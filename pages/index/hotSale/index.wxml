@@ -1,0 +1,32 @@
+<view class="wrap">
+  <view class="wrap-tab">
+    <view class="{{currentTab==index ? 'tab-li-ture' : 'tab-li'}}"
+    wx:for="{{tabList}}"
+    wx:key="index"
+    data-current="{{index}}"
+    bindtap="clickTab">{{item.name}}</view>
+  </view>
+  <!-- li部分 -->
+  <view class="wrap-box">
+    <view class="wrap-box-li">
+      <view class="box-li-left">
+        <!-- <image src=""></image> -->
+      </view>
+      <view class="box-li-right">
+        <view class="li-right-title">脐橙</view>
+        <view class="li-right-name">米米电偶</view>
+        <view class="li-right-num">销量：11111</view>
+        <view class="li-right-price">
+          <text>￥</text>300
+          <view class="li-bottom-price">
+            <view class="bottom-price-del" catchtap='quantityChange' data-index="0" id='sub'>-</view>
+            <view class="bottom-price-num">1</view>
+            <view class="bottom-price-add" catchtap='quantityChange' data-index="0" id='add'>
+              <i-icon type="add" color="white"/>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

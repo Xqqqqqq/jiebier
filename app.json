@@ -1,0 +1,57 @@
+{
+  "pages": [
+    "pages/index/index/index",
+    "pages/index/hotSale/index",
+    "pages/classify/classify/index",
+    "pages/shoppingCart/shoppingCart/index",
+    "pages/news/news/index",
+    "pages/mine/mine/index"
+  ],
+  "subPackages": [
+    {
+      "root": "packageMall",
+      "pages": [
+      ]
+    }
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "界壁儿",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#8F9091",
+    "selectedColor": "#476BA4",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index/index",
+        "text": "界壁儿"
+      },
+      {
+        "pagePath": "pages/classify/classify/index",
+        "text": "分类"
+      },
+      {                
+        "pagePath": "pages/shoppingCart/shoppingCart/index",
+        "text": "购物车"
+      },
+      {
+        "pagePath": "pages/news/news/index",
+        "text": "消息"
+      },
+      {
+        "pagePath": "pages/mine/mine/index",
+        "text": "我的"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

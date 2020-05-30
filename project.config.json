@@ -1,0 +1,1805 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"preloadBackgroundData": false,
+		"minified": true,
+		"newFeature": true,
+		"coverView": true,
+		"autoAudits": false,
+		"showShadowRootInWxmlPanel": true,
+		"scopeDataCheck": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.0.4",
+	"appid": "wx73629214f10bf65b",
+	"projectname": "hospitalProject",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/serviceCentreIndex/index",
+					"pathName": "pages/serviceCentre/serviceCentreIndex/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/applyForPurchase/applyForPurchase/index",
+					"pathName": "pages/serviceCentre/applyForPurchase/applyForPurchase/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/serviceCentreIndex/index",
+					"pathName": "pages/serviceCentre/serviceCentreIndex/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/loginAll/register/index",
+					"pathName": "pages/loginAll/register/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/mine/mine/index",
+					"pathName": "pages/mine/mine/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 5,
+					"name": "pages/loginAll/register/index",
+					"pathName": "pages/loginAll/register/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/index/index",
+					"pathName": "pages/index/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/index/index",
+					"pathName": "pages/index/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 8,
+					"name": "pages/loginAll/login/index",
+					"pathName": "pages/loginAll/login/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/applyForPurchase/memDetail/index",
+					"pathName": "pages/serviceCentre/applyForPurchase/memDetail/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/mine/integral/index",
+					"pathName": "pages/mine/integral/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/mine/member/index",
+					"pathName": "pages/mine/member/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/mine/member/index",
+					"pathName": "pages/mine/member/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/mine/integral/index",
+					"pathName": "pages/mine/integral/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/mine/promotionCode/index",
+					"pathName": "pages/mine/promotionCode/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/mine/member/index",
+					"pathName": "pages/mine/member/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/mine/applyFor/index",
+					"pathName": "pages/mine/applyFor/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/loginAll/forgetPassword/index",
+					"pathName": "pages/loginAll/forgetPassword/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/loginAll/forgetPassword/index",
+					"pathName": "pages/loginAll/forgetPassword/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/loginAll/passwordSettingSuccess/index",
+					"pathName": "pages/loginAll/passwordSettingSuccess/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/loginAll/setPassword/index",
+					"pathName": "pages/loginAll/setPassword/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/applyForPurchase/memDetail/index",
+					"pathName": "pages/serviceCentre/applyForPurchase/memDetail/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/mine/account/balance/index",
+					"pathName": "pages/mine/account/balance/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/mine/account/turnover/index",
+					"pathName": "pages/mine/account/turnover/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/mine/account/promotionFee/index",
+					"pathName": "pages/mine/account/promotionFee/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/mine/memberCenter/index",
+					"pathName": "pages/mine/memberCenter/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/loginAll/memNotice/index",
+					"pathName": "pages/loginAll/memNotice/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/mine/messageCenter/index",
+					"pathName": "pages/mine/messageCenter/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/mine/feedback/index",
+					"pathName": "pages/mine/feedback/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/mine/application/index",
+					"pathName": "pages/mine/application/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/mine/aboutUs/index",
+					"pathName": "pages/mine/aboutUs/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/companyEnquiry/subsidiaryQuery/index",
+					"pathName": "pages/companyEnquiry/subsidiaryQuery/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/reservaService/searchHospital/index",
+					"pathName": "pages/serviceCentre/reservaService/searchHospital/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/reservaService/historyOrder/index",
+					"pathName": "pages/serviceCentre/reservaService/historyOrder/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/reservaService/orderCenter/index",
+					"pathName": "pages/serviceCentre/reservaService/orderCenter/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/reservaService/hospitalOrder/index",
+					"pathName": "pages/serviceCentre/reservaService/hospitalOrder/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/reservaService/hospitalOrder/index",
+					"pathName": "pages/serviceCentre/reservaService/hospitalOrder/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/reservaService/orderCenter/index",
+					"pathName": "pages/serviceCentre/reservaService/orderCenter/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/reservaService/orderCenter/index",
+					"pathName": "pages/serviceCentre/reservaService/orderCenter/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/reservaService/historyOrder/index",
+					"pathName": "pages/serviceCentre/reservaService/historyOrder/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/reservaService/searchHospital/index",
+					"pathName": "pages/serviceCentre/reservaService/searchHospital/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/reservaService/orderDetails/index",
+					"pathName": "pages/serviceCentre/reservaService/orderDetails/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/loginAll/passwordSettingSuccess/index",
+					"pathName": "pages/loginAll/passwordSettingSuccess/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/reservaService/cancelOrder/index",
+					"pathName": "pages/serviceCentre/reservaService/cancelOrder/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/reservaService/successOrder/index",
+					"pathName": "pages/serviceCentre/reservaService/successOrder/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/reservaService/orderCenter/index",
+					"pathName": "pages/serviceCentre/reservaService/orderCenter/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/reservaService/hospitalOrder/index",
+					"pathName": "pages/serviceCentre/reservaService/hospitalOrder/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/reservaService/orderCenter/index",
+					"pathName": "pages/serviceCentre/reservaService/orderCenter/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/reservaService/orderCenter/index",
+					"pathName": "pages/serviceCentre/reservaService/orderCenter/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/reservaService/historyOrder/index",
+					"pathName": "pages/serviceCentre/reservaService/historyOrder/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/reservaService/orderCenter/index",
+					"pathName": "pages/serviceCentre/reservaService/orderCenter/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/reservaService/historyOrder/index",
+					"pathName": "pages/serviceCentre/reservaService/historyOrder/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/reservaService/orderCenter/index",
+					"pathName": "pages/serviceCentre/reservaService/orderCenter/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/reservaService/searchHospital/index",
+					"pathName": "pages/serviceCentre/reservaService/searchHospital/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/reservaService/historyOrder/index",
+					"pathName": "pages/serviceCentre/reservaService/historyOrder/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/reservaService/orderCenter/index",
+					"pathName": "pages/serviceCentre/reservaService/orderCenter/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/reservaService/historyOrder/index",
+					"pathName": "pages/serviceCentre/reservaService/historyOrder/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/reservaService/orderDetails/index",
+					"pathName": "pages/serviceCentre/reservaService/orderDetails/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/reservaService/orderCenter/index",
+					"pathName": "pages/serviceCentre/reservaService/orderCenter/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/reservaService/searchHospital/index",
+					"pathName": "pages/serviceCentre/reservaService/searchHospital/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/reservaService/hospitalOrder/index",
+					"pathName": "pages/serviceCentre/reservaService/hospitalOrder/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/reservaService/historyOrder/index",
+					"pathName": "pages/serviceCentre/reservaService/historyOrder/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/reservaService/orderDetails/index",
+					"pathName": "pages/serviceCentre/reservaService/orderDetails/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/reservaService/orderCenter/index",
+					"pathName": "pages/serviceCentre/reservaService/orderCenter/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/reservaService/hospitalOrder/index",
+					"pathName": "pages/serviceCentre/reservaService/hospitalOrder/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/reservaService/orderCenter/index",
+					"pathName": "pages/serviceCentre/reservaService/orderCenter/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/reservaService/hospitalOrder/index",
+					"pathName": "pages/serviceCentre/reservaService/hospitalOrder/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/reservaService/orderCenter/index",
+					"pathName": "pages/serviceCentre/reservaService/orderCenter/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/reservaService/orderDetails/index",
+					"pathName": "pages/serviceCentre/reservaService/orderDetails/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/reservaService/hospitalOrder/index",
+					"pathName": "pages/serviceCentre/reservaService/hospitalOrder/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/reservaService/searchHospital/index",
+					"pathName": "pages/serviceCentre/reservaService/searchHospital/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/reservaService/hospitalOrder/index",
+					"pathName": "pages/serviceCentre/reservaService/hospitalOrder/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/reservaService/orderCenter/index",
+					"pathName": "pages/serviceCentre/reservaService/orderCenter/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/applyForPurchase/applyForPurchase/index",
+					"pathName": "pages/serviceCentre/applyForPurchase/applyForPurchase/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/loginAll/register/index",
+					"pathName": "pages/loginAll/register/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/loginAll/register/index",
+					"pathName": "pages/loginAll/register/index",
+					"query": "scene=\"12\"",
+					"scene": 1011
+				},
+				{
+					"id": -1,
+					"name": "pages/loginAll/register/index",
+					"pathName": "pages/loginAll/register/index",
+					"query": "scene=\"12\"",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/loginAll/register/index",
+					"pathName": "pages/loginAll/register/index",
+					"query": "{\\\"scene\\\":\\\"inviterCode=\"+code+\"\\\",\"             + \"\\\"page\\\":\\\"pages/loginAll/register/index\\\",\"             + \"\\\"width\\\":430}",
+					"scene": 1011
+				},
+				{
+					"id": -1,
+					"name": "pages/loginAll/register/index",
+					"pathName": "pages/loginAll/register/index",
+					"query": "inviterCode='dddddddd'",
+					"scene": 1011
+				},
+				{
+					"id": -1,
+					"name": "pages/loginAll/register/index",
+					"pathName": "pages/loginAll/register/index",
+					"query": "inviterCode=dddddddd",
+					"scene": 1011
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/reservaService/historyOrder/index",
+					"pathName": "pages/serviceCentre/reservaService/historyOrder/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/reservaService/historyOrder/index",
+					"pathName": "pages/serviceCentre/reservaService/historyOrder/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/companyEnquiry/subsidiaryQuery/index",
+					"pathName": "pages/companyEnquiry/subsidiaryQuery/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/reservaService/historyOrder/index",
+					"pathName": "pages/serviceCentre/reservaService/historyOrder/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/reservaService/historyOrder/index",
+					"pathName": "pages/serviceCentre/reservaService/historyOrder/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/reservaService/historyOrder/index",
+					"pathName": "pages/serviceCentre/reservaService/historyOrder/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/mine/application/index",
+					"pathName": "pages/mine/application/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/companyEnquiry/subsidiaryQuery/index",
+					"pathName": "pages/companyEnquiry/subsidiaryQuery/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/companyEnquiry/fillApplication/index",
+					"pathName": "pages/companyEnquiry/fillApplication/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/companyEnquiry/fillApplication/index",
+					"pathName": "pages/companyEnquiry/fillApplication/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/companyEnquiry/paymentCost/index",
+					"pathName": "pages/companyEnquiry/paymentCost/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/companyEnquiry/subsidiaryQuery/index",
+					"pathName": "pages/companyEnquiry/subsidiaryQuery/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/companyEnquiry/fillApplication/index",
+					"pathName": "pages/companyEnquiry/fillApplication/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/companyEnquiry/subsidiaryQuery/index",
+					"pathName": "pages/companyEnquiry/subsidiaryQuery/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/companyEnquiry/companyInfo/index",
+					"pathName": "pages/companyEnquiry/companyInfo/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/companyEnquiry/fillApplication/index",
+					"pathName": "pages/companyEnquiry/fillApplication/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/companyEnquiry/paymentCost/index",
+					"pathName": "pages/companyEnquiry/paymentCost/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/reportView/reportList/index",
+					"pathName": "pages/serviceCentre/reportView/reportList/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/index/index",
+					"pathName": "pages/loginAll/register/index",
+					"query": "scene=inviterCode%3D8cpkrw",
+					"scene": 1011
+				},
+				{
+					"id": -1,
+					"name": "pages/index/index/index",
+					"pathName": "pages/index/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/mine/promotionCode/index",
+					"pathName": "pages/mine/promotionCode/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/index/index",
+					"pathName": "pages/index/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/reportView/reportList/index",
+					"pathName": "pages/serviceCentre/reportView/reportList/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/serviceCentreIndex/index",
+					"pathName": "pages/serviceCentre/serviceCentreIndex/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/reservaService/searchHospital/index",
+					"pathName": "pages/serviceCentre/reservaService/searchHospital/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/statistics/companyHospital/index",
+					"pathName": "pages/serviceCentre/statistics/companyHospital/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/statistics/companyList/index",
+					"pathName": "pages/serviceCentre/statistics/companyList/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/statistics/interStatistics/index",
+					"pathName": "pages/serviceCentre/statistics/interStatistics/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/reportView/reportList/index",
+					"pathName": "pages/serviceCentre/reportView/reportList/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/serviceCentreIndex/index",
+					"pathName": "pages/serviceCentre/serviceCentreIndex/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/mall/IntegralMall/index",
+					"pathName": "packageMall/pages/mall/IntegralMall/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/statistics/companyList/index",
+					"pathName": "pages/serviceCentre/statistics/companyList/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/mall/IntegralMall/index",
+					"pathName": "packageMall/pages/mall/IntegralMall/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/statistics/companyHospital/index",
+					"pathName": "pages/serviceCentre/statistics/companyHospital/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/statistics/companyList/index",
+					"pathName": "pages/serviceCentre/statistics/companyList/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/statistics/interStatistics/index",
+					"pathName": "pages/serviceCentre/statistics/interStatistics/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/companyEnquiry/fillApplication/index",
+					"pathName": "pages/companyEnquiry/fillApplication/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/companyEnquiry/fillApplication/index",
+					"pathName": "pages/companyEnquiry/fillApplication/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/mine/securitySettings/index",
+					"pathName": "pages/mine/securitySettings/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/companyEnquiry/fillApplication/index",
+					"pathName": "pages/companyEnquiry/fillApplication/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/companyEnquiry/subsidiaryQuery/index",
+					"pathName": "pages/companyEnquiry/subsidiaryQuery/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/companyEnquiry/fillApplication/index",
+					"pathName": "pages/companyEnquiry/fillApplication/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/mall/IntegralMall/index",
+					"pathName": "packageMall/pages/mall/IntegralMall/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/statistics/interStatistics/index",
+					"pathName": "pages/serviceCentre/statistics/interStatistics/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/statistics/companyList/index",
+					"pathName": "pages/serviceCentre/statistics/companyList/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/statistics/interStatistics/index",
+					"pathName": "pages/serviceCentre/statistics/interStatistics/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/statistics/companyList/index",
+					"pathName": "pages/serviceCentre/statistics/companyList/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/statistics/interStatistics/index",
+					"pathName": "pages/serviceCentre/statistics/interStatistics/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/statistics/companyList/index",
+					"pathName": "pages/serviceCentre/statistics/companyList/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/companyEnquiry/subsidiaryQuery/index",
+					"pathName": "pages/companyEnquiry/subsidiaryQuery/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/companyEnquiry/subsidiaryQuery/index",
+					"pathName": "pages/companyEnquiry/subsidiaryQuery/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/companyEnquiry/paymentCost/index",
+					"pathName": "pages/companyEnquiry/paymentCost/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/statistics/companyList/index",
+					"pathName": "pages/serviceCentre/statistics/companyList/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/reportView/reportList/index",
+					"pathName": "pages/serviceCentre/reportView/reportList/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/mine/gradeExplain/index",
+					"pathName": "pages/mine/gradeExplain/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/mall/IntegralMall/index",
+					"pathName": "packageMall/pages/mall/IntegralMall/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/companyEnquiry/fillApplication/index",
+					"pathName": "pages/companyEnquiry/fillApplication/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/mine/infoModify/index",
+					"pathName": "pages/mine/infoModify/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/mall/IntegralMall/index",
+					"pathName": "packageMall/pages/mall/IntegralMall/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/mall/selectAddress/index",
+					"pathName": "packageMall/pages/mall/selectAddress/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/reportView/reportList/index",
+					"pathName": "pages/serviceCentre/reportView/reportList/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/mall/productDetail/index",
+					"pathName": "packageMall/pages/mall/productDetail/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/reportView/reportList/index",
+					"pathName": "pages/serviceCentre/reportView/reportList/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/reportView/reportList/index",
+					"pathName": "pages/serviceCentre/reportView/reportList/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/mall/productDetail/index",
+					"pathName": "packageMall/pages/mall/productDetail/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/reportView/reportList/index",
+					"pathName": "pages/serviceCentre/reportView/reportList/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/mall/productDetail/index",
+					"pathName": "packageMall/pages/mall/productDetail/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/companyEnquiry/fillApplication/index",
+					"pathName": "pages/companyEnquiry/fillApplication/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/mall/productDetail/index",
+					"pathName": "packageMall/pages/mall/productDetail/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/reportView/reportList/index",
+					"pathName": "pages/serviceCentre/reportView/reportList/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/mall/productDetail/index",
+					"pathName": "packageMall/pages/mall/productDetail/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/mall/mallClassifice/index",
+					"pathName": "packageMall/pages/mall/mallClassifice/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/mall/myOrder/index",
+					"pathName": "packageMall/pages/mall/myOrder/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/mall/selectAddress/index",
+					"pathName": "packageMall/pages/mall/selectAddress/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/mall/myAddress/index",
+					"pathName": "packageMall/pages/mall/myAddress/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/mall/IntegralMall/index",
+					"pathName": "packageMall/pages/mall/IntegralMall/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/shoppingCart/shoppingCart/index",
+					"pathName": "packageMall/pages/shoppingCart/shoppingCart/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/loginAll/register/index",
+					"pathName": "pages/loginAll/register/index",
+					"query": "scene=%2Bcode%2B",
+					"scene": 1011
+				},
+				{
+					"id": -1,
+					"name": "pages/loginAll/register/index",
+					"pathName": "pages/loginAll/register/index",
+					"query": "scene=%2Bcode%2B",
+					"scene": 1011
+				},
+				{
+					"id": -1,
+					"name": "pages/loginAll/register/index",
+					"pathName": "pages/loginAll/register/index",
+					"query": "scene=%2Bcode%2B",
+					"scene": 1011
+				},
+				{
+					"id": -1,
+					"name": "pages/loginAll/register/index",
+					"pathName": "pages/loginAll/register/index",
+					"query": "scene=%2Bcode%2B",
+					"scene": 1011
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/shoppingCart/shoppingCart/index",
+					"pathName": "packageMall/pages/shoppingCart/shoppingCart/index",
+					"query": "scene=%2Bcode%2B",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/loginAll/register/index",
+					"pathName": "pages/loginAll/register/index",
+					"query": "scene=adc123",
+					"scene": 1011
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/shoppingCart/shoppingCart/index",
+					"pathName": "packageMall/pages/shoppingCart/shoppingCart/index",
+					"query": "scene=adc123",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/shoppingCart/shoppingCart/index",
+					"pathName": "packageMall/pages/shoppingCart/shoppingCart/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/mall/IntegralMall/index",
+					"pathName": "packageMall/pages/mall/IntegralMall/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/mall/mallClassifice/index",
+					"pathName": "packageMall/pages/mall/mallClassifice/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/mall/mallClassifice/index",
+					"pathName": "packageMall/pages/mall/mallClassifice/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/mall/IntegralMall/index",
+					"pathName": "packageMall/pages/mall/IntegralMall/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/applyForPurchase/inputPass/index",
+					"pathName": "pages/serviceCentre/applyForPurchase/inputPass/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/mall/IntegralMall/index",
+					"pathName": "packageMall/pages/mall/IntegralMall/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/applyForPurchase/applyForPurchase/index",
+					"pathName": "pages/serviceCentre/applyForPurchase/applyForPurchase/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/mall/IntegralMall/index",
+					"pathName": "packageMall/pages/mall/IntegralMall/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/mall/IntegralMall/index",
+					"pathName": "packageMall/pages/mall/IntegralMall/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/mall/IntegralMall/index",
+					"pathName": "packageMall/pages/mall/IntegralMall/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/mall/classificeList/index",
+					"pathName": "packageMall/pages/mall/classificeList/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/mall/mallClassifice/index",
+					"pathName": "packageMall/pages/mall/mallClassifice/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/mall/newAddress/index",
+					"pathName": "packageMall/pages/mall/newAddress/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/mall/myAddress/index",
+					"pathName": "packageMall/pages/mall/myAddress/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/mall/newAddress/index",
+					"pathName": "packageMall/pages/mall/newAddress/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/mall/myAddress/index",
+					"pathName": "packageMall/pages/mall/myAddress/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/mall/myAddress/index",
+					"pathName": "packageMall/pages/mall/myAddress/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/shoppingCart/shoppingCart/index",
+					"pathName": "packageMall/pages/shoppingCart/shoppingCart/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/mall/myAddress/index",
+					"pathName": "packageMall/pages/mall/myAddress/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/shoppingCart/shoppingCart/index",
+					"pathName": "packageMall/pages/shoppingCart/shoppingCart/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/mall/generateOrder/index",
+					"pathName": "packageMall/pages/mall/generateOrder/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/mall/IntegralMall/index",
+					"pathName": "packageMall/pages/mall/IntegralMall/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/loginAll/register/index",
+					"pathName": "pages/loginAll/register/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/mall/IntegralMall/index",
+					"pathName": "packageMall/pages/mall/IntegralMall/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/mall/disclaimer/index",
+					"pathName": "packageMall/pages/mall/disclaimer/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/mall/myOrder/index",
+					"pathName": "packageMall/pages/mall/myOrder/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/mall/serviceTel/index",
+					"pathName": "packageMall/pages/mall/serviceTel/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/mall/myOrder/index",
+					"pathName": "packageMall/pages/mall/myOrder/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/mall/myOrder/index",
+					"pathName": "packageMall/pages/mall/myOrder/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/mall/orderStatus/index",
+					"pathName": "packageMall/pages/mall/orderStatus/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/mall/myOrder/index",
+					"pathName": "packageMall/pages/mall/myOrder/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/shoppingCart/orderSuccess/index",
+					"pathName": "packageMall/pages/shoppingCart/orderSuccess/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/mall/orderDetail/index",
+					"pathName": "packageMall/pages/mall/orderDetail/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/companyEnquiry/fillApplication/index",
+					"pathName": "pages/companyEnquiry/fillApplication/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/mall/IntegralMall/index",
+					"pathName": "packageMall/pages/mall/IntegralMall/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/serviceCentre/applyForPurchase/inputPass/index",
+					"pathName": "pages/serviceCentre/applyForPurchase/inputPass/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/mine/securitySettings/index",
+					"pathName": "pages/mine/securitySettings/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/mine/integral/index",
+					"pathName": "pages/mine/integral/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/mine/account/balance/index",
+					"pathName": "pages/mine/account/balance/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/mall/IntegralMall/index",
+					"pathName": "packageMall/pages/mall/IntegralMall/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/mall/IntegralMall/index",
+					"pathName": "packageMall/pages/mall/IntegralMall/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/mall/IntegralMall/index",
+					"pathName": "packageMall/pages/mall/IntegralMall/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/mall/orderDetail/index",
+					"pathName": "packageMall/pages/mall/orderDetail/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/mall/generateOrder/index",
+					"pathName": "packageMall/pages/mall/generateOrder/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/mall/IntegralMall/index",
+					"pathName": "packageMall/pages/mall/IntegralMall/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/mall/generateOrder/index",
+					"pathName": "packageMall/pages/mall/generateOrder/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/mall/IntegralMall/index",
+					"pathName": "packageMall/pages/mall/IntegralMall/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/shoppingCart/orderSuccess/index",
+					"pathName": "packageMall/pages/shoppingCart/orderSuccess/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/shoppingCart/shoppingCart/index",
+					"pathName": "packageMall/pages/shoppingCart/shoppingCart/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/mall/IntegralMall/index",
+					"pathName": "packageMall/pages/mall/IntegralMall/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/shoppingCart/shoppingCart/index",
+					"pathName": "packageMall/pages/shoppingCart/shoppingCart/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/shoppingCart/shoppingCart/index",
+					"pathName": "packageMall/pages/shoppingCart/shoppingCart/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/mall/IntegralMall/index",
+					"pathName": "packageMall/pages/mall/IntegralMall/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/shoppingCart/shoppingCart/index",
+					"pathName": "packageMall/pages/shoppingCart/shoppingCart/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/mine/IntegralMall/index",
+					"pathName": "pages/mine/IntegralMall/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/mall/orderStatus/index",
+					"pathName": "packageMall/pages/mall/orderStatus/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/mall/myOrder/index",
+					"pathName": "packageMall/pages/mall/myOrder/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/mall/orderStatus/index",
+					"pathName": "packageMall/pages/mall/orderStatus/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/mall/myOrder/index",
+					"pathName": "packageMall/pages/mall/myOrder/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/mall/orderDetail/index",
+					"pathName": "packageMall/pages/mall/orderDetail/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/mall/myOrder/index",
+					"pathName": "packageMall/pages/mall/myOrder/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/mall/orderDetail/index",
+					"pathName": "packageMall/pages/mall/orderDetail/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/mall/myOrder/index",
+					"pathName": "packageMall/pages/mall/myOrder/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/mall/returnGoods/index",
+					"pathName": "packageMall/pages/mall/returnGoods/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/companyEnquiry/fillApplication/index",
+					"pathName": "pages/companyEnquiry/fillApplication/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/mall/returnGoods/index",
+					"pathName": "packageMall/pages/mall/returnGoods/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/mall/myOrder/index",
+					"pathName": "packageMall/pages/mall/myOrder/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/mall/myOrder/index",
+					"pathName": "packageMall/pages/mall/myOrder/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/mine/IntegralMall/index",
+					"pathName": "pages/mine/IntegralMall/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/mine/IntegralMall/index",
+					"pathName": "pages/mine/IntegralMall/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/loginAll/register/index",
+					"pathName": "pages/loginAll/register/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/mine/cashOut/index",
+					"pathName": "pages/mine/cashOut/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/mine/applyFor/index",
+					"pathName": "pages/mine/applyFor/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/mine/cashOut/index",
+					"pathName": "pages/mine/cashOut/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/mine/infoModify/index",
+					"pathName": "pages/mine/infoModify/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/mine/infoModify/index",
+					"pathName": "pages/mine/infoModify/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/mine/infoModify/index",
+					"pathName": "pages/mine/infoModify/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/mine/integral/index",
+					"pathName": "pages/mine/integral/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/mine/IntegralMall/index",
+					"pathName": "pages/mine/IntegralMall/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/mall/myOrder/index",
+					"pathName": "packageMall/pages/mall/myOrder/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/mine/IntegralMall/index",
+					"pathName": "pages/mine/IntegralMall/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/mine/IntegralMall/index",
+					"pathName": "pages/mine/IntegralMall/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/hotSale/index",
+					"pathName": "pages/index/hotSale/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/index/index",
+					"pathName": "pages/index/index/index",
+					"scene": null
+				}
+			]
+		}
+	}
+}
