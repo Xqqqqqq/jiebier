@@ -5,8 +5,8 @@ Page({
     addressInfo:{}
   },
   onShow(){
-    getUserAddress().then(res => {
-      console.log('sss',res)
-    })
+    // getUserAddress().then(res => {
+    //   console.log('sss',res)
+    // })
   },
 })

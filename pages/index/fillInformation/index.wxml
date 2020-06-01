@@ -1,0 +1,130 @@
+<view class="wrap">
+  <view class="wrap-box">
+    <view class="wrap-box-li">
+      <view class="wrap-box-li-img" style="width: 48rpx; height: 44rpx;">
+        <image src="{{url}}index/qiyemingcheng.png"></image>
+      </view>
+      <view class="wrap-box-li-input">
+        <i-input value="{{ value1 }}" title="企业名称" right="true" maxlength="100"/>
+      </view>
+    </view>
+    <view class="wrap-box-li">
+      <view class="wrap-box-li-img" style="width: 48rpx; height: 44rpx;">
+        <image src="{{url}}index/qiyedizhi.png"></image>
+      </view>
+      <view class="wrap-box-li-input">
+        <i-input value="{{ value1 }}" title="企业地址" right="true" maxlength="100"/>
+      </view>
+    </view>
+    <view class="wrap-box-li wrap-box-li-picker">
+      <view class="wrap-box-li-img" style="width: 48rpx; height: 44rpx;">
+        <image src="{{url}}index/qiyezhonglei.png"></image>
+      </view>
+      <view class="wrap-box-li-input">
+        <picker bindchange="bindStatusChange" value="{{statusIndex}}" range-key="dictLabel" range="{{statusList}}">
+          <view class="box-li-picker">
+            <view class="li-picker-left">企业种类</view>
+            <view class="li-picker-right">{{statusList[statusIndex].dictLabel}}</view>
+          </view>
+        </picker>
+      </view>
+    </view>
+  </view>
+  <view class="wrap-box">
+    <view class="wrap-box-li">
+      <view class="wrap-box-li-img" style="width: 48rpx; height: 44rpx;">
+        <image src="{{url}}index/farenxingming.png"></image>
+      </view>
+      <view class="wrap-box-li-input">
+        <i-input value="{{ value1 }}" title="企业法人姓名" right="true" maxlength="100"/>
+      </view>
+    </view>
+    <view class="wrap-box-li">
+      <view class="wrap-box-li-img" style="width: 48rpx; height: 44rpx;">
+        <image src="{{url}}index/lianxidianhua.png"></image>
+      </view>
+      <view class="wrap-box-li-input">
+        <i-input value="{{ value1 }}" title="联系电话" right="true" type="number" maxlength="100"/>
+      </view>
+    </view>
+    <view class="wrap-box-li">
+      <view class="wrap-box-li-img" style="width: 48rpx; height: 44rpx;">
+        <image src="{{url}}index/qiyeyouxiang.png"></image>
+      </view>
+      <view class="wrap-box-li-input">
+        <i-input value="{{ value1 }}" title="企业邮箱" right="true" maxlength="100"/>
+      </view>
+    </view>
+    <view class="wrap-box-li wrap-box-li-picker">
+      <view class="wrap-box-li-img" style="width: 48rpx; height: 44rpx;">
+        <image src="{{url}}index/qiyeleixing.png"></image>
+      </view>
+      <view class="wrap-box-li-input">
+        <picker bindchange="bindTypeChange" value="{{typeIndex}}" range-key="dictLabel" range="{{typeList}}">
+          <view class="box-li-picker">
+            <view class="li-picker-left">企业类型</view>
+            <view class="li-picker-right">{{typeList[typeIndex].dictLabel}}</view>
+          </view>
+        </picker>
+      </view>
+    </view>
+  </view>
+  <view class="wrap-box wrap-box-other">
+    <view class="wrap-box-li">
+      <view class="wrap-box-li-img" style="width: 48rpx; height: 44rpx;">
+        <image src="{{url}}index/card.png"></image>
+      </view>
+      <view class="wrap-box-li-input">
+        <i-input value="{{ value1 }}" title="法人身份证号" right="true" maxlength="100"/>
+      </view>
+    </view>
+    <view class="wrap-box-block">
+      <view class="box-block-img" bindtap="chooseImage" data-type="cardIn">
+        <image src="{{url}}index/shenfenzhengzheng.png"></image>
+      </view>
+      <view class="box-block-title">上传身份证正面</view>
+    </view>
+    <view class="wrap-box-block">
+      <view class="box-block-img" bindtap="chooseImage" data-type="cardOut">
+        <image src="{{url}}index/shenfenzhengfan.png"></image>
+      </view>
+      <view class="box-block-title">上传身份证反面</view>
+    </view>
+  </view>
+  <view class="wrap-box">
+    <view class="wrap-box-li">
+      <view class="wrap-box-li-img" style="width: 48rpx; height: 44rpx;">
+        <image src="{{url}}index/yinhangkahao.png"></image>
+      </view>
+      <view class="wrap-box-li-input">
+        <i-input value="{{ value1 }}" title="银行卡账号" right="true" type="number" maxlength="100"/>
+      </view>
+    </view>
+    <view class="wrap-box-li wrap-box-li-other">
+      <view class="wrap-box-li-img" style="width: 48rpx; height: 44rpx;">
+        <image src="{{url}}index/kaihuhang.png"></image>
+      </view>
+      <view class="wrap-box-li-input">
+        <i-input value="{{ value1 }}" title="开户行" right="true" maxlength="100"/>
+      </view>
+    </view>
+  </view>
+  <view class="wrap-box wrap-box-other">
+    <view class="wrap-box-li">
+      <view class="wrap-box-li-img" style="width: 48rpx; height: 44rpx;">
+        <image src="{{url}}index/xukezheng.png"></image>
+      </view>
+      <view class="wrap-box-li-input">
+        <i-input value="{{ value1 }}" title="经营许可证" disabled maxlength="100"/>
+      </view>
+    </view>
+    <view class="wrap-box-block">
+      <view class="box-block-img">
+        <image src="{{url}}index/zhaopian.png"></image>
+      </view>
+      <view class="box-block-title">上传许可证</view>
+    </view>
+  </view>
+  <view class="wrap-btn-block"></view>
+  <view class="wrap-btn">提 交</view>
+</view>

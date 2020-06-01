@@ -6,7 +6,7 @@ class HTTP {
   request({
     url, 
     data = {},
-    method = 'GET',
+    method = 'POST',
     header = {},
     loadingStatus = true
   }){

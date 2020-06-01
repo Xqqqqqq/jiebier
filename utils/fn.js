@@ -142,7 +142,6 @@ export function getUserAddress(){
           wx.getLocation({
             type: 'gcj02',
             success (res) {
-              console.log('333', res)
               resolve(res)
             }
           })
