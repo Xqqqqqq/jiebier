@@ -6,6 +6,7 @@
     "pages/index/shops/index",
     "pages/index/hotSale/index",
     "pages/classify/classify/index",
+    "pages/classify/selectCity/index",
     "pages/shoppingCart/shoppingCart/index",
     "pages/news/news/index",
     "pages/mine/mine/index"

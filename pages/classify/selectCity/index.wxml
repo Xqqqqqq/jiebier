@@ -1,0 +1,23 @@
+<view class="i-index-demo" style="height: 100%; position:relative">
+  <!-- <scroll-view scroll-y="true" class="scr_right" scroll-into-view="{{currentScrollId}}" scroll-with-animation="true" bindscroll="bindscroll" style="height: 100%;"> -->
+    <i-index height="100%" bind:change="onChange">
+      <i-index-item
+          wx:for="{{ cities }}" 
+          wx:for-index="index" 
+          wx:key 
+          wx:for-item="item" name="{{item.key}}"
+          id="c_{{item.key}}"  data-id="c_{{item.key}}">
+          <view 
+          class="i-index-demo-item" 
+          wx:for="{{item.list}}" 
+          wx:for-index="in" 
+          wx:key 
+          wx:for-item="it"
+          bindtap="aa"
+          data-name="{{it.name}}">
+          {{it.name}}
+          </view>
+      </i-index-item>
+  </i-index>
+  <!-- </scroll-view> -->
+</view>
