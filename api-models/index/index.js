@@ -11,6 +11,16 @@ class Index extends HTTP {
     })
   }
   /**
+   * 获取openid
+   */
+  getOpenid(data){
+    return this.request({
+      url:'/api/wx/getOpenid',
+      data: data,
+      method:"GET"
+    })
+  }
+  /**
    * 	企业入驻申请
    */
   companyIn(data){

@@ -1805,6 +1805,62 @@
 					"id": -1,
 					"name": "pages/index/fillInformation/index",
 					"pathName": "pages/index/fillInformation/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/index/index",
+					"pathName": "pages/index/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/fillInformation/index",
+					"pathName": "pages/index/fillInformation/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/hotSale/index",
+					"pathName": "pages/index/hotSale/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/fillInformation/index",
+					"pathName": "pages/index/fillInformation/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/index/index",
+					"pathName": "pages/index/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/recommendStores/index",
+					"pathName": "pages/index/recommendStores/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/shops/index",
+					"pathName": "pages/index/shops/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/recommendStores/index",
+					"pathName": "pages/index/recommendStores/index",
 					"scene": null
 				}
 			]

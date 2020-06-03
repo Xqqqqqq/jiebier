@@ -118,5 +118,20 @@
     data-current="{{index}}"
     bindtap="clickTab">{{item}}</view>
   </view>
+  <!-- 选择城市 -->
+  <i-collapse accordion name="{{name}}">
+    <i-collapse-item 
+    title="{{item.title}}" wx:for="{{collapseList}}" wx:key="index" name="{{item.title}}"
+    i-class-title="collapse-item-title" i-class-content="collapse-item-content">
+      <view slot="content">
+        <radio-group bindchange="radioChange">
+          <label class="collapse-label" wx:for="{{item.children}}" wx:key="index" wx:for-item="itemSmall">
+            <radio value="{{itemSmall.id}}" checked="{{itemSmall.checked}}"/>
+            <view class="collapse-label-title">{{itemSmall.value}}</view>
+          </label>
+        </radio-group>
+      </view>
+    </i-collapse-item>
+  </i-collapse>
   <i-toast id="toast" />
 </view>

@@ -1,0 +1,11 @@
+<view>
+  <view style="width:100%;" wx:for="{{shopList}}">
+    <view style="margin-bottom: 20rpx;" bindtap="gotoShop" data-id="{{item.id}}">{{item.title}}</view>
+    <view style="display: flex; justify-content: space-between;">
+      <view wx:for="{{item.goods}}" 
+      style="height: 200rpx; background-color: green;" 
+      wx:for-item="itemSmall"
+      bindtap="gotoGoods" data-item="{{itemSmall}}">{{itemSmall.name}}{{itemSmall.id}}</view>
+    </view>
+  </view>
+</view>

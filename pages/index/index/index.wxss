@@ -186,3 +186,17 @@ swiper-item image {
   margin-right: 20rpx;
   margin-bottom: 20rpx;
 }
+/* 选择城市 */
+.collapse-item-title{
+  color: red;
+}
+.collapse-item-content{
+  display: flex;
+}
+.collapse-label{
+  width: 100%;
+  display: flex;
+}
+.collapse-label-title{
+  width: 80%;
+}

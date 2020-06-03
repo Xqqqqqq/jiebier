@@ -1,0 +1,44 @@
+<view class="containner">
+  <view class="top" wx:if="{{showTop}}">左右联动例子</view>
+  <view class="cont">
+    <scroll-view 
+    style="height: {{height}}px"
+    scroll-y="true" class="scr_left" scroll-top="{{leftTop}}" scroll-with-animation="true">
+      <block wx:for="{{rightData}}" wx:for-item="lcai" wx:key="index">
+        <view class="sc_left_item {{cp_index==index? 'active':''}}"  data-id="c_{{lcai.id}}" data-index="{{index}}" bindtap="leftTap" >
+          {{lcai.name}}{{lcai.id}}
+        </view>
+        </block>
+    </scroll-view>
+       
+    <scroll-view scroll-y="true" class="scr_right" scroll-into-view="{{currentScrollId}}" scroll-with-animation="true" bindscroll="bindscroll">
+      <block wx:for="{{rightDataList.img}}" wx:for-item="rcai" wx:key="index">
+        <view class="sc_right_item" id="c_{{rcai.id}}"  data-id="c_{{rcai.id}}" data-index="{{index}}" >
+          <view class="images_wrap">
+            <view>{{rcai.name}}{{rcai.id}}</view>
+            <image src="{{rcai.img}}"></image>
+          </view>
+        </view>
+      </block>
+    </scroll-view>
+    <!-- 联动样式 -->
+    <!-- <scroll-view scroll-y="true" class="scr_left" scroll-top="{{leftTop}}" scroll-with-animation="true">
+      <block wx:for="{{leftData}}" wx:for-item="lcai" wx:key="index">
+        <view class="sc_left_item {{cp_index==index? 'active':''}}"  data-id="c_{{lcai.id}}" data-index="{{index}}" bindtap="leftTap" >
+          {{lcai.name}}
+        </view>
+        </block>
+    </scroll-view>
+    <scroll-view scroll-y="true" class="scr_right" scroll-into-view="{{currentScrollId}}" scroll-with-animation="true" bindscroll="bindscroll">
+      <block wx:for="{{rightData}}" wx:for-item="rcai" wx:key="index">
+        <view class="sc_right_item" id="c_{{rcai.id}}"  data-id="c_{{rcai.id}}" data-index="{{index}}" bindtap="rightTap" >
+          <text>{{rcai.name}}</text>
+          <view class="images_wrap" wx:for="{{rcai.img}}" wx:key="index">
+            <view>{{item.name}}</view>
+            <image src="{{item.img}}"></image>
+          </view>
+        </view>
+      </block>
+    </scroll-view> -->
+  </view>
+</view>

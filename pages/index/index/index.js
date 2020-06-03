@@ -15,6 +15,40 @@ Page({
     duration: 500,
     recommendList:['沈阳', '北京','上海','天津','武汉','吉林','河南','四川',],
     currentTab: -1,
+    collapseList: [
+      {
+        title: '辽宁省',
+        children:[{
+          id:1,
+          value: '沈阳',
+          checked:false
+        },{
+          id:2,
+          value: '丹东',
+          checked:false
+        },{
+          id:3,
+          value: '大连',
+          checked:false
+        },]
+      },
+      {
+        title: '北京',
+        children:[{
+          id:4,
+          value: '啊啊',
+          checked:false
+        },{
+          id:5,
+          value: '的丹东',
+          checked:false
+        },{
+          id:6,
+          value: '任溶溶',
+          checked:false
+        },]
+      },
+    ]
   },
   onShow(){
     // 设置购物车数量
@@ -22,7 +56,7 @@ Page({
     //   index: 1,
     //   text: '4'
     // })
-    this.getLoopList()
+    // this.getLoopList()
   },
   // 获取轮播图数组
   getLoopList(){
@@ -71,6 +105,20 @@ Page({
         currentTab:cur,
       }) 
     }
+  },
+  radioChange(e){
+    // console.log(e.detail.value)
+    this.data.collapseList.map(item =>{
+      item.children.map(itemSmall => {
+        itemSmall.checked = false
+        if(itemSmall.id == e.detail.value){
+          itemSmall.checked = true
+        }
+      })
+    })
+    this.setData({
+      collapseList: this.data.collapseList
+    })
   }
 });
 
