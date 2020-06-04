@@ -1,0 +1,42 @@
+<view class="wrap">
+  <view class="wrap-select wrap-select-other">
+    <input bindinput="bindNameInput" value="{{goodsName}}" name="goodsName" 
+    type="text" placeholder="万千好物等你搜索" placeholder-class="input-placeholder" class="input-length"/>
+    <view class="search-icon" bindtap="clickSearch">
+      <!-- <image src="{{url}}search-white.png"></image> -->
+    </view>
+  </view>
+  <!-- tab切换 -->
+  <view class="wrap-tab-inline">
+    <view class="{{currentTab==index ? 'tab-inline-ture' : 'tab-inline'}}"
+    wx:for="{{tabList}}"
+    wx:key="index"
+    data-current="{{index}}"
+    bindtap="clickTab">{{item.name}}</view>
+  </view>
+  <!-- card部分 -->
+  <!-- 店铺 -->
+  <view class="shop-card" wx:if="{{currentTab == 0}}">
+    <view class="shop-card-left">
+      <!-- <image src="{{url}}search-white.png"></image> -->
+    </view>
+    <view class="shop-card-right">
+      <view class="shop-card-right-title">明明水果摊店铺</view>
+      <view class="shop-card-right-num">销量：12547</view>
+    </view>
+  </view>
+  <!-- 商品 -->
+  <view class="shop-card" wx:if="{{currentTab == 1}}">
+    <view class="shop-card-left">
+      <!-- <image src="{{url}}search-white.png"></image> -->
+    </view>
+    <view class="shop-card-right">
+      <view class="shop-card-right-title">新鲜赣南脐橙</view>
+      <view class="shop-card-right-shop">明明水果摊店铺</view>
+      <view class="shop-card-right-bot">
+        <view class="right-bot-left"><text>￥</text>30</view>
+        <view class="right-bot-right shop-card-right-num">销量：12547</view>
+      </view>
+    </view>
+  </view>
+</view>

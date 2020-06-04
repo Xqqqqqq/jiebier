@@ -26,7 +26,7 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.0.4",
-	"appid": "wx73629214f10bf65b",
+	"appid": "wx530814c239aa8c09",
 	"projectname": "hospitalProject",
 	"debugOptions": {
 		"hidedInDevtools": []
@@ -1889,6 +1889,76 @@
 					"id": -1,
 					"name": "pages/index/recommendStores/index",
 					"pathName": "pages/index/recommendStores/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/fillInformation/index",
+					"pathName": "pages/index/fillInformation/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/hotSale/index",
+					"pathName": "pages/index/hotSale/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/search/index",
+					"pathName": "pages/index/search/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/searchDetail/index",
+					"pathName": "pages/index/searchDetail/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/hotSale/index",
+					"pathName": "pages/index/hotSale/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/searchDetail/index",
+					"pathName": "pages/index/searchDetail/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/index/index",
+					"pathName": "pages/index/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/shops/index",
+					"pathName": "pages/index/shops/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/shops/index",
+					"pathName": "pages/index/shops/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/news/news/index",
+					"pathName": "pages/news/news/index",
 					"scene": null
 				}
 			]

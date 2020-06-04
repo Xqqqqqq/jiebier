@@ -5,10 +5,13 @@
     "pages/index/recommendStores/index",
     "pages/index/shops/index",
     "pages/index/hotSale/index",
+    "pages/index/search/index",
+    "pages/index/searchDetail/index",
     "pages/classify/classify/index",
     "pages/classify/selectCity/index",
     "pages/shoppingCart/shoppingCart/index",
     "pages/news/news/index",
+    "pages/news/newsDetail/index",
     "pages/mine/mine/index"
   ],
   "subPackages": [

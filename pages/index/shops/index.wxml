@@ -1,22 +1,61 @@
 <view class="containner">
-  <view class="top" wx:if="{{showTop}}">左右联动例子</view>
+  <view class="top" wx:if="{{showTop}}">
+    <view class="top-banner">
+      <image src="{{url}}index/zhaopian.png" class="top-banner-img"></image>
+      <view class="top-banner-mask"></view>
+      <view class="top-banner-logo">
+        <!-- <image src=""></image> -->
+      </view>
+      <view class="top-banner-name">源来是你水果超市</view>
+    </view>
+    <view class="wrap-title">
+      <view class="wrap-title-name">热销</view>
+    </view>
+    <view class="wrap-scroll">
+      <scroll-view scroll-x="true">
+        <view class="scroll-li">
+          <view class="scroll-li-img">
+            <!-- <image src=""></image> -->
+          </view>
+          <view class="scroll-li-bottom">
+            <view class="scroll-li-bottom-title">新鲜脐橙</view>
+            <view class="scroll-li-bottom-num"><view class="scroll-li-bottom-num-score">10积分</view>销量：110</view>
+            <view class="scroll-li-bottom-price">
+              <text>￥</text>300
+              <view class="li-bottom-price"></view>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+    <view class="line-block"></view>
+  </view>
+  <!-- 商品区 -->
   <view class="cont">
-    <scroll-view 
-    style="height: {{height}}px"
-    scroll-y="true" class="scr_left" scroll-top="{{leftTop}}" scroll-with-animation="true">
-      <block wx:for="{{rightData}}" wx:for-item="lcai" wx:key="index">
-        <view class="sc_left_item {{cp_index==index? 'active':''}}"  data-id="c_{{lcai.id}}" data-index="{{index}}" bindtap="leftTap" >
-          {{lcai.name}}{{lcai.id}}
+    <scroll-view scroll-y="true" class="scr_left" scroll-with-animation="true">
+      <block wx:for="{{rightData}}" wx:for-item="item" wx:key="index">
+        <view class="sc_left_item {{cp_index==index? 'active':''}}"  data-id="c_{{item.id}}" data-index="{{index}}" bindtap="leftTap" >
+          <view class="{{cp_index==index? 'item-title-active':'item-title'}}">{{item.name}}</view>
         </view>
         </block>
     </scroll-view>
        
     <scroll-view scroll-y="true" class="scr_right" scroll-into-view="{{currentScrollId}}" scroll-with-animation="true" bindscroll="bindscroll">
-      <block wx:for="{{rightDataList.img}}" wx:for-item="rcai" wx:key="index">
-        <view class="sc_right_item" id="c_{{rcai.id}}"  data-id="c_{{rcai.id}}" data-index="{{index}}" >
-          <view class="images_wrap">
-            <view>{{rcai.name}}{{rcai.id}}</view>
-            <image src="{{rcai.img}}"></image>
+      <block wx:for="{{rightDataList.img}}" wx:for-item="item" wx:key="index">
+        <view class="sc_right_item" id="c_{{item.id}}"  data-id="c_{{item.id}}" data-index="{{index}}">
+          <view class="right_item-img">
+            <!-- <image src=""></image> -->
+          </view>
+          <view class="right_item-box">
+            <view class="item-box-title">新鲜赣南脐橙</view>
+            <view class="item-box-num">
+              <view class="box-num-score">10积分</view>
+              <view class="box-num">销量：125</view>
+            </view>
+            <view class="item-box-price">
+              <text>￥</text>30
+              <view class="item-box-price-btn"></view>
+            </view>
           </view>
         </view>
       </block>
@@ -40,5 +79,19 @@
         </view>
       </block>
     </scroll-view> -->
+  </view>
+  <!-- 购物车 -->
+  <view class="containner-block"></view>
+  <view class="bottom">
+    <view class="bottom-left">
+      <view class="bottom-left-shop">
+        <!-- <image></image> -->
+        <view class="left-shop-num">1</view>
+      </view>
+      <view class="bottom-left-price">
+        <text>￥</text>30
+      </view>
+    </view>
+    <view class="bottom-right">支 付</view>
   </view>
 </view>

@@ -1,0 +1,12 @@
+<view class="wrap">
+  <view class="wrap-message">
+    <view class="message-top">
+      <view class="message-top-left">系统通知</view>
+      <view class="message-top-right">2020-02-02 15:30</view>
+    </view>
+    <view class="message-bottom">
+      <view class="message-bottom-title">订单信息</view>
+      <view class="message-bottom-tip">恭喜你购买蒙牛牛奶套餐成功，谢谢您的支持。</view>
+    </view>
+  </view>
+</view>

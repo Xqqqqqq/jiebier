@@ -1,0 +1,64 @@
+.wrap{
+  width: 100%;
+  padding: 25rpx;
+  box-sizing: border-box;
+}
+.wrap-select-other{
+  margin-bottom: 46rpx;
+}
+/* card部分 */
+.shop-card{
+  width: 100%;
+  box-shadow:0px 2px 8px 0px #EFEFEF;
+  padding: 34rpx;
+  box-sizing: border-box;
+  display: flex;
+  margin-bottom: 26rpx;
+}
+.shop-card-left{
+  width: 124rpx;
+  height: 124rpx;
+  margin-right: 34rpx;
+  background-color: red;
+  overflow: hidden;
+  border-radius: 10rpx;
+}
+.shop-card-left image{
+  width: 100%;
+  height: 100%;
+}
+.shop-card-right{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 75%;
+}
+.shop-card-right-title{
+  color: #000000;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+.shop-card-right-num{
+  font-size: 24rpx;
+  color: #565656;
+}
+.shop-card-right-shop{
+  font-size: 26rpx;
+  color: #000000;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+}
+.shop-card-right-bot{
+  display: flex;
+  justify-content: space-between;
+}
+.right-bot-left{
+  font-size: 34rpx;
+  color: #FF4100;
+}
+.right-bot-left text{
+  font-size: 18rpx;
+}
+.right-bot-right{
+  margin-top: 10rpx;
+}

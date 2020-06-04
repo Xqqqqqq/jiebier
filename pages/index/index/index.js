@@ -51,18 +51,18 @@ Page({
     ]
   },
   onShow(){
-    wx.chooseAddress({
-      success (res) {
-        console.log(res.userName)
-        console.log(res.postalCode)
-        console.log(res.provinceName)
-        console.log(res.cityName)
-        console.log(res.countyName)
-        console.log(res.detailInfo)
-        console.log(res.nationalCode)
-        console.log(res.telNumber)
-      }
-    })
+    // wx.chooseAddress({
+    //   success (res) {
+    //     console.log(res.userName)
+    //     console.log(res.postalCode)
+    //     console.log(res.provinceName)
+    //     console.log(res.cityName)
+    //     console.log(res.countyName)
+    //     console.log(res.detailInfo)
+    //     console.log(res.nationalCode)
+    //     console.log(res.telNumber)
+    //   }
+    // })
     // 设置购物车数量
     // wx.setTabBarBadge({
     //   index: 1,
@@ -80,34 +80,7 @@ Page({
       }
     })
   },
-  // 计算商品增加或减少
-  quantityChange(e){
-    const index = e.currentTarget.dataset.index;
-    let goodsList = this.data.goodsList;
-    let quantity = goodsList[index].num
-    if(e.target.id == 'sub'){
-      if(quantity <= 1){
-        wx.showToast({
-          title: '该宝贝不能减少了哦~',
-          icon: 'none',
-          duration: 1500
-        })
-        return
-      }else{
-        quantity -= 1
-      }
-    }else if(e.target.id == 'add'){
-      quantity +=1
-    }
-    goodsList[index].num = quantity
-    this.setData({
-      goodsList: goodsList
-    })
-    this.getTotalPrice()
-  },
-  gotoHot(){
-    wx_gotoNewUrl('navigateTo','/pages/index/hotSale/index')
-  },
+  // 推荐城市
   clickTab(e){
     let cur = e.currentTarget.dataset.current;
     if(this.data.currentTab == cur){
@@ -117,6 +90,14 @@ Page({
         currentTab:cur,
       }) 
     }
+    wx_gotoNewUrl('switchTab','/pages/classify/classify/index')
+  },
+  gotoRouter(e){
+    console.log(e.currentTarget.dataset.type)
+    console.log(e.currentTarget.dataset.url)
+    let type= e.currentTarget.dataset.type
+    let url= e.currentTarget.dataset.url
+    wx_gotoNewUrl(type,url)
   },
   radioChange(e){
     // console.log(e.detail.value)

@@ -1,7 +1,6 @@
 //index.js
 //获取应用实例
 const app = getApp()
-
 Page({
   data: {
     currentScrollId: '',// 值应为某子元素id（id不能以数字开头）。设置哪个方向可滚动，则在哪个方向滚动到该元素
@@ -151,7 +150,8 @@ Page({
     heightArr: 0,
     zindex: 0,
     showTop: true,
-    height: ''
+    height: '',
+    url: app.globalData.url,
   },
   onLoad(options){
     let that = this
@@ -211,6 +211,7 @@ Page({
     }
   },
   bindscroll: function (e) {
+    console.log(e.detail.scrollTop)
     if(e.detail.scrollTop > 100){
       this.setData({
         showTop: false

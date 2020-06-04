@@ -1,0 +1,29 @@
+<view class="wrap">
+  <view class="wrap-title">今天想找什么？</view>
+  <view class="wrap-select wrap-select-other">
+    <input bindinput="bindNameInput" value="{{goodsName}}" name="goodsName" 
+    type="text" placeholder="万千好物等你搜索" placeholder-class="input-placeholder" class="input-length"/>
+    <view class="search-icon" bindtap="clickSearch">
+      <!-- <image src="{{url}}search-white.png"></image> -->
+    </view>
+  </view>
+  <!-- 历史记录 -->
+  <view class="wrap-name">
+    历史记录
+    <view class="wrap-name-icon">
+      <!-- <image src="{{url}}search-white.png"></image> -->
+    </view>
+  </view>
+  <view class="history">
+    <view wx:for="{{historyList}}" wx:key="index"
+    data-index="{{index}}" bindtap="clickHistoryTab"
+    class="{{currentHistoryTab==index ? 'tab-li tab-li-ture' : 'tab-li'}}">{{item.name}}</view>
+  </view>
+  <!-- 热门搜索 -->
+  <view class="wrap-name">热门搜索</view>
+  <view class="history">
+    <view wx:for="{{hotList}}" wx:key="index"
+    data-index="{{index}}" bindtap="clickHotTab"
+    class="{{currentHotTab==index ? 'tab-li tab-li-ture' : 'tab-li'}}">{{item.name}}</view>
+  </view>
+</view>

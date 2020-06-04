@@ -1,11 +1,11 @@
 <view class="wrap">
   <!-- 搜索栏 -->
   <view class="wrap-input">
-    <view class="wrap-input-name">
-      <i-icon type="coordinates" size="24"/> 沈阳
-    </view>
-    <view class="wrap-input-select">
-      <i-icon type="search"  size="24"/>  搜索商品
+    <view class="wrap-input-select" bindtap="gotoRouter" data-url="/pages/index/search/index" data-type="navigateTo">
+      搜索商品
+      <view class="search-icon">
+        <!-- <image src="{{url}}search-white.png"></image> -->
+      </view>
     </view>
   </view>
   <!-- 轮播图 -->
@@ -25,7 +25,7 @@
   <!-- 热销 -->
   <view class="wrap-title">
     <view class="wrap-title-name">热销</view>
-    <view class="wrap-title-arrow" bindtap="gotoHot">查看更多 ></view>
+    <view class="wrap-title-arrow" bindtap="gotoRouter" data-url="/pages/index/hotSale/index" data-type="navigateTo">查看更多 ></view>
   </view>
   <view class="wrap-scroll">
     <scroll-view scroll-x="true">
@@ -38,70 +38,7 @@
           <view class="scroll-li-bottom-num">销量：101010</view>
           <view class="scroll-li-bottom-price">
             <text>￥</text>300
-            <view class="li-bottom-price">
-              <view class="bottom-price-del" catchtap='quantityChange' data-index="0" id='sub'>-</view>
-              <view class="bottom-price-num">1</view>
-              <view class="bottom-price-add" catchtap='quantityChange' data-index="0" id='add'>
-                <i-icon type="add" color="white"/>
-              </view>
-            </view>
-          </view>
-        </view>
-      </view>
-      <view class="scroll-li">
-        <view class="scroll-li-img">
-          <!-- <image src=""></image> -->
-        </view>
-        <view class="scroll-li-bottom">
-          <view class="scroll-li-bottom-title">新鲜脐橙</view>
-          <view class="scroll-li-bottom-num">销量：101010</view>
-          <view class="scroll-li-bottom-price">
-            <text>￥</text>300
-            <view class="li-bottom-price">
-              <view class="bottom-price-del" catchtap='quantityChange' data-index="0" id='sub'>-</view>
-              <view class="bottom-price-num">1</view>
-              <view class="bottom-price-add" catchtap='quantityChange' data-index="0" id='add'>
-                <i-icon type="add" color="white"/>
-              </view>
-            </view>
-          </view>
-        </view>
-      </view>
-      <view class="scroll-li">
-        <view class="scroll-li-img">
-          <!-- <image src=""></image> -->
-        </view>
-        <view class="scroll-li-bottom">
-          <view class="scroll-li-bottom-title">新鲜脐橙</view>
-          <view class="scroll-li-bottom-num">销量：101010</view>
-          <view class="scroll-li-bottom-price">
-            <text>￥</text>300
-            <view class="li-bottom-price">
-              <view class="bottom-price-del" catchtap='quantityChange' data-index="0" id='sub'>-</view>
-              <view class="bottom-price-num">1</view>
-              <view class="bottom-price-add" catchtap='quantityChange' data-index="0" id='add'>
-                <i-icon type="add" color="white"/>
-              </view>
-            </view>
-          </view>
-        </view>
-      </view>
-      <view class="scroll-li">
-        <view class="scroll-li-img">
-          <!-- <image src=""></image> -->
-        </view>
-        <view class="scroll-li-bottom">
-          <view class="scroll-li-bottom-title">新鲜脐橙</view>
-          <view class="scroll-li-bottom-num">销量：101010</view>
-          <view class="scroll-li-bottom-price">
-            <text>￥</text>300
-            <view class="li-bottom-price">
-              <view class="bottom-price-del" catchtap='quantityChange' data-index="0" id='sub'>-</view>
-              <view class="bottom-price-num">1</view>
-              <view class="bottom-price-add" catchtap='quantityChange' data-index="0" id='add'>
-                <i-icon type="add" color="white"/>
-              </view>
-            </view>
+            <view class="li-bottom-price"></view>
           </view>
         </view>
       </view>
@@ -119,17 +56,28 @@
     bindtap="clickTab">{{item}}</view>
   </view>
   <!-- 选择城市 -->
+  <!-- <view class="wrap-line"></view> -->
+  <view class="wrap-title">
+    <view class="wrap-title-name">选择城市</view>
+  </view>
   <i-collapse accordion name="{{name}}">
     <i-collapse-item 
     title="{{item.title}}" wx:for="{{collapseList}}" wx:key="index" name="{{item.title}}"
     i-class-title="collapse-item-title" i-class-content="collapse-item-content">
       <view slot="content">
-        <radio-group bindchange="radioChange">
+        <view class="wrap-recommend wrap-recommend-other">
+          <view class="{{currentTab==index ? 'recommend-li-ture' : 'recommend-li'}}"
+          wx:for="{{recommendList}}"
+          wx:key="index"
+          data-current="{{index}}"
+          bindtap="clickTab">{{item}}</view>
+        </view>
+        <!-- <radio-group bindchange="radioChange">
           <label class="collapse-label" wx:for="{{item.children}}" wx:key="index" wx:for-item="itemSmall">
             <radio value="{{itemSmall.id}}" checked="{{itemSmall.checked}}"/>
             <view class="collapse-label-title">{{itemSmall.value}}</view>
           </label>
-        </radio-group>
+        </radio-group> -->
       </view>
     </i-collapse-item>
   </i-collapse>

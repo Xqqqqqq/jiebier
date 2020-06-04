@@ -15,15 +15,11 @@
       <view class="box-li-right">
         <view class="li-right-title">脐橙</view>
         <view class="li-right-name">米米电偶</view>
-        <view class="li-right-num">销量：11111</view>
         <view class="li-right-price">
-          <text>￥</text>300
-          <view class="li-bottom-price">
-            <view class="bottom-price-del" catchtap='quantityChange' data-index="0" id='sub'>-</view>
-            <view class="bottom-price-num">1</view>
-            <view class="bottom-price-add" catchtap='quantityChange' data-index="0" id='add'>
-              <i-icon type="add" color="white"/>
-            </view>
+          <text class="li-right-price-small">￥</text>300
+          <text class="li-right-num">销量：111</text>
+          <view class="li-right-pos">
+            <!-- <image src=""></image> -->
           </view>
         </view>
       </view>
