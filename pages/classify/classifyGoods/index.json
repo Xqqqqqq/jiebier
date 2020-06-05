@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "消息详情",
+  "navigationBarTitleText": "分类商品",
   "usingComponents": {
     "i-toast": "../../../dist/toast/index",
     "i-icon": "../../../dist/icon/index"

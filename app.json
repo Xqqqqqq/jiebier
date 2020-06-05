@@ -8,11 +8,14 @@
     "pages/index/search/index",
     "pages/index/searchDetail/index",
     "pages/classify/classify/index",
+    "pages/classify/classifyGoods/index",
     "pages/classify/selectCity/index",
+    "pages/classify/goodsDetail/index",
     "pages/shoppingCart/shoppingCart/index",
     "pages/news/news/index",
     "pages/news/newsDetail/index",
-    "pages/mine/mine/index"
+    "pages/mine/mine/index",
+    "pages/mine/orders/index"
   ],
   "subPackages": [
     {

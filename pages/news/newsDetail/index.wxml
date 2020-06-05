@@ -1,0 +1,54 @@
+<view class="wrap">
+  <view class="news-detail">
+    <view class="detail-click-li">
+      <view class="click-li-img">
+        <!-- <image></image> -->
+      </view>
+      <view class="click-li-name">校友店铺</view>
+      <i-icon type="enter" size="24" color="#D3D3D3" class="click-li-icon"/>
+    </view>
+    <view class="detail-li">
+      <view class="detail-li-left">牛奶 <text>x1</text></view>
+      <view class="detail-li-right"><text>￥</text>30</view>
+    </view>
+    <view class="detail-li">
+      <view class="detail-li-left">牛奶 <text>x1</text></view>
+      <view class="detail-li-right"><text>￥</text>30</view>
+    </view>
+  </view>
+  <view class="news-detail">
+    <view class="detail-li">
+      <view class="detail-li-left detail-li-left-other">优惠券</view>
+      <view class="detail-li-right">-30元</view>
+    </view>
+    <view class="detail-li">
+      <view class="detail-li-left detail-li-left-other">获得积分</view>
+      <view class="detail-li-right">30积分</view>
+    </view>
+  </view>
+  <view class="news-detail">
+    <view class="detail-li">
+      <view class="detail-li-left detail-li-left-other">订单信息</view>
+    </view>
+    <view class="detail-li">
+      <view class="detail-li-left detail-li-left-other">订单号</view>
+      <view class="detail-li-right">138452xxxxxx</view>
+    </view>
+    <view class="detail-li">
+      <view class="detail-li-left detail-li-left-other">支付方式</view>
+      <view class="detail-li-right">微信</view>
+    </view>
+    <view class="detail-li">
+      <view class="detail-li-left detail-li-left-other">下单时间</view>
+      <view class="detail-li-right">2020-02-02 15:30</view>
+    </view>
+    <view class="detail-li">
+      <view class="detail-li-left detail-li-left-other">配送方式</view>
+      <view class="detail-li-right">自提</view>
+    </view>
+    <view class="detail-li">
+      <view class="detail-li-left detail-li-left-other">物流单号</view>
+      <view class="detail-li-right">wda143543241321<text class="li-right-btn">复制</text></view>
+    </view>
+  </view>
+</view>

@@ -1,5 +1,8 @@
+import { wx_gotoNewUrl } from '../../../utils/fn'
 Page({
   data : {
+    recommendList:['沈阳', '北京','上海','天津','武汉','吉林','河南','四川',],
+    currentTab: -1,
       cities : [
         {
           "zip": "010",
@@ -40,11 +43,22 @@ Page({
         },
       ],
   },
+  clickTab(e){
+    let cur = e.currentTarget.dataset.current;
+    if(this.data.currentTab == cur){
+      return false;
+    }else{
+      this.setData({
+        currentTab:cur,
+      }) 
+    }
+    wx_gotoNewUrl('switchTab','/pages/classify/classify/index')
+  },
   onChange(event){
-      console.log(event.detail,'click right menu callback data')
+      // console.log(event.detail,'click right menu callback data')
   },
   aa(e){
-    console.log(e.currentTarget.dataset.name)
+    // console.log(e.currentTarget.dataset.name)
   },
   onReady(){
       let storeCity = new Array(26);
@@ -64,7 +78,7 @@ Page({
         });
       })
       this.data.cities = storeCity;
-      console.log(this.data.cities)
+      // console.log(this.data.cities)
       this.setData({
         cities : this.data.cities
       })

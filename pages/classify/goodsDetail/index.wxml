@@ -1,0 +1,53 @@
+<view class="wrap">
+  <view class="wrap-top">
+    <view class="wrap-img">
+      <!-- <image></image> -->
+    </view>
+    <view class="wrap-top-title">赣南大脐橙多汁富含维生素c</view>
+    <view class="wrap-top-num">
+      <view class="top-num-score">10积分</view>
+      <view class="top-num-num">销量：12547</view>
+    </view>
+    <view class="wrap-top-bottom">
+      <view class="top-bottom-price"><text>￥</text>30</view>
+      <view class="top-bottom-btn">
+        <view class="bottom-btn-box">-</view>
+        <view class="bottom-btn-num">1</view>
+        <view class="bottom-btn-box">+</view>
+      </view>
+    </view>
+  </view>
+  <view class="wrap-box">
+    <picker bindchange="bindProvinceChange" value="{{item.adcode}}" range-key="name" range="{{provinceList}}" data-current="0">
+      <view class="wrap-box-li">
+        <view class="wrap-box-li-left">配送方式</view>
+        <view class="wrap-box-li-right">商品自提 ></view>
+      </view>
+    </picker>
+    <view class="wrap-box-li wrap-box-li-other">
+      <view class="wrap-box-li-left">运费</view>
+      <view class="wrap-box-li-right wrap-box-li-right-other"><text>￥</text>30</view>
+    </view>
+  </view>
+  <view class="wrap-box">
+    <view class="wrap-box-title">产品规格</view>
+    <view class="wrap-box-li">
+      <view class="wrap-box-li-left">重量</view>
+      <view class="wrap-box-li-right">20g</view>
+    </view>
+    <view class="wrap-box-li wrap-box-li-other">
+      <view class="wrap-box-li-left">厂家</view>
+      <view class="wrap-box-li-right">蒙牛</view>
+    </view>
+  </view>
+  <view class="wrap-box">
+    <view class="wrap-box-title">商品介绍</view>
+    <view class="wrap-box-image"></view>
+  </view>
+  <view class="wrap-bottom-block"></view>
+  <view class="wrap-bottom">
+    <view class="wrap-bottom-btn bottom-btn-gray">购 物 车</view>
+    <view class="wrap-bottom-btn bottom-btn-orange">店 铺</view>
+    <view class="wrap-bottom-btn bottom-btn-green">加 入 购 物 车</view>
+  </view>
+</view>

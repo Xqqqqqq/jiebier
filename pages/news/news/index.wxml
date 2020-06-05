@@ -1,5 +1,5 @@
 <view class="wrap">
-  <view class="wrap-message">
+  <view class="wrap-message" bindtap="gotoRouter">
     <view class="message-top">
       <view class="message-top-left">系统通知</view>
       <view class="message-top-right">2020-02-02 15:30</view>

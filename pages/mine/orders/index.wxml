@@ -1,0 +1,36 @@
+<view class="wrap">
+  <view class="wrap-tab">
+    <view class="{{currentTab==index ? 'tab-li-ture tab-li-ture-other' : 'tab-li tab-li-ture-other'}}"
+    wx:for="{{tabList}}"
+    wx:key="index"
+    data-current="{{index}}"
+    bindtap="clickTab">{{item.name}}</view>
+  </view>
+  <!-- li部分 -->
+  <view class="wrap-box">
+    <view class="wrap-box-li">
+      <view class="box-li-top">
+        <view class="li-top-img">
+          <!-- <image></image> -->
+        </view>
+        <view class="li-top-right">
+          <view class="top-right-title">xxxxx店铺</view>
+          <view class="top-right-time">2020-02-20 15:30</view>
+        </view>
+        <view class="li-top-status" style="color: #1F7DDF;">已支付</view>
+      </view>
+      <view class="box-li-content">
+        <view class="li-content-line">
+          <view class="content-line-left">雪碧柠檬味汽水<text>x1</text></view>
+          <view class="content-line-right"><text>￥</text>30</view>
+        </view>
+        <view class="li-content-line">
+          <view class="content-line-left">雪碧柠檬味汽水<text>x1</text></view>
+          <view class="content-line-right"><text>￥</text>30</view>
+        </view>
+      </view>
+      <view class="box-li-btn">取消订单</view>
+      <view class="box-li-btn box-li-btn-orange">查看进度</view>
+    </view>
+  </view>
+</view>

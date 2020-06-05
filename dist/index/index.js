@@ -103,7 +103,7 @@ Component({
             const eindex = event.currentTarget.dataset.index;
             const item = this.getCurrentItem(eindex);
             this.setData({
-                scrollTop : item.top-100,
+                scrollTop : item.top-200,
                 currentName : item.currentName,
                 isTouches : true
             })
@@ -130,7 +130,7 @@ Component({
             }
 
             this.setData({
-                scrollTop : movePosition.top,
+                scrollTop : movePosition.top-200,
                 currentName : movePosition.name,
                 isTouches : true
             })

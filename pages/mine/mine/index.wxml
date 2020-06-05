@@ -1,1 +1,45 @@
-<view>我的</view>
+<view class="wrap">
+  <view class="my-box my-box-unlogin">
+    <view class="unlogin-title">登录/注册</view>
+    <view class="unlogin-tip">买不买都上界壁儿</view>
+  </view>
+  <view class="my-box my-box-other">
+    <i-cell title="我的订单"></i-cell>
+    <view class="my-box-line"></view>
+    <view class="my-box-block">
+      <view class="box-block-li" bindtap="gotoRouter" data-url="/pages/mine/orders/index" data-type="navigateTo">
+        <view class="box-block-img">
+          <!-- <image></image> -->
+        </view>
+        <view class="box-block-name">全部订单</view>
+      </view>
+      <view class="box-block-li">
+        <view class="box-block-img">
+          <!-- <image></image> -->
+        </view>
+        <view class="box-block-name">待收货</view>
+      </view>
+      <view class="box-block-li">
+        <view class="box-block-img">
+          <!-- <image></image> -->
+        </view>
+        <view class="box-block-name">已完成</view>
+      </view>
+      <view class="box-block-li">
+        <view class="box-block-img">
+          <!-- <image></image> -->
+        </view>
+        <view class="box-block-name">已取消</view>
+      </view>
+    </view>
+  </view>
+  <view class="my-box my-box-other">
+    <i-cell title="商家入驻" is-link></i-cell>
+    <view class="my-box-line"></view>
+    <i-cell title="优惠券" is-link></i-cell>
+    <view class="my-box-line"></view>
+    <i-cell title="积分" is-link></i-cell>
+    <view class="my-box-line"></view>
+    <i-cell title="我的地址" is-link></i-cell>
+  </view>
+</view>
