@@ -16,19 +16,19 @@ App({
         if(code) {
           // console.log('获取用户登录凭证：' + code);
           // 获取openid
-          // index.getOpenid({
-          //   code:code
-          // }).then(res => {
-          //   if(res.code == 200){
-          //     if(res.result){
-          //       wx.setStorage({
-          //         key: 'openId',
-          //         data: res.result,
-          //       })
-          //     }
-          //   }
-          //   console.log('openId',res)
-          // })
+          index.getOpenid({
+            code:code
+          }).then(res => {
+            if(res.code == 200){
+              if(res.result){
+                wx.setStorage({
+                  key: 'openId',
+                  data: res.result,
+                })
+              }
+            }
+            console.log('openId',res)
+          })
         }else{
           console.log('未获取到code', res);
         }

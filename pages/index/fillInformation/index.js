@@ -3,6 +3,7 @@ import { Index } from '../../../api-models/index/index';
 const index = new Index();
 const { $Toast } = require('../../../dist/base/index');
 import { wx_gotoNewUrl } from '../../../utils/fn'
+import { config }  from '../../../utils/config'
 //获取应用实例
 const app = getApp()
 Page({
@@ -28,25 +29,62 @@ Page({
     statusIndex: '',
     typeList: [], //类型数组
     typeIndex: '',
+    openid: ''
   },
   onShow(){
     this.getDictAll()
+    let openid = wx.getStorageSync('openId')
+    if(openid){
+      this.setData({
+        openid: openid
+      })
+    }else{
+      // 登录
+      wx.login({
+        success: res => {
+          // 发送 res.code 到后台换取 openId, sessionKey, unionId
+          let code = res.code;
+          if(code) {
+            // console.log('获取用户登录凭证：' + code);
+            // 获取openid
+            index.getOpenid({
+              code:code
+            }).then(res => {
+              if(res.code == 200){
+                if(res.result){
+                  wx.setStorage({
+                    key: 'openId',
+                    data: res.result,
+                  })
+                  this.setData({
+                    openid: res.result
+                  })
+                }
+              }
+              console.log('openId',res)
+            })
+          }else{
+            console.log('未获取到code', res);
+          }
+        }
+      })
+    }
   },
   // 获取用户字典 
   getDictAll(){
     // 企业状态
-    index.getDict({ dictType: 'company_status' }).then(res => {
-      if(res.code == 200){
-        this.setData({
-          statusList: res.result
-        })
-      }else {
-        $Toast({
-          content: res.msg,
-          type: 'error'
-        });
-      }
-    })
+    // index.getDict({ dictType: 'company_status' }).then(res => {
+    //   if(res.code == 200){
+    //     this.setData({
+    //       statusList: res.result
+    //     })
+    //   }else {
+    //     $Toast({
+    //       content: res.msg,
+    //       type: 'error'
+    //     });
+    //   }
+    // })
     // 企业类型
     index.getDict({ dictType: 'company_type' }).then(res => {
       if(res.code == 200){
@@ -101,6 +139,11 @@ Page({
       'submitInfo.bankCardOpen': e.detail.detail.value
     })
   },
+  changeCompanyClass(e){
+    this.setData({
+      'submitInfo.companyClass': e.detail.detail.value
+    })
+  },
   bindStatusChange(e){
     this.setData({
       statusIndex: e.detail.value,
@@ -123,7 +166,7 @@ Page({
         // tempFilePath可以作为img标签的src属性显示图片
         const tempFilePaths = res.tempFilePaths
         wx.uploadFile({
-          url: 'http://192.168.88.125:8080/api/picture/uploadPicFile', //仅为示例，非真实的接口地址
+          url: `${config.api_base_url}/api/picture/uploadPicFile`, //仅为示例，非真实的接口地址
           filePath: tempFilePaths[0],
           name: 'file',
           header:{
@@ -155,16 +198,19 @@ Page({
     })
   },
   onSubmitForm(){
-    console.log(this.data.submitInfo)
+    // console.log(this.data.submitInfo)
     index.companyIn({
       ...this.data.submitInfo,
-      openid: '11111111',
+      openid: this.data.openid,
     }).then(res => {
       if(res.code == 200){
         $Toast({
           content: '提交成功！',
           type: 'success'
         });
+        this.setData({
+          submitInfo: ''
+        })
       }else{
         $Toast({
           content: res.msg,

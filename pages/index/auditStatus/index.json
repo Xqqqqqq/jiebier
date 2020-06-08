@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "申请状态",
+  "usingComponents": {
+    "i-toast": "../../../dist/toast/index",
+    "i-icon": "../../../dist/icon/index"
+  }
+}

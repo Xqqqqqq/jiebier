@@ -1,0 +1,60 @@
+<view class="wrap">
+  <view class="wrap-top">
+    <view class="wrap-top-left">共10件宝贝</view>
+    <view class="wrap-top-right">编辑</view>
+  </view>
+  <view class="goods-box" wx:for="{{goodsList}}" wx:key="index" wx:for-index="index">
+    <view class="goods-box-top" bindtap="switchSelect" data-index="{{index}}" data-id="{{item.id}}">
+      <view class="box-top-check">
+        <image src="{{url}}index/kaihuhang.png" wx:if="{{item.isSelect}}"></image>
+        <image src="{{url}}index/lianxidianhua.png" wx:else></image>
+      </view>
+      <view class="box-top-name">{{item.name}}</view>
+    </view>
+    <block wx:for="{{item.goods}}" wx:for-item="itemSmall" wx:key="indexSmall" wx:for-index="indexSmall">
+      <view class="goods-box-content">
+        <view class="box-top-check box-content-check" bindtap="goodsSelect" data-index="{{index}}" data-indexsmall="{{indexSmall}}">
+          <image src="{{url}}index/kaihuhang.png" wx:if="{{itemSmall.isSmallSelect}}"></image>
+          <image src="{{url}}index/lianxidianhua.png" wx:else></image>
+        </view>
+        <view class="box-content-img">
+          <!-- <image src=""></image> -->
+        </view>
+        <view class="box-content-right">
+          <view class="content-right-top">
+            {{itemSmall.name}}
+            <view class="right-top-score">10积分</view>
+          </view>
+          <view class="content-right-type">
+            <view>取货方式：</view>
+            <view>商品自提></view>
+          </view>
+          <view class="content-right-bottom">
+            <view class="right-bottom-left"><text>￥</text>{{itemSmall.price}}</view>
+            <view class="right-bottom-right">
+              <view class="bottom-right-img" catchtap='quantityChange' data-index="{{index}}" data-indexsmall="{{indexSmall}}" id='sub'>-</view>
+              <view class="bottom-right-num">{{itemSmall.num}}</view>
+              <view class="bottom-right-img" catchtap='quantityChange' data-index="{{index}}" data-indexsmall="{{indexSmall}}" id='add'>+</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+  <!-- 底部按钮 -->
+  <view class="wrap-bottom-block"></view>
+  <view class="wrap-bottom">
+    <view class="wrap-bottom-box">
+      <view class="wrap-btn-check" bindtap="selectAll">
+        <view class="box-top-check box-bottom-check">
+          <image src="{{url}}index/kaihuhang.png" wx:if="{{isAllSelect}}"></image>
+          <image src="{{url}}index/lianxidianhua.png" wx:else></image>
+        </view>
+        <text>全选</text>
+      </view>
+      <view class="wrap-btn-pirce">合计 <text class="btn-pirce-text">￥</text><text class="btn-pirce-num">{{totalMoney}}</text></view>
+    </view>
+    <view class="wrap-bottom-btn">结 算</view>
+  </view>
+  <i-toast id="toast" />
+</view>

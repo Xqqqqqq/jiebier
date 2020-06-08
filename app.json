@@ -2,6 +2,7 @@
   "pages": [
     "pages/index/index/index",
     "pages/index/fillInformation/index",
+    "pages/index/auditStatus/index",
     "pages/index/recommendStores/index",
     "pages/index/shops/index",
     "pages/index/hotSale/index",

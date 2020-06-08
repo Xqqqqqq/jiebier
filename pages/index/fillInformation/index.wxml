@@ -16,17 +16,18 @@
         <i-input bind:change="changeCompanyAddress" value="{{ submitInfo.companyAddress }}" title="企业地址" right="true" maxlength="100"/>
       </view>
     </view>
-    <view class="wrap-box-li wrap-box-li-picker">
+    <view class="wrap-box-li">
       <view class="wrap-box-li-img" style="width: 44rpx; height: 46rpx;">
         <image src="{{url}}index/qiyezhonglei.png"></image>
       </view>
       <view class="wrap-box-li-input">
-        <picker bindchange="bindStatusChange" value="{{statusIndex}}" range-key="dictLabel" range="{{statusList}}">
+        <i-input bind:change="changeCompanyClass" value="{{ submitInfo.companyClass }}" title="企业种类" right="true" maxlength="100"/>
+        <!-- <picker bindchange="bindStatusChange" value="{{statusIndex}}" range-key="dictLabel" range="{{statusList}}">
           <view class="box-li-picker">
             <view class="li-picker-left">企业种类</view>
             <view class="li-picker-right">{{statusList[statusIndex].dictLabel}}</view>
           </view>
-        </picker>
+        </picker> -->
       </view>
     </view>
   </view>
