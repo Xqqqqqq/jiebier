@@ -29,7 +29,9 @@ Page({
     statusIndex: '',
     typeList: [], //类型数组
     typeIndex: '',
-    openid: ''
+    openid: '',
+    showImg: true, // 是否显示审核中
+    companyStatus: '',//  1：已认证 2：认证中 3：未认证 4：逾期
   },
   onShow(){
     this.getDictAll()
@@ -38,7 +40,9 @@ Page({
       this.setData({
         openid: openid
       })
+      this.getCompanyState(openid)
     }else{
+      let vm = this
       // 登录
       wx.login({
         success: res => {
@@ -59,9 +63,9 @@ Page({
                   this.setData({
                     openid: res.result
                   })
+                  vm.getCompanyState(res.result)
                 }
               }
-              console.log('openId',res)
             })
           }else{
             console.log('未获取到code', res);
@@ -69,6 +73,29 @@ Page({
         }
       })
     }
+  },
+  getCompanyState(openid){
+    index.getCompanyState({
+      openid: openid
+    }).then(res => {
+      if(res.code == 200){
+        if(res.result == null){
+          this.setData({
+            showImg: false
+          })
+        }else{
+          this.setData({
+            showImg: true,
+            companyStatus: res.result.companyStatus
+          })
+        }
+      }else{
+        $Toast({
+          content: res.msg,
+          type: 'error'
+        });
+      }
+    })
   },
   // 获取用户字典 
   getDictAll(){
@@ -211,6 +238,7 @@ Page({
         this.setData({
           submitInfo: ''
         })
+        this.getCompanyState(wx.getStorageSync('openId'))
       }else{
         $Toast({
           content: res.msg,

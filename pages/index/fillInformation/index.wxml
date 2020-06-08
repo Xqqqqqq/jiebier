@@ -1,4 +1,13 @@
-<view class="wrap">
+<view class="wrap-imgall" wx:if="{{showImg}}">
+  <view class="wrap-img">
+    <image src="{{url}}index/shenhechenggong.png" mode="widthFix" wx:if="{{companyStatus == 1}}"></image>
+    <image src="{{url}}index/shenhezhong.png" mode="widthFix" wx:if="{{companyStatus == 2}}"></image>
+  </view>
+  <view class="wrap-text" wx:if="{{companyStatus == 2}}">审核中</view>
+  <view class="wrap-text" wx:if="{{companyStatus == 1}}">审核完成</view>
+</view>
+
+<view class="wrap" wx:else>
   <view class="wrap-box">
     <view class="wrap-box-li">
       <view class="wrap-box-li-img" style="width: 46rpx; height: 44rpx;">

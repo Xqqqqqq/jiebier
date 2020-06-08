@@ -1,7 +1,7 @@
 <view class="wrap">
   <view class="wrap-top">
     <view class="wrap-top-left">共10件宝贝</view>
-    <view class="wrap-top-right">编辑</view>
+    <view class="wrap-top-right" bindtap="changeName">{{clickName}}</view>
   </view>
   <view class="goods-box" wx:for="{{goodsList}}" wx:key="index" wx:for-index="index">
     <view class="goods-box-top" bindtap="switchSelect" data-index="{{index}}" data-id="{{item.id}}">
@@ -54,7 +54,8 @@
       </view>
       <view class="wrap-btn-pirce">合计 <text class="btn-pirce-text">￥</text><text class="btn-pirce-num">{{totalMoney}}</text></view>
     </view>
-    <view class="wrap-bottom-btn">结 算</view>
+    <view class="wrap-bottom-btn" wx:if="{{showDelete}}">删 除</view>
+    <view class="wrap-bottom-btn" wx:else>结 算</view>
   </view>
   <i-toast id="toast" />
 </view>

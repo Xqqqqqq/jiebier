@@ -4,7 +4,7 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": false,
+		"urlCheck": true,
 		"es6": true,
 		"enhance": true,
 		"postcss": true,
@@ -2120,6 +2120,41 @@
 					"id": -1,
 					"name": "pages/shoppingCart/shoppingCart/index",
 					"pathName": "pages/shoppingCart/shoppingCart/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/auditStatus/index",
+					"pathName": "pages/index/auditStatus/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/fillInformation/index",
+					"pathName": "pages/index/fillInformation/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/shoppingCart/shoppingCart/index",
+					"pathName": "pages/shoppingCart/shoppingCart/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/mine/cancelOrder/index",
+					"pathName": "pages/mine/cancelOrder/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/mine/cancelStep/index",
+					"pathName": "pages/mine/cancelStep/index",
 					"scene": null
 				}
 			]

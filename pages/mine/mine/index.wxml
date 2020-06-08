@@ -1,6 +1,12 @@
 <view class="wrap">
+  <!-- <view class="my-box my-box-unlogin" wx:if="{{isLogin}}"> -->
   <view class="my-box my-box-unlogin">
-    <view class="unlogin-title">登录/注册</view>
+    <button class="unlogin-title" bindgetuserinfo="onGotUserInfo" open-type="getUserInfo">登录/注册</button>
+    <view class="unlogin-tip">买不买都上界壁儿</view>
+  </view>
+  <!-- <view class="my-box my-box-unlogin" wx:else> -->
+  <view class="my-box my-box-unlogin">
+    <view class="unlogin-title">微信名称</view>
     <view class="unlogin-tip">买不买都上界壁儿</view>
   </view>
   <view class="my-box my-box-other">

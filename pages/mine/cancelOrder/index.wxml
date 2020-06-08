@@ -1,0 +1,17 @@
+<view class="wrap">
+  <view>
+    <picker bindchange="bindCancelChange" value="{{cancelIndex}}" range-key="name" range="{{cancelList}}">
+      <view class="box-li-picker">
+        <view class="li-picker-left">取消原因</view>
+        <view class="li-picker-right">{{cancelList[cancelIndex].name}}</view>
+      </view>
+    </picker>
+  </view>
+  <veiw class="wrap-tip">
+    <view class="wrap-tip-title">订单取消后：</view>
+    <view class="wrap-tip-content">
+      <text>• 此订单所使用优惠券会退回（新用户券失效）\n• 此订单参加满赠券活动所送优惠券将失效\n• 此订单获得的成长值会被扣除</text>
+    </view>
+  </veiw>
+  <view class="wrap-btn">下一步</view>
+</view>

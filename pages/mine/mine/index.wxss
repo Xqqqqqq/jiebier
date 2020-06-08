@@ -60,3 +60,19 @@
   font-size: 28rpx;
   color: #202020;
 }
+button{
+  line-height: 1;
+  margin:0;
+  padding: 0;
+  display: inline-block;
+  background-color: #fff;
+  text-align: left;
+}
+button::after{
+  border:none;
+}
+input{
+  outline:none;
+  border:none;
+  list-style: none;
+}

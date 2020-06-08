@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "申请取消订单",
+  "usingComponents": {
+    "i-toast": "../../../dist/toast/index"
+  }
+}

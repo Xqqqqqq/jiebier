@@ -5,7 +5,8 @@ const app = getApp()
 Page({
   data:{
     url: app.globalData.url,
-    clickName: '编 辑',
+    clickName: '编辑',
+    showDelete: true,
     isAllSelect: false,
     totalMoney: 0,
     goodsList:[
@@ -94,6 +95,19 @@ Page({
       goodsList: goodsList,
     })
     this.getTotalPrice()
+  },
+  changeName(){
+    if(this.data.clickName == '编辑'){
+      this.setData({
+        clickName: '完成',
+        showDelete: false
+      })
+    }else if(this.data.clickName == '完成'){
+      this.setData({
+        clickName: '编辑',
+        showDelete: true
+      })
+    }
   },
   // 点击门店旁的checkbox
   switchSelect(e){

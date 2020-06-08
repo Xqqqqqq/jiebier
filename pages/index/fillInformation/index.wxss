@@ -3,6 +3,29 @@ page{
   padding: 27rpx 24rpx;
   box-sizing: border-box;
 }
+/* 审核时 */
+.wrap-imgall{
+  width: 100%;
+  text-align: center;
+  padding-top: 10%;
+  box-sizing: border-box;
+}
+.wrap-img{
+  margin: auto;
+  width: 80%;
+  /* height: 300rpx; */
+}
+.wrap-img image{
+  width: 100%;
+}
+.wrap-text{
+  font-weight: bold;
+  margin-top: 20rpx;
+  font-size: 40rpx;
+  color: #000000;
+}
+
+/* 未审核 */
 .wrap{
   width: 100%;
 }

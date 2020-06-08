@@ -29,21 +29,13 @@ class Index extends HTTP {
       data: data    
     })
   }
-  /**
-   * 获取轮播图列表
+   /**
+   * 	查询企业审核状态
    */
-  getLoopList(){
+  getCompanyState(data){
     return this.request({
-        url:'examination_war/apiExmLoopController.do?getLoopList'
-    })
-  }
-  /**
-   * 	轮播图信息
-   */
-  getLoop(data){
-    return this.request({
-        url:'examination_war/apiExmLoopController.do?getLoop',
-        data: data,
+      url:'/api/company/getCompanyState',
+      data: data    
     })
   }
 }

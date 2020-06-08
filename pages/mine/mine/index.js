@@ -4,7 +4,8 @@ import { wx_gotoNewUrl } from '../../../utils/fn'
 const app = getApp()
 Page({
   data:{
-    
+    url: app.globalData.url,
+    isLogin: app.globalData.loginStatus
   },
   gotoRouter(e){
     console.log(e.currentTarget.dataset.type)

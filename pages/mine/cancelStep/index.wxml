@@ -1,0 +1,12 @@
+<view class="wrap">
+  <i-steps direction="vertical">
+    <i-step wx:for="{{progressList}}" wx:key>
+      <view slot="title">
+        {{item.time}}
+      </view>
+      <view slot="content">
+        【订单】{{item.content}}
+      </view>
+    </i-step>
+</i-steps>
+</view>

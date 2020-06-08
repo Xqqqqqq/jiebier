@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "填写申请",
+  "navigationBarTitleText": "申请",
   "usingComponents": {
     "i-toast": "../../../dist/toast/index",
     "i-icon": "../../../dist/icon/index",
