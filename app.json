@@ -16,6 +16,7 @@
     "pages/news/newsDetail/index",
     "pages/mine/mine/index",
     "pages/mine/orders/index",
+    "pages/mine/orderDetail/index",
     "pages/mine/cancelOrder/index",
     "pages/mine/cancelStep/index"
   ],

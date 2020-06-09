@@ -1,12 +1,13 @@
 <view class="wrap">
-  <!-- <view class="my-box my-box-unlogin" wx:if="{{isLogin}}"> -->
-  <view class="my-box my-box-unlogin">
-    <button class="unlogin-title" bindgetuserinfo="onGotUserInfo" open-type="getUserInfo">登录/注册</button>
+  <view class="my-box my-box-unlogin" wx:if="{{isLogin}}">
+    <view class="unlogin-title" wx:if="{{wxUserInfo.nickName}}">{{wxUserInfo.nickName}}</view>
     <view class="unlogin-tip">买不买都上界壁儿</view>
+    <view class="unlogin-img" wx:if="{{wxUserInfo.avatarUrl}}">
+      <image src="{{wxUserInfo.avatarUrl}}"></image>
+    </view>
   </view>
-  <!-- <view class="my-box my-box-unlogin" wx:else> -->
-  <view class="my-box my-box-unlogin">
-    <view class="unlogin-title">微信名称</view>
+  <view class="my-box my-box-unlogin" wx:else>
+    <button class="unlogin-title" bindgetuserinfo="onGotUserInfo" open-type="getUserInfo">登录/注册</button>
     <view class="unlogin-tip">买不买都上界壁儿</view>
   </view>
   <view class="my-box my-box-other">

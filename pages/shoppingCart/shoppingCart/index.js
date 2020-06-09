@@ -82,7 +82,22 @@ Page({
           },
         ]
       },
-    ]
+    ],
+    typeList:[
+      {
+        id:1,
+        name: '商品自提'
+      },
+      {
+        id:2,
+        name: '商品配送'
+      },
+      {
+        id:3,
+        name: '商品物流'
+      },
+    ],
+    showMask: false
   },
   onShow(){
     const goodsList = this.data.goodsList.map(item => {
@@ -108,6 +123,20 @@ Page({
         showDelete: true
       })
     }
+  },
+  // 点击商品自提打开蒙层
+  openMask(){
+    this.setData({
+      showMask: true
+    })
+  },
+  closeMask(){
+    this.setData({
+      showMask: false
+    })
+  },
+  radioChange(e){
+    console.log(e.detail.value)
   },
   // 点击门店旁的checkbox
   switchSelect(e){

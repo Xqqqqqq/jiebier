@@ -25,7 +25,7 @@
             {{itemSmall.name}}
             <view class="right-top-score">10积分</view>
           </view>
-          <view class="content-right-type">
+          <view class="content-right-type" catchtap="openMask">
             <view>取货方式：</view>
             <view>商品自提></view>
           </view>
@@ -56,6 +56,21 @@
     </view>
     <view class="wrap-bottom-btn" wx:if="{{showDelete}}">删 除</view>
     <view class="wrap-bottom-btn" wx:else>结 算</view>
+  </view>
+  <!-- 弹出层 -->
+  <view class="wrap-mask" wx:if="{{showMask}}" bindtap="closeMask"></view>
+  <view class="wrap-mask-box" wx:if="{{showMask}}">
+    <view class="mask-box-top">
+      <radio-group bindchange="radioChange">
+        <label class="box-top-li" wx:for="{{typeList}}" wx:key="index">
+          <view class="top-li-check">
+            <radio value="{{item.id}}"/>
+          </view>
+          <view class="top-li-name">{{item.name}}</view>
+        </label>
+      </radio-group>
+    </view>
+    <view class="mask-box-bottom" bindtap="closeMask"></view>
   </view>
   <i-toast id="toast" />
 </view>

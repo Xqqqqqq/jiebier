@@ -2155,6 +2155,27 @@
 					"id": -1,
 					"name": "pages/mine/cancelStep/index",
 					"pathName": "pages/mine/cancelStep/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/mine/orderDetail/index",
+					"pathName": "pages/mine/orderDetail/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/mine/orders/index",
+					"pathName": "pages/mine/orders/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/shoppingCart/shoppingCart/index",
+					"pathName": "pages/shoppingCart/shoppingCart/index",
 					"scene": null
 				}
 			]
