@@ -1,0 +1,55 @@
+<view class="wrap">
+  <view class="wrap-box">
+    <view class="wrap-box-title">收货地址</view>
+    <view class="wrap-box-content" bindtap="chooseAddress">
+      <view class="box-content-phone">{{addressInfo.userName}}<text>{{addressInfo.telNumber}}</text></view>
+      <view class="box-content-address">
+        <view class="content-address">{{addressInfo.provinceName}}{{addressInfo.cityName}}{{addressInfo.countyName}}{{addressInfo.detailInfo}}</view>
+        <view class="box-content-arrow">></view>
+      </view>
+    </view>
+  </view>
+
+  <view class="wrap-box">
+    <view class="wrap-box-ul">
+      <view class="wrap-box-title">xxxxx店铺1</view>
+      <view class="wrap-box-li">
+        <view class="box-li-left">
+          <!-- <image></image> -->
+        </view>
+        <view class="box-li-right">
+          <view class="li-right-title">新鲜赣南脐橙</view>
+          <view class="li-right-type">取货方式：商品自提</view>
+          <view class="li-right-price"><text class="right-price-small">￥</text>30 <text class="right-price-num">x1</text></view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="wrap-box wrap-box-other">
+    <view class="box-line">
+      <view class="box-line-left">获得积分</view>
+      <view class="box-line-right">30积分</view>
+    </view>
+    <view class="box-line">
+      <view class="box-line-left">折扣</view>
+      <view class="box-line-right">98折</view>
+    </view>
+    <view class="box-line">
+      <view class="box-line-left">优惠券</view>
+      <view class="box-line-right">暂无选择优惠卷</view>
+    </view>
+    <view class="box-line">
+      <view class="box-line-left">支付方式</view>
+      <view class="box-line-right">微信</view>
+    </view>
+  </view>
+
+  <view class="wrap-btn-block"></view>
+  <view class="wrap-btn">
+    <view class="wrap-btn-left">总金额：<text class="btn-left-small">￥</text><text class="btn-left-big">30</text></view>
+    <view class="wrap-btn-right">立即支付</view>
+  </view>
+
+  <i-toast id="toast" />
+</view>

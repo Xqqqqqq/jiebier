@@ -1,0 +1,19 @@
+<view class="wrap">
+  <view class="wrap-logo">
+    <!-- <image></image> -->
+  </view>
+  <view class="wrap-box">
+    <input class="wrap-box-input" placeholder="请输入手机号或者用户名" placeholder-class="input-placeholder"/>
+  </view>
+  <view class="wrap-box">
+    <input class="wrap-box-input" placeholder="请输入密码，8-16位字符组成" placeholder-class="input-placeholder"/>
+  </view>
+  <view class="wrap-box">
+    <input class="wrap-box-input" placeholder="确认密码" placeholder-class="input-placeholder"/>
+  </view>
+  <view class="wrap-box wrap-box-other">
+    <input class="wrap-box-input box-input-other" placeholder="请输入验证码" placeholder-class="input-placeholder"/>
+    <view class="wrap-box-code">发送验证码</view>
+  </view>
+  <view class="wrap-box-btn">注册</view>
+</view>

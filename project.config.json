@@ -2176,6 +2176,55 @@
 					"id": -1,
 					"name": "pages/shoppingCart/shoppingCart/index",
 					"pathName": "pages/shoppingCart/shoppingCart/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/classify/confirmOrder/index",
+					"pathName": "pages/classify/confirmOrder/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/loginAll/loginCode/index",
+					"pathName": "pages/loginAll/loginCode/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/loginAll/loginAdmin/index",
+					"pathName": "pages/loginAll/loginAdmin/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/loginAll/register/index",
+					"pathName": "pages/loginAll/register/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/loginAll/forget/index",
+					"pathName": "pages/loginAll/forget/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/loginAll/resetPassword/index",
+					"pathName": "pages/loginAll/resetPassword/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/loginAll/loginCode/index",
+					"pathName": "pages/loginAll/loginCode/index",
 					"scene": null
 				}
 			]

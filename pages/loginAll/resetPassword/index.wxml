@@ -1,0 +1,10 @@
+<view class="wrap">
+  <view class="wrap-logo">
+    <!-- <image></image> -->
+  </view>
+
+  <view class="wrap-box">
+    <input class="wrap-box-input" placeholder="请设置您的新密码" placeholder-class="input-placeholder"/>
+  </view>
+  <view class="wrap-box-btn" bindtap="gotoUrl">去登录</view>
+</view>

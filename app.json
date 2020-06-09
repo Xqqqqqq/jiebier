@@ -11,6 +11,7 @@
     "pages/classify/classifyGoods/index",
     "pages/classify/selectCity/index",
     "pages/classify/goodsDetail/index",
+    "pages/classify/confirmOrder/index",
     "pages/shoppingCart/shoppingCart/index",
     "pages/news/news/index",
     "pages/news/newsDetail/index",
@@ -18,7 +19,12 @@
     "pages/mine/orders/index",
     "pages/mine/orderDetail/index",
     "pages/mine/cancelOrder/index",
-    "pages/mine/cancelStep/index"
+    "pages/mine/cancelStep/index",
+    "pages/loginAll/loginCode/index",
+    "pages/loginAll/loginAdmin/index",
+    "pages/loginAll/register/index",
+    "pages/loginAll/forget/index",
+    "pages/loginAll/resetPassword/index"
   ],
   "subPackages": [
     {

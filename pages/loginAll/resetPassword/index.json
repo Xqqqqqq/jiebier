@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "设置密码",
+  "usingComponents": {
+    "i-toast": "../../../dist/toast/index",
+    "i-icon": "../../../dist/icon/index"
+  }
+}

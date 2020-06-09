@@ -1,0 +1,17 @@
+<view class="wrap">
+  <view class="wrap-logo">
+    <!-- <image></image> -->
+  </view>
+
+  <view class="wrap-box">
+    <view class="wrap-box-left">+86</view>
+    <view class="wrap-box-line"></view>
+    <input class="wrap-box-input" placeholder="请输入手机号" placeholder-class="input-placeholder"/>
+  </view>
+  <view class="wrap-box wrap-box-other">
+    <input class="wrap-box-input box-input-other" placeholder="请输入验证码" placeholder-class="input-placeholder"/>
+    <view class="wrap-box-code">发送验证码</view>
+  </view>
+  <view class="wrap-box-type" bindtap="gotoUrl">账户登录</view>
+  <view class="wrap-box-btn">提交</view>
+</view>
