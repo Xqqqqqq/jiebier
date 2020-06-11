@@ -2449,6 +2449,13 @@
 					"id": -1,
 					"name": "pages/mine/coupon/index",
 					"pathName": "pages/mine/coupon/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/classify/selectCity/index",
+					"pathName": "pages/classify/selectCity/index",
 					"scene": null
 				}
 			]

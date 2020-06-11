@@ -66,5 +66,14 @@ class Index extends HTTP {
       method:"GET"
     })
   }
+  /**
+   * 	轮播图
+   */
+  getLoops(){
+    return this.request({
+      url:'/api/miniCommon/getLoops',
+      method:"GET"
+    })
+  }
 }
 export { Index }

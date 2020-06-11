@@ -21,11 +21,6 @@ Page({
     // getUserAddress().then(res => {
     //   console.log('sss',res)
     // })
-    if(wx.getStorageSync('userCity')){
-      this.setData({
-        selectCity: wx.getStorageSync('userCity')
-      })
-    }
   },
   productClass(){
     classify.productClass().then(res => {

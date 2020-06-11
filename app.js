@@ -136,13 +136,20 @@ App({
             "lat": vm.globalData.positionAddress.latitude,
             "lng": vm.globalData.positionAddress.longitude
           }).then(res => {
-            // console.log(res)
             if(res.code == '200'){
-              vm.globalData.userCity.id = res.result[0].id
-              vm.globalData.userCity.city = res.result[0].regionName
+              vm.globalData.userCity = res.result
               wx.setStorage({
                 key: 'userCity',
                 data: vm.globalData.userCity
+              })
+              wx.setStorage({
+                key: 'showRecommend',
+                data: true,
+              })
+            }else{
+              wx.setStorage({
+                key: 'showRecommend',
+                data: false,
               })
             }
           })
@@ -162,9 +169,6 @@ App({
       latitude: '',
       longitude: ''
     }, // 用户定位城市经纬度
-    userCity: {
-      id:'',
-      city:''
-    }
+    userCity: [], //推荐城市
   }
 })

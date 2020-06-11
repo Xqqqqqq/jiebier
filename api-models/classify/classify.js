@@ -35,5 +35,14 @@ class Classify extends HTTP {
       data:data
     })
   }
+   /**
+   * 	地址列表
+   */
+  searchRegion(){
+    return this.request({
+      url:'/api/miniCommon/searchRegion',
+      method:'GET'
+    })
+  }
 }
 export { Classify }

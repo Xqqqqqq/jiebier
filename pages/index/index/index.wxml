@@ -16,7 +16,8 @@
       style="height: 100%;">
         <block wx:for="{{imgUrls}}" wx:key="imgUrls">
           <swiper-item>
-            <image src="{{item.loopImg}}" class="slide-image" data-url="indexSwiper" data-id="{{item.id}}" bindtap="clickNews"/>
+            <!-- <image src="{{item.loopImg}}" class="slide-image" data-url="indexSwiper" data-id="{{item.id}}" bindtap="clickNews"/> -->
+            <image src="{{item.loopImg}}" class="slide-image"/>
           </swiper-item>
         </block>
       </swiper>
@@ -47,15 +48,16 @@
     </scroll-view>
   </view>
   <!-- 推荐城市 -->
-  <view class="wrap-title">
+  <view class="wrap-title" wx:if="{{showRecommend}}">
     <view class="wrap-title-name">推荐城市</view>
   </view>
-  <view class="wrap-recommend">
+  <view class="wrap-recommend" wx:if="{{showRecommend}}">
     <view class="{{currentTab==index ? 'recommend-li-ture' : 'recommend-li'}}"
     wx:for="{{recommendList}}"
     wx:key="index"
     data-current="{{index}}"
-    bindtap="clickTab">{{item}}</view>
+    data-item="{{item}}"
+    bindtap="clickTab">{{item.regionName}}</view>
   </view>
   <!-- 选择城市 -->
   <!-- <view class="wrap-line"></view> -->

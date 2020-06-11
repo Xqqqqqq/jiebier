@@ -408,7 +408,7 @@ interface PageConstructor {
 
 declare var Page: PageConstructor;
 
-declare var wx: {
+declare var 'wx: {
     // # 网络 # 
     
     request(obj: {

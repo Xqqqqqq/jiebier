@@ -14,7 +14,8 @@ Page({
     autoplay: true,
     interval: 3000,
     duration: 500,
-    recommendList:['沈阳', '北京','上海','天津','武汉','吉林','河南','四川',],
+    recommendList:[],
+    showRecommend: false,
     currentTab: -1,
     collapseList: [], //选择城市的数组
     selectTab: -1,
@@ -26,7 +27,92 @@ Page({
     //   index: 1,
     //   text: '4'
     // })
+    // 获取定位
+    let vm = this
+    wx.getSetting({
+      success(res){
+        let status = res.authSetting['scope.userLocation']
+        if (status !== undefined && status !== true){
+          wx.showModal({
+            title: '请求授权当前位置',
+            content: '需要获取您的地理位置，请确认授权',
+            success(res) {
+              if(res.cancel){
+                //取消授权
+                wx.showToast({
+                  title: '拒绝授权,无法获取当前位置！',
+                  icon: 'none',
+                  duration: 1000
+                })
+              }else if(res.confirm){
+                wx.openSetting({
+                  success (res) {
+                    if (res.authSetting["scope.userLocation"] == true) {
+                      wx.showToast({
+                        title: '授权成功',
+                        icon: 'success',
+                        duration: 1000
+                      })
+                      vm.geo();
+                    }else{
+                      wx.showToast({
+                        title: '授权失败',
+                        icon: 'none',
+                        duration: 1000
+                      })
+                    }
+                  }
+                })
+              }
+            }
+          })
+        }else if(status == undefined) {
+          vm.geo();
+        }else {
+          vm.geo();
+        } 
+      }
+    })
     this.getRegionTree()
+    this.getLoops()
+  },
+  geo(){
+    let vm =this
+    wx.getLocation({
+      type: 'gcj02',
+      success (res) {
+        if(res.latitude && res.longitude){
+          index.getAddressInfo({
+            "lat": res.latitude,
+            "lng": res.longitude
+          }).then(res => {
+            if(res.code == '200'){
+              wx.setStorage({
+                key: 'userCity',
+                data: res.result
+              })
+              wx.setStorage({
+                key: 'showRecommend',
+                data: true,
+              })
+              vm.setData({
+                recommendList: res.result,
+                showRecommend: true,
+              })
+            }else{
+              wx.setStorage({
+                key: 'showRecommend',
+                data: false,
+              })
+              vm.setData({
+                recommendList: res.result,
+                showRecommend: false,
+              })
+            }
+          })
+        }
+      }
+    })
   },
   // 获取地区分类
   getRegionTree(){
@@ -44,12 +130,17 @@ Page({
     })
   },
   // 获取轮播图数组
-  getLoopList(){
-    index.getLoopList().then(res => {
-      if(res.code == '0'){
+  getLoops(){
+    index.getLoops().then(res => {
+      if(res.code == 200){
         this.setData({
-          imgUrls: res.data.loopList
+          imgUrls: res.result
         })
+      }else{
+        $Toast({
+          content: res.msg,
+          type: 'error'
+        });
       }
     })
   },
@@ -62,6 +153,10 @@ Page({
       this.setData({
         currentTab:cur,
       }) 
+    }
+    if(e.currentTarget.dataset.item.regionName && e.currentTarget.dataset.item.id){
+      app.globalData.selectCity.id = e.currentTarget.dataset.item.id
+      app.globalData.selectCity.city = e.currentTarget.dataset.item.regionName
     }
     wx_gotoNewUrl('switchTab','/pages/classify/classify/index')
   },
@@ -76,15 +171,11 @@ Page({
         selectTab:this.data.collapseList[index].children[indexsmall],
       }) 
     }
-    wx_gotoNewUrl('switchTab','/pages/classify/classify/index')
     if(e.currentTarget.dataset.name && e.currentTarget.dataset.id){
-      app.globalData.userCity.id = e.currentTarget.dataset.id
-      app.globalData.userCity.city = e.currentTarget.dataset.name
-      wx.setStorage({
-        key: 'userCity',
-        data: app.globalData.userCity
-      })
+      app.globalData.selectCity.id = e.currentTarget.dataset.id
+      app.globalData.selectCity.city = e.currentTarget.dataset.name
     }
+    wx_gotoNewUrl('switchTab','/pages/classify/classify/index')
   },
   gotoRouter(e){
     let type= e.currentTarget.dataset.type
