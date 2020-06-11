@@ -20,6 +20,10 @@
     "pages/mine/orderDetail/index",
     "pages/mine/cancelOrder/index",
     "pages/mine/cancelStep/index",
+    "pages/mine/coupon/index",
+    "pages/mine/myScore/index",
+    "pages/mine/scoreInfo/index",
+    "pages/mine/myMember/index",
     "pages/loginAll/loginCode/index",
     "pages/loginAll/loginAdmin/index",
     "pages/loginAll/register/index",
@@ -35,7 +39,7 @@
   ],
   "permission": {
     "scope.userLocation": {
-      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+      "desc": "你的位置信息将用于获取展示数据"
     }
   },
   "window": {
@@ -45,28 +49,38 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "color": "#8F9091",
-    "selectedColor": "#476BA4",
+    "color": "#313233",
+    "selectedColor": "#313233",
     "borderStyle": "black",
     "backgroundColor": "#ffffff",
     "list": [
       {
+        "iconPath": "/static/image/tabs/shouye-gray.png",
+        "selectedIconPath": "/static/image/tabs/shouye-green.png",
         "pagePath": "pages/index/index/index",
         "text": "界壁儿"
       },
       {
+        "iconPath": "/static/image/tabs/fenlei-gray.png",
+        "selectedIconPath": "/static/image/tabs/fenlei-green.png",
         "pagePath": "pages/classify/classify/index",
         "text": "分类"
       },
-      {                
+      {         
+        "iconPath": "/static/image/tabs/shop-gray.png",
+        "selectedIconPath": "/static/image/tabs/shop-green.png",       
         "pagePath": "pages/shoppingCart/shoppingCart/index",
         "text": "购物车"
       },
       {
+        "iconPath": "/static/image/tabs/msg-gray.png",
+        "selectedIconPath": "/static/image/tabs/msg-green.png",
         "pagePath": "pages/news/news/index",
         "text": "消息"
       },
       {
+        "iconPath": "/static/image/tabs/my-gray.png",
+        "selectedIconPath": "/static/image/tabs/my-green.png",
         "pagePath": "pages/mine/mine/index",
         "text": "我的"
       }

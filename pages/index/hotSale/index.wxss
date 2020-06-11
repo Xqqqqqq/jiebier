@@ -26,7 +26,6 @@ page{
 .box-li-left{
   width: 100%;
   height: 298rpx;
-  background-color: red;
   border-radius: 10rpx;
   margin-bottom: 49rpx;
 }
@@ -69,7 +68,6 @@ page{
   bottom: 0;
   right: 0;
   border-radius: 50%;
-  background-color: red;
 }
 .li-right-pos image{
   width: 100%;

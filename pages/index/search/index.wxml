@@ -8,22 +8,22 @@
     </view>
   </view>
   <!-- 历史记录 -->
-  <view class="wrap-name">
+  <view class="wrap-name" wx:if="{{historyList.length >0}}">
     历史记录
     <view class="wrap-name-icon">
       <!-- <image src="{{url}}search-white.png"></image> -->
     </view>
   </view>
-  <view class="history">
+  <view class="history" wx:if="{{historyList.length >0}}">
     <view wx:for="{{historyList}}" wx:key="index"
     data-index="{{index}}" bindtap="clickHistoryTab"
-    class="{{currentHistoryTab==index ? 'tab-li tab-li-ture' : 'tab-li'}}">{{item.name}}</view>
+    class="{{currentHistoryTab==index ? 'tab-li tab-li-ture' : 'tab-li'}}">{{item}}</view>
   </view>
   <!-- 热门搜索 -->
-  <view class="wrap-name">热门搜索</view>
+  <!-- <view class="wrap-name">热门搜索</view>
   <view class="history">
     <view wx:for="{{hotList}}" wx:key="index"
     data-index="{{index}}" bindtap="clickHotTab"
     class="{{currentHotTab==index ? 'tab-li tab-li-ture' : 'tab-li'}}">{{item.name}}</view>
-  </view>
+  </view> -->
 </view>

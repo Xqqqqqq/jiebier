@@ -4,7 +4,7 @@
     <view class="wrap-input-select" bindtap="gotoRouter" data-url="/pages/index/search/index" data-type="navigateTo">
       搜索商品
       <view class="search-icon">
-        <!-- <image src="{{url}}search-white.png"></image> -->
+        <image src="{{url}}index/search.png"></image>
       </view>
     </view>
   </view>
@@ -38,7 +38,9 @@
           <view class="scroll-li-bottom-num">销量：101010</view>
           <view class="scroll-li-bottom-price">
             <text>￥</text>300
-            <view class="li-bottom-price"></view>
+            <view class="li-bottom-price">
+              <image src="{{url}}index/cart.png"></image>
+            </view>
           </view>
         </view>
       </view>
@@ -62,15 +64,20 @@
   </view>
   <i-collapse accordion name="{{name}}">
     <i-collapse-item 
-    title="{{item.title}}" wx:for="{{collapseList}}" wx:key="index" name="{{item.title}}"
+    title="{{item.regionName}}" wx:for="{{collapseList}}" wx:key="index" name="{{item.regionName}}"
     i-class-title="collapse-item-title" i-class-content="collapse-item-content">
       <view slot="content">
         <view class="wrap-recommend wrap-recommend-other">
-          <view class="{{currentTab==index ? 'recommend-li-ture' : 'recommend-li'}}"
-          wx:for="{{recommendList}}"
+          <view class="{{selectTab==indexSmall ? 'recommend-li-ture' : 'recommend-li'}}"
+          wx:for="{{item.children}}"
           wx:key="index"
-          data-current="{{index}}"
-          bindtap="clickTab">{{item}}</view>
+          wx:for-item="itemSmaller"
+          wx:for-index="indexSmall"
+          data-name="{{itemSmaller.regionName}}"
+          data-id="{{itemSmaller.id}}"
+          data-indexsmall="{{indexSmall}}"
+          data-index="{{index}}"
+          bindtap="selectTab">{{itemSmaller.regionName}}</view>
         </view>
         <!-- <radio-group bindchange="radioChange">
           <label class="collapse-label" wx:for="{{item.children}}" wx:key="index" wx:for-item="itemSmall">

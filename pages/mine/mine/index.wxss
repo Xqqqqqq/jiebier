@@ -62,7 +62,6 @@
 .box-block-img{
   width: 88rpx;
   height: 88rpx;
-  background-color: red;
   border-radius:10rpx;
   margin: auto;
   margin-bottom: 18rpx;

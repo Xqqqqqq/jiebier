@@ -38,5 +38,33 @@ class Index extends HTTP {
       data: data    
     })
   }
+  /**
+   * 	获取地区分类
+   */
+  getRegionTree(){
+    return this.request({
+      url:'/api/region/getRegionTree',
+      method: "GET"   
+    })
+  }
+  /**
+   * 	根据经纬度获取省市信息
+   */
+  getAddressInfo(data){
+    return this.request({
+      url:'/api/miniCommon/getAddressInfo',
+      data: data    
+    })
+  }
+  /**
+   * 	搜索
+   */
+  search(data){
+    return this.request({
+      url:'/api/miniCommon/search',
+      data: data,
+      method:"GET"
+    })
+  }
 }
 export { Index }

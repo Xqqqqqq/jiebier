@@ -20,6 +20,7 @@ export function wx_gotoNewUrl(type, url, parmas = {}, successBack, failBack, com
   for (let key in parmas) {
     str = `${str}&${key}=${parmas[key]}`
   }
+  let aa = url+str
   if (type == 'navigateTo') {
     wx.navigateTo({
       url: url+str,

@@ -1,3 +1,5 @@
+import { ShoppingCart } from '../../../api-models/shoppingCart/shoppingCart';
+const shoppingCart = new ShoppingCart();
 const { $Toast } = require('../../../dist/base/index');
 import { wx_gotoNewUrl } from '../../../utils/fn'
 //获取应用实例
@@ -5,84 +7,12 @@ const app = getApp()
 Page({
   data:{
     url: app.globalData.url,
-    clickName: '编辑',
-    showDelete: true,
+    clickName: '完成',
+    showDelete: false,
     isAllSelect: false,
     totalMoney: 0,
-    goodsList:[
-      {
-        id:1,
-        name:'嘻唰唰店',
-        goods:[
-          {
-            goodsId:10,
-            name:'xixi',
-            num:1,
-            price:10,
-          },
-          {
-            goodsId:11,
-            name:'haha',
-            num:3,
-            price:20,
-          },
-          {
-            goodsId:12,
-            name:'hoho',
-            num:5,
-            price:30,
-          },
-        ]
-      },
-      {
-        id:2,
-        name:'卖水果的',
-        goods:[
-          {
-            goodsId:20,
-            name:'pingguo',
-            num:2,
-            price:40,
-          },
-          {
-            goodsId:21,
-            name:'xiangjiao',
-            num:4,
-            price:50,
-          },
-          {
-            goodsId:22,
-            name:'boluo',
-            num:6,
-            price:60,
-          },
-        ]
-      },
-      {
-        id:3,
-        name:'卖菜的',
-        goods:[
-          {
-            goodsId:30,
-            name:'黄瓜',
-            num:4,
-            price:70,
-          },
-          {
-            goodsId:31,
-            name:'西红柿',
-            num:2,
-            price:80,
-          },
-          {
-            goodsId:32,
-            name:'茄子',
-            num:5,
-            price:90,
-          },
-        ]
-      },
-    ],
+    goodsList:[],
+    goodsLength: 0,
     typeList:[
       {
         id:1,
@@ -100,16 +30,39 @@ Page({
     showMask: false
   },
   onShow(){
-    const goodsList = this.data.goodsList.map(item => {
-      return {
-        ...item,
-        isSelect: false
+    this.setData({
+      isAllSelect: false,
+      goodsList: []
+    })
+    this.selectCartByUserId()
+    this.getTotalPrice()
+  },
+  selectCartByUserId(){
+    shoppingCart.selectCartByUserId({
+      userId: '1'
+    }).then(res => {
+      if(res.code == 200){
+        let goodsLength = 0
+        const goodsList = res.result.map(item => {
+          return {
+            ...item,
+            isSelect: false
+          }
+        })
+        for(let i = 0; i < goodsList.length; i++){
+          goodsLength += goodsList[i].productList.length
+        }
+        this.setData({
+          goodsList: goodsList,
+          goodsLength: goodsLength
+        })
+      }else{
+        $Toast({
+          content: res.msg,
+          type: 'error'
+        });
       }
     })
-    this.setData({
-      goodsList: goodsList,
-    })
-    this.getTotalPrice()
   },
   changeName(){
     if(this.data.clickName == '编辑'){
@@ -148,11 +101,11 @@ Page({
     for(let i=0;i<goodsList.length; i++){
       if(goodsList[i].isSelect == true){
         selectNum++
-        goodsList[i].goods.map(itemSmall => {
+        goodsList[i].productList.map(itemSmall => {
           itemSmall.isSmallSelect = true
         })
       }else{
-        goodsList[i].goods.map(itemSmall => {
+        goodsList[i].productList.map(itemSmall => {
           itemSmall.isSmallSelect = false
         })
       }
@@ -203,8 +156,8 @@ Page({
     let goodsList = this.data.goodsList
     for(let i =0; i <goodsList.length; i++){
       goodsList[i].isSelect = isAllSelect
-      for(let j = 0; j <goodsList[i].goods.length; j++){
-        goodsList[i].goods[j].isSmallSelect = isAllSelect
+      for(let j = 0; j <goodsList[i].productList.length; j++){
+        goodsList[i].productList[j].isSmallSelect = isAllSelect
       }
     }
     this.getTotalPrice()
@@ -244,8 +197,8 @@ Page({
     let total = 0
     for(let i =0; i < goodsList.length; i++){
       if(goodsList[i].isSelect){
-        for(let j =0; j <goodsList[i].goods.length; j++){
-          total += goodsList[i].goods[j].num * goodsList[i].goods[j].price
+        for(let j =0; j <goodsList[i].productList.length; j++){
+          total += Number(goodsList[i].productList[j].productNum) * Number(goodsList[i].productList[j].productPrice)
         }
       }
     }

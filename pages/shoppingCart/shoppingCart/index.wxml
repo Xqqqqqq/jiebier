@@ -1,39 +1,41 @@
 <view class="wrap">
   <view class="wrap-top">
-    <view class="wrap-top-left">共10件宝贝</view>
+    <view class="wrap-top-left">共{{goodsLength}}件宝贝</view>
     <view class="wrap-top-right" bindtap="changeName">{{clickName}}</view>
   </view>
   <view class="goods-box" wx:for="{{goodsList}}" wx:key="index" wx:for-index="index">
-    <view class="goods-box-top" bindtap="switchSelect" data-index="{{index}}" data-id="{{item.id}}">
+    <view class="goods-box-top" bindtap="switchSelect" data-index="{{index}}" data-id="{{item.companyId}}">
       <view class="box-top-check">
-        <image src="{{url}}index/kaihuhang.png" wx:if="{{item.isSelect}}"></image>
-        <image src="{{url}}index/lianxidianhua.png" wx:else></image>
+        <image src="{{url}}classify/choose.png" wx:if="{{item.isSelect}}"></image>
+        <image src="{{url}}classify/no-choose.png" wx:else></image>
       </view>
-      <view class="box-top-name">{{item.name}}</view>
+      <view class="box-top-name">{{item.companyName}}</view>
     </view>
-    <block wx:for="{{item.goods}}" wx:for-item="itemSmall" wx:key="indexSmall" wx:for-index="indexSmall">
+    <block wx:for="{{item.productList}}" wx:for-item="itemSmall" wx:key="indexSmall" wx:for-index="indexSmall">
       <view class="goods-box-content">
         <view class="box-top-check box-content-check" bindtap="goodsSelect" data-index="{{index}}" data-indexsmall="{{indexSmall}}">
-          <image src="{{url}}index/kaihuhang.png" wx:if="{{itemSmall.isSmallSelect}}"></image>
-          <image src="{{url}}index/lianxidianhua.png" wx:else></image>
+          <image src="{{url}}classify/choose.png" wx:if="{{itemSmall.isSmallSelect}}"></image>
+          <image src="{{url}}classify/no-choose.png" wx:else></image>
         </view>
         <view class="box-content-img">
-          <!-- <image src=""></image> -->
+          <image src="{{itemSmall.productImg}}"></image>
         </view>
         <view class="box-content-right">
           <view class="content-right-top">
-            {{itemSmall.name}}
-            <view class="right-top-score">10积分</view>
+            {{itemSmall.productName}}
+            <view class="right-top-score">{{itemSmall.productPrice}}积分</view>
           </view>
-          <view class="content-right-type" catchtap="openMask">
+          <!-- <view class="content-right-type" catchtap="openMask"> -->
+          <view class="content-right-type">
             <view>取货方式：</view>
-            <view>商品自提></view>
+            <!-- <view>商品自提></view> -->
+            <view>商品自提</view>
           </view>
           <view class="content-right-bottom">
-            <view class="right-bottom-left"><text>￥</text>{{itemSmall.price}}</view>
+            <view class="right-bottom-left"><text>￥</text>{{itemSmall.productPrice}}</view>
             <view class="right-bottom-right">
               <view class="bottom-right-img" catchtap='quantityChange' data-index="{{index}}" data-indexsmall="{{indexSmall}}" id='sub'>-</view>
-              <view class="bottom-right-num">{{itemSmall.num}}</view>
+              <view class="bottom-right-num">{{itemSmall.productNum}}</view>
               <view class="bottom-right-img" catchtap='quantityChange' data-index="{{index}}" data-indexsmall="{{indexSmall}}" id='add'>+</view>
             </view>
           </view>
@@ -47,8 +49,8 @@
     <view class="wrap-bottom-box">
       <view class="wrap-btn-check" bindtap="selectAll">
         <view class="box-top-check box-bottom-check">
-          <image src="{{url}}index/kaihuhang.png" wx:if="{{isAllSelect}}"></image>
-          <image src="{{url}}index/lianxidianhua.png" wx:else></image>
+          <image src="{{url}}classify/choose.png" wx:if="{{isAllSelect}}"></image>
+          <image src="{{url}}classify/no-choose.png" wx:else></image>
         </view>
         <text>全选</text>
       </view>

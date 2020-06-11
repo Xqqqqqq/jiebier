@@ -19,7 +19,7 @@
   width: 124rpx;
   height: 124rpx;
   margin-right: 34rpx;
-  background-color: red;
+  /* background-color: red; */
   overflow: hidden;
   border-radius: 10rpx;
 }

@@ -1,0 +1,34 @@
+<view class="wrap">
+  <view class="wrap-tab">
+    <view class="{{currentTab==index ? 'tab-li-ture tab-li-ture-other' : 'tab-li tab-li-ture-other'}}"
+    wx:for="{{tabList}}"
+    wx:key="index"
+    data-current="{{index}}"
+    bindtap="clickTab">{{item.name}}</view>
+  </view>
+  <view class="wrap-box">
+    <view class="wrap-box-li" wx:for="{{couponList}}" wx:key>
+      <view class="box-li-left">
+        <view class="li-left-img">
+          <!-- <image></image> -->
+        </view>
+        <view class="li-left-detail">
+        <view class="left-detail-name" style="color:{{item.state != '0' ? '#CECCCD' : ''}}">{{item.name}}</view>
+          <view class="left-detail-time" style="color:{{item.state != '0' ? '#CECCCD' : ''}}">{{item.endTime}}</view>
+          <view class="left-detail-tip" style="color:{{item.state != '0' ? '#CECCCD' : ''}}">{{item.couponExplain}}</view>
+        </view>
+      </view>
+      <view class="box-li-right">
+        <view class="li-right-price" style="color:{{item.state != '0' ? '#CECCCD' : ''}}"><text>￥</text>{{item.value}}</view>
+        <view class="li-right-tip" style="color:{{item.state != '0' ? '#CECCCD' : ''}}">满{{item.quota}}可以用</view>
+        <view class="li-right-btn" style="background-color:{{item.state != '0' ? '#CECCCD' : ''}}" wx:if="{{item.state == 0}}">立即使用</view>
+        <view class="li-right-btn" style="background-color:{{item.state != '0' ? '#CECCCD' : ''}}" wx:if="{{item.state == 1}}">已使用</view>
+        <view class="li-right-btn" style="background-color:{{item.state != '0' ? '#CECCCD' : ''}}" wx:if="{{item.state == 3}}">已失效</view>
+      </view>
+      <view class="wrap-box-pos" wx:if="{{item.state == 3}}">
+        <image src="{{url}}my/yiguoq.png"></image>
+      </view>
+    </view>
+  </view>
+  <i-toast id="toast" />
+</view>

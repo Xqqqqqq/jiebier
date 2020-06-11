@@ -1,53 +1,64 @@
 <view class="wrap">
   <view class="wrap-top">
     <view class="wrap-img">
-      <!-- <image></image> -->
+      <swiper indicator-dots="{{indicatorDots}}"
+      autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}"
+      style="height: 100%;">
+        <block wx:for="{{goodInfo.loopList}}" wx:key="imgUrls">
+          <swiper-item>
+            <image src="{{item.productPic}}" class="slide-image" data-url="indexSwiper" data-id="{{item.id}}" bindtap="clickNews"/>
+          </swiper-item>
+        </block>
+      </swiper>
     </view>
-    <view class="wrap-top-title">赣南大脐橙多汁富含维生素c</view>
+    <view class="wrap-top-title">{{goodInfo.productOutVo.productName}}</view>
     <view class="wrap-top-num">
-      <view class="top-num-score">10积分</view>
-      <view class="top-num-num">销量：12547</view>
+      <view class="top-num-score">{{goodInfo.productOutVo.productPrice}}积分</view>
+      <view class="top-num-num">销量：{{goodInfo.productOutVo.shopSale}}</view>
     </view>
     <view class="wrap-top-bottom">
-      <view class="top-bottom-price"><text>￥</text>30</view>
+      <view class="top-bottom-price"><text>￥</text>{{goodInfo.productOutVo.productPrice}}</view>
       <view class="top-bottom-btn">
-        <view class="bottom-btn-box">-</view>
-        <view class="bottom-btn-num">1</view>
-        <view class="bottom-btn-box">+</view>
+        <view class="bottom-btn-box" bindtap='quantityChange' id='sub'>-</view>
+        <view class="bottom-btn-num">{{goodsDetail.productNum}}</view>
+        <view class="bottom-btn-box" bindtap='quantityChange' id='add'>+</view>
       </view>
     </view>
   </view>
   <view class="wrap-box">
-    <picker bindchange="bindProvinceChange" value="{{item.adcode}}" range-key="name" range="{{provinceList}}" data-current="0">
+    <picker bindchange="bindTypeChange" value="{{item.id}}" range-key="name" range="{{typeList}}">
       <view class="wrap-box-li">
         <view class="wrap-box-li-left">配送方式</view>
-        <view class="wrap-box-li-right">商品自提 ></view>
+        <view class="wrap-box-li-right">{{typeList[typeIndex].name}} ></view>
       </view>
     </picker>
     <view class="wrap-box-li wrap-box-li-other">
       <view class="wrap-box-li-left">运费</view>
-      <view class="wrap-box-li-right wrap-box-li-right-other"><text>￥</text>30</view>
+      <view class="wrap-box-li-right wrap-box-li-right-other"><text>￥</text>{{goodInfo.productOutVo.distributionFee}}</view>
     </view>
   </view>
-  <view class="wrap-box">
+  <view class="wrap-box" wx:if="{{goodInfo.productOutVo.productWeight || goodInfo.productOutVo.companyName}}">
     <view class="wrap-box-title">产品规格</view>
-    <view class="wrap-box-li">
+    <view class="wrap-box-li" wx:if="{{goodInfo.productOutVo.productWeight}}">
       <view class="wrap-box-li-left">重量</view>
-      <view class="wrap-box-li-right">20g</view>
+      <view class="wrap-box-li-right">{{goodInfo.productOutVo.productWeight}}</view>
     </view>
-    <view class="wrap-box-li wrap-box-li-other">
+    <view class="wrap-box-li wrap-box-li-other" wx:if="{{goodInfo.productOutVo.companyName}}">
       <view class="wrap-box-li-left">厂家</view>
-      <view class="wrap-box-li-right">蒙牛</view>
+      <view class="wrap-box-li-right">{{goodInfo.productOutVo.companyName}}</view>
     </view>
   </view>
   <view class="wrap-box">
     <view class="wrap-box-title">商品介绍</view>
-    <view class="wrap-box-image"></view>
+    <view class="wrap-box-image" wx:for="{{goodInfo.detailList}}" wx:key>
+      <image src="{{item.productPic}}"></image>
+    </view>
   </view>
   <view class="wrap-bottom-block"></view>
   <view class="wrap-bottom">
-    <view class="wrap-bottom-btn bottom-btn-gray">购 物 车</view>
-    <view class="wrap-bottom-btn bottom-btn-orange">店 铺</view>
-    <view class="wrap-bottom-btn bottom-btn-green">加 入 购 物 车</view>
+    <view class="wrap-bottom-btn bottom-btn-gray" bindtap="gotoShopcart">购 物 车</view>
+    <view class="wrap-bottom-btn bottom-btn-orange" bindtap="gotoShop">店 铺</view>
+    <view class="wrap-bottom-btn bottom-btn-green" bindtap="addShop">加 入 购 物 车</view>
   </view>
+  <i-toast id="toast" />
 </view>

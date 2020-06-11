@@ -48,7 +48,6 @@
   width: 100%;
   border-radius: 20rpx;
   overflow: hidden;
-  background-color: red;
 }
 swiper-item image {
   width: 100%;

@@ -16,27 +16,32 @@
   </view>
   <!-- card部分 -->
   <!-- 店铺 -->
-  <view class="shop-card" wx:if="{{currentTab == 0}}">
-    <view class="shop-card-left">
-      <!-- <image src="{{url}}search-white.png"></image> -->
-    </view>
-    <view class="shop-card-right">
-      <view class="shop-card-right-title">明明水果摊店铺</view>
-      <view class="shop-card-right-num">销量：12547</view>
-    </view>
-  </view>
-  <!-- 商品 -->
-  <view class="shop-card" wx:if="{{currentTab == 1}}">
-    <view class="shop-card-left">
-      <!-- <image src="{{url}}search-white.png"></image> -->
-    </view>
-    <view class="shop-card-right">
-      <view class="shop-card-right-title">新鲜赣南脐橙</view>
-      <view class="shop-card-right-shop">明明水果摊店铺</view>
-      <view class="shop-card-right-bot">
-        <view class="right-bot-left"><text>￥</text>30</view>
-        <view class="right-bot-right shop-card-right-num">销量：12547</view>
+  <block wx:if="{{currentTab == 0 && shopList.length > 0}}">
+    <view class="shop-card" wx:for="{{shopList}}" wx:key>
+      <view class="shop-card-left">
+        <image src="{{item.companyUrl}}"></image>
+      </view>
+      <view class="shop-card-right">
+        <view class="shop-card-right-title">{{item.companyName}}</view>
+        <view class="shop-card-right-num">地址：{{item.companyAddress}}</view>
       </view>
     </view>
-  </view>
+  </block>
+  <!-- 商品 -->
+  <block wx:if="{{currentTab == 1 && goodsList.length > 0}}">
+    <view class="shop-card" wx:for="{{goodsList}}" wx:key>
+      <view class="shop-card-left">
+        <image src="{{item.productImg}}"></image>
+      </view>
+      <view class="shop-card-right">
+        <view class="shop-card-right-title">{{item.productName}}</view>
+        <view class="shop-card-right-shop">{{item.companyName}}</view>
+        <view class="shop-card-right-bot">
+          <view class="right-bot-left"><text>￥</text>{{item.productPrice}}</view>
+          <view class="right-bot-right shop-card-right-num" wx:if="{{item.productSale}}">销量：{{item.productSale}}</view>
+        </view>
+      </view>
+    </view>
+  </block>
+  <i-toast id="toast" />
 </view>

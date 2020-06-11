@@ -1,0 +1,7 @@
+<view class="wrap">
+  <view class="wrap-li">
+    <view class="wrap-li-btn" bindtap="gotoDetail">积分规则</view>
+    <view class="wrap-li-title">当前积分</view>
+    <view class="wrap-li-num">129000</view>
+  </view>
+</view>

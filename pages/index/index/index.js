@@ -8,6 +8,7 @@ const app = getApp()
 
 Page({
   data : {
+    url: app.globalData.url,
     imgUrls: [], // 轮播图数组
     indicatorDots: true,
     autoplay: true,
@@ -15,40 +16,9 @@ Page({
     duration: 500,
     recommendList:['沈阳', '北京','上海','天津','武汉','吉林','河南','四川',],
     currentTab: -1,
-    collapseList: [
-      {
-        title: '辽宁省',
-        children:[{
-          id:1,
-          value: '沈阳',
-          checked:false
-        },{
-          id:2,
-          value: '丹东',
-          checked:false
-        },{
-          id:3,
-          value: '大连',
-          checked:false
-        },]
-      },
-      {
-        title: '北京',
-        children:[{
-          id:4,
-          value: '啊啊',
-          checked:false
-        },{
-          id:5,
-          value: '的丹东',
-          checked:false
-        },{
-          id:6,
-          value: '任溶溶',
-          checked:false
-        },]
-      },
-    ]
+    collapseList: [], //选择城市的数组
+    selectTab: -1,
+    name: ''
   },
   onShow(){
     // 设置购物车数量
@@ -56,7 +26,22 @@ Page({
     //   index: 1,
     //   text: '4'
     // })
-    // this.getLoopList()
+    this.getRegionTree()
+  },
+  // 获取地区分类
+  getRegionTree(){
+    index.getRegionTree().then(res => {
+      if(res.code == '200'){
+        this.setData({
+          collapseList: res.result[0].children
+        })
+      }else{
+        $Toast({
+          content: res.msg,
+          type: 'error'
+        });
+      }
+    })
   },
   // 获取轮播图数组
   getLoopList(){
@@ -80,9 +65,28 @@ Page({
     }
     wx_gotoNewUrl('switchTab','/pages/classify/classify/index')
   },
+  // 选择城市  // 没做完
+  selectTab(e){
+    let index = e.currentTarget.dataset.index;
+    let indexsmall = e.currentTarget.dataset.indexsmall;
+    if(this.data.selectTab == this.data.collapseList[index].children[indexsmall]){
+      return false;
+    }else{
+      this.setData({
+        selectTab:this.data.collapseList[index].children[indexsmall],
+      }) 
+    }
+    wx_gotoNewUrl('switchTab','/pages/classify/classify/index')
+    if(e.currentTarget.dataset.name && e.currentTarget.dataset.id){
+      app.globalData.userCity.id = e.currentTarget.dataset.id
+      app.globalData.userCity.city = e.currentTarget.dataset.name
+      wx.setStorage({
+        key: 'userCity',
+        data: app.globalData.userCity
+      })
+    }
+  },
   gotoRouter(e){
-    console.log(e.currentTarget.dataset.type)
-    console.log(e.currentTarget.dataset.url)
     let type= e.currentTarget.dataset.type
     let url= e.currentTarget.dataset.url
     wx_gotoNewUrl(type,url)

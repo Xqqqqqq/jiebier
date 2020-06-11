@@ -1,34 +1,36 @@
 <view class="wrap">
   <view class="wrap-top" bindtap="gotoPos">
     <view class="wrap-position">
-      <!-- <image></image> -->
+      <image src="{{url}}classify/dingwei.png"></image>
     </view>
-    <view class="wrap-address">沈阳</view>
+    <view class="wrap-address" wx:if="{{selectCity.city}}">{{selectCity.city}}</view>
+    <view class="wrap-address" wx:else>全部</view>
     <view class="wrap-arrow">
-      <!-- <image></image> -->
+      <image src="{{url}}classify/down-arrow.png"></image>
     </view>
   </view>
   <!-- 分类 -->
   <view class="cont">
     <scroll-view scroll-y="true" class="scr_left" scroll-with-animation="true">
-      <block wx:for="{{rightData}}" wx:for-item="item" wx:key="index">
+      <block wx:for="{{goodsData}}" wx:for-item="item" wx:key="index">
         <view class="sc_left_item {{cp_index==index? 'active':''}}"  data-id="c_{{item.id}}" data-index="{{index}}" bindtap="leftTap" >
-          <view class="{{cp_index==index? 'item-title-active':'item-title'}}">{{item.name}}</view>
+          <view class="{{cp_index==index? 'item-title-active':'item-title'}}">{{item.regionName}}</view>
         </view>
         </block>
     </scroll-view>
 
     <scroll-view scroll-y="true" class="scr_right" scroll-into-view="{{currentScrollId}}" scroll-with-animation="true" bindscroll="bindscroll">
-      <block wx:for="{{rightData}}" wx:for-item="item" wx:key="index">
-        <view wx:for="{{item.img}}" wx:for-item="itemSmall" wx:key="indexSmall" 
-        class="sc_right_item" id="c_{{item.id}}"  data-id="c_{{item.id}}" data-index="{{index}}"
+      <!-- <block wx:for="{{rightData}}" wx:for-item="item" wx:key="index"> -->
+        <view wx:for="{{rightData.sonClassList}}" wx:for-item="itemSmall" wx:key="indexSmall" 
+        class="sc_right_item" id="c_{{itemSmall.id}}"  data-id="{{itemSmall.id}}" data-name="{{itemSmall.regionName}}" 
         bindtap="gotoRouter">
           <view class="right_item-img">
-            <image src="{{itemSmall.img}}"></image>
+            <image src="{{itemSmall.regionImg}}"></image>
           </view>
-          <view class="right_item-box">{{itemSmall.name}}</view>
+          <view class="right_item-box">{{itemSmall.regionName}}</view>
         </view>
-      </block>
+      <!-- </block> -->
     </scroll-view>
   </view>
+  <i-toast id="toast" />
 </view>

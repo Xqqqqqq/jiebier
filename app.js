@@ -27,7 +27,7 @@ App({
                 })
               }
             }
-            console.log('openId',res)
+            // console.log('openId',res)
           })
         }else{
           console.log('未获取到code', res);
@@ -76,10 +76,95 @@ App({
         showCancel: false
       })
     })
+    // 获取定位
+    let vm = this
+    wx.getSetting({
+      success(res){
+        let status = res.authSetting['scope.userLocation']
+        if (status !== undefined && status !== true){
+          wx.showModal({
+            title: '请求授权当前位置',
+            content: '需要获取您的地理位置，请确认授权',
+            success(res) {
+              if(res.cancel){
+                //取消授权
+                wx.showToast({
+                  title: '拒绝授权,无法获取当前位置！',
+                  icon: 'none',
+                  duration: 1000
+                })
+              }else if(res.confirm){
+                wx.openSetting({
+                  success (res) {
+                    if (res.authSetting["scope.userLocation"] == true) {
+                      wx.showToast({
+                        title: '授权成功',
+                        icon: 'success',
+                        duration: 1000
+                      })
+                      vm.geo();
+                    }else{
+                      wx.showToast({
+                        title: '授权失败',
+                        icon: 'none',
+                        duration: 1000
+                      })
+                    }
+                  }
+                })
+              }
+            }
+          })
+        }else if(status == undefined) {
+          vm.geo();
+        }else {
+          vm.geo();
+        } 
+      }
+    })
+  },
+  geo(){
+    let vm =this
+    wx.getLocation({
+      type: 'gcj02',
+      success (res) {
+        // console.log('地址',res)
+        vm.globalData.positionAddress.latitude = res.latitude
+        vm.globalData.positionAddress.longitude = res.longitude
+        if(vm.globalData.positionAddress.latitude && vm.globalData.positionAddress.longitude){
+          index.getAddressInfo({
+            "lat": vm.globalData.positionAddress.latitude,
+            "lng": vm.globalData.positionAddress.longitude
+          }).then(res => {
+            // console.log(res)
+            if(res.code == '200'){
+              vm.globalData.userCity.id = res.result[0].id
+              vm.globalData.userCity.city = res.result[0].regionName
+              wx.setStorage({
+                key: 'userCity',
+                data: vm.globalData.userCity
+              })
+            }
+          })
+        }
+      }
+    })
   },
   globalData: {
     userInfo: null,
     url:'/static/image/',
     loginStatus:false,
+    selectCity: {
+      id:'',
+      name:''
+    }, //用户所选城市
+    positionAddress:{
+      latitude: '',
+      longitude: ''
+    }, // 用户定位城市经纬度
+    userCity: {
+      id:'',
+      city:''
+    }
   }
 })
