@@ -34,9 +34,13 @@
           <view class="content-right-bottom">
             <view class="right-bottom-left"><text>￥</text>{{itemSmall.productPrice}}</view>
             <view class="right-bottom-right">
-              <view class="bottom-right-img" catchtap='quantityChange' data-index="{{index}}" data-indexsmall="{{indexSmall}}" id='sub'>-</view>
+              <view class="bottom-right-img" catchtap='quantityChange' data-index="{{index}}" data-indexsmall="{{indexSmall}}" id='sub'>
+                <image src="{{url}}index/del.png"></image>
+              </view>
               <view class="bottom-right-num">{{itemSmall.productNum}}</view>
-              <view class="bottom-right-img" catchtap='quantityChange' data-index="{{index}}" data-indexsmall="{{indexSmall}}" id='add'>+</view>
+              <view class="bottom-right-img" catchtap='quantityChange' data-index="{{index}}" data-indexsmall="{{indexSmall}}" id='add'>
+                <image src="{{url}}index/add.png"></image>
+              </view>
             </view>
           </view>
         </view>

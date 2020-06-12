@@ -19,9 +19,13 @@
     <view class="wrap-top-bottom">
       <view class="top-bottom-price"><text>￥</text>{{goodInfo.productOutVo.productPrice}}</view>
       <view class="top-bottom-btn">
-        <view class="bottom-btn-box" bindtap='quantityChange' id='sub'>-</view>
+        <view class="bottom-btn-box" bindtap='quantityChange' id='sub'>
+          <image src="{{url}}index/del.png"></image>
+        </view>
         <view class="bottom-btn-num">{{goodsDetail.productNum}}</view>
-        <view class="bottom-btn-box" bindtap='quantityChange' id='add'>+</view>
+        <view class="bottom-btn-box" bindtap='quantityChange' id='add'>
+          <image src="{{url}}index/add.png"></image>
+        </view>
       </view>
     </view>
   </view>

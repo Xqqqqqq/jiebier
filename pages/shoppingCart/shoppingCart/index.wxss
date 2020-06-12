@@ -179,17 +179,21 @@
   bottom: 5rpx;
 }
 .bottom-right-img{
-  width:37rpx;
-  height:37rpx;
+  width:40rpx;
+  height:40rpx;
   line-height: 35rpx;
-  background:linear-gradient(0deg,rgba(79,190,0,1),rgba(155,223,34,1));
+  /* background:linear-gradient(0deg,rgba(79,190,0,1),rgba(155,223,34,1)); */
   text-align: center;
-  color: #ffffff;
-  font-size: 34rpx;
+  /* color: #ffffff;
+  font-size: 34rpx; */
   border-radius: 50%;
 }
+.bottom-right-img image{
+  width: 100%;
+  height: 100%;
+}
 .bottom-right-num{
-  font-size: 24rpx;
+  font-size: 28rpx;
   margin-left: 24rpx;
   margin-right: 24rpx;
   color: #000000;

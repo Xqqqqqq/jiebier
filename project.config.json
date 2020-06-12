@@ -2505,6 +2505,13 @@
 					"id": -1,
 					"name": "pages/index/fillInformation/index",
 					"pathName": "pages/index/fillInformation/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/shoppingCart/shoppingCart/index",
+					"pathName": "pages/shoppingCart/shoppingCart/index",
 					"scene": null
 				}
 			]

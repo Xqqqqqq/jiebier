@@ -124,22 +124,22 @@ Page({
       goodsList: goodsList
     })
   },
-  // 点击商品旁边的checkbox  没做完
+  // 点击商品旁边的checkbox
   goodsSelect(e){
     const index = e.currentTarget.dataset.index
     const indexsmall = e.currentTarget.dataset.indexsmall
     let goodsList = this.data.goodsList
-    const isSmallSelect = goodsList[index].goods[indexsmall].isSmallSelect
-    goodsList[index].goods[indexsmall].isSmallSelect = !isSmallSelect
+    const isSmallSelect = goodsList[index].productList[indexsmall].isSmallSelect
+    goodsList[index].productList[indexsmall].isSmallSelect = !isSmallSelect
     let selectNum = 0 // 统计选中商品
     for(let i =0; i < goodsList.length; i++){
-      for(let j=0; j< goodsList[i].goods.length; j++){
-        if(goodsList[i].goods[j].isSmallSelect == true){
+      for(let j=0; j< goodsList[i].productList.length; j++){
+        if(goodsList[i].productList[j].isSmallSelect == true){
           selectNum++
         }
       }
     }
-    if(selectNum == goodsList[index].goods.length){
+    if(selectNum == goodsList[index].productList.length){
       goodsList[index].isSelect = true
     }else{
       goodsList[index].isSelect = false
@@ -171,7 +171,7 @@ Page({
     const index = e.currentTarget.dataset.index
     const indexsmall = e.currentTarget.dataset.indexsmall
     let goodsList = this.data.goodsList
-    let quantity = goodsList[index].goods[indexsmall].num
+    let quantity = goodsList[index].productList[indexsmall].productNum
     if(e.target.id == 'sub'){
       if(quantity <= 1){
         $Toast({
@@ -185,7 +185,7 @@ Page({
     }else if(e.target.id == 'add'){
       quantity += 1
     }
-    goodsList[index].goods[indexsmall].num = quantity
+    goodsList[index].productList[indexsmall].productNum = quantity
     this.getTotalPrice()
     this.setData({
       goodsList: goodsList

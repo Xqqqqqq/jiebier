@@ -2,8 +2,11 @@ import { Classify } from '../../../api-models/classify/classify';
 const classify = new Classify();
 const { $Toast } = require('../../../dist/base/index');
 import { wx_gotoNewUrl } from '../../../utils/fn'
+//获取应用实例
+const app = getApp()
 Page({
   data:{
+    url: app.globalData.url,
     indicatorDots: true,
     autoplay: true,
     interval: 3000,
