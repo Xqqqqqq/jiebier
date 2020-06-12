@@ -47,7 +47,7 @@ page{
   padding-left: 40rpx;
   box-sizing: border-box;
   position: relative;
-  border-bottom: 1px solid #E6E6E6;
+  border-bottom: 1px solid #eeeeee;
 }
 .wrap-box-li-other{
   border-bottom: none;

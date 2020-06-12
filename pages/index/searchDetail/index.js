@@ -6,6 +6,7 @@ import { wx_gotoNewUrl } from '../../../utils/fn'
 const app = getApp()
 Page({
   data:{
+    url: app.globalData.url,
     goodsName: '',
     tabList:[
       { id:1, name:"店铺" },
@@ -13,17 +14,28 @@ Page({
     ],
     currentTab:0,
     shopList:[],
-    goodsList:[]
+    goodsList:[],
+    options: {}
   },
   onLoad(options){
-    console.log(options)
     if(options.name){
       this.setData({
-        goodsName:options.name
+        options:options
       })
     }
-    // this.search(this.data.goodsName)
-    this.search('英驰')
+  },
+  onShow(){
+    this.setData({
+      shopList:[],
+      goodsList:[],
+      currentTab:0,
+    })
+     if(this.data.options){
+      this.setData({
+        goodsName:this.data.options.name ? this.data.options.name : ''
+      })
+    }
+    this.search(this.data.goodsName)
   },
   search(key){
     index.search({
@@ -48,7 +60,6 @@ Page({
     })
   },
   clickSearch(){
-    console.log(this.data.goodsName)
     this.search(this.data.goodsName)
   },
   clickTab(e){
@@ -60,5 +71,11 @@ Page({
         currentTab:cur,
       }) 
     }
+  },
+  gotoDetail(e){
+    wx_gotoNewUrl('navigateTo','/pages/classify/goodsDetail/index',{
+      goodsid:e.currentTarget.dataset.id, // 详细商品id
+      goodsname:e.currentTarget.dataset.name, // 详细商品名称
+    })
   }
 })

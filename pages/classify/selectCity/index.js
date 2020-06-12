@@ -10,12 +10,26 @@ Page({
     recommendList:[],
     currentTab: -1,
     cities : [],
+    height: '80', // index索引器高度
+    posCity: '',
   },
   onShow(){
-    this.searchRegion()
-    if(wx.getStorageSync('userCity')){
+    this.searchRegion(); // index索引器
+    if(wx.getStorageSync('userCity')){ // 获取推荐城市
       this.setData({
-        recommendList: wx.getStorageSync('userCity')
+        recommendList: wx.getStorageSync('userCity'),
+        posCity:wx.getStorageSync('posCity')
+      })
+      let vm = this
+      let query = wx.createSelectorQuery();
+      query.select('.wrap-recommend').boundingClientRect(function (rect) {
+        vm.setData({
+          height: (wx.getSystemInfoSync().windowHeight - rect.height- 60)+ 'px'
+        })
+      }).exec();
+    }else{
+      this.setData({
+        height: (wx.getSystemInfoSync().windowHeight - 60)+ 'px'
       })
     }
   },

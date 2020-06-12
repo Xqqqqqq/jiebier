@@ -5,6 +5,7 @@ import { wx_gotoNewUrl } from '../../../utils/fn'
 const app = getApp()
 Page({
   data:{
+    url: app.globalData.url,
     goodsName: '',
     historyList:[],
     currentHistoryTab:-1,
@@ -31,6 +32,7 @@ Page({
       },
     ],
     currentHotTab:-1,
+    visible: false,
   },
   onShow(){
     this.setData({
@@ -94,4 +96,22 @@ Page({
       }) 
     }
   },
+  clickDelete(){
+    this.setData({
+      visible: true
+    })
+  },
+  handleOk(){
+    wx.clearStorage('historyList')
+    this.setData({
+      visible: false,
+      historyList: [],
+      currentHistoryTab: -1,
+    })
+  },
+  handleCancel(){
+    this.setData({
+      visible: false
+    })
+  }
 })

@@ -19,10 +19,10 @@ Page({
     couponStateList:[]
   },
   onShow(){
-    this.getDictAll()
+    this.getDictAll('1')
   },
   // 获取用户字典 
-  getDictAll(){
+  getDictAll(type){
     let couponStateList = []
     let couponList = []
     index.getDict({ dictType: 'coupon_state' }).then(res => {
@@ -33,11 +33,24 @@ Page({
         }).then(res => {
           if(res.code == 200){
             couponList = res.result
-            if(couponList && couponStateList){
+            if(type == 1){
               this.setData({
-                couponList:this.findDictLabel(couponStateList,couponList)
+                couponList: res.result.normalList
+              })
+            }else if(type == 2){
+              this.setData({
+                couponList: res.result.usedlList
+              })
+            }else if(type ==3){
+              this.setData({
+                couponList: res.result.invalidlList
               })
             }
+            // if(couponList && couponStateList){
+            //   this.setData({
+            //     couponList:this.findDictLabel(couponStateList,couponList)
+            //   })
+            // }
           }else{
             $Toast({
               content: res.msg,
@@ -46,22 +59,6 @@ Page({
           }
         })
       }else {
-        $Toast({
-          content: res.msg,
-          type: 'error'
-        });
-      }
-    })
-  },
-  // 获取列表
-  userCouponList(){
-    // 获取优惠券列表
-    mine.userCouponList({
-      id: '2'
-    }).then(res => {
-      if(res.code == 200){
-        this.data.couponList = res.result
-      }else{
         $Toast({
           content: res.msg,
           type: 'error'
@@ -82,6 +79,7 @@ Page({
   // 切换状态
   clickTab(e){
     let cur = e.currentTarget.dataset.current;
+    let id = e.currentTarget.dataset.id;
     if(this.data.currentTab == cur){
       return false;
     }else{
@@ -89,5 +87,6 @@ Page({
         currentTab:cur,
       }) 
     }
+    this.getDictAll(id)
   },
 })

@@ -32,5 +32,9 @@
       <!-- </block> -->
     </scroll-view>
   </view>
+  <view class="no-data" wx:if="{{goodsData.length ==0}}">
+    <image src="{{url}}tabs/no-data.png" mode="widthFix"></image>
+    <view class="no-data-text">暂无数据</view>
+  </view>
   <i-toast id="toast" />
 </view>

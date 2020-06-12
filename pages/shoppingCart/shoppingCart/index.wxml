@@ -1,4 +1,4 @@
-<view class="wrap">
+<view class="wrap" wx:if="{{goodsLength > 0}}">
   <view class="wrap-top">
     <view class="wrap-top-left">共{{goodsLength}}件宝贝</view>
     <view class="wrap-top-right" bindtap="changeName">{{clickName}}</view>
@@ -75,4 +75,9 @@
     <view class="mask-box-bottom" bindtap="closeMask"></view>
   </view>
   <i-toast id="toast" />
+</view>
+<!-- 没有数据时 -->
+<view class="no-data" wx:else>
+  <image src="{{url}}tabs/no-data.png" mode="widthFix"></image>
+  <view class="no-data-text">购物车空空如也~</view>
 </view>

@@ -50,7 +50,7 @@
   </view>
   <view class="wrap-box">
     <view class="wrap-box-title">商品介绍</view>
-    <view class="wrap-box-image" wx:for="{{goodInfo.detailList}}" wx:key>
+    <view class="wrap-box-image" wx:for="{{goodInfo.detailList}}" wx:key="index">
       <image src="{{item.productPic}}"></image>
     </view>
   </view>

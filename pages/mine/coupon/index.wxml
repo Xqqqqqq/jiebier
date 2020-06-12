@@ -4,9 +4,10 @@
     wx:for="{{tabList}}"
     wx:key="index"
     data-current="{{index}}"
+    data-id="{{item.id}}"
     bindtap="clickTab">{{item.name}}</view>
   </view>
-  <view class="wrap-box">
+  <view class="wrap-box" wx:if="{{couponList.length >0}}">
     <view class="wrap-box-li" wx:for="{{couponList}}" wx:key>
       <view class="box-li-left">
         <view class="li-left-img">
@@ -29,6 +30,10 @@
         <image src="{{url}}my/yiguoq.png"></image>
       </view>
     </view>
+  </view>
+  <view class="no-data" wx:else>
+    <image src="{{url}}tabs/no-data.png" mode="widthFix"></image>
+    <view class="no-data-text">暂无数据</view>
   </view>
   <i-toast id="toast" />
 </view>

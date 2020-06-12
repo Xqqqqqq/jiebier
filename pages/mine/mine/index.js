@@ -35,6 +35,7 @@ Page({
         // wxUserInfo: wx.getStorageSync('wxUserInfo')
         wxUserInfo: e.detail.userInfo
       })
+      wx_gotoNewUrl("navigateTo",'/pages/loginAll/loginAdmin/index')
     }else{
       wx.showToast({
         title: '请授权后进行操作！',

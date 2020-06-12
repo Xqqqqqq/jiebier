@@ -33,6 +33,10 @@
       <view class="box-li-btn box-li-btn-orange" catchtap="gotoProgress">查看进度</view>
     </view>
   </view>
+  <view class="no-data">
+    <image src="{{url}}tabs/no-data.png" mode="widthFix"></image>
+    <view class="no-data-text">暂无数据</view>
+  </view>
   <!-- 取消按钮对话框 -->
   <i-modal title="提示" visible="{{ visibleCancel }}" bind:ok="handleCancelTrue" bind:cancel="handleCancelFalse">
     <view>是否确定取消该订单</view>

@@ -8,9 +8,9 @@
     bindtap="clickTab">{{item.name}}</view>
   </view>
   <!-- li部分 -->
-  <view class="wrap-box">
+  <view class="wrap-box" wx:if="{{goodsList.length > 0}}">
     <view class="wrap-box-li" bindtap="gotoRouter" 
-    wx:for="{{goodsList}}" wx:key data-id="{{item.id}}" data-name="{{item.productName}}">
+    wx:for="{{goodsList}}" wx:key="index" data-id="{{item.id}}" data-name="{{item.productName}}">
       <view class="box-li-left">
         <image src="{{item.mainImg}}"></image>
       </view>
@@ -26,6 +26,10 @@
         </view>
       </view>
     </view>
+  </view>
+  <view class="no-data" wx:else>
+    <image src="{{url}}tabs/no-data.png" mode="widthFix"></image>
+    <view class="no-data-text">暂无数据</view>
   </view>
   <i-toast id="toast" />
 </view>

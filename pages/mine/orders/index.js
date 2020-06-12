@@ -1,6 +1,9 @@
 import { wx_gotoNewUrl } from '../../../utils/fn'
+//获取应用实例
+const app = getApp()
 Page({
   data:{
+    url: app.globalData.url,
     tabList:[
       { id:1, name:"我的订单"},
       { id:2, name:"待收货"},

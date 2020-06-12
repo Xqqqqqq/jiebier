@@ -2456,6 +2456,48 @@
 					"id": -1,
 					"name": "pages/classify/selectCity/index",
 					"pathName": "pages/classify/selectCity/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/news/news/index",
+					"pathName": "pages/news/news/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/searchDetail/index",
+					"pathName": "pages/index/searchDetail/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/searchDetail/index",
+					"pathName": "pages/index/searchDetail/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/searchDetail/index",
+					"pathName": "pages/index/searchDetail/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/classify/classify/index",
+					"pathName": "pages/classify/classify/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/classify/selectCity/index",
+					"pathName": "pages/classify/selectCity/index",
 					"scene": null
 				}
 			]

@@ -4,14 +4,14 @@
     <input bindinput="bindNameInput" value="{{goodsName}}" name="goodsName" 
     type="text" placeholder="万千好物等你搜索" placeholder-class="input-placeholder" class="input-length"/>
     <view class="search-icon" bindtap="clickSearch">
-      <!-- <image src="{{url}}search-white.png"></image> -->
+      <image src="{{url}}index/search.png"></image>
     </view>
   </view>
   <!-- 历史记录 -->
   <view class="wrap-name" wx:if="{{historyList.length >0}}">
     历史记录
-    <view class="wrap-name-icon">
-      <!-- <image src="{{url}}search-white.png"></image> -->
+    <view class="wrap-name-icon" bindtap="clickDelete">
+      <image src="{{url}}index/delete.png"></image>
     </view>
   </view>
   <view class="history" wx:if="{{historyList.length >0}}">
@@ -19,6 +19,9 @@
     data-index="{{index}}" bindtap="clickHistoryTab"
     class="{{currentHistoryTab==index ? 'tab-li tab-li-ture' : 'tab-li'}}">{{item}}</view>
   </view>
+  <i-modal title="提示" visible="{{ visible }}" bind:ok="handleOk" bind:cancel="handleCancel">
+    <view>是否确认删除所有历史记录？</view>
+  </i-modal>
   <!-- 热门搜索 -->
   <!-- <view class="wrap-name">热门搜索</view>
   <view class="history">

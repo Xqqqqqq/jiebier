@@ -45,8 +45,10 @@
   color: #999999;
 }
 .my-box-line{
-  border-bottom: 1px solid #E6E6E6;
+  /* border-bottom: 1px solid #E6E6E6; */
   width: 95%;
+  height: 1px;
+  background-color: #eeeeee;
   margin: auto;
 }
 .my-box-block{

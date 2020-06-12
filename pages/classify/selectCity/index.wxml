@@ -1,5 +1,5 @@
 <view class="wrap">
-  <view class="wrap-pos">定位城市<text>沈阳</text></view>
+  <view class="wrap-pos" wx:if="{{posCity}}">定位城市<text>{{posCity}}</text></view>
   <view class="wrap-recommend" wx:if="{{recommendList.length > 0}}">
     <view class="{{currentTab==index ? 'recommend-li-ture' : 'recommend-li'}}"
     wx:for="{{recommendList}}"
@@ -8,7 +8,7 @@
     data-item="{{item}}"
     bindtap="clickTab">{{item.regionName}}</view>
   </view>
-  <view class="i-index-demo" style="height: 100%; position:relative">
+  <view class="i-index-demo" style="position:relative; height:{{height}}" >
     <i-index height="100%" bind:change="onChange">
       <i-index-item
         wx:for="{{ cities }}" 

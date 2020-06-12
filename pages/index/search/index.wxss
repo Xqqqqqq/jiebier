@@ -23,7 +23,6 @@
   top: 50%;
   right: 0;
   transform: translateY(-50%);
-  background-color: red;
 }
 .wrap-name-icon image{
   width: 100%;

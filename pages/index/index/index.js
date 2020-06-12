@@ -27,92 +27,111 @@ Page({
     //   index: 1,
     //   text: '4'
     // })
-    // 获取定位
-    let vm = this
-    wx.getSetting({
-      success(res){
-        let status = res.authSetting['scope.userLocation']
-        if (status !== undefined && status !== true){
-          wx.showModal({
-            title: '请求授权当前位置',
-            content: '需要获取您的地理位置，请确认授权',
-            success(res) {
-              if(res.cancel){
-                //取消授权
-                wx.showToast({
-                  title: '拒绝授权,无法获取当前位置！',
-                  icon: 'none',
-                  duration: 1000
-                })
-              }else if(res.confirm){
-                wx.openSetting({
-                  success (res) {
-                    if (res.authSetting["scope.userLocation"] == true) {
-                      wx.showToast({
-                        title: '授权成功',
-                        icon: 'success',
-                        duration: 1000
-                      })
-                      vm.geo();
-                    }else{
-                      wx.showToast({
-                        title: '授权失败',
-                        icon: 'none',
-                        duration: 1000
-                      })
-                    }
-                  }
-                })
-              }
-            }
-          })
-        }else if(status == undefined) {
-          vm.geo();
-        }else {
-          vm.geo();
-        } 
-      }
+    this.setData({
+      selectTab: -1,
+      name: '',
+      currentTab: -1,
+      collapseList: [], //选择城市的数组
+      recommendList:[],
+      showRecommend: false,
     })
+    if(wx.getStorageSync('userCity')){
+      this.setData({
+        recommendList: wx.getStorageSync('userCity'),
+        showRecommend: true,
+      })
+    }else{
+      // 获取定位
+      let vm = this
+      wx.getSetting({
+        success(res){
+          let status = res.authSetting['scope.userLocation']
+          if (status !== undefined && status !== true){
+            wx.showModal({
+              title: '请求授权当前位置',
+              content: '需要获取您的地理位置，请确认授权',
+              success(res) {
+                if(res.cancel){
+                  //取消授权
+                  wx.showToast({
+                    title: '拒绝授权,无法获取当前位置！',
+                    icon: 'none',
+                    duration: 1000
+                  })
+                }else if(res.confirm){
+                  wx.openSetting({
+                    success (res) {
+                      if (res.authSetting["scope.userLocation"] == true) {
+                        wx.showToast({
+                          title: '授权成功',
+                          icon: 'success',
+                          duration: 1000
+                        })
+                        vm.geo();
+                      }else{
+                        wx.showToast({
+                          title: '授权失败',
+                          icon: 'none',
+                          duration: 1000
+                        })
+                      }
+                    }
+                  })
+                }
+              }
+            })
+          }else if(status == undefined) {
+            vm.geo();
+          }else {
+            vm.geo();
+          } 
+        }
+      })
+    }
     this.getRegionTree()
     this.getLoops()
   },
   geo(){
     let vm =this
-    wx.getLocation({
-      type: 'gcj02',
-      success (res) {
-        if(res.latitude && res.longitude){
-          index.getAddressInfo({
-            "lat": res.latitude,
-            "lng": res.longitude
-          }).then(res => {
-            if(res.code == '200'){
-              wx.setStorage({
-                key: 'userCity',
-                data: res.result
-              })
-              wx.setStorage({
-                key: 'showRecommend',
-                data: true,
-              })
-              vm.setData({
-                recommendList: res.result,
-                showRecommend: true,
-              })
-            }else{
-              wx.setStorage({
-                key: 'showRecommend',
-                data: false,
-              })
-              vm.setData({
-                recommendList: res.result,
-                showRecommend: false,
-              })
-            }
-          })
+      wx.getLocation({
+        type: 'gcj02',
+        success (res) {
+          if(res.latitude && res.longitude){
+            index.getAddressInfo({
+              "lat": res.latitude,
+              "lng": res.longitude
+            }).then(res => {
+              if(res.code == '200'){
+                wx.setStorage({
+                  key: 'userCity',
+                  data: res.result.regions
+                })
+                wx.setStorage({
+                  key: 'showRecommend',
+                  data: true,
+                })
+                wx.setStorage({
+                  key: 'posCity',
+                  data: res.result.city,
+                })
+                vm.setData({
+                  recommendList: res.result,
+                  showRecommend: true,
+                })
+              }else{
+                wx.setStorage({
+                  key: 'showRecommend',
+                  data: false,
+                })
+                vm.setData({
+                  recommendList: res.result,
+                  showRecommend: false,
+                })
+              }
+            })
+          }
         }
-      }
-    })
+      })
   },
   // 获取地区分类
   getRegionTree(){
