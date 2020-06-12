@@ -45,10 +45,10 @@
   color: #999999;
 }
 .my-box-line{
-  /* border-bottom: 1px solid #E6E6E6; */
+  border-bottom: 1rpx solid #e9eaec;
   width: 95%;
-  height: 1px;
-  background-color: #eeeeee;
+  /* height: 1rpx;
+  background-color: #e9eaec; */
   margin: auto;
 }
 .my-box-block{

@@ -47,7 +47,7 @@ page{
   padding-left: 40rpx;
   box-sizing: border-box;
   position: relative;
-  border-bottom: 1px solid #eeeeee;
+  /* border-bottom: 1px solid #eeeeee; */
 }
 .wrap-box-li-other{
   border-bottom: none;
@@ -75,11 +75,12 @@ page{
   text-align: center;
 }
 .box-block-img{
-  width: 100%;
+  width: 558rpx;
   height: 340rpx;
   border-radius: 10rpx;
   overflow: hidden;
   text-align: center;
+  margin: auto;
 }
 .box-block-img image{
   width: 98%;

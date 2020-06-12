@@ -115,7 +115,7 @@ Page({
                   data: res.result.city,
                 })
                 vm.setData({
-                  recommendList: res.result,
+                  recommendList: res.result.regions,
                   showRecommend: true,
                 })
               }else{

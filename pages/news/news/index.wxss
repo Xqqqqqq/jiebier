@@ -31,6 +31,7 @@
   margin-bottom: 27rpx;
   font-size: 30rpx;
   color: #000000;
+  font-weight: bold;
 }
 .message-bottom-tip{
   font-size: 24rpx;

@@ -103,7 +103,7 @@ swiper-item image {
   justify-content: space-between;
   height: 97rpx;
   line-height: 97rpx;
-  border-bottom: 1px solid #eeeeee;
+  border-bottom: 1rpx solid #e9eaec;
 }
 .wrap-box-li-left{
   font-size: 28rpx;

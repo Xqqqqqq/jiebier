@@ -115,3 +115,8 @@ swiper-item image {
 .collapse-label-title{
   width: 80%;
 }
+.wrap-collapse{
+  width: 100%;
+  padding: 0 24rpx;
+  box-sizing: border-box;
+}

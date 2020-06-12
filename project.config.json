@@ -4,7 +4,7 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": false,
+		"urlCheck": true,
 		"es6": true,
 		"enhance": true,
 		"postcss": true,
@@ -2498,6 +2498,13 @@
 					"id": -1,
 					"name": "pages/classify/selectCity/index",
 					"pathName": "pages/classify/selectCity/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/fillInformation/index",
+					"pathName": "pages/index/fillInformation/index",
 					"scene": null
 				}
 			]

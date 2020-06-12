@@ -32,7 +32,52 @@
     <scroll-view scroll-x="true">
       <view class="scroll-li">
         <view class="scroll-li-img">
-          <!-- <image src=""></image> -->
+          <image src="{{url}}index/1.jpg"></image>
+        </view>
+        <view class="scroll-li-bottom">
+          <view class="scroll-li-bottom-title">新鲜脐橙</view>
+          <view class="scroll-li-bottom-num">销量：101010</view>
+          <view class="scroll-li-bottom-price">
+            <text>￥</text>300
+            <view class="li-bottom-price">
+              <image src="{{url}}index/cart.png"></image>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="scroll-li">
+        <view class="scroll-li-img">
+          <image src="{{url}}index/2.jpg"></image>
+        </view>
+        <view class="scroll-li-bottom">
+          <view class="scroll-li-bottom-title">新鲜脐橙</view>
+          <view class="scroll-li-bottom-num">销量：101010</view>
+          <view class="scroll-li-bottom-price">
+            <text>￥</text>300
+            <view class="li-bottom-price">
+              <image src="{{url}}index/cart.png"></image>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="scroll-li">
+        <view class="scroll-li-img">
+          <image src="{{url}}index/3.jpg"></image>
+        </view>
+        <view class="scroll-li-bottom">
+          <view class="scroll-li-bottom-title">新鲜脐橙</view>
+          <view class="scroll-li-bottom-num">销量：101010</view>
+          <view class="scroll-li-bottom-price">
+            <text>￥</text>300
+            <view class="li-bottom-price">
+              <image src="{{url}}index/cart.png"></image>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="scroll-li">
+        <view class="scroll-li-img">
+          <image src="{{url}}index/4.jpg"></image>
         </view>
         <view class="scroll-li-bottom">
           <view class="scroll-li-bottom-title">新鲜脐橙</view>
@@ -64,31 +109,33 @@
   <view class="wrap-title">
     <view class="wrap-title-name">选择城市</view>
   </view>
-  <i-collapse accordion name="{{name}}">
-    <i-collapse-item 
-    title="{{item.regionName}}" wx:for="{{collapseList}}" wx:key="index" name="{{item.regionName}}"
-    i-class-title="collapse-item-title" i-class-content="collapse-item-content">
-      <view slot="content">
-        <view class="wrap-recommend wrap-recommend-other">
-          <view class="{{selectTab==indexSmall ? 'recommend-li-ture' : 'recommend-li'}}"
-          wx:for="{{item.children}}"
-          wx:key="index"
-          wx:for-item="itemSmaller"
-          wx:for-index="indexSmall"
-          data-name="{{itemSmaller.regionName}}"
-          data-id="{{itemSmaller.id}}"
-          data-indexsmall="{{indexSmall}}"
-          data-index="{{index}}"
-          bindtap="selectTab">{{itemSmaller.regionName}}</view>
+  <view class="wrap-collapse">
+    <i-collapse accordion name="{{name}}">
+      <i-collapse-item 
+      title="{{item.regionName}}" wx:for="{{collapseList}}" wx:key="index" name="{{item.regionName}}"
+      i-class-title="collapse-item-title" i-class-content="collapse-item-content">
+        <view slot="content">
+          <view class="wrap-recommend wrap-recommend-other">
+            <view class="{{selectTab==indexSmall ? 'recommend-li-ture' : 'recommend-li'}}"
+            wx:for="{{item.children}}"
+            wx:key="index"
+            wx:for-item="itemSmaller"
+            wx:for-index="indexSmall"
+            data-name="{{itemSmaller.regionName}}"
+            data-id="{{itemSmaller.id}}"
+            data-indexsmall="{{indexSmall}}"
+            data-index="{{index}}"
+            bindtap="selectTab">{{itemSmaller.regionName}}</view>
+          </view>
+          <!-- <radio-group bindchange="radioChange">
+            <label class="collapse-label" wx:for="{{item.children}}" wx:key="index" wx:for-item="itemSmall">
+              <radio value="{{itemSmall.id}}" checked="{{itemSmall.checked}}"/>
+              <view class="collapse-label-title">{{itemSmall.value}}</view>
+            </label>
+          </radio-group> -->
         </view>
-        <!-- <radio-group bindchange="radioChange">
-          <label class="collapse-label" wx:for="{{item.children}}" wx:key="index" wx:for-item="itemSmall">
-            <radio value="{{itemSmall.id}}" checked="{{itemSmall.checked}}"/>
-            <view class="collapse-label-title">{{itemSmall.value}}</view>
-          </label>
-        </radio-group> -->
-      </view>
-    </i-collapse-item>
-  </i-collapse>
+      </i-collapse-item>
+    </i-collapse>
+  </view>
   <i-toast id="toast" />
 </view>
