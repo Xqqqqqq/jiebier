@@ -18,11 +18,35 @@
         <view class="li-right-price">
           <text class="li-right-price-small">￥</text>300
           <text class="li-right-num">销量：111</text>
-          <view class="li-right-pos">
+          <view class="li-right-pos" bindtap="openPopup">
             <image src="{{url}}index/cart.png"></image>
           </view>
         </view>
       </view>
     </view>
+  </view>
+  <!-- 底部弹窗 -->
+  <view class="wrap-mask" wx:if="{{showPopup}}" bindtap="closePopup"></view>
+  <view class="popup" wx:if="{{showPopup}}">
+    <radio-group bindchange="typeChange">
+      <view class="popup-li" wx:for="{{typeList}}" wx:key="index">
+        <label class="popup-left">
+          <view class="popup-left-check">
+            <radio value="{{item.id}}"/>
+          </view>
+          <view class="popup-left-name">{{item.type}}</view>
+        </label>
+        <view class="popup-right">
+          <view class="popup-right-img">
+            <image src="{{url}}index/del.png"></image>
+          </view>
+          <view class="popup-right-num">{{item.num}}</view>
+          <view class="popup-right-img">
+            <image src="{{url}}index/add.png"></image>
+          </view>
+        </view>
+      </view>
+    </radio-group>
+    <view class="popup-btn">加入购物车</view>
   </view>
 </view>

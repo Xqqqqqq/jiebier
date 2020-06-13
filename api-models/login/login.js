@@ -47,5 +47,32 @@ class Login extends HTTP {
       method:"GET"
     })
   }
+   /**
+   * 	忘记密码点击下一步
+   */
+  forgetPassNext(data){
+    return this.request({
+      url:'/api/member/forgetPassNext',
+      data: data,
+    })
+  }
+   /**
+   * 	忘记密码发送验证码
+   */
+  forgetPassSendCode(data){
+    return this.request({
+      url:'/api/member/forgetPassSendCode',
+      data: data,
+    })
+  }
+   /**
+   * 	忘记密码设置新密码
+   */
+  forgetPassSetNewPass(data){
+    return this.request({
+      url:'/api/member/forgetPassSetNewPass',
+      data: data,
+    })
+  }
 }
 export { Login }

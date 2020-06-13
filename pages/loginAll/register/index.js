@@ -107,7 +107,7 @@ Page({
         content: '请检查输入项！',
         type: 'warning'
       });
-    }if(!regPhone.test(this.data.submitForm.tel)){
+    }else if(!regPhone.test(this.data.submitForm.tel)){
       $Toast({
         content: '请输入正确的手机号！',
         type: 'warning'
@@ -136,7 +136,7 @@ Page({
             })
             wx_gotoNewUrl('switchTab','/pages/mine/mine/index')
             $Toast.hide();
-          }, 3000);
+          }, 1000);
         }else{
           $Toast({
             content: res.msg,

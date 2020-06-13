@@ -2554,6 +2554,13 @@
 					"id": -1,
 					"name": "pages/shoppingCart/shoppingCart/index",
 					"pathName": "pages/shoppingCart/shoppingCart/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/loginAll/forget/index",
+					"pathName": "pages/loginAll/forget/index",
 					"scene": null
 				}
 			]

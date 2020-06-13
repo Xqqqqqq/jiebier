@@ -41,7 +41,7 @@ Page({
       if(res.code == 200){
         if(res.result.productOutVo.express == 1){
           this.data.typeList.push({
-            id:'1',
+            id:'3',
             name: '快递'
           })
         }
@@ -53,7 +53,7 @@ Page({
         }
         if(res.result.productOutVo.isDelivery == 1){
           this.data.typeList.push({
-            id:'3',
+            id:'1',
             name: '商家配送'
           })
         }
@@ -74,7 +74,7 @@ Page({
   // 点击加减商品
   quantityChange(e){
     let quantity = this.data.goodsDetail.productNum
-    if(e.target.id == 'sub'){
+    if(e.currentTarget.id == 'sub'){
       if(quantity <= 1){
         $Toast({
           content: '该宝贝不能减少了哦~',
@@ -84,7 +84,7 @@ Page({
       }else{
         quantity -= 1
       }
-    }else if(e.target.id == 'add'){
+    }else if(e.currentTarget.id == 'add'){
       quantity += 1
     }
     this.setData({
@@ -92,7 +92,6 @@ Page({
     })
   },
   addShop(){
-    console.log(this.data.goodsDetail)
     classify.addCart({
       userId:'1', //	string 用户id
       ...this.data.goodsDetail
