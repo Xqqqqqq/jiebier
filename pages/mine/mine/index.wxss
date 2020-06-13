@@ -45,7 +45,7 @@
   color: #999999;
 }
 .my-box-line{
-  border-bottom: 1rpx solid #e9eaec;
+  border-bottom: 1rpx solid #f4f4f6;
   width: 95%;
   /* height: 1rpx;
   background-color: #e9eaec; */

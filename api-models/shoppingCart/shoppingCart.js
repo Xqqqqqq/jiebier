@@ -10,5 +10,15 @@ class ShoppingCart extends HTTP {
       method:"GET"
     })
   }
+  /**
+   * 	删除购物车记录
+   */
+  delCart(data){
+    return this.request({
+      url:'/api/company/delCart',
+      data: data,
+      method:"GET"
+    })
+  }
 }
 export { ShoppingCart }

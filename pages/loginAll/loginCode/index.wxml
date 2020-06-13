@@ -6,12 +6,13 @@
   <view class="wrap-box">
     <view class="wrap-box-left">+86</view>
     <view class="wrap-box-line"></view>
-    <input class="wrap-box-input" placeholder="请输入手机号" placeholder-class="input-placeholder"/>
+    <input bindinput="bindTelInput" value="{{submitForm.tel}}" name="submitForm.tel" type="number"  class="wrap-box-input" placeholder="请输入手机号" placeholder-class="input-placeholder"/>
   </view>
   <view class="wrap-box wrap-box-other">
-    <input class="wrap-box-input box-input-other" placeholder="请输入验证码" placeholder-class="input-placeholder"/>
-    <view class="wrap-box-code">发送验证码</view>
+    <input bindinput="bindCodeInput" value="{{submitForm.telCode}}" name="submitForm.telCode" type="number" class="wrap-box-input box-input-other" placeholder="请输入验证码" placeholder-class="input-placeholder"/>
+    <view class="wrap-box-code" bindtap="getCode">{{btnName}}</view>
   </view>
   <view class="wrap-box-type" bindtap="gotoUrl">账户登录</view>
-  <view class="wrap-box-btn">提交</view>
+  <view class="wrap-box-btn" bindtap="clickSubmit">提交</view>
+  <i-toast id="toast" />
 </view>

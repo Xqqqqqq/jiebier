@@ -11,6 +11,9 @@ Page({
     wxUserInfo: {}, // 获取微信信息
   },
   onShow(){
+    this.setData({
+      isLogin:app.globalData.loginStatus,
+    })
     if(this.data.isLogin == true){
       if(wx.getStorageSync('wxUserInfo')){
         this.setData({

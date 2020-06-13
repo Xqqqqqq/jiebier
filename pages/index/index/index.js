@@ -19,7 +19,25 @@ Page({
     currentTab: -1,
     collapseList: [], //选择城市的数组
     selectTab: -1,
-    name: ''
+    name: '',
+    typeList:[
+      {
+        id:'1',
+        type: '商品自提',
+        num:1
+      },
+      {
+        id:'2',
+        type: '商品配送',
+        num:1
+      },
+      {
+        id:'3',
+        type: '商品物流',
+        num:1
+      },
+    ],
+    showPopup:false, // 是否显示底部弹窗
   },
   onShow(){
     // 设置购物车数量
@@ -161,6 +179,19 @@ Page({
           type: 'error'
         });
       }
+    })
+  },
+  typeChange(e){
+    console.log(e.detail.value)
+  },
+  openPopup(){
+    this.setData({
+      showPopup: true
+    })
+  },
+  closePopup(){
+    this.setData({
+      showPopup: false
     })
   },
   // 推荐城市

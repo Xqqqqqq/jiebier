@@ -4,15 +4,16 @@
   </view>
 
   <view class="wrap-box">
-    <input class="wrap-box-input" placeholder="请输入手机号" placeholder-class="input-placeholder"/>
+    <input bindinput="bindTelInput" value="{{submitForm.tel}}" name="submitForm.tel" type="number"  class="wrap-box-input" placeholder="请输入手机号" placeholder-class="input-placeholder"/>
   </view>
   <view class="wrap-box wrap-box-other">
-    <input class="wrap-box-input" placeholder="请输入密码" placeholder-class="input-placeholder"/>
+    <input bindinput="bindPasInput" value="{{submitForm.password}}" name="submitForm.password" password class="wrap-box-input" placeholder="请输入密码" placeholder-class="input-placeholder"/>
   </view>
   <view class="wrap-box-type" bindtap="gotoUrl" data-url="/pages/loginAll/loginCode/index" data-type="navigateTo">手机验证</view>
-  <view class="wrap-box-btn">提交</view>
+  <view class="wrap-box-btn" bindtap="clickSubmit">提交</view>
   <view class="wrap-box-bottom">
     <view bindtap="gotoUrl" data-url="/pages/loginAll/forget/index" data-type="navigateTo">忘记密码</view>
     <view bindtap="gotoUrl" data-url="/pages/loginAll/register/index" data-type="navigateTo">注册</view>
   </view>
+  <i-toast id="toast" />
 </view>

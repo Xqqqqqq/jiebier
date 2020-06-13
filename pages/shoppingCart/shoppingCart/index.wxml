@@ -26,10 +26,10 @@
             <view class="right-top-score">{{itemSmall.productPrice}}积分</view>
           </view>
           <!-- <view class="content-right-type" catchtap="openMask"> -->
-          <view class="content-right-type">
+          <view class="content-right-type" wx:if="{{itemSmall.deliveryLabel}}">
             <view>取货方式：</view>
             <!-- <view>商品自提></view> -->
-            <view>商品自提</view>
+            <view>{{itemSmall.deliveryLabel}}</view>
           </view>
           <view class="content-right-bottom">
             <view class="right-bottom-left"><text>￥</text>{{itemSmall.productPrice}}</view>
@@ -60,7 +60,7 @@
       </view>
       <view class="wrap-btn-pirce">合计 <text class="btn-pirce-text">￥</text><text class="btn-pirce-num">{{totalMoney}}</text></view>
     </view>
-    <view class="wrap-bottom-btn" wx:if="{{showDelete}}">删 除</view>
+    <view class="wrap-bottom-btn" wx:if="{{showDelete}}" bindtap="clickDelete">删 除</view>
     <view class="wrap-bottom-btn" wx:else>结 算</view>
   </view>
   <!-- 弹出层 -->

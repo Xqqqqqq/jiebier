@@ -26,7 +26,7 @@
   position: relative;
   padding-bottom: 30rpx;
   box-sizing: border-box;
-  border-bottom: 1rpx solid #e9eaec;
+  border-bottom: 1rpx solid #f4f4f6
 }
 .li-top-img{
   width:120rpx;

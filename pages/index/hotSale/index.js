@@ -1,5 +1,12 @@
+import { Index } from '../../../api-models/index/index';
+const index = new Index();
+const { $Toast } = require('../../../dist/base/index');
+import { wx_gotoNewUrl } from '../../../utils/fn'
+//获取应用实例
+const app = getApp()
 Page({
   data:{
+    url: app.globalData.url,
     tabList:[
       { id:1, name:"热销" },
       { id:2, name:"价格" },

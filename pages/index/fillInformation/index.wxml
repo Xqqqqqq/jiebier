@@ -26,7 +26,7 @@
       </view>
     </view>
     <view class="wrap-box-li">
-      <view class="wrap-box-li-img" style="width: 44rpx; height: 46rpx;">
+      <view class="wrap-box-li-img" style="width: 46rpx; height: 46rpx;">
         <image src="{{url}}index/qiyezhonglei.png"></image>
       </view>
       <view class="wrap-box-li-input">

@@ -4,7 +4,7 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"enhance": true,
 		"postcss": true,
@@ -2505,6 +2505,48 @@
 					"id": -1,
 					"name": "pages/index/fillInformation/index",
 					"pathName": "pages/index/fillInformation/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/shoppingCart/shoppingCart/index",
+					"pathName": "pages/shoppingCart/shoppingCart/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/shoppingCart/shoppingCart/index",
+					"pathName": "pages/shoppingCart/shoppingCart/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/shoppingCart/shoppingCart/index",
+					"pathName": "pages/shoppingCart/shoppingCart/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/loginAll/loginAdmin/index",
+					"pathName": "pages/loginAll/loginAdmin/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/loginAll/loginCode/index",
+					"pathName": "pages/loginAll/loginCode/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/loginAll/loginCode/index",
+					"pathName": "pages/loginAll/loginCode/index",
 					"query": "",
 					"scene": null
 				},

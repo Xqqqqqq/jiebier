@@ -3,17 +3,18 @@
     <!-- <image></image> -->
   </view>
   <view class="wrap-box">
-    <input class="wrap-box-input" placeholder="请输入手机号或者用户名" placeholder-class="input-placeholder"/>
+    <input bindinput="bindTelInput" value="{{submitForm.tel}}" name="submitForm.tel" type="number" class="wrap-box-input" placeholder="请输入手机号" placeholder-class="input-placeholder"/>
   </view>
   <view class="wrap-box">
-    <input class="wrap-box-input" placeholder="请输入密码，8-16位字符组成" placeholder-class="input-placeholder"/>
+    <input bindinput="bindPasInput" value="{{submitForm.password}}" name="submitForm.password" password type="text" class="wrap-box-input" placeholder="请输入密码" placeholder-class="input-placeholder"/>
   </view>
   <view class="wrap-box">
-    <input class="wrap-box-input" placeholder="确认密码" placeholder-class="input-placeholder"/>
+    <input bindinput="bindrePInput" value="{{rePassword}}" name="rePassword" type="text" password class="wrap-box-input" placeholder="请确认密码" placeholder-class="input-placeholder"/>
   </view>
   <view class="wrap-box wrap-box-other">
-    <input class="wrap-box-input box-input-other" placeholder="请输入验证码" placeholder-class="input-placeholder"/>
-    <view class="wrap-box-code">发送验证码</view>
+    <input bindinput="bindCodeInput" value="{{submitForm.telCode}}" name="submitForm.telCode" type="number" class="wrap-box-input box-input-other" placeholder="请输入验证码" placeholder-class="input-placeholder"/>
+    <view class="wrap-box-code" bindtap="getCode">{{btnName}}</view>
   </view>
-  <view class="wrap-box-btn">注册</view>
+  <view class="wrap-box-btn" bindtap="clickSubmit">注册</view>
+  <i-toast id="toast" />
 </view>

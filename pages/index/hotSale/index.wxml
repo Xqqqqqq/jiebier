@@ -19,7 +19,7 @@
           <text class="li-right-price-small">￥</text>300
           <text class="li-right-num">销量：111</text>
           <view class="li-right-pos">
-            <!-- <image src=""></image> -->
+            <image src="{{url}}index/cart.png"></image>
           </view>
         </view>
       </view>

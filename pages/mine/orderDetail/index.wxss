@@ -18,7 +18,7 @@
   box-sizing: border-box;
   position: relative;
   display: flex;
-  border-bottom: 1px solid #e9eaec;
+  border-bottom: 1rpx solid #f4f4f6
 }
 .click-li-img{
   width: 58rpx;
@@ -49,7 +49,7 @@
   line-height: 100rpx;
   display: flex;
   justify-content: space-between;
-  border-bottom: 1rpx solid #e9eaec;
+  border-bottom: 1rpx solid #f4f4f6
 }
 .detail-li-left{
   color: #202020;
