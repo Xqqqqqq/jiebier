@@ -1,8 +1,16 @@
 //index.js
 //获取应用实例
+import { Index } from '../../../api-models/index/index';
+const index = new Index();
+import { Classify } from '../../../api-models/classify/classify';
+const classify = new Classify();
+const { $Toast } = require('../../../dist/base/index');
+import { wx_gotoNewUrl } from '../../../utils/fn'
+//获取应用实例
 const app = getApp()
 Page({
   data: {
+    url: app.globalData.url,
     currentScrollId: '',// 值应为某子元素id（id不能以数字开头）。设置哪个方向可滚动，则在哪个方向滚动到该元素
     cp_index: 0,// 左侧点击下标
     leftTop: 0, // 左侧竖向滚动条位置

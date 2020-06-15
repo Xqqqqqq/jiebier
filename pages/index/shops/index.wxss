@@ -225,7 +225,6 @@ page{
   width: 60rpx;
   height: 47rpx;
   position: relative;
-  background-color: red;
 }
 .bottom-left-shop image{
   width: 100%;

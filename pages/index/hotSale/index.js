@@ -34,6 +34,23 @@ Page({
   },
   onLoad(options){
     console.log(options)
+    index.wxOrderPay().then(res => {
+      console.log(res)
+      wx.requestPayment({
+        'timeStamp': res.timeStamp,
+        'nonceStr': res.nonceStr,
+        'package': res.package,
+        'signType': 'MD5',
+        'paySign': res.paySign,
+        'success': function (res) {
+          console.log("支付成功");
+        },
+        'fail': function (res) {
+          //支付失败后的回掉
+          console.log("支付失败");
+        }
+      })
+    })
   },
   clickTab(e){
     let cur = e.currentTarget.dataset.current;

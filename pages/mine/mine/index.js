@@ -12,15 +12,13 @@ Page({
   },
   onShow(){
     // if(this.data.isLogin == true){
-    if(wx.getStorageSync('loginStatus')){
+    if(wx.getStorageSync('loginStatus') && wx.getStorageSync('wxUserInfo')){
       this.setData({
-        isLogin: wx.getStorageSync('loginStatus')
+        isLogin: wx.getStorageSync('loginStatus'),
+        wxUserInfo: wx.getStorageSync('wxUserInfo')
       })
-      if(wx.getStorageSync('wxUserInfo')){
-        this.setData({
-          wxUserInfo: wx.getStorageSync('wxUserInfo')
-        })
-      }
+    }else{
+
     }
   },
   gotoRouter(e){
@@ -41,10 +39,9 @@ Page({
       })
       wx_gotoNewUrl("navigateTo",'/pages/loginAll/loginAdmin/index')
     }else{
-      wx.showToast({
-        title: '请授权后进行操作！',
-        icon: 'none',
-        duration: 2000
+      $Toast({
+        content: '请授权后进行操作！',
+        type: 'warning'
       });
     }
   },

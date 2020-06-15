@@ -87,7 +87,7 @@
   <view class="bottom">
     <view class="bottom-left">
       <view class="bottom-left-shop">
-        <!-- <image></image> -->
+        <image src="{{url}}index/shopping.png"></image>
         <view class="left-shop-num">1</view>
       </view>
       <view class="bottom-left-price">

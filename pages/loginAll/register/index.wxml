@@ -15,6 +15,7 @@
     <input bindinput="bindCodeInput" value="{{submitForm.telCode}}" name="submitForm.telCode" type="number" class="wrap-box-input box-input-other" placeholder="请输入验证码" placeholder-class="input-placeholder"/>
     <view class="wrap-box-code" disabled="{{disabled}}" bindtap="getCode">{{btnName}}</view>
   </view>
-  <view class="wrap-box-btn" bindtap="clickSubmit">注册</view>
+  <button class="wrap-box-btn" bindgetuserinfo="clickSubmit" open-type="getUserInfo">注册</button>
+  <!-- <view class="wrap-box-btn" bindtap="clickSubmit">注册</view> -->
   <i-toast id="toast" />
 </view>

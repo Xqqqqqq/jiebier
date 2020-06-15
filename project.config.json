@@ -2568,6 +2568,34 @@
 					"id": -1,
 					"name": "pages/loginAll/loginAdmin/index",
 					"pathName": "pages/loginAll/loginAdmin/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/loginAll/loginCode/index",
+					"pathName": "pages/loginAll/loginCode/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/hotSale/index",
+					"pathName": "pages/index/hotSale/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/hotSale/index",
+					"pathName": "pages/index/hotSale/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/shops/index",
+					"pathName": "pages/index/shops/index",
 					"scene": null
 				}
 			]

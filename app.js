@@ -1,6 +1,8 @@
 //app.js
 import { Index } from './api-models/index/index';
 const index = new Index();
+import { ShoppingCart } from './api-models/shoppingCart/shoppingCart';
+const shoppingCart = new ShoppingCart();
 App({
   onLaunch: function () {
     // 展示本地存储能力
@@ -130,6 +132,24 @@ App({
           }else {
             vm.geo();
           } 
+        }
+      })
+    }
+    // 查询购物车数量
+    if(wx.getStorageSync('userInfo')){
+      shoppingCart.selectCartByUserId({
+        userId: wx.getStorageSync('userInfo').id
+      }).then(res => {
+        if(res.code == 200){
+          let goodsLength = 0
+          for(let i = 0; i < res.result.length; i++){
+            goodsLength += res.result[i].productList.length
+          }
+          // 设置购物车数量
+          wx.setTabBarBadge({
+            index: 2,
+            text: goodsLength+''
+          })
         }
       })
     }

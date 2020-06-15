@@ -13,6 +13,7 @@
     <view class="wrap-box-code" disabled="{{disabled}}" bindtap="getCode">{{btnName}}</view>
   </view>
   <view class="wrap-box-type" bindtap="gotoUrl">账户登录</view>
-  <view class="wrap-box-btn" bindtap="clickSubmit">提交</view>
+  <button class="wrap-box-btn" bindgetuserinfo="clickSubmit" open-type="getUserInfo">提交</button>
+  <!-- <view class="wrap-box-btn" bindtap="clickSubmit">提交</view> -->
   <i-toast id="toast" />
 </view>

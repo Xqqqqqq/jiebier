@@ -83,5 +83,13 @@ class Index extends HTTP {
       url:'/api/product/selectProductHomePage'
     })
   }
+  /**
+   * 	调起支付
+   */
+  wxOrderPay(){
+    return this.request({
+      url:'/api/pay/wxOrderPay'
+    })
+  }
 }
 export { Index }

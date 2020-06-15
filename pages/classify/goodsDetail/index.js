@@ -32,13 +32,11 @@ Page({
       })
     }
     this.productDetail(this.data.goodsDetail.productId)
-    // this.productDetail('ffgdsgfdfdg')
   },
   productDetail(id){
     classify.productDetail({
       id: id
     }).then(res => {
-      // console.log(res)
       if(res.code == 200){
         if(res.result.productOutVo.express == 1){
           this.data.typeList.push({
