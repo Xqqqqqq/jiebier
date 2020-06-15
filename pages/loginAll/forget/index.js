@@ -33,7 +33,6 @@ Page({
       if(this.data.disabled == false){
         login.forgetPassSendCode({
           ...this.data.submitForm,
-          userId: 'a4e6957bad3511ea94340242ac110002'
         }).then(res => {
           if(res.code == '200') {
             $Toast({

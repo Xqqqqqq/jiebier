@@ -30,61 +30,16 @@
   </view>
   <view class="wrap-scroll">
     <scroll-view scroll-x="true">
-      <view class="scroll-li">
+      <view class="scroll-li" wx:for="{{hotList}}" wx:key="index">
         <view class="scroll-li-img">
-          <image src="{{url}}index/1.jpg"></image>
+          <image src="{{item.mainImg}}"></image>
         </view>
         <view class="scroll-li-bottom">
-          <view class="scroll-li-bottom-title">新鲜脐橙</view>
-          <view class="scroll-li-bottom-num">销量：101010</view>
+          <view class="scroll-li-bottom-title">{{item.productName}}</view>
+          <view class="scroll-li-bottom-num">销量：{{item.shopSale}}</view>
           <view class="scroll-li-bottom-price">
-            <text>￥</text>300
+            <text>￥</text>{{item.productPrice}}
             <view class="li-bottom-price" bindtap="openPopup">
-              <image src="{{url}}index/cart.png"></image>
-            </view>
-          </view>
-        </view>
-      </view>
-      <view class="scroll-li">
-        <view class="scroll-li-img">
-          <image src="{{url}}index/2.jpg"></image>
-        </view>
-        <view class="scroll-li-bottom">
-          <view class="scroll-li-bottom-title">新鲜脐橙</view>
-          <view class="scroll-li-bottom-num">销量：101010</view>
-          <view class="scroll-li-bottom-price">
-            <text>￥</text>300
-            <view class="li-bottom-price">
-              <image src="{{url}}index/cart.png"></image>
-            </view>
-          </view>
-        </view>
-      </view>
-      <view class="scroll-li">
-        <view class="scroll-li-img">
-          <image src="{{url}}index/3.jpg"></image>
-        </view>
-        <view class="scroll-li-bottom">
-          <view class="scroll-li-bottom-title">新鲜脐橙</view>
-          <view class="scroll-li-bottom-num">销量：101010</view>
-          <view class="scroll-li-bottom-price">
-            <text>￥</text>300
-            <view class="li-bottom-price">
-              <image src="{{url}}index/cart.png"></image>
-            </view>
-          </view>
-        </view>
-      </view>
-      <view class="scroll-li">
-        <view class="scroll-li-img">
-          <image src="{{url}}index/4.jpg"></image>
-        </view>
-        <view class="scroll-li-bottom">
-          <view class="scroll-li-bottom-title">新鲜脐橙</view>
-          <view class="scroll-li-bottom-num">销量：101010</view>
-          <view class="scroll-li-bottom-price">
-            <text>￥</text>300
-            <view class="li-bottom-price">
               <image src="{{url}}index/cart.png"></image>
             </view>
           </view>

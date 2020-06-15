@@ -52,6 +52,10 @@ Page({
               key: 'userInfo',
               data: res.result,
             })
+            wx.setStorage({
+              key: 'loginStatus',
+              data: true,
+            })
             wx_gotoNewUrl('switchTab','/pages/mine/mine/index')
             $Toast.hide();
           }, 1000);

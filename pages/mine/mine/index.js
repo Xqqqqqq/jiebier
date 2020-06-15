@@ -7,14 +7,15 @@ const app = getApp()
 Page({
   data:{
     url: app.globalData.url,
-    isLogin: app.globalData.loginStatus,
+    isLogin: false,
     wxUserInfo: {}, // 获取微信信息
   },
   onShow(){
-    this.setData({
-      isLogin:app.globalData.loginStatus,
-    })
-    if(this.data.isLogin == true){
+    // if(this.data.isLogin == true){
+    if(wx.getStorageSync('loginStatus')){
+      this.setData({
+        isLogin: wx.getStorageSync('loginStatus')
+      })
       if(wx.getStorageSync('wxUserInfo')){
         this.setData({
           wxUserInfo: wx.getStorageSync('wxUserInfo')

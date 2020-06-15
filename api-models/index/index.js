@@ -75,5 +75,13 @@ class Index extends HTTP {
       method:"GET"
     })
   }
+  /**
+   * 	获取首页热销商品
+   */
+  selectProductHomePage(){
+    return this.request({
+      url:'/api/product/selectProductHomePage'
+    })
+  }
 }
 export { Index }

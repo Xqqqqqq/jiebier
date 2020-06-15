@@ -15,6 +15,7 @@ Page({
     interval: 3000,
     duration: 500,
     recommendList:[],
+    hotList:[],
     showRecommend: false,
     currentTab: -1,
     collapseList: [], //选择城市的数组
@@ -108,6 +109,7 @@ Page({
     }
     this.getRegionTree()
     this.getLoops()
+    this.selectProductHomePage()
   },
   geo(){
     let vm =this
@@ -172,6 +174,21 @@ Page({
       if(res.code == 200){
         this.setData({
           imgUrls: res.result
+        })
+      }else{
+        $Toast({
+          content: res.msg,
+          type: 'error'
+        });
+      }
+    })
+  },
+  // 获取首页热销商品
+  selectProductHomePage(){
+    index.selectProductHomePage().then(res => {
+      if(res.code ==200){
+        this.setData({
+          hotList: res.result
         })
       }else{
         $Toast({
