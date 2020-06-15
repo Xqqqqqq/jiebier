@@ -78,6 +78,10 @@
     </view>
     <view class="mask-box-bottom" bindtap="closeMask"></view>
   </view>
+  <!-- 弹窗 -->
+  <i-modal title="提示" visible="{{ visible }}" bind:ok="handleOk" bind:cancel="handleClose">
+    <view>您尚未登录，是否去登录？</view>
+  </i-modal>
   <i-toast id="toast" />
 </view>
 <!-- 没有数据时 -->

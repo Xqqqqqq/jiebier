@@ -47,37 +47,40 @@ Page({
         type: 'warning'
       });
     }else{
-      login.registerSendCode({
-        phone: this.data.submitForm.tel,
-      }).then(res => {
-        if(res.code == '200') {
-          $Toast({
-            content: '发送验证码成功！',
-            type: 'success'
-          });
-          const timer = setInterval(() => {
-            if(this.data.countDown < 1) {
-              clearInterval(timer);
-              this.data.countDown = 60;
-              this.setData({
-                disabled: false,
-                btnName: "发送验证码"
-              })
-              return;
-            }else{
-              this.data.countDown--;
-              this.setData({
-                btnName: this.data.countDown + "s"
-              })
-            }
-          },1000);
-        }else{
-          $Toast({
-            content: res.msg,
-            type: 'error'
-          });
-        }
-      })
+      if(this.data.disabled == false){
+        login.registerSendCode({
+          phone: this.data.submitForm.tel,
+        }).then(res => {
+          if(res.code == '200') {
+            $Toast({
+              content: '发送验证码成功！',
+              type: 'success'
+            });
+            const timer = setInterval(() => {
+              if(this.data.countDown < 1) {
+                clearInterval(timer);
+                this.data.countDown = 60;
+                this.setData({
+                  disabled: false,
+                  btnName: "发送验证码"
+                })
+                return;
+              }else{
+                this.data.countDown--;
+                this.setData({
+                  btnName: this.data.countDown + "s",
+                  disabled: true,
+                })
+              }
+            },1000);
+          }else{
+            $Toast({
+              content: res.msg,
+              type: 'error'
+            });
+          }
+        })
+      }
     }
   },
   bindTelInput(e){

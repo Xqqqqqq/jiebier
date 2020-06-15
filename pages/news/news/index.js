@@ -10,41 +10,59 @@ Page({
   data:{
     newsList:[],
     url: app.globalData.url,
+    visible: false,
   },
   onShow(){
     this.getDictAll()
   },
   // 获取用户字典 
   getDictAll(){
-    let couponStateList = []
-    let newsList = []
-    index.getDict({ dictType: 'news_type' }).then(res => {
-      if(res.code == 200){
-        couponStateList = res.result
-        news.searchNews({
-          userId: '4'
-        }).then(res => {
-          if(res.code == 200){
-            newsList = res.result
-            if(newsList && couponStateList){
-              this.setData({
-                newsList:this.findDictLabel(couponStateList,newsList)
-              })
+    if(wx.getStorageSync('userInfo').id){
+      let couponStateList = []
+      let newsList = []
+      index.getDict({ dictType: 'news_type' }).then(res => {
+        if(res.code == 200){
+          couponStateList = res.result
+          news.searchNews({
+            userId: wx.getStorageSync('userInfo').id
+          }).then(res => {
+            if(res.code == 200){
+              newsList = res.result
+              if(newsList && couponStateList){
+                this.setData({
+                  newsList:this.findDictLabel(couponStateList,newsList)
+                })
+              }
+              console.log(this.data.newsList)
+            }else{
+              $Toast({
+                content: res.msg,
+                type: 'error'
+              });
             }
-            console.log(this.data.newsList)
-          }else{
-            $Toast({
-              content: res.msg,
-              type: 'error'
-            });
-          }
-        })
-      }else {
-        $Toast({
-          content: res.msg,
-          type: 'error'
-        });
-      }
+          })
+        }else {
+          $Toast({
+            content: res.msg,
+            type: 'error'
+          });
+        }
+      })
+    }else{
+      this.setData({
+        visible: true
+      })
+    }
+  },
+  handleOk(){
+    this.setData({
+      visible: false
+    })
+    wx_gotoNewUrl('navigateTo','/pages/loginAll/loginAdmin/index')
+  },
+  handleClose(){
+    this.setData({
+      visible: false
     })
   },
   gotoRouter(e){

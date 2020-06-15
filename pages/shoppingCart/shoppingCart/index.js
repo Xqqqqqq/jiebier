@@ -18,6 +18,7 @@ Page({
     typeList:[], // 弹出层用
     showMask: false,
     deleteList:[], //需要删除的id数组
+    visible: false,
   },
   onShow(){
     this.setData({
@@ -29,48 +30,65 @@ Page({
   },
   // 获取用户字典 
   getDictAll(){
-    let couponStateList = []
-    let goodsList = []
-    index.getDict({ dictType: 'delivery_type' }).then(res => {
-      if(res.code == 200){
-        couponStateList = res.result
-        shoppingCart.selectCartByUserId({
-          userId: '1'
-        }).then(res => {
-          if(res.code == 200){
-            let goodsLength = 0
-            goodsList = res.result.map(item => {
-              return {
-                ...item,
-                isSelect: false
-              }
-            })
-            for(let i = 0; i < goodsList.length; i++){
-              goodsLength += goodsList[i].productList.length
-            }
-            if(goodsList && couponStateList){
-              this.setData({
-                goodsList:this.findDictLabel(goodsList, couponStateList)
+    if(wx.getStorageSync('userInfo').id){
+      let couponStateList = []
+      let goodsList = []
+      index.getDict({ dictType: 'delivery_type' }).then(res => {
+        if(res.code == 200){
+          couponStateList = res.result
+          shoppingCart.selectCartByUserId({
+            userId: wx.getStorageSync('userInfo').id
+          }).then(res => {
+            if(res.code == 200){
+              let goodsLength = 0
+              goodsList = res.result.map(item => {
+                return {
+                  ...item,
+                  isSelect: false
+                }
               })
+              for(let i = 0; i < goodsList.length; i++){
+                goodsLength += goodsList[i].productList.length
+              }
+              if(goodsList && couponStateList){
+                this.setData({
+                  goodsList:this.findDictLabel(goodsList, couponStateList)
+                })
+              }
+              this.getTotalPrice()
+              this.setData({
+                goodsList: goodsList,
+                goodsLength: goodsLength
+              })
+            }else{
+              $Toast({
+                content: res.msg,
+                type: 'error'
+              });
             }
-            this.getTotalPrice()
-            this.setData({
-              goodsList: goodsList,
-              goodsLength: goodsLength
-            })
-          }else{
-            $Toast({
-              content: res.msg,
-              type: 'error'
-            });
-          }
-        })
-      }else {
-        $Toast({
-          content: res.msg,
-          type: 'error'
-        });
-      }
+          })
+        }else {
+          $Toast({
+            content: res.msg,
+            type: 'error'
+          });
+        }
+      })
+    }else{
+      this.setData({
+        visible: true
+      })
+    }
+  },
+  handleOk(){
+    this.setData({
+      visible: false
+    })
+    wx_gotoNewUrl('navigateTo','/pages/loginAll/loginAdmin/index')
+  },
+  handleClose(){
+    this.setData({
+      visible: false
     })
   },
   // 数据字典-列表转换

@@ -64,5 +64,9 @@
     <view class="wrap-bottom-btn bottom-btn-orange" bindtap="gotoShop">店 铺</view>
     <view class="wrap-bottom-btn bottom-btn-green" bindtap="addShop">加 入 购 物 车</view>
   </view>
+  <!-- 弹窗 -->
+  <i-modal title="提示" visible="{{ visible }}" bind:ok="handleOk" bind:cancel="handleClose">
+    <view>您尚未登录，是否去登录？</view>
+  </i-modal>
   <i-toast id="toast" />
 </view>

@@ -2561,6 +2561,13 @@
 					"id": -1,
 					"name": "pages/loginAll/forget/index",
 					"pathName": "pages/loginAll/forget/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/loginAll/loginAdmin/index",
+					"pathName": "pages/loginAll/loginAdmin/index",
 					"scene": null
 				}
 			]

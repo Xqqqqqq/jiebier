@@ -2,6 +2,7 @@
   "navigationBarTitleText": "XXX商品",
   "usingComponents": {
     "i-toast": "../../../dist/toast/index",
-    "i-icon": "../../../dist/icon/index"
+    "i-icon": "../../../dist/icon/index",
+    "i-modal": "../../../dist/modal/index"
   }
 }

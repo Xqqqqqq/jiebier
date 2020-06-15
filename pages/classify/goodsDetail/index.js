@@ -20,6 +20,7 @@ Page({
     goodInfo:{},
     typeList:[], // 配送方式
     typeIndex: 0,
+    visible: false,
   },
   onLoad(options){
     if(options){
@@ -92,21 +93,38 @@ Page({
     })
   },
   addShop(){
-    classify.addCart({
-      userId:'1', //	string 用户id
-      ...this.data.goodsDetail
-    }).then(res => {
-      if(res.code == 200){
-        $Toast({
-          content: "添加购物车成功！",
-          type: 'success'
-        });
-      }else{
-        $Toast({
-          content: res.msg,
-          type: 'error'
-        });
-      }
+    if(wx.getStorageSync('userInfo').id){
+      classify.addCart({
+        userId: wx.getStorageSync('userInfo').id, //	string 用户id
+        ...this.data.goodsDetail
+      }).then(res => {
+        if(res.code == 200){
+          $Toast({
+            content: "添加购物车成功！",
+            type: 'success'
+          });
+        }else{
+          $Toast({
+            content: res.msg,
+            type: 'error'
+          });
+        }
+      })
+    }else{
+      this.setData({
+        visible: true
+      })
+    }
+  },
+  handleOk(){
+    this.setData({
+      visible: false
+    })
+    wx_gotoNewUrl('navigateTo','/pages/loginAll/loginAdmin/index')
+  },
+  handleClose(){
+    this.setData({
+      visible: false
     })
   },
   bindTypeChange(e){

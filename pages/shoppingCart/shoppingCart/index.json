@@ -1,6 +1,7 @@
 {
   "navigationBarTitleText": "购物车",
   "usingComponents": {
-    "i-toast": "../../../dist/toast/index"
+    "i-toast": "../../../dist/toast/index",
+    "i-modal": "../../../dist/modal/index"
   }
 }
