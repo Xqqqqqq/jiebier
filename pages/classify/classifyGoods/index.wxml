@@ -20,7 +20,7 @@
         <view class="li-right-price">
           <text class="li-right-price-small">￥</text>{{item.productPrice}}
           <text class="li-right-num">销量：{{item.shopSale}}</text>
-          <view class="li-right-pos">
+          <view class="li-right-pos" catchtap="openPopup" data-id="{{item.id}}"  data-company="{{item.companyId}}">
             <image src="{{url}}index/cart.png"></image>
           </view>
         </view>
@@ -31,5 +31,33 @@
     <image src="{{url}}tabs/no-data.png" mode="widthFix"></image>
     <view class="no-data-text">暂无数据</view>
   </view>
+  <!-- 底部弹窗 -->
+  <view class="wrap-mask" wx:if="{{showPopup}}" bindtap="closePopup"></view>
+  <view class="popup" wx:if="{{showPopup}}">
+    <radio-group bindchange="typeChange">
+      <view class="popup-li" wx:for="{{typeList.typeList}}" wx:key="index">
+        <label class="popup-left">
+          <view class="popup-left-check">
+            <radio value="{{item.id}}"/>
+          </view>
+          <view class="popup-left-name">{{item.name}}</view>
+        </label>
+        <view class="popup-right">
+          <view class="popup-right-img" catchtap='quantityChange' data-index="{{index}}" id='sub'>
+            <image src="{{url}}index/del.png"></image>
+          </view>
+          <view class="popup-right-num">{{item.num}}</view>
+          <view class="popup-right-img" catchtap='quantityChange' data-index="{{index}}"  id='add'>
+            <image src="{{url}}index/add.png"></image>
+          </view>
+        </view>
+      </view>
+    </radio-group>
+    <view class="popup-btn" bindtap="clickAddShop">加入购物车</view>
+  </view>
+  <!-- 弹窗 -->
+  <i-modal title="提示" visible="{{ visible }}" bind:ok="handleOk" bind:cancel="handleClose">
+    <view>您尚未登录，是否去登录？</view>
+  </i-modal>
   <i-toast id="toast" />
 </view>

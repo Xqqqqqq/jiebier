@@ -30,8 +30,8 @@ Page({
       this.setData({
         "goodsDetail.productId":options.goodsid
       })
+      this.productDetail(options.goodsid)
     }
-    this.productDetail(this.data.goodsDetail.productId)
   },
   productDetail(id){
     classify.productDetail({
@@ -59,7 +59,7 @@ Page({
         this.setData({
           goodInfo: res.result,
           typeList:this.data.typeList,
-          'goodsDetail.deliveryType':Number(this.data.typeList[0].id),
+          'goodsDetail.deliveryType':this.data.typeList.length >0 ? Number(this.data.typeList[0].id) : '',
           "goodsDetail.companyId":res.result.productOutVo.companyId
         })
       }else{
@@ -131,10 +131,14 @@ Page({
       'goodsDetail.deliveryType':Number(this.data.typeList[e.detail.value].id)
     })
   },
+  // 点击去购物车
   gotoShopcart(){
     wx_gotoNewUrl('switchTab','/pages/shoppingCart/shoppingCart/index')
   },
+  // 点击去店铺详情
   gotoShop(){
-    wx_gotoNewUrl('navigateTo','/pages/index/shops/index')
+    wx_gotoNewUrl('navigateTo','/pages/index/shops/index',{
+      companyId: this.data.goodInfo.productOutVo.companyId
+    })
   },
 })

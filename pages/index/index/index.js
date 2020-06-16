@@ -349,6 +349,13 @@ Page({
       visible: false
     })
   },
+  // 点击热销中的商品去商品详情
+  gotoDetail(e){
+    wx_gotoNewUrl('navigateTo','/pages/classify/goodsDetail/index',{
+      goodsid:e.currentTarget.dataset.id, // 详细商品id
+      goodsname:e.currentTarget.dataset.name, // 详细商品名称
+    })
+  },
   // 推荐城市
   clickTab(e){
     let cur = e.currentTarget.dataset.current;

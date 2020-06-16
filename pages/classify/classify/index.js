@@ -1,5 +1,7 @@
 import { Classify } from '../../../api-models/classify/classify';
 const classify = new Classify();
+import { ShoppingCart } from '../../../api-models/shoppingCart/shoppingCart';
+const shoppingCart = new ShoppingCart();
 const { $Toast } = require('../../../dist/base/index');
 import { wx_gotoNewUrl, getUserAddress } from '../../../utils/fn'
 const app = getApp()
@@ -18,6 +20,24 @@ Page({
       cp_index: 0,
       selectCity: app.globalData.selectCity
     })
+    // 查询购物车数量
+    if(wx.getStorageSync('userInfo').id){
+      shoppingCart.selectCartByUserId({
+        userId: wx.getStorageSync('userInfo').id
+      }).then(res => {
+        if(res.code == 200){
+          let goodsLength = 0
+          for(let i = 0; i < res.result.length; i++){
+            goodsLength += res.result[i].productList.length
+          }
+          // 设置购物车数量
+          wx.setTabBarBadge({
+            index: 2,
+            text: goodsLength+''
+          })
+        }
+      })
+    }
     // getUserAddress().then(res => {
     //   console.log('sss',res)
     // })

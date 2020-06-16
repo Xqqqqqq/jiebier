@@ -91,5 +91,15 @@ class Index extends HTTP {
       url:'/api/pay/wxOrderPay'
     })
   }
+  /**
+   * 	进入店铺详情
+   */
+  selectCompanyDetails(data){
+    return this.request({
+      url:'/api/product/selectCompanyDetails',
+      data: data,
+      method:"GET"  
+    })
+  }
 }
 export { Index }

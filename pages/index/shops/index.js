@@ -4,6 +4,8 @@ import { Index } from '../../../api-models/index/index';
 const index = new Index();
 import { Classify } from '../../../api-models/classify/classify';
 const classify = new Classify();
+import { ShoppingCart } from '../../../api-models/shoppingCart/shoppingCart';
+const shoppingCart = new ShoppingCart();
 const { $Toast } = require('../../../dist/base/index');
 import { wx_gotoNewUrl } from '../../../utils/fn'
 //获取应用实例
@@ -65,124 +67,105 @@ Page({
         id: 'cp12'
       }
     ],
-    rightData: [{
-        name: '菜品1',
-        id: 'cp1',
-        img: [
-          {
-            id:'10',
-            name:'苹果',
-            img:'../../../static/image/index/card.png',
-          },
-          {
-            id:'11',
-            name:'香蕉',
-            img:'../../../static/image/index/card.png',
-          },
-          {
-            id:'12',
-            name:'橙子',
-            img:'../../../static/image/index/card.png',
-          },
-          {
-            id:'13',
-            name:'李子',
-            img:'../../../static/image/index/card.png',
-          }
-        ]
-      },
-      {
-        name: '菜品2',
-        id: 'cp2',
-        img: [
-          {
-            id:'20',
-            name:'黄瓜',
-            img:'../../../static/image/index/card.png',
-          },
-          {
-            id:'21',
-            name:'柿子',
-            img:'../../../static/image/index/card.png',
-          },
-          {
-            id:'22',
-            name:'茄子',
-            img:'../../../static/image/index/card.png',
-          },
-          {
-            id:'23',
-            name:'土豆',
-            img:'../../../static/image/index/card.png',
-          }
-        ]
-      },
-      {
-        name: '菜品3',
-        id: 'cp3',
-        img: [
-          {
-            id:'30',
-            name:'牛奶',
-            img:'../../../static/image/index/card.png',
-          },
-          {
-            id:'31',
-            name:'汽水',
-            img:'../../../static/image/index/card.png',
-          },
-          {
-            id:'32',
-            name:'花生露',
-            img:'../../../static/image/index/card.png',
-          },
-          {
-            id:'33',
-            name:'养乐多',
-            img:'../../../static/image/index/card.png',
-          },
-          {
-            id:'34',
-            name:'冰红茶',
-            img:'../../../static/image/index/card.png',
-          },
-          {
-            id:'35',
-            name:'果汁',
-            img:'../../../static/image/index/card.png',
-          },
-        ]
-      },
-    ],
-    rightDataList:{},
+    rightData: [], // 分类所有数据
+    rightDataList:{}, // 右侧数据
     heightArr: 0,
     zindex: 0,
-    showTop: true,
+    showTop: true, // 是否展示顶部热销和门店图片
     height: '',
     url: app.globalData.url,
+    companyId: '', //企业id
+    shopInfo:{}, //店铺头部详情部分
+    type: '', // 判断点击商品还是门店进入
+    showPopup:false, // 是否显示底部弹窗
+    visible: false, //是否显示去登录的按钮
+    goodsDetail:{
+      productId:'', //商品id
+      deliveryType: '',// 配送方式id  integer($int32)
+      productNum: 1, //添加数量
+      companyId: '',//店铺id
+    },  // 加入购物车的参数
+    canSubmit: false, // 是否可以点击加入购物车
+    typeList:[],
   },
   onLoad(options){
-    let that = this
-    wx.getSystemInfo({
-      success: function(res) {
-        that.setData({
-          height: res.windowHeight - 200
-        })
-      }
-    })
-    if(options.type == 'goods'){
-      this.findGoodId(this.data.rightData, options.id)
+    // let that = this
+    // wx.getSystemInfo({
+    //   success: function(res) {
+    //     that.setData({
+    //       height: res.windowHeight - 200
+    //     })
+    //   }
+    // })
+    // 获取店铺所有数据
+    if(options){
       this.setData({
-        showTop: false,
-        currentScrollId:`c_${options.id}`,
-        rightDataList: this.findGoodId(this.data.rightData, options.id),
-      })
-    }else{
-      this.setData({
-        showTop: true,
-        rightDataList: this.data.rightData[0],
+        companyId: options.companyId,
+        type: options.type
       })
     }
+    // this.selectCompanyDetails(this.data.companyId)
+    this.selectCompanyDetails('42b477acad4311ea94340242ac110002')
+  },
+  // 获取店铺详情
+  selectCompanyDetails(companyId){
+    index.selectCompanyDetails({
+      companyId:companyId
+    }).then(res => {
+      if(res.code == 200){
+        let rightDataList = res.result.companyClassList[0]
+        rightDataList.productList.map(item => {
+          item.typeList = []
+          if(item.express && item.express== 1){
+            item.typeList.push({
+              id:'3',
+              name: '快递',
+              num: 1,
+              checked: false
+            })
+          }
+          if(item.isPick && item.isPick== 1){
+            item.typeList.push({
+              id:'2',
+              name: '自提',
+              num: 1,
+              checked: false
+            })
+          }
+          if(item.isDelivery && item.isDelivery== 1){
+            item.typeList.push({
+              id:'1',
+              name: '商家配送',
+              num: 1,
+              checked: false
+            })
+          }
+        })
+        this.setData({
+          shopInfo: res.result,
+          rightData: res.result.companyClassList,
+          rightDataList:rightDataList,
+        })
+        // if(this.data.type == 'goods'){
+        //   this.findGoodId(this.data.rightData, options.id)
+        //   this.setData({
+        //     showTop: false,
+        //     currentScrollId:`c_${options.id}`,
+        //     rightDataList: this.findGoodId(this.data.rightData, options.id),
+        //   })
+        // }else{
+        //   this.setData({
+        //     showTop: true,
+        //     rightDataList: this.data.rightData[0],
+        //   })
+        // }
+      }else{
+        $Toast({
+          content: res.msg,
+          type: 'error'
+        });
+      }
+    })
   },
   // 查找商品上一级id
   findGoodId(arr, sourceId){
@@ -202,7 +185,7 @@ Page({
     return rightList
   },
   // 点击左侧
-  leftTap: function (e) {
+  leftTap (e) {
     var index = e.currentTarget.dataset.index;
     var id = e.currentTarget.dataset.id;
     var idSplit = e.currentTarget.dataset.id.split("c_")[1];
@@ -210,16 +193,43 @@ Page({
       return false;
     }else{
       let goodsList = this.data.rightData
-      let rightList = goodsList.find(item => item.id == idSplit)
+      let rightDataList = goodsList.find(item => item.classId == idSplit)
+      rightDataList.productList.map(item => {
+        item.typeList = []
+        if(item.express && item.express== 1){
+          item.typeList.push({
+            id:'3',
+            name: '快递',
+            num: 1,
+            checked: false
+          })
+        }
+        if(item.isPick && item.isPick== 1){
+          item.typeList.push({
+            id:'2',
+            name: '自提',
+            num: 1,
+            checked: false
+          })
+        }
+        if(item.isDelivery && item.isDelivery== 1){
+          item.typeList.push({
+            id:'1',
+            name: '商家配送',
+            num: 1,
+            checked: false
+          })
+        }
+      })
       this.setData({
         cp_index: index,
         currentScrollId: id,
-        rightDataList: rightList ? rightList : {}
+        rightDataList: rightDataList ? rightDataList : {}
       }) 
+      console.log(rightDataList)
     }
   },
-  bindscroll: function (e) {
-    console.log(e.detail.scrollTop)
+  bindscroll (e) {
     if(e.detail.scrollTop > 100){
       this.setData({
         showTop: false
@@ -230,6 +240,140 @@ Page({
       })
     }
   },
+  // 点击加入购物车图标
+  openPopup(e){
+    if(wx.getStorageSync('userInfo').id){
+      let rightDataList = this.data.rightDataList
+      let id = e.currentTarget.dataset.id
+      this.data.typeList = rightDataList.productList.find(item => item.id == id)
+      this.setData({
+        showPopup: true,
+        typeList: this.data.typeList,
+        'goodsDetail.productId': id,
+        'goodsDetail.companyId': e.currentTarget.dataset.company
+      })
+    }else{
+      this.setData({
+        visible: true
+      })
+    }
+  },
+  // 点击热销弹出的底部弹窗
+  typeChange(e){
+    this.data.typeList.typeList.map(item => {
+      item.checked = false
+      if(item.id == e.detail.value){
+        item.checked = true
+      }
+    })
+    this.setData({
+      typeList: this.data.typeList
+    })
+  },
+  // 点击关闭购物车的蒙层
+  closePopup(){
+    this.setData({
+      showPopup: false,
+      canSubmit:false
+    })
+  },
+  // 点击加减商品
+  quantityChange(e){
+    const index = e.currentTarget.dataset.index
+    let typeList = this.data.typeList
+    let quantity = typeList.typeList[index].num
+    if(e.currentTarget.id == 'sub'){
+      if(quantity <= 1){
+        $Toast({
+          content: '该宝贝不能减少了哦~',
+          type: 'warning'
+        });
+        return
+      }else{
+        quantity -= 1
+      }
+    }else if(e.currentTarget.id == 'add'){
+      quantity += 1
+    }
+    typeList.typeList[index].num = quantity
+    this.setData({
+      typeList: typeList
+    })
+  },
+  clickAddShop(){
+    this.data.typeList.typeList.forEach(item => {
+      if(item.checked == true){
+        this.data.canSubmit = true
+        this.setData({
+          'goodsDetail.deliveryType': Number(item.id),
+          'goodsDetail.productNum': Number(item.num),
+        })
+      }
+      item.checked =false
+    })
+    if(this.data.canSubmit == true){
+      classify.addCart({
+        userId: wx.getStorageSync('userInfo').id, //	string 用户id
+        ...this.data.goodsDetail
+      }).then(res => {
+        if(res.code == 200){
+          // 查询购物车数量
+          shoppingCart.selectCartByUserId({
+            userId: wx.getStorageSync('userInfo').id
+          }).then(res => {
+            if(res.code == 200){
+              let goodsLength = 0
+              for(let i = 0; i < res.result.length; i++){
+                goodsLength += res.result[i].productList.length
+              }
+              // 设置购物车数量
+              wx.setTabBarBadge({
+                index: 2,
+                text: goodsLength+''
+              })
+            }else{
+              $Toast({
+                content: res.msg,
+                type: 'error'
+              });
+            }
+          })
+          $Toast({
+            content: "添加购物车成功！",
+            type: 'success'
+          });
+          this.setData({
+            showPopup: false,
+            canSubmit:false
+          })
+        }else{
+          $Toast({
+            content: res.msg,
+            type: 'error'
+          });
+        }
+      })
+    }else{
+      $Toast({
+        content: '请选择配送方式！',
+        type: 'warning'
+      });
+    }
+  },
+  handleOk(){
+    this.setData({
+      visible: false
+    })
+    wx_gotoNewUrl('navigateTo','/pages/loginAll/loginAdmin/index')
+  },
+  handleClose(){
+    this.setData({
+      visible: false
+    })
+  },
+  gotoShop(){
+    wx_gotoNewUrl('switchTab','/pages/shoppingCart/shoppingCart/index')
+  }
 
 
 

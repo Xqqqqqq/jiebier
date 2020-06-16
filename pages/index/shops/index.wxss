@@ -38,7 +38,7 @@ page{
   left: 50%;
   transform: translateX(-50%);
   top:38rpx;
-  background-color: red;
+  /* background-color: red; */
 }
 .top-banner-logo image{
   width: 100%;
@@ -135,10 +135,11 @@ page{
 .right_item-img{
   width: 124rpx;
   height: 124rpx;
-  background-color: red;
+  /* background-color: red; */
   overflow: hidden;
   border-radius: 20rpx;
   margin-right: 40rpx;
+  margin-top: 5rpx;
 }
 .right_item-img image{
   width: 100%;
@@ -180,13 +181,12 @@ page{
   font-size: 18rpx;
 }
 .item-box-price-btn{
-  width: 34rpx;
-  height: 34rpx;
+  width: 45rpx;
+  height: 45rpx;
   position: absolute;
   bottom: 0;
   right: 0;
   border-radius: 50%;
-  background-color: red;
 }
 .item-box-price-btn image{
   width: 100%;
@@ -199,12 +199,22 @@ page{
 }
 .bottom{
   width: 100%;
-  display: flex;
+  height:90rpx;
+  line-height: 90rpx;
+  background:rgba(89,194,5,1);
+  border-radius:5rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: #FFFFFF;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  /* display: flex;
   position: fixed;
   left: 0;
   bottom: 0;
   border-top: 1px solid #EAEAEA;
-  background-color: #fff;
+  background-color: #fff; */
 }
 .bottom-left{
   flex: 1;
@@ -254,4 +264,22 @@ page{
   font-size: 18rpx;
   color: #1C1C1C;
   font-weight: normal;
+}
+.add-cart{
+  width: 60rpx;
+  height: 60rpx;
+  background-color: #9BDF22;
+  position: fixed;
+  right: 5%;
+  bottom: 15%;
+  line-height: 60rpx;
+  border-radius: 50%;
+  text-align: center;
+  padding-top: 8rpx;
+  box-sizing: border-box;
+}
+.add-cart image{
+  width: 70%;
+  height: 70%;
+  margin: auto;
 }

@@ -24,13 +24,13 @@
     </view>
   </view>
   <!-- 热销 -->
-  <view class="wrap-title">
+  <view class="wrap-title" wx:if="{{hotList.length > 0}}">
     <view class="wrap-title-name">热销</view>
-    <view class="wrap-title-arrow" bindtap="gotoRouter" data-url="/pages/index/hotSale/index" data-type="navigateTo">查看更多 ></view>
+    <!-- <view class="wrap-title-arrow" bindtap="gotoRouter" data-url="/pages/index/hotSale/index" data-type="navigateTo">查看更多 ></view> -->
   </view>
-  <view class="wrap-scroll">
+  <view class="wrap-scroll" wx:if="{{hotList.length > 0}}">
     <scroll-view scroll-x="true">
-      <view class="scroll-li" wx:for="{{hotList}}" wx:key="index">
+      <view class="scroll-li" wx:for="{{hotList}}" wx:key="index" bindtap="gotoDetail" data-id="{{item.id}}" data-name="{{item.productName}}">
         <view class="scroll-li-img">
           <image src="{{item.mainImg}}"></image>
         </view>

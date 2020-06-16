@@ -21,6 +21,7 @@
     "pages/mine/cancelOrder/index",
     "pages/mine/cancelStep/index",
     "pages/mine/coupon/index",
+    "pages/mine/couponUse/index",
     "pages/mine/myScore/index",
     "pages/mine/scoreInfo/index",
     "pages/mine/myMember/index",

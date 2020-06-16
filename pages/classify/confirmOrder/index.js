@@ -7,8 +7,36 @@ Page({
   data:{
     addressInfo:{},
     url: app.globalData.url,
+    orderList:[],
+    totalMoney:0
   },
   onShow(){
+    // console.log(wx.getStorageSync('orderList'))
+    if(wx.getStorageSync('orderList')){
+      this.setData({
+        orderList: wx.getStorageSync('orderList')
+      })
+      this.getTotalPrice()
+    }else{
+      $Toast({
+        content: '没有获取到商品，请重试！',
+        type: 'warning'
+      });
+    }
+  },
+  // 计算总价
+  getTotalPrice(){
+    let goodsList = this.data.orderList
+    let total = 0
+    for(let i =0; i < goodsList.length; i++){ 
+      for(let j =0; j <goodsList[i].children.length; j++){
+        total += Number(goodsList[i].children[j].productNum) * Number(goodsList[i].children[j].productPrice)
+      }
+    }
+    this.setData({
+      goodsList: goodsList,
+      totalMoney: total.toFixed(2)
+    })
   },
   chooseAddress(){
     let vm = this
@@ -53,6 +81,6 @@ Page({
     })
   },
   gotoCoupon(){
-    wx_gotoNewUrl('navigateTo','/pages/mine/coupon/index')
+    wx_gotoNewUrl('navigateTo','/pages/mine/couponUse/index')
   }
 })

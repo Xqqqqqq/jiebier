@@ -1,7 +1,7 @@
 <view class="wrap" wx:if="{{newsList.length > 0}}">
   <view class="wrap-message" 
   bindtap="gotoRouter" wx:for="{{newsList}}" wx:key="index"
-  data-type="{{item.newsType}}">
+  data-item="{{item}}">
     <view class="message-top">
       <view class="message-top-left">{{item.dictLabel}}</view>
       <view class="message-top-right">{{item.createTime}}</view>

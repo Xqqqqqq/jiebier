@@ -11,33 +11,33 @@
     <view class="wrap-box-address" wx:else bindtap="chooseAddress">请选择地址</view>
   </view>
 
-  <view class="wrap-box">
-    <view class="wrap-box-ul">
-      <view class="wrap-box-title">xxxxx店铺1</view>
-      <view class="wrap-box-li">
+  <view class="wrap-box wrap-box-goods" wx:if="{{orderList.length > 0}}">
+    <view class="wrap-box-ul" wx:for="{{orderList}}" wx:key="index">
+      <view class="wrap-box-title">{{item.companyName}}</view>
+      <view class="wrap-box-li" wx:for="{{item.children}}" wx:for-item="itemSmall" wx:key="indexSmall" wx:for-index="indexSmall">
         <view class="box-li-left">
-          <!-- <image></image> -->
+          <image src="{{itemSmall.productImg}}"></image>
         </view>
         <view class="box-li-right">
-          <view class="li-right-title">新鲜赣南脐橙</view>
-          <view class="li-right-type">取货方式：商品自提</view>
-          <view class="li-right-price"><text class="right-price-small">￥</text>30 <text class="right-price-num">x1</text></view>
+          <view class="li-right-title">{{itemSmall.productName}}</view>
+          <view class="li-right-type">取货方式：{{itemSmall.deliveryLabel}}</view>
+          <view class="li-right-price"><text class="right-price-small">￥</text>{{itemSmall.productPrice}} <text class="right-price-num">x{{itemSmall.productNum}}</text></view>
         </view>
       </view>
     </view>
   </view>
 
   <view class="wrap-box wrap-box-other">
-    <view class="box-line">
+    <!-- <view class="box-line">
       <view class="box-line-left">获得积分</view>
       <view class="box-line-right">30积分</view>
-    </view>
-    <view class="box-line">
+    </view> -->
+    <!-- <view class="box-line">
       <view class="box-line-left">折扣</view>
       <view class="box-line-right">98折</view>
-    </view>
+    </view> -->
     <view class="box-line" bindtap="gotoCoupon">
-      <view class="box-line-left">优惠券</view>
+      <view class="box-line-left">折扣/优惠券</view>
       <view class="box-line-right">请选择优惠卷 ></view>
     </view>
     <view class="box-line">
@@ -48,7 +48,7 @@
 
   <view class="wrap-btn-block"></view>
   <view class="wrap-btn">
-    <view class="wrap-btn-left">总金额：<text class="btn-left-small">￥</text><text class="btn-left-big">30</text></view>
+    <view class="wrap-btn-left">总金额：<text class="btn-left-small">￥</text><text class="btn-left-big">{{totalMoney}}</text></view>
     <view class="wrap-btn-right">立即支付</view>
   </view>
 

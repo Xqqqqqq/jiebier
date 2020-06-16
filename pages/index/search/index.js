@@ -40,7 +40,6 @@ Page({
       currentHistoryTab:-1,
       historyList: wx.getStorageSync('historyList') ? wx.getStorageSync('historyList') : []
     })
-    console.log(wx.getStorageSync('historyList'))
   },
   bindNameInput(e){
     this.setData({

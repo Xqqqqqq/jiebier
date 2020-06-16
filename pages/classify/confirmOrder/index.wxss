@@ -11,6 +11,10 @@
   box-shadow:0px 2px 8px 0px #EFEFEF;
   margin-bottom: 26rpx;
 }
+.wrap-box-goods{
+  padding-top: 0;
+  box-sizing: border-box;
+}
 .wrap-box-title{
   font-size: 32rpx;
   color: #000000;
@@ -61,6 +65,8 @@
 
 .wrap-box-ul{
   width: 100%;
+  padding-top: 40rpx;
+  box-sizing: border-box;
 }
 .wrap-box-li{
   width: 100%;

@@ -1,0 +1,29 @@
+@import '../coupon/index.wxss';
+page{
+  width: 100%;
+  padding: 30rpx 24rpx;
+  box-sizing: border-box;
+  background-color: #F8F8F8;
+}
+.wrap{
+  width: 100%;
+}
+.wrap-li{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  background-color: #fff;
+  border-radius: 20rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  margin-bottom: 20rpx;
+}
+.wrap-li-left{
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #000000;
+}
+.wrap-box-other{
+  padding: 0;
+}

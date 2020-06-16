@@ -1,12 +1,12 @@
 <view class="containner">
   <view class="top" wx:if="{{showTop}}">
     <view class="top-banner">
-      <image src="{{url}}index/zhaopian.png" class="top-banner-img"></image>
+      <image src="{{url}}index/banner.jpg" class="top-banner-img"></image>
       <view class="top-banner-mask"></view>
-      <view class="top-banner-logo">
-        <!-- <image src=""></image> -->
+      <view class="top-banner-logo" wx:if="{{shopInfo.companyLogo}}">
+        <image src="{{shopInfo.companyLogo}}"></image>
       </view>
-      <view class="top-banner-name">源来是你水果超市</view>
+      <view class="top-banner-name" wx:if="{{shopInfo.companyName}}">{{shopInfo.companyName}}</view>
     </view>
     <view class="wrap-title">
       <view class="wrap-title-name">热销</view>
@@ -35,27 +35,29 @@
     <scroll-view scroll-y="true" scroll-with-animation="true" class="cont-box">
       <scroll-view scroll-y="true" class="scr_left" scroll-with-animation="true">
         <block wx:for="{{rightData}}" wx:for-item="item" wx:key="index">
-          <view class="sc_left_item {{cp_index==index? 'active':''}}"  data-id="c_{{item.id}}" data-index="{{index}}" bindtap="leftTap" >
-            <view class="{{cp_index==index? 'item-title-active':'item-title'}}">{{item.name}}</view>
+          <view class="sc_left_item {{cp_index==index? 'active':''}}"  data-id="c_{{item.classId}}" data-index="{{index}}" bindtap="leftTap" >
+            <view class="{{cp_index==index? 'item-title-active':'item-title'}}">{{item.className}}</view>
           </view>
           </block>
       </scroll-view>
          
       <scroll-view scroll-y="true" class="scr_right" scroll-into-view="{{currentScrollId}}" scroll-with-animation="true" bindscroll="bindscroll">
-        <block wx:for="{{rightDataList.img}}" wx:for-item="item" wx:key="index">
+        <block wx:for="{{rightDataList.productList}}" wx:for-item="item" wx:key="index">
           <view class="sc_right_item" id="c_{{item.id}}"  data-id="c_{{item.id}}" data-index="{{index}}">
             <view class="right_item-img">
-              <!-- <image src=""></image> -->
+              <image src="{{item.mainImg}}"></image>
             </view>
             <view class="right_item-box">
-              <view class="item-box-title">新鲜赣南脐橙</view>
+              <view class="item-box-title">{{item.productName}}</view>
               <view class="item-box-num">
-                <view class="box-num-score">10积分</view>
-                <view class="box-num">销量：125</view>
+                <view class="box-num-score">{{item.productPrice}}积分</view>
+                <view class="box-num">销量：{{item.shopSale}}</view>
               </view>
               <view class="item-box-price">
-                <text>￥</text>30
-                <view class="item-box-price-btn"></view>
+                <text>￥</text>{{item.productPrice}}
+                <view class="item-box-price-btn" catchtap="openPopup" data-id="{{item.id}}"  data-company="{{item.companyId}}">
+                  <image src="{{url}}index/cart.png"></image>
+                </view>
               </view>
             </view>
           </view>
@@ -84,8 +86,9 @@
   </view>
   <!-- 购物车 -->
   <view class="containner-block"></view>
-  <view class="bottom">
-    <view class="bottom-left">
+  <view class="bottom" bindtap="gotoShop">
+    去购物车
+    <!-- <view class="bottom-left">
       <view class="bottom-left-shop">
         <image src="{{url}}index/shopping.png"></image>
         <view class="left-shop-num">1</view>
@@ -94,6 +97,35 @@
         <text>￥</text>30
       </view>
     </view>
-    <view class="bottom-right">支 付</view>
+    <view class="bottom-right">支 付</view> -->
   </view>
+  <!-- 底部弹窗 -->
+  <view class="wrap-mask" wx:if="{{showPopup}}" bindtap="closePopup"></view>
+  <view class="popup" wx:if="{{showPopup}}">
+    <radio-group bindchange="typeChange">
+      <view class="popup-li" wx:for="{{typeList.typeList}}" wx:key="index">
+        <label class="popup-left">
+          <view class="popup-left-check">
+            <radio value="{{item.id}}"/>
+          </view>
+          <view class="popup-left-name">{{item.name}}</view>
+        </label>
+        <view class="popup-right">
+          <view class="popup-right-img" catchtap='quantityChange' data-index="{{index}}" id='sub'>
+            <image src="{{url}}index/del.png"></image>
+          </view>
+          <view class="popup-right-num">{{item.num}}</view>
+          <view class="popup-right-img" catchtap='quantityChange' data-index="{{index}}"  id='add'>
+            <image src="{{url}}index/add.png"></image>
+          </view>
+        </view>
+      </view>
+    </radio-group>
+    <view class="popup-btn" bindtap="clickAddShop">加入购物车</view>
+  </view>
+  <!-- 弹窗 -->
+  <i-modal title="提示" visible="{{ visible }}" bind:ok="handleOk" bind:cancel="handleClose">
+    <view>您尚未登录，是否去登录？</view>
+  </i-modal>
+  <i-toast id="toast" />
 </view>

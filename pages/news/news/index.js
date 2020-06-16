@@ -66,12 +66,14 @@ Page({
     })
   },
   gotoRouter(e){
-    console.log(e.currentTarget.dataset)
-    if(e.currentTarget.dataset.type == 1){ // 订单信息
+    if(e.currentTarget.dataset.item.newsType == 1){ // 订单信息
 
-    }else if(e.currentTarget.dataset.type == 2) { //商品消息
-
-    }else if(e.currentTarget.dataset.type == 0) { // 系统消息
+    }else if(e.currentTarget.dataset.item.newsType == 2) { //商品消息
+      wx_gotoNewUrl('navigateTo','/pages/classify/goodsDetail/index',{
+        goodsid:e.currentTarget.dataset.item.keyword, // 详细商品id
+        goodsname:e.currentTarget.dataset.item.remark, // 详细商品名称
+      })
+    }else if(e.currentTarget.dataset.item.newsType == 0) { // 系统消息
       console.log('系统消息，不可点击')
     }
     // wx_gotoNewUrl('navigateTo','/pages/news/newsDetail/index')

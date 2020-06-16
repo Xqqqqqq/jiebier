@@ -55,6 +55,11 @@ Page({
                   goodsList:this.findDictLabel(goodsList, couponStateList)
                 })
               }
+              // 设置购物车数量
+              wx.setTabBarBadge({
+                index: 2,
+                text: goodsLength+''
+              })
               this.getTotalPrice()
               this.setData({
                 goodsList: goodsList,
@@ -302,6 +307,43 @@ Page({
   },
   // 结算
   submitOrder(){
-    wx_gotoNewUrl('navigateTo','/pages/classify/confirmOrder/index')
+    const { goodsList } = this.data
+    const newOrderList = goodsList.map(goodsItem => {
+      const newProductList = goodsItem.productList.filter(productItem => productItem.isSmallSelect)
+      return {
+        companyName: goodsItem.companyName,
+        children: newProductList.map(productItem => {
+          return {
+            productName: productItem.productName,
+            productNum: productItem.productNum,
+            productPrice: productItem.productPrice,
+            productImg: productItem.productImg,
+            deliveryLabel: productItem.deliveryLabel,
+            deliveryType:productItem.deliveryType,
+          }
+        })
+      }
+    }).filter(orderItem => orderItem.children.length !== 0)
+    // console.log('newOrderList', newOrderList)
+    if(newOrderList.length >0){
+      wx.setStorage({
+        key: 'orderList',
+        data: newOrderList,
+        success: function(res){
+          wx_gotoNewUrl('navigateTo','/pages/classify/confirmOrder/index')
+        },
+        fail: function() {
+          // fail
+        },
+        complete: function() {
+          // complete
+        }
+      })
+    }else{
+      $Toast({
+        content: '请先选择想要结算的宝贝！',
+        type: 'warning'
+      });
+    }
   }
 })
