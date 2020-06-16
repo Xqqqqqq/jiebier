@@ -1,6 +1,12 @@
+import { Classify } from '../../../api-models/classify/classify';
+const classify = new Classify();
+const { $Toast } = require('../../../dist/base/index');
+import { wx_gotoNewUrl } from '../../../utils/fn'
+const app = getApp()
 Page({
   data:{
-    addressInfo:{}
+    addressInfo:{},
+    url: app.globalData.url,
   },
   onShow(){
   },
@@ -45,5 +51,8 @@ Page({
         }
       }
     })
+  },
+  gotoCoupon(){
+    wx_gotoNewUrl('navigateTo','/pages/mine/coupon/index')
   }
 })

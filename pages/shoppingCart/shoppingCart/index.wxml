@@ -61,7 +61,7 @@
       <view class="wrap-btn-pirce">合计 <text class="btn-pirce-text">￥</text><text class="btn-pirce-num">{{totalMoney}}</text></view>
     </view>
     <view class="wrap-bottom-btn" wx:if="{{showDelete}}" bindtap="clickDelete">删 除</view>
-    <view class="wrap-bottom-btn" wx:else>结 算</view>
+    <view class="wrap-bottom-btn" wx:else bindtap="submitOrder">结 算</view>
   </view>
   <!-- 弹出层 -->
   <view class="wrap-mask" wx:if="{{showMask}}" bindtap="closeMask"></view>

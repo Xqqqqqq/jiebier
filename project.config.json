@@ -2596,6 +2596,34 @@
 					"id": -1,
 					"name": "pages/index/shops/index",
 					"pathName": "pages/index/shops/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/mine/myScore/index",
+					"pathName": "pages/mine/myScore/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/loginAll/loginAdmin/index",
+					"pathName": "pages/loginAll/loginAdmin/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/classify/confirmOrder/index",
+					"pathName": "pages/classify/confirmOrder/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/shoppingCart/shoppingCart/index",
+					"pathName": "pages/shoppingCart/shoppingCart/index",
 					"scene": null
 				}
 			]

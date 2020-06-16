@@ -2,6 +2,10 @@
   <view class="wrap-li">
     <view class="wrap-li-btn" bindtap="gotoDetail">积分规则</view>
     <view class="wrap-li-title">当前积分</view>
-    <view class="wrap-li-num">129000</view>
+    <view class="wrap-li-num">{{score}}</view>
   </view>
 </view>
+<!-- 弹窗 -->
+<i-modal title="提示" visible="{{ visible }}" bind:ok="handleOk" bind:cancel="handleClose">
+  <view>您尚未登录，是否去登录？</view>
+</i-modal>

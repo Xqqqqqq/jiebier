@@ -1,13 +1,14 @@
 <view class="wrap">
   <view class="wrap-box">
     <view class="wrap-box-title">收货地址</view>
-    <view class="wrap-box-content" bindtap="chooseAddress">
+    <view class="wrap-box-content" wx:if="{{addressInfo && addressInfo.userName}}" bindtap="chooseAddress">
       <view class="box-content-phone">{{addressInfo.userName}}<text>{{addressInfo.telNumber}}</text></view>
       <view class="box-content-address">
         <view class="content-address">{{addressInfo.provinceName}}{{addressInfo.cityName}}{{addressInfo.countyName}}{{addressInfo.detailInfo}}</view>
         <view class="box-content-arrow">></view>
       </view>
     </view>
+    <view class="wrap-box-address" wx:else bindtap="chooseAddress">请选择地址</view>
   </view>
 
   <view class="wrap-box">
@@ -35,9 +36,9 @@
       <view class="box-line-left">折扣</view>
       <view class="box-line-right">98折</view>
     </view>
-    <view class="box-line">
+    <view class="box-line" bindtap="gotoCoupon">
       <view class="box-line-left">优惠券</view>
-      <view class="box-line-right">暂无选择优惠卷</view>
+      <view class="box-line-right">请选择优惠卷 ></view>
     </view>
     <view class="box-line">
       <view class="box-line-left">支付方式</view>

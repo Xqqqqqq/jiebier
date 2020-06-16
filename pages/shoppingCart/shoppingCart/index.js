@@ -299,5 +299,9 @@ Page({
         type: 'warning'
       });
     }
+  },
+  // 结算
+  submitOrder(){
+    wx_gotoNewUrl('navigateTo','/pages/classify/confirmOrder/index')
   }
 })

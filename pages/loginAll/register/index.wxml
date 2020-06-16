@@ -1,6 +1,6 @@
 <view class="wrap">
   <view class="wrap-logo">
-    <!-- <image></image> -->
+    <image src="{{url}}my/logo.jpg"></image>
   </view>
   <view class="wrap-box">
     <input bindinput="bindTelInput" value="{{submitForm.tel}}" name="submitForm.tel" type="number" class="wrap-box-input" placeholder="请输入手机号" placeholder-class="input-placeholder"/>

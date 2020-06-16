@@ -7,9 +7,10 @@
   width: 144rpx;
   height: 144rpx;
   border-radius:20rpx;
-  background-color: red;
+  /* background-color: red; */
   margin: auto;
   margin-bottom: 130rpx;
+  overflow: hidden;
 }
 .wrap-logo image{
   width: 100%;

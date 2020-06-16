@@ -1,6 +1,6 @@
 <view class="wrap">
   <view class="wrap-logo">
-    <!-- <image></image> -->
+    <image src="{{url}}my/logo.jpg"></image>
   </view>
 
   <view class="wrap-box">

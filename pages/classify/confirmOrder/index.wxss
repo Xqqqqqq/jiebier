@@ -16,6 +16,12 @@
   color: #000000;
   font-weight: bold;
 }
+.wrap-box-address{
+  color: #000000;
+  font-weight: bold;
+  margin-top: 20rpx;
+  padding-bottom: 41rpx;
+}
 .wrap-box-content{
   width: 100%;
   padding: 35rpx 0;
