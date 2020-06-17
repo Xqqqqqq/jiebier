@@ -9,5 +9,14 @@ class Mine extends HTTP {
       data: data,
     })
   }
+  /**
+   * 	可使用优惠券列表
+   */
+  getCouponList(data){
+    return this.request({
+      url:'/api/coupon/getCouponList',
+      data: data,
+    })
+  }
 }
 export { Mine }

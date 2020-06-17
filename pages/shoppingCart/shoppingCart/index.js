@@ -320,6 +320,9 @@ Page({
             productImg: productItem.productImg,
             deliveryLabel: productItem.deliveryLabel,
             deliveryType:productItem.deliveryType,
+            manufacturerId:productItem.manufacturerId,
+            productId: productItem.productId,
+            productClassId:productItem.productClassId
           }
         })
       }
@@ -345,5 +348,11 @@ Page({
         type: 'warning'
       });
     }
+  },
+  gotoDetail(e){
+    wx_gotoNewUrl('navigateTo','/pages/classify/goodsDetail/index',{
+      goodsid:e.currentTarget.dataset.id, // 详细商品id
+      goodsname:e.currentTarget.dataset.name, // 详细商品名称
+    })
   }
 })

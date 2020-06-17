@@ -12,8 +12,8 @@
       <view class="box-top-name">{{item.companyName}}</view>
     </view>
     <block wx:for="{{item.productList}}" wx:for-item="itemSmall" wx:key="indexSmall" wx:for-index="indexSmall">
-      <view class="goods-box-content">
-        <view class="box-top-check box-content-check" bindtap="goodsSelect" data-index="{{index}}" data-indexsmall="{{indexSmall}}">
+      <view class="goods-box-content" bindtap="gotoDetail" data-id="{{itemSmall.productId}}" data-name="{{itemSmall.productName}}">
+        <view class="box-top-check box-content-check" catchtap="goodsSelect" data-index="{{index}}" data-indexsmall="{{indexSmall}}">
           <image src="{{url}}classify/choose.png" wx:if="{{itemSmall.isSmallSelect}}"></image>
           <image src="{{url}}classify/no-choose.png" wx:else></image>
         </view>

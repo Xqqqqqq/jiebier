@@ -138,7 +138,8 @@ Page({
   // 点击去店铺详情
   gotoShop(){
     wx_gotoNewUrl('navigateTo','/pages/index/shops/index',{
-      companyId: this.data.goodInfo.productOutVo.companyId
+      companyId: this.data.goodInfo.productOutVo.companyId,
+      companyName: this.data.goodInfo.productOutVo.companyName,
     })
   },
 })

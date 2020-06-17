@@ -27,3 +27,6 @@ page{
 .wrap-box-other{
   padding: 0;
 }
+.li-right-btn-gray{
+  background-color: #CECCCD;
+}

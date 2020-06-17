@@ -3,38 +3,34 @@
     <label class="wrap-li">
       <view class="wrap-li-left">暂不使用优惠券</view>
       <view class="popup-left-check">
-        <radio value="{{item.id}}"/>
+        <radio value="2"/>
       </view>
     </label>
     <label class="wrap-li">
       <view class="wrap-li-left">折扣：98折</view>
       <view class="popup-left-check">
-        <radio value="{{item.id}}"/>
+        <radio value="0" disabled="{{disabled}}"/>
       </view>
     </label>
   </radio-group>
-  <view class="wrap-box wrap-box-other">
-    <view class="wrap-box-li">
+  <view class="wrap-box wrap-box-other" wx:if="{{couponList.length>0}}">
+    <view class="wrap-box-li" wx:for="{{couponList}}" wx:key="index">
       <view class="box-li-left">
         <view class="li-left-img">
-          <!-- <image></image> -->
+          <image src="{{}}"></image>
         </view>
         <view class="li-left-detail">
-        <view class="left-detail-name" style="color:{{item.state != '0' ? '#CECCCD' : ''}}">{{item.name}}</view>
-          <view class="left-detail-time" style="color:{{item.state != '0' ? '#CECCCD' : ''}}">{{item.endTime}}</view>
-          <view class="left-detail-tip" style="color:{{item.state != '0' ? '#CECCCD' : ''}}">{{item.couponExplain}}</view>
+        <view class="left-detail-name">{{item.name}}</view>
+          <view class="left-detail-time">{{item.endTime}}</view>
+          <view class="left-detail-tip">{{item.couponExplain}}</view>
         </view>
       </view>
       <view class="box-li-right">
-        <view class="li-right-price" style="color:{{item.state != '0' ? '#CECCCD' : ''}}"><text>￥</text>{{item.value}}</view>
-        <view class="li-right-tip" style="color:{{item.state != '0' ? '#CECCCD' : ''}}">满{{item.quota}}可以用</view>
-        <view class="li-right-btn" style="background-color:{{item.state != '0' ? '#CECCCD' : ''}}" wx:if="{{item.state == 0}}">立即使用</view>
-        <view class="li-right-btn" style="background-color:{{item.state != '0' ? '#CECCCD' : ''}}" wx:if="{{item.state == 1}}">已使用</view>
-        <view class="li-right-btn" style="background-color:{{item.state != '0' ? '#CECCCD' : ''}}" wx:if="{{item.state == 3}}">已失效</view>
-      </view>
-      <view class="wrap-box-pos" wx:if="{{item.state == 3}}">
-        <image src="{{url}}my/yiguoq.png"></image>
+        <view class="li-right-price"><text>￥</text>{{item.value}}</view>
+        <view class="li-right-tip">满{{item.quota}}可以用</view>
+        <view class="{{currentTab==index ? 'li-right-btn li-right-btn-gray' : 'li-right-btn'}}" bindtap="gotoUse" data-id="{{item.id}}" data-current="{{index}}" data-price="{{item.value}}">立即使用</view>
       </view>
     </view>
   </view>
+  <i-toast id="toast" />
 </view>

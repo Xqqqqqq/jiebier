@@ -69,6 +69,7 @@ Page({
     ],
     rightData: [], // 分类所有数据
     rightDataList:{}, // 右侧数据
+    hotList:[],
     heightArr: 0,
     zindex: 0,
     showTop: true, // 是否展示顶部热销和门店图片
@@ -77,7 +78,7 @@ Page({
     companyId: '', //企业id
     shopInfo:{}, //店铺头部详情部分
     type: '', // 判断点击商品还是门店进入
-    showPopup:false, // 是否显示底部弹窗
+    showPopup:false, // 是否显示底部分页弹窗
     visible: false, //是否显示去登录的按钮
     goodsDetail:{
       productId:'', //商品id
@@ -103,9 +104,12 @@ Page({
         companyId: options.companyId,
         type: options.type
       })
+      wx.setNavigationBarTitle({
+        title: options.companyName 
+      })
     }
-    // this.selectCompanyDetails(this.data.companyId)
-    this.selectCompanyDetails('42b477acad4311ea94340242ac110002')
+    this.selectCompanyDetails(this.data.companyId)
+    // this.selectCompanyDetails('42b477acad4311ea94340242ac110002')
   },
   // 获取店铺详情
   selectCompanyDetails(companyId){
@@ -141,10 +145,39 @@ Page({
             })
           }
         })
+        let hotList = res.result.hotProductList
+        hotList.map(item => {
+          item.typeList = []
+          if(item.express && item.express== 1){
+            item.typeList.push({
+              id:'3',
+              name: '快递',
+              num: 1,
+              checked: false
+            })
+          }
+          if(item.isPick && item.isPick== 1){
+            item.typeList.push({
+              id:'2',
+              name: '自提',
+              num: 1,
+              checked: false
+            })
+          }
+          if(item.isDelivery && item.isDelivery== 1){
+            item.typeList.push({
+              id:'1',
+              name: '商家配送',
+              num: 1,
+              checked: false
+            })
+          }
+        })
         this.setData({
           shopInfo: res.result,
           rightData: res.result.companyClassList,
           rightDataList:rightDataList,
+          hotList:hotList
         })
         // if(this.data.type == 'goods'){
         //   this.findGoodId(this.data.rightData, options.id)
@@ -226,7 +259,6 @@ Page({
         currentScrollId: id,
         rightDataList: rightDataList ? rightDataList : {}
       }) 
-      console.log(rightDataList)
     }
   },
   bindscroll (e) {
@@ -240,7 +272,7 @@ Page({
       })
     }
   },
-  // 点击加入购物车图标
+  // 点击分页加入购物车图标
   openPopup(e){
     if(wx.getStorageSync('userInfo').id){
       let rightDataList = this.data.rightDataList
@@ -258,7 +290,25 @@ Page({
       })
     }
   },
-  // 点击热销弹出的底部弹窗
+  // 点击热销加入购物车图标
+  openHotPopup(e){
+    if(wx.getStorageSync('userInfo').id){
+      let hotList = this.data.hotList
+      let id = e.currentTarget.dataset.id
+      this.data.typeList = hotList.find(item => item.id == id)
+      this.setData({
+        showPopup: true,
+        typeList: this.data.typeList,
+        'goodsDetail.productId': id,
+        'goodsDetail.companyId': e.currentTarget.dataset.company
+      })
+    }else{
+      this.setData({
+        visible: true
+      })
+    }
+  },
+  // 点击分页弹出的底部弹窗
   typeChange(e){
     this.data.typeList.typeList.map(item => {
       item.checked = false
@@ -274,10 +324,10 @@ Page({
   closePopup(){
     this.setData({
       showPopup: false,
-      canSubmit:false
+      canSubmit:false,
     })
   },
-  // 点击加减商品
+  // 点击分页加减商品
   quantityChange(e){
     const index = e.currentTarget.dataset.index
     let typeList = this.data.typeList
@@ -344,7 +394,8 @@ Page({
           });
           this.setData({
             showPopup: false,
-            canSubmit:false
+            canSubmit:false,
+            typeList:[]
           })
         }else{
           $Toast({
