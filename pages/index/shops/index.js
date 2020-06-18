@@ -175,7 +175,7 @@ Page({
         })
         this.setData({
           shopInfo: res.result,
-          rightData: res.result.companyClassList,
+          rightData: res.result.companyClassList ? res.result.companyClassList : [],
           rightDataList:rightDataList,
           hotList:hotList
         })

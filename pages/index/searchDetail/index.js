@@ -9,8 +9,8 @@ Page({
     url: app.globalData.url,
     goodsName: '',
     tabList:[
-      { id:1, name:"店铺" },
       { id:2, name:"商品" },
+      { id:1, name:"店铺" },
     ],
     currentTab:0,
     shopList:[],
@@ -76,6 +76,15 @@ Page({
     wx_gotoNewUrl('navigateTo','/pages/classify/goodsDetail/index',{
       goodsid:e.currentTarget.dataset.id, // 详细商品id
       goodsname:e.currentTarget.dataset.name, // 详细商品名称
+      type:'goods'
     })
-  }
+  },
+  // 点击去店铺详情
+  gotoShop(e){
+    wx_gotoNewUrl('navigateTo','/pages/index/shops/index',{
+      companyId: e.currentTarget.dataset.item.companyId,
+      companyName: e.currentTarget.dataset.item.companyName,
+      type:'shops'
+    })
+  },
 })

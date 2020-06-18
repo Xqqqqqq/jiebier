@@ -47,7 +47,7 @@ class Classify extends HTTP {
    /**
    * 	生成订单
    */
-  searchRegion(data){
+  saveOrders(data){
     return this.request({
       url:'/api/orders/saveOrders',
       data:data

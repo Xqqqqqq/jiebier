@@ -21,6 +21,7 @@ Page({
     countDown:60,
   },
   onShow(){
+    console.log(wx.getStorageSync('wxUserInfo'))
     if(wx.getStorageSync('wxUserInfo')){
       this.setData({
         'submitForm.headPortrait': wx.getStorageSync('wxUserInfo').avatarUrl,

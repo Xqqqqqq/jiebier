@@ -8,10 +8,10 @@
       </view>
       <view class="top-banner-name" wx:if="{{shopInfo.companyName}}">{{shopInfo.companyName}}</view>
     </view>
-    <view class="wrap-title">
+    <view class="wrap-title" wx:if="{{hotList.length > 0}}">
       <view class="wrap-title-name">热销</view>
     </view>
-    <view class="wrap-scroll">
+    <view class="wrap-scroll" wx:if="{{hotList.length > 0}}">
       <scroll-view scroll-x="true">
         <view class="scroll-li" wx:for="{{hotList}}" wx:key="index">
           <view class="scroll-li-img">
@@ -33,7 +33,7 @@
     <view class="line-block"></view>
   </view>
   <!-- 商品区 -->
-  <view class="cont">
+  <view class="cont" wx:if="{{rightData.length > 0}}">
     <scroll-view scroll-y="true" scroll-with-animation="true" class="cont-box">
       <scroll-view scroll-y="true" class="scr_left" scroll-with-animation="true">
         <block wx:for="{{rightData}}" wx:for-item="item" wx:key="index">
@@ -85,6 +85,10 @@
         </view>
       </block>
     </scroll-view> -->
+  </view>
+  <view class="no-data" wx:else>
+    <image src="{{url}}tabs/no-data.png" mode="widthFix"></image>
+    <view class="no-data-text">暂无数据</view>
   </view>
   <!-- 购物车 -->
   <view class="containner-block"></view>

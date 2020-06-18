@@ -16,8 +16,8 @@
   </view>
   <!-- card部分 -->
   <!-- 店铺 -->
-  <block wx:if="{{currentTab == 0 && shopList.length > 0}}">
-    <view class="shop-card" wx:for="{{shopList}}" wx:key>
+  <block wx:if="{{currentTab == 1 && shopList.length > 0}}">
+    <view class="shop-card" wx:for="{{shopList}}" wx:key data-item="{{item}}" bindtap="gotoShop">
       <view class="shop-card-left">
         <image src="{{item.companyUrl}}"></image>
       </view>
@@ -28,7 +28,7 @@
     </view>
   </block>
   <!-- 商品 -->
-  <block wx:if="{{currentTab == 1 && goodsList.length > 0}}">
+  <block wx:if="{{currentTab == 0 && goodsList.length > 0}}">
     <view class="shop-card" wx:for="{{goodsList}}" wx:key="index" 
     data-id="{{item.productId}}" data-name="{{item.productName}}" bindtap="gotoDetail">
       <view class="shop-card-left">
@@ -44,7 +44,7 @@
       </view>
     </view>
   </block>
-  <view class="no-data" wx:if="{{shopList.length ==0 || goodsList.length ==0}}">
+  <view class="no-data" wx:if="{{shopList.length ==0 && currentTab == 1 || goodsList.length ==0 && currentTab == 0}}">
     <image src="{{url}}tabs/no-data.png" mode="widthFix"></image>
     <view class="no-data-text">暂无数据</view>
   </view>

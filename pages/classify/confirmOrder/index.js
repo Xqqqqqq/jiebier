@@ -134,11 +134,14 @@ Page({
       });
     }else{
       console.log('可以提交')
-      classify.searchRegion({
+      classify.saveOrders({
         ...this.data.submitForm
       }).then(res => {
         if(res.code == 200){
-
+          $Toast({
+            content: "生成订单成功，可以调支付了！",
+            type: 'success'
+          });
         }else{
           $Toast({
             content: res.msg,
