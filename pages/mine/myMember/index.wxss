@@ -17,8 +17,10 @@
 }
 .wrap-li-top{
   width: 68%;
-  display: flex;
+  /* display: flex; */
   margin-bottom: 15rpx;
+  margin-top: 10rpx;
+  text-align: right;
 }
 .li-top-left{
   font-size: 98rpx;
@@ -45,7 +47,7 @@
   color:rgba(255,255,255,1);
 }
 .wrap-li-bottom{
-  width: 60%;
+  width: 68%;
   text-align: right;
   font-size: 24rpx;
   color: #EDD1B3;

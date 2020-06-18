@@ -18,5 +18,15 @@ class Mine extends HTTP {
       data: data,
     })
   }
+  /**
+   * 	获取用户会员信息
+   */
+  getMembersInfo(data){
+    return this.request({
+      url:'/api/member/getMembersInfo',
+      data: data,
+      method:'GET'
+    })
+  }
 }
 export { Mine }

@@ -75,7 +75,7 @@ Page({
     }else if(this.data.submitForm.couponType == '0'){
       total = total*0.98
     }
-    console.log('total',total)
+    // console.log('total',total)
     this.setData({
       goodsList: goodsList,
       totalMoney: total.toFixed(2)
@@ -126,7 +126,7 @@ Page({
     })
   },
   gotoPay(){
-    console.log('this.data.submitForm',this.data.submitForm)
+    // console.log('this.data.submitForm',this.data.submitForm)
     if(!this.data.submitForm.address || !this.data.submitForm.addressDetails || !this.data.submitForm.name || !this.data.submitForm.tel){
       $Toast({
         content: "请完善收货信息！",
