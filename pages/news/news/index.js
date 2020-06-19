@@ -71,7 +71,7 @@ Page({
     }else if(e.currentTarget.dataset.item.newsType == 2) { //商品消息
       wx_gotoNewUrl('navigateTo','/pages/classify/goodsDetail/index',{
         goodsid:e.currentTarget.dataset.item.keyword, // 详细商品id
-        goodsname:e.currentTarget.dataset.item.remark, // 详细商品名称
+        goodsname:'订单详情', // 详细商品名称
       })
     }else if(e.currentTarget.dataset.item.newsType == 0) { // 系统消息
       console.log('系统消息，不可点击')

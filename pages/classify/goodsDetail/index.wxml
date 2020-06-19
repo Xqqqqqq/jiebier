@@ -48,7 +48,7 @@
       <view class="wrap-box-li-right">{{goodInfo.productOutVo.productWeight}}</view>
     </view>
     <view class="wrap-box-li wrap-box-li-other" wx:if="{{goodInfo.productOutVo.companyName}}">
-      <view class="wrap-box-li-left">厂家</view>
+      <view class="wrap-box-li-left">店铺</view>
       <view class="wrap-box-li-right">{{goodInfo.productOutVo.companyName}}</view>
     </view>
   </view>
