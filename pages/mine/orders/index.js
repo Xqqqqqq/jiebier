@@ -1,24 +1,66 @@
+import { Mine } from '../../../api-models/mine/mine';
+const mine = new Mine();
 import { wx_gotoNewUrl } from '../../../utils/fn'
+const { $Toast } = require('../../../dist/base/index');
 //获取应用实例
 const app = getApp()
 Page({
   data:{
     url: app.globalData.url,
     tabList:[
-      { id:1, name:"我的订单"},
-      { id:2, name:"待收货"},
-      { id:3, name:"已完成"},
-      { id:4, name:"已取消"},
+      { id:'', name:"我的订单"},
+      { id:1, name:"未完成"},
+      { id:2, name:"已完成"},
+      { id:3, name:"已取消"},
     ],
     currentTab:0,
     visibleCancel: false, //取消订单弹窗
+    orderList:[],
+    couponStateList:[],
+    visible: false, // 登录弹窗
   },
-  onLoad(options){
-    console.log(options)
+  onShow(){
+    this.selectOrdersList('')
+  },
+  selectOrdersList(condition){
+    if(wx.getStorageSync('userInfo').id){
+      mine.selectOrdersList({
+        condition:condition,
+        userId:wx.getStorageSync('userInfo').id
+      }).then(res => {
+        if(res.code == 200){
+          console.log(res)
+          this.setData({
+            orderList: res.result
+          })
+        }else{
+          $Toast({
+            content: res.msg,
+            type: 'error'
+          });
+        }
+      })
+    }else{
+      this.setData({
+        visible: true
+      })
+    }
+  },
+  handleOk(){
+    this.setData({
+      visible: false
+    })
+    wx_gotoNewUrl('navigateTo','/pages/loginAll/loginAdmin/index')
+  },
+  handleClose(){
+    this.setData({
+      visible: false
+    })
   },
   // 切换状态
   clickTab(e){
     let cur = e.currentTarget.dataset.current;
+    let id = e.currentTarget.dataset.id;
     if(this.data.currentTab == cur){
       return false;
     }else{
@@ -26,10 +68,13 @@ Page({
         currentTab:cur,
       }) 
     }
+    this.selectOrdersList(id)
   },
   // 查看详情
-  gotoDetail(){
-    wx_gotoNewUrl('navigateTo','/pages/mine/orderDetail/index')
+  gotoDetail(e){
+    wx_gotoNewUrl('navigateTo','/pages/mine/orderDetail/index',{
+      id:e.currentTarget.dataset.id
+    })
   },
   // 查看进度
   gotoProgress(){

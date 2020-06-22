@@ -28,5 +28,25 @@ class Mine extends HTTP {
       method:'GET'
     })
   }
+  /**
+   * 	查询订单列表
+   */
+  selectOrdersList(data){
+    return this.request({
+      url:'/api/orders/selectOrdersList',
+      data: data,
+      method:'GET'
+    })
+  }
+  /**
+   * 	查询订单详情
+   */
+  selectOrdersDetails(data){
+    return this.request({
+      url:'/api/orders/selectOrdersDetails',
+      data: data,
+      method:'GET'
+    })
+  }
 }
 export { Mine }

@@ -1,7 +1,11 @@
 <view class="wrap" wx:if="{{goodsLength > 0}}">
   <view class="wrap-top">
     <view class="wrap-top-left">共{{goodsLength}}件宝贝</view>
-    <view class="wrap-top-right" bindtap="changeName">{{clickName}}</view>
+    <i-switch value="{{switch}}" size="large" bind:change="onChange">
+      <view slot="open">完成</view>
+      <view slot="close">编辑</view>
+    </i-switch>
+    <!-- <view class="wrap-top-right" bindtap="changeName">{{clickName}}</view> -->
   </view>
   <view class="goods-box" wx:for="{{goodsList}}" wx:key="index" wx:for-index="index">
     <view class="goods-box-top" bindtap="switchSelect" data-index="{{index}}" data-id="{{item.companyId}}">

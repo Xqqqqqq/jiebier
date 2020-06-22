@@ -38,7 +38,8 @@
     </view> -->
     <view class="box-line" bindtap="gotoCoupon">
       <view class="box-line-left">折扣/优惠券</view>
-      <view class="box-line-right">></view>
+      <view class="box-line-right" wx:if="{{price}}">抵扣{{price}}元 ></view>
+      <view class="box-line-right" wx:else>></view>
     </view>
     <view class="box-line">
       <view class="box-line-left">支付方式</view>

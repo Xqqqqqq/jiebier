@@ -26,14 +26,15 @@
   position: relative;
   padding-bottom: 30rpx;
   box-sizing: border-box;
-  border-bottom: 1rpx solid #f4f4f6
+  border-bottom: 1rpx solid #f4f4f6;
 }
 .li-top-img{
-  width:120rpx;
-  height:120rpx;
+  width:100rpx;
+  height:100rpx;
   border-radius:20rpx;
   margin-right: 24rpx;
-  background-color: red;
+  overflow: hidden;
+  border-bottom: 1rpx solid #f4f4f6;
 }
 .li-top-img image{
   width:100%;
@@ -43,20 +44,30 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  width: 100%;
 }
 .top-right-title{
   font-size: 32rpx;
   color: #000000;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+  width: 100%;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
 }
 .top-right-time{
   font-size: 22rpx;
   color: #565656;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 .li-top-status{
-  font-size: 24rpx;
+  font-size: 32rpx;
   position: absolute;
   top: 5rpx;
-  right: 10rpx;
+  right: 0rpx;
 }
 .box-li-content{
   width: 100%;
@@ -64,15 +75,17 @@
 }
 .li-content-line{
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   margin-bottom: 24rpx;
 }
 .content-line-left{
-  font-size: 24rpx;
+  font-size: 28rpx;
   color: #565656;
+  display: flex;
+  justify-content: space-between;
 }
 .content-line-left text{
-  font-size: 24rpx;
+  font-size: 28rpx;
   color: #565656;
   margin-left: 18rpx;
 }
@@ -98,4 +111,11 @@
 .box-li-btn-orange{
   border: 1px solid #EC5E5B;
   color: #EC5E5B;
+}
+.content-line-box{
+  margin-left: 15rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 75%;
 }

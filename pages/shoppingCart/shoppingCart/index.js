@@ -19,6 +19,7 @@ Page({
     showMask: false,
     deleteList:[], //需要删除的id数组
     visible: false,
+    switch: true, // 完成/编辑的按钮
   },
   onShow(){
     this.setData({
@@ -106,6 +107,21 @@ Page({
       })
     })
     return newSourceData
+  },
+  onChange(event){
+    const detail = event.detail;
+    this.setData({
+      'switch' : detail.value
+    })
+    if(detail.value == true){
+      this.setData({
+        showDelete: false
+      })
+    }else{
+      this.setData({
+        showDelete: true
+      })
+    }
   },
   changeName(){
     if(this.data.clickName == '编辑'){

@@ -1,6 +1,8 @@
+page{
+  background-color: #F8F8F8;
+}
 .wrap{
   width: 100%;
-  background-color: #F8F8F8;
   padding: 27rpx 24rpx;
   box-sizing: border-box;
 }
@@ -10,7 +12,6 @@
   box-shadow:0px 2px 8px 0px #EFEFEF;
   padding: 0 31rpx;
   box-sizing: border-box;
-  margin-bottom: 28rpx;
 }
 .detail-click-li{
   width: 100%;
@@ -33,9 +34,13 @@
 }
 .click-li-name{
   color: #202020;
-  font-size: 34rpx;
+  font-size: 32rpx;
   margin-top: 1%;
   font-weight: bold;
+  width: 100%;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
 }
 .click-li-icon{
   position: absolute;
@@ -54,6 +59,17 @@
 .detail-li-left{
   color: #202020;
   font-size: 34rpx;
+  display: flex;
+}
+.detail-li-left-img{
+  width: 70rpx;
+  height: 70rpx;
+  margin-right: 15rpx;
+  margin-top: 5%;
+}
+.detail-li-left-img image{
+  width: 100%;
+  height: 100%;
 }
 .detail-li-left text{
   margin-left: 20rpx;

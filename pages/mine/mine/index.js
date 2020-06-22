@@ -17,8 +17,6 @@ Page({
         isLogin: wx.getStorageSync('loginStatus'),
         wxUserInfo: wx.getStorageSync('wxUserInfo')
       })
-    }else{
-
     }
   },
   gotoRouter(e){

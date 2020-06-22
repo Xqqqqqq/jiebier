@@ -18,6 +18,8 @@ Page({
       couponType: '', //优惠类型：0打折，1优惠券，2无
     },
     price:0, // 选择优惠券的钱数
+    couponName:0,
+    getPrice: 0
   },
   onLoad(options){
     console.log(options)
@@ -29,7 +31,7 @@ Page({
         'submitForm.tel': options.tel,
         'submitForm.couponId': options.couponId,
         'submitForm.couponType': options.couponType,
-        price:options.price
+        getPrice: options.price
       })
     }
   },
@@ -63,6 +65,7 @@ Page({
   },
   // 计算总价
   getTotalPrice(){
+    console.log('343434', this.data.submitForm.couponType)
     let goodsList = this.data.orderList
     let total = 0
     for(let i =0; i < goodsList.length; i++){ 
@@ -70,13 +73,15 @@ Page({
         total += Number(goodsList[i].children[j].productNum) * Number(goodsList[i].children[j].productPrice)
       }
     }
-    if(this.data.price >0 && this.data.submitForm.couponType == '1'){
-      total = total-this.data.price
+    if(this.data.getPrice >0 && this.data.submitForm.couponType == '1'){
+      total = total-this.data.getPrice
+      this.data.price = this.data.getPrice
     }else if(this.data.submitForm.couponType == '0'){
       total = total*0.98
+      this.data.price = (total-total*0.98).toFixed(2)
     }
-    // console.log('total',total)
     this.setData({
+      price:this.data.price,
       goodsList: goodsList,
       totalMoney: total.toFixed(2)
     })
@@ -135,13 +140,28 @@ Page({
     }else{
       console.log('可以提交')
       classify.saveOrders({
-        ...this.data.submitForm
+        ...this.data.submitForm,
+        openId: wx.getStorageSync('openId')
       }).then(res => {
         if(res.code == 200){
-          $Toast({
-            content: "生成订单成功，可以调支付了！",
-            type: 'success'
-          });
+          if(res.result){
+            let result = JSON.parse(res.result)
+            // console.log(result)
+            wx.requestPayment({
+              'timeStamp': result.timeStamp,
+              'nonceStr': result.nonceStr,
+              'package': result.package,
+              'signType': 'MD5',
+              'paySign': result.paySign,
+              'success': function (res) {
+                console.log("支付成功");
+              },
+              'fail': function (res) {
+                //支付失败后的回掉
+                console.log("支付失败");
+              }
+            })
+          }
         }else{
           $Toast({
             content: res.msg,

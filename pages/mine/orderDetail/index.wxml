@@ -1,5 +1,5 @@
-<view class="wrap">
-  <view class="news-detail">
+<view class="wrap" wx:for="{{orderInfoList}}" wx:key="index">
+  <!-- <view class="news-detail">
     <view class="detail-click-li" bindtap="gotoProgress">
       <view class="click-li-name">订单取消</view>
       <i-icon type="enter" size="24" color="#D3D3D3" class="click-li-icon"/>
@@ -7,54 +7,42 @@
     <view class="detail-box">
       <text>您取消了订单\n退款(￥96)将于2个工作日原路退回</text>
     </view>
-  </view>
-  <view class="news-detail">
-    <view class="detail-click-li" bindtap="gotoShops">
-      <view class="click-li-img">
-        <!-- <image></image> -->
-      </view>
-      <view class="click-li-name">校友店铺</view>
-      <i-icon type="enter" size="24" color="#D3D3D3" class="click-li-icon"/>
-    </view>
-    <view class="detail-li">
-      <view class="detail-li-left">牛奶 <text>x1</text></view>
-      <view class="detail-li-right"><text>￥</text>30</view>
-    </view>
-    <view class="detail-li">
-      <view class="detail-li-left">牛奶 <text>x1</text></view>
-      <view class="detail-li-right"><text>￥</text>30</view>
-    </view>
-    <view class="detail-price"><text class="detail-price-big">30</text><text class="detail-price-small">￥</text>实付</view>
-  </view>
-  <view class="news-detail">
+  </view> -->
+  <!-- <view class="detail-price"><text class="detail-price-big">30</text><text class="detail-price-small">￥</text>实付</view> -->
+  <!-- <view class="news-detail">
     <view class="detail-li">
       <view class="detail-li-left detail-li-left-other">优惠券</view>
       <view class="detail-li-right">-30元</view>
     </view>
-  </view>
+  </view> -->
   <view class="news-detail">
-    <view class="detail-li">
-      <view class="detail-li-left detail-li-left-other">订单信息</view>
+    <view class="detail-click-li">
+      <!-- <view class="click-li-img">
+        <image></image>
+      </view> -->
+      <view class="click-li-name">订单号：{{item.subOrderNo}}</view>
     </view>
-    <view class="detail-li">
-      <view class="detail-li-left detail-li-left-other">订单号</view>
-      <view class="detail-li-right">138452xxxxxx</view>
-    </view>
-    <view class="detail-li">
-      <view class="detail-li-left detail-li-left-other">支付方式</view>
-      <view class="detail-li-right">微信</view>
+    <view class="detail-li" wx:for="{{item.ordersProductDetailsList}}" wx:for-item="itemSmall" wx:key="indexSmall" wx:for-index="indexSmall">
+      <view class="detail-li-left" bindtap="openImg" data-url="{{itemSmall.mainImg}}">
+        <view class="detail-li-left-img">
+          <image src="{{itemSmall.mainImg}}"></image>
+        </view>
+        {{itemSmall.productName}} <text>x{{itemSmall.productNum}}</text>
+      </view>
+      <view class="detail-li-right"><text>￥</text>{{itemSmall.productPrice}}</view>
     </view>
     <view class="detail-li">
       <view class="detail-li-left detail-li-left-other">下单时间</view>
-      <view class="detail-li-right">2020-02-02 15:30</view>
+      <view class="detail-li-right">{{item.createTime}}</view>
     </view>
     <view class="detail-li">
       <view class="detail-li-left detail-li-left-other">配送方式</view>
-      <view class="detail-li-right">自提</view>
+      <view class="detail-li-right">{{item.dictLabel}}</view>
     </view>
-    <view class="detail-li">
+    <view class="detail-li" wx:if="{{item.logisticsNo}}">
       <view class="detail-li-left detail-li-left-other">物流单号</view>
-      <view class="detail-li-right">wda143543241321<text class="li-right-btn">复制</text></view>
+      <view class="detail-li-right">{{item.logisticsNo}}<text class="li-right-btn">复制</text></view>
     </view>
   </view>
+  <i-toast id="toast" />
 </view>
