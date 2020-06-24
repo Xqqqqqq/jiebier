@@ -65,7 +65,6 @@ Page({
   },
   // 计算总价
   getTotalPrice(){
-    console.log('343434', this.data.submitForm.couponType)
     let goodsList = this.data.orderList
     let total = 0
     for(let i =0; i < goodsList.length; i++){ 
@@ -138,7 +137,7 @@ Page({
         type: 'warning'
       });
     }else{
-      console.log('可以提交')
+      // console.log('可以提交')
       classify.saveOrders({
         ...this.data.submitForm,
         openId: wx.getStorageSync('openId')
@@ -146,12 +145,12 @@ Page({
         if(res.code == 200){
           if(res.result){
             let result = JSON.parse(res.result)
-            // console.log(result)
+            console.log(result)
             wx.requestPayment({
               'timeStamp': result.timeStamp,
               'nonceStr': result.nonceStr,
               'package': result.package,
-              'signType': 'MD5',
+              'signType': result.signType,
               'paySign': result.paySign,
               'success': function (res) {
                 console.log("支付成功");

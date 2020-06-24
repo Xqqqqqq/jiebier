@@ -3,6 +3,8 @@
   "usingComponents": {
     "i-toast": "../../../dist/toast/index",
     "i-icon": "../../../dist/icon/index",
-    "i-input": "../../../dist/input/index"
+    "i-input": "../../../dist/input/index",
+    "i-checkbox-group": "../../../dist/checkbox-group/index",
+    "i-checkbox": "../../../dist/checkbox/index"
   }
 }

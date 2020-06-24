@@ -24,6 +24,7 @@ Page({
       bankCardOpen: '',//开户行
       licenseImg: '',//经营许可证
       openid: '', //微信openid  必填
+      remark: '', // 种类
     },
     statusList: [], //状态数组
     statusIndex: '',
@@ -32,6 +33,11 @@ Page({
     openid: '',
     showImg: true, // 是否显示审核中
     companyStatus: '',//  1：已认证 2：认证中 3：未认证 4：逾期
+    showMask:false, // 企业个人种类
+    classList:[], // 企业种类
+    position: 'left',
+    checked: false,
+    remarkList:[],
   },
   onShow(){
     this.getDictAll()
@@ -99,19 +105,19 @@ Page({
   },
   // 获取用户字典 
   getDictAll(){
-    // 企业状态
-    // index.getDict({ dictType: 'company_status' }).then(res => {
-    //   if(res.code == 200){
-    //     this.setData({
-    //       statusList: res.result
-    //     })
-    //   }else {
-    //     $Toast({
-    //       content: res.msg,
-    //       type: 'error'
-    //     });
-    //   }
-    // })
+    // 企业种类
+    index.getDict({ dictType: 'settle_type' }).then(res => {
+      if(res.code == 200){
+        this.setData({
+          classList: res.result
+        })
+      }else {
+        $Toast({
+          content: res.msg,
+          type: 'error'
+        });
+      }
+    })
     // 企业类型
     index.getDict({ dictType: 'company_type' }).then(res => {
       if(res.code == 200){
@@ -124,6 +130,30 @@ Page({
           type: 'error'
         });
       }
+    })
+  },
+  openBox(){
+    this.setData({
+      showMask:true,
+    })
+  },
+  closeCheckBox(){
+    this.setData({
+      showMask:false,
+    })
+  },
+  handleCheckboxChange({ detail = {} }) {
+    const index = this.data.remarkList.indexOf(detail.value);
+    index === -1 ? this.data.remarkList.push(detail.value) : this.data.remarkList.splice(index, 1);
+    this.setData({
+      remarkList: this.data.remarkList
+    });
+  },
+  chooseCheckBox(){
+    this.data.submitInfo.remark = this.data.remarkList.join(',')
+    this.setData({
+      showMask:false,
+      'submitInfo.remark':this.data.submitInfo.remark
     })
   },
   changeCompanyName(e){
@@ -226,25 +256,38 @@ Page({
   },
   onSubmitForm(){
     // console.log(this.data.submitInfo)
-    index.companyIn({
-      ...this.data.submitInfo,
-      openid: this.data.openid,
-    }).then(res => {
-      if(res.code == 200){
-        $Toast({
-          content: '提交成功！',
-          type: 'success'
-        });
-        this.setData({
-          submitInfo: ''
-        })
-        this.getCompanyState(wx.getStorageSync('openId'))
-      }else{
-        $Toast({
-          content: res.msg,
-          type: 'error'
-        });
-      }
-    })
+    // console.log(this.data.remarkList)
+    if(!this.data.submitInfo.companyType){
+      $Toast({
+        content: '请选择企业类型后提交！',
+        type: 'warning'
+      });
+    }else if(!this.data.submitInfo.remark){
+      $Toast({
+        content: '请选择种类后提交！',
+        type: 'warning'
+      });
+    }else{
+      index.companyIn({
+        ...this.data.submitInfo,
+        openid: this.data.openid,
+      }).then(res => {
+        if(res.code == 200){
+          $Toast({
+            content: '提交成功！',
+            type: 'success'
+          });
+          this.setData({
+            submitInfo: ''
+          })
+          this.getCompanyState(wx.getStorageSync('openId'))
+        }else{
+          $Toast({
+            content: res.msg,
+            type: 'error'
+          });
+        }
+      })
+    }
   }
 })
