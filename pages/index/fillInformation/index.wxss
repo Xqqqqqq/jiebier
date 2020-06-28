@@ -140,7 +140,7 @@ picker{
   left: 0;
   bottom: 0;
   font-size: 34rpx;
-  z-index: 999;
+  z-index: 90;
 }
 .mask-box{
   position: fixed;

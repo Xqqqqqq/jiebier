@@ -278,7 +278,8 @@ Page({
             type: 'success'
           });
           this.setData({
-            submitInfo: ''
+            submitInfo: '',
+            remarkList:[]
           })
           this.getCompanyState(wx.getStorageSync('openId'))
         }else{

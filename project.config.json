@@ -2904,6 +2904,20 @@
 					"id": -1,
 					"name": "pages/index/fillInformation/index",
 					"pathName": "pages/index/fillInformation/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/fillInformation/index",
+					"pathName": "pages/index/fillInformation/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/hotSale/index",
+					"pathName": "pages/index/hotSale/index",
 					"scene": null
 				}
 			]
