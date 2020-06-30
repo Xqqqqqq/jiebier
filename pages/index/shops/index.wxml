@@ -92,9 +92,12 @@
   </view>
   <!-- 购物车 -->
   <view class="containner-block"></view>
-  <view class="bottom" bindtap="gotoShop">
-    去购物车
-    <!-- <view class="bottom-left">
+  <view class="bottom">
+    <view class="bottom-left" bindtap="clickBinding">绑定店铺</view>
+    <view class="bottom-left bottom-right" bindtap="gotoShop">去购物车</view>
+  </view>
+  <!-- <view class="bottom" bindtap="gotoShop">
+    <view class="bottom-left">
       <view class="bottom-left-shop">
         <image src="{{url}}index/shopping.png"></image>
         <view class="left-shop-num">1</view>
@@ -103,8 +106,8 @@
         <text>￥</text>30
       </view>
     </view>
-    <view class="bottom-right">支 付</view> -->
-  </view>
+    <view class="bottom-right">支 付</view>
+  </view> -->
   <!-- 底部弹窗 -->
   <view class="wrap-mask" wx:if="{{showPopup}}" bindtap="closePopup"></view>
   <!-- 分类弹出的弹框 -->

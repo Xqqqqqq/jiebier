@@ -26,8 +26,9 @@
         </view>
         <view class="box-content-right">
           <view class="content-right-top">
-            {{itemSmall.productName}}
+            <view class="content-right-top-name">{{itemSmall.productName}}</view>
             <view class="right-top-score">{{itemSmall.productPrice}}积分</view>
+            <view class="content-right-top-pos" wx:if="{{itemSmall.ifUse != 1}}">不可结算</view>
           </view>
           <!-- <view class="content-right-type" catchtap="openMask"> -->
           <view class="content-right-type" wx:if="{{itemSmall.deliveryLabel}}">

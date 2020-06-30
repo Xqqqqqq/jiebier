@@ -424,6 +424,31 @@ Page({
   },
   gotoShop(){
     wx_gotoNewUrl('switchTab','/pages/shoppingCart/shoppingCart/index')
+  },
+  // 绑定店铺
+  clickBinding(){
+    if(wx.getStorageSync('userInfo').id){
+      index.bindCompany({
+        "companyId": this.data.companyId,
+        "userId":wx.getStorageSync('userInfo').id
+      }).then(res => {
+        if(res.code == 200){
+          $Toast({
+            content: '绑定成功！',
+            type: 'success'
+          });
+        }else{
+          $Toast({
+            content: res.msg,
+            type: 'error'
+          });
+        }
+      })
+    }else{
+      this.setData({
+        visible: true
+      })
+    }
   }
 
 

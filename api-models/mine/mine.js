@@ -48,5 +48,15 @@ class Mine extends HTTP {
       method:'GET'
     })
   }
+  /**
+   * 	用户申请订单退款
+   */
+  ordersRefund(data){
+    return this.request({
+      url:'/api/orders/ordersRefund',
+      data: data,
+      method:'GET'
+    })
+  }
 }
 export { Mine }

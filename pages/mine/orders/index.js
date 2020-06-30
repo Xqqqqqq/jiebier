@@ -14,7 +14,8 @@ Page({
       { id:3, name:"已取消"},
     ],
     currentTab:0,
-    visibleCancel: false, //取消订单弹窗
+    visibleReturn: false, //申请退货弹窗
+    mainorderno:'', //申请退货
     orderList:[],
     couponStateList:[],
     visible: false, // 登录弹窗
@@ -29,7 +30,7 @@ Page({
         userId:wx.getStorageSync('userInfo').id
       }).then(res => {
         if(res.code == 200){
-          console.log(res)
+          // console.log(res)
           this.setData({
             orderList: res.result
           })
@@ -80,20 +81,51 @@ Page({
   gotoProgress(){
     wx_gotoNewUrl('navigateTo','/pages/mine/cancelStep/index')
   },
-  // 取消订单
-  clickCancel(){
+  // 申请退货
+  gotoReturn(e){
+    // console.log(e.currentTarget.dataset.mainorderno)
     this.setData({
-      visibleCancel: true
+      visibleReturn: true,
+      mainorderno: e.currentTarget.dataset.mainorderno
     });
   },
-  handleCancelFalse(){
+  handleReturnFalse(){
     this.setData({
-      visibleCancel: false
+      visibleReturn: false
     });
   },
-  handleCancelTrue(){
+  handleReturnTrue(){
+    if(this.data.mainorderno){
+      mine.ordersRefund({
+        mainOrderNo: this.data.mainorderno
+      }).then(res => {
+        if(res.code == 200){
+          $Toast({
+            content: "申请成功，等待审核！",
+            type: 'success'
+          });
+          setTimeout(() => {
+            this.setData({
+              orderList:[],
+              couponStateList:[]
+            })
+            this.selectOrdersList('')
+          }, 2000);
+        }else{
+          $Toast({
+            content: res.msg,
+            type: 'error'
+          });
+        }
+      })
+    }else{
+      $Toast({
+        content: '未获取到订单号，请重试！',
+        type: 'error'
+      });
+    }
     this.setData({
-      visibleCancel: false
+      visibleReturn: false
     });
   }
 })

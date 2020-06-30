@@ -4,7 +4,7 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": false,
+		"urlCheck": true,
 		"es6": true,
 		"enhance": true,
 		"postcss": true,
@@ -2918,6 +2918,27 @@
 					"id": -1,
 					"name": "pages/index/hotSale/index",
 					"pathName": "pages/index/hotSale/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/shops/index",
+					"pathName": "pages/index/shops/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/shoppingCart/shoppingCart/index",
+					"pathName": "pages/shoppingCart/shoppingCart/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/mine/orders/index",
+					"pathName": "pages/mine/orders/index",
 					"scene": null
 				}
 			]

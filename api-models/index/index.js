@@ -101,5 +101,14 @@ class Index extends HTTP {
       method:"GET"  
     })
   }
+  /**
+   * 	绑定店铺
+   */
+  bindCompany(data){
+    return this.request({
+      url:'/api/member/bindCompany',
+      data: data,
+    })
+  }
 }
 export { Index }

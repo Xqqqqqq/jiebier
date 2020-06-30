@@ -135,6 +135,22 @@
   color: #000000;
   margin-bottom: 15rpx;
   font-weight: bold;
+  position: relative;
+}
+.content-right-top-pos{
+  font-size: 28rpx;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0rpx;
+  font-weight: normal;
+  color: #FF4100;
+}
+.content-right-top-name{
+  max-width: 45%;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
 }
 .right-top-score{
   min-width:72rpx;
