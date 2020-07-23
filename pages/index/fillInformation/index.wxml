@@ -152,6 +152,7 @@
       <view class="box-block-title">上传许可证</view>
     </view>
   </view>
+  <view class="tips" bindtap="gotoFill">* 提交即代表同意入驻协议（点击查看协议）</view>
   <view class="wrap-btn-block"></view>
   <view class="wrap-btn" bindtap="onSubmitForm">提 交</view>
   <i-toast id="toast" />

@@ -2939,6 +2939,27 @@
 					"id": -1,
 					"name": "pages/mine/orders/index",
 					"pathName": "pages/mine/orders/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/fillInformation/index",
+					"pathName": "pages/index/fillInformation/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/fillAgreement/index",
+					"pathName": "pages/index/fillAgreement/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/fillInformation/index",
+					"pathName": "pages/index/fillInformation/index",
 					"scene": null
 				}
 			]

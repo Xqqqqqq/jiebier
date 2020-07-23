@@ -43,4 +43,9 @@ Page({
       });
     }
   },
+  callPhone(){
+    wx.makePhoneCall({
+      phoneNumber: '1340000'
+    })
+  }
 })

@@ -169,3 +169,8 @@ picker{
   line-height: 60rpx;
   font-size: 28rpx;
 }
+.tips{
+  text-align: center;
+  color: red;
+  font-size: 26rpx;
+}

@@ -1,0 +1,17 @@
+.wrap{
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.wrap-title{
+  text-align: center;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+.wrap-content{
+  text-indent: 2em;
+  font-size: 26rpx;
+  line-height: 40rpx;
+  text-align: left;
+  width: 100%;
+}

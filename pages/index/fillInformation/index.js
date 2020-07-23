@@ -290,5 +290,8 @@ Page({
         }
       })
     }
+  },
+  gotoFill(){
+    wx_gotoNewUrl('navigateTo','/pages/index/fillAgreement/index')
   }
 })
