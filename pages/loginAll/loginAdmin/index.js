@@ -29,7 +29,7 @@ Page({
         key: 'wxUserInfo',
         data: e.detail.userInfo,
       })
-      const regPhone = /^1[3|4|5|7|8][0-9]{9}$/;
+      const regPhone = /^1[3|4|5|6|7|8|9][0-9]{9}$/;
       if(!this.data.submitForm.password || !this.data.submitForm.tel){
         $Toast({
           content: '请检查输入项！',

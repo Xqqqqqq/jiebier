@@ -18,7 +18,7 @@ Page({
   },
   // 获取验证码
   getCode() {
-    const regPhone = /^1[3|4|5|7|8][0-9]{9}$/;
+    const regPhone = /^1[3|4|5|6|7|8|9][0-9]{9}$/;
     if(this.data.submitForm.tel == '' || this.data.submitForm.tel == undefined || this.data.submitForm.tel == null) {
       $Toast({
         content: '请输入手机号！',
@@ -77,7 +77,7 @@ Page({
     })
   },
   clickSubmit(){
-    const regPhone = /^1[3|4|5|7|8][0-9]{9}$/;
+    const regPhone = /^1[3|4|5|6|7|8|9][0-9]{9}$/;
     if(!this.data.submitForm.tel || !this.data.submitForm.telCode){
       $Toast({
         content: '请检查输入项！',
