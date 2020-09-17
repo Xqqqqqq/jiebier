@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "超值团购",
+  "usingComponents": {
+    "i-toast": "../../../dist/toast/index",
+    "i-modal": "../../../dist/modal/index",
+    "i-count-down": "../../../dist/count-down/index"
+  }
+}

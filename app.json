@@ -8,6 +8,7 @@
     "pages/index/hotSale/index",
     "pages/index/search/index",
     "pages/index/searchDetail/index",
+    "pages/index/groupBuying/index",
     "pages/classify/classify/index",
     "pages/classify/classifyGoods/index",
     "pages/classify/selectCity/index",
