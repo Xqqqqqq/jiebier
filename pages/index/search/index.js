@@ -71,14 +71,10 @@ Page({
       goodsName: ''
     })
     let cur = e.currentTarget.dataset.index;
-    if(this.data.currentHistoryTab == cur){
-      return false;
-    }else{
-      this.setData({
-        currentHistoryTab:cur,
-        goodsName: this.data.historyList[cur]
-      }) 
-    }
+    this.setData({
+      currentHistoryTab:cur,
+      goodsName: this.data.historyList[cur]
+    }) 
   },
   clickHotTab(e){
     this.setData({

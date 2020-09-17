@@ -41,14 +41,14 @@
     </view>
   </view>
   <view class="my-box my-box-other">
-    <i-cell title="商家入驻" is-link bindtap="gotoRouter" data-url="/pages/index/fillInformation/index" data-type="navigateTo"></i-cell>
-    <view class="my-box-line"></view>
+    <!-- <i-cell title="商家入驻" is-link bindtap="gotoRouter" data-url="/pages/index/fillInformation/index" data-type="navigateTo"></i-cell>
+    <view class="my-box-line"></view> -->
     <i-cell title="优惠券" is-link bindtap="gotoRouter" data-url="/pages/mine/coupon/index" data-type="navigateTo"></i-cell>
     <view class="my-box-line"></view>
     <i-cell title="积分" is-link bindtap="gotoRouter" data-url="/pages/mine/myScore/index" data-type="navigateTo"></i-cell>
     <view class="my-box-line"></view>
     <i-cell title="我的会员" is-link bindtap="gotoRouter" data-url="/pages/mine/myMember/index" data-type="navigateTo"></i-cell>
-    <view class="my-box-line"></view>
-    <i-cell title="客服电话" is-link bindtap="callPhone" data-url="/pages/mine/myMember/index" data-type="navigateTo"></i-cell>
+    <!-- <view class="my-box-line"></view>
+    <i-cell title="客服电话" is-link bindtap="callPhone" data-url="/pages/mine/myMember/index" data-type="navigateTo"></i-cell> -->
   </view>
 </view>

@@ -32,13 +32,6 @@
     "pages/loginAll/forget/index",
     "pages/loginAll/resetPassword/index"
   ],
-  "subPackages": [
-    {
-      "root": "packageMall",
-      "pages": [
-      ]
-    }
-  ],
   "permission": {
     "scope.userLocation": {
       "desc": "你的位置信息将用于获取展示数据"

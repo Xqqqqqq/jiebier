@@ -22,7 +22,10 @@
 			"ignore": [],
 			"disablePlugins": [],
 			"outputPath": ""
-		}
+		},
+		"useIsolateContext": true,
+		"useCompilerModule": true,
+		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.0.4",
@@ -2953,6 +2956,13 @@
 					"id": -1,
 					"name": "pages/index/fillAgreement/index",
 					"pathName": "pages/index/fillAgreement/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/fillInformation/index",
+					"pathName": "pages/index/fillInformation/index",
 					"query": "",
 					"scene": null
 				},
