@@ -15,7 +15,7 @@
       autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}"
       style="height: 100%;">
         <block wx:for="{{imgUrls}}" wx:key="imgUrls">
-          <swiper-item>
+          <swiper-item bindtap="clickSwiper" data-url="{{item.loopLink}}"> 
             <!-- <image src="{{item.loopImg}}" class="slide-image" data-url="indexSwiper" data-id="{{item.id}}" bindtap="clickNews"/> -->
             <image src="{{item.loopImg}}" class="slide-image"/>
           </swiper-item>

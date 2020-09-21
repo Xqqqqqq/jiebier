@@ -228,9 +228,15 @@ Page({
     }
   },
   gotoRouter(e){
-    wx_gotoNewUrl('navigateTo','/pages/classify/goodsDetail/index',{
-      goodsid:e.currentTarget.dataset.id, // 详细商品id
-      goodsname:e.currentTarget.dataset.name, // 详细商品名称
-    })
+    if(e.currentTarget.dataset.group == '1'){
+      wx_gotoNewUrl('navigateTo','/pages/index/groupBuying/index',{
+        goodsid:e.currentTarget.dataset.id, // 详细商品id
+      })
+    }else{
+      wx_gotoNewUrl('navigateTo','/pages/classify/goodsDetail/index',{
+        goodsid:e.currentTarget.dataset.id, // 详细商品id
+        goodsname:e.currentTarget.dataset.name, // 详细商品名称
+      })
+    }
   }
 })

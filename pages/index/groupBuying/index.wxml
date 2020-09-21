@@ -1,15 +1,15 @@
 <view class="wrap">
   <view class="wrap-top">
     <view class="wrap-top-img">
-      <image src="" ></image>
+      <image src="{{productInfo.productImg}}" ></image>
     </view>
     <view class="wrap-top-detail">
       <view class="top-detail-left">
-        ￥<text class="detail-left-pirce">40</text>
-        <text class="detail-left-origin">￥100</text>
+        ￥<text class="detail-left-pirce">{{productInfo.price}}</text>
+        <!-- <text class="detail-left-origin">￥100</text> -->
       </view>
       <view class="top-detail-right">
-        <view class="detail-right-top">超值团购</view>
+        <view class="detail-right-top">{{productInfo.productName}}</view>
         <view class="detail-right-bottom">
           <text>距离结束</text>
           <i-count-down
@@ -23,13 +23,13 @@
   </view>
   <view class="wrap-box">
     <view class="wrap-box-ul">
-      <view class="box-ul-li" wx:for="{{6}}" wx:key="index">
+      <view class="box-ul-li" wx:for="{{productInfo.users}}" wx:key="index">
         <view class="ul-li-img">
           <image src=""></image>
         </view>
         <view class="ul-li-text">会飞的鱼</view>
       </view>
-      <view class="box-ul-li" wx:for="{{5}}" wx:key="">
+      <view class="box-ul-li" wx:for="{{grayLength}}" wx:key="">
         <view class="ul-li-img">
           <image src="{{url}}index/tianjia.png"></image>
         </view>
@@ -38,7 +38,7 @@
     </view>
   </view>
   <view class="wrap-bottom">
-    <view class="wrap-bottom-btn bottom-btn-red" bindtap="submitGroup">发起团购</view>
+    <view class="wrap-bottom-btn bottom-btn-red" bindtap="submitGroup" wx:if="{{productInfo.users.length != 10}}">发起团购</view>
     <button class="wrap-bottom-btn bottom-btn-yellow" open-type="share">分享</button>
   </view>
   <!-- 弹窗 -->

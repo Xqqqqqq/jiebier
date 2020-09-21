@@ -110,5 +110,15 @@ class Index extends HTTP {
       data: data,
     })
   }
+  /**
+   * 	
+      初始化拼团页面信息
+   */
+  getGroupInfo(data){
+    return this.request({
+      url:'/api/activity/getGroupInfo',
+      data: data,
+    })
+  }
 }
 export { Index }

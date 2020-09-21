@@ -144,6 +144,12 @@ Page({
         }
       })
   },
+  clickSwiper(e){
+    console.log(e.currentTarget.dataset.url)
+    if(e.currentTarget.dataset.url){
+      wx_gotoNewUrl('navigateTo',`/${e.currentTarget.dataset.url}`)
+    }
+  },
   // 获取地区分类
   getRegionTree(){
     index.getRegionTree().then(res => {

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "团购商品订单",
+  "usingComponents": {
+    "i-toast": "../../../dist/toast/index"
+  }
+}

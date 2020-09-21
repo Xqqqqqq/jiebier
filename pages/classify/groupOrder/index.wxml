@@ -1,0 +1,36 @@
+<view class="wrap">
+  <view class="wrap-box">
+    <view class="wrap-box-title">收货地址</view>
+    <view class="wrap-box-content" wx:if="{{submitForm && submitForm.name}}" bindtap="chooseAddress">
+      <view class="box-content-phone">{{submitForm.name}}<text>{{submitForm.tel}}</text></view>
+      <view class="box-content-address">
+        <view class="content-address">{{submitForm.address}}{{submitForm.addressDetails}}</view>
+        <view class="box-content-arrow">></view>
+      </view>
+    </view>
+    <view class="wrap-box-address" wx:else bindtap="chooseAddress">请选择地址</view>
+  </view>
+
+  <view class="wrap-box wrap-box-goods">
+    <view class="wrap-box-ul">
+      <view class="wrap-box-li">
+        <view class="box-li-left">
+          <image src="{{groupInfo.productImg}}"></image>
+        </view>
+        <view class="box-li-right">
+          <view class="li-right-title">{{groupInfo.productName}}</view>
+          <view class="li-right-type">取货方式：自提</view>
+          <view class="li-right-price"><text class="right-price-small">￥</text>{{groupInfo.price}} <text class="right-price-num">x{{groupInfo.num}}</text></view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="wrap-btn-block"></view>
+  <view class="wrap-btn">
+    <view class="wrap-btn-left">总金额：<text class="btn-left-small">￥</text><text class="btn-left-big">{{groupInfo.price}}</text></view>
+    <view class="wrap-btn-right" bindtap="gotoPay">立即支付</view>
+  </view>
+
+  <i-toast id="toast" />
+</view>

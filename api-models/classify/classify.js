@@ -53,5 +53,23 @@ class Classify extends HTTP {
       data:data
     })
   }
+   /**
+   * 创建拼团活动
+   */
+  createGroup(data){
+    return this.request({
+      url:'/api/activity/createGroup',
+      data: data,
+    })
+  }
+  /**
+   *参与拼团活动
+   */
+  joinGroup(data){
+    return this.request({
+      url:'/api/activity/joinGroup',
+      data: data,
+    })
+  }
 }
 export { Classify }

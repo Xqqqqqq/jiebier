@@ -45,8 +45,7 @@ Page({
             list : []
           }
         })
-        this.data.cities.forEach((item)=>{
-          // let firstName = item.hanyuPinyin.substring(0,1);
+        res.result.forEach((item)=>{
           let firstName = item.hanyuPinyin;
           let index = words.indexOf( firstName );
           storeCity[index].list.push({
@@ -56,7 +55,6 @@ Page({
           });
         })
         this.data.cities = storeCity;
-        // console.log(this.data.cities)
         this.setData({
           cities : this.data.cities
         })

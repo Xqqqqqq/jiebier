@@ -10,7 +10,8 @@
   <!-- li部分 -->
   <view class="wrap-box" wx:if="{{goodsList.length > 0}}">
     <view class="wrap-box-li" bindtap="gotoRouter" 
-    wx:for="{{goodsList}}" wx:key="index" data-id="{{item.id}}" data-name="{{item.productName}}">
+    wx:for="{{goodsList}}" wx:key="index" 
+    data-id="{{item.id}}" data-name="{{item.productName}}" data-group="{{item.isGroup}}">
       <view class="box-li-left">
         <image src="{{item.mainImg}}"></image>
       </view>

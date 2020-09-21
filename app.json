@@ -14,6 +14,7 @@
     "pages/classify/selectCity/index",
     "pages/classify/goodsDetail/index",
     "pages/classify/confirmOrder/index",
+    "pages/classify/groupOrder/index",
     "pages/shoppingCart/shoppingCart/index",
     "pages/news/news/index",
     "pages/news/newsDetail/index",

@@ -18,6 +18,7 @@
 		"checkInvalidKey": true,
 		"checkSiteMap": true,
 		"uploadWithSourceMap": true,
+		"compileHotReLoad": false,
 		"babelSetting": {
 			"ignore": [],
 			"disablePlugins": [],
@@ -2991,6 +2992,27 @@
 					"id": -1,
 					"name": "pages/index/groupBuying/index",
 					"pathName": "pages/index/groupBuying/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/classify/selectCity/index",
+					"pathName": "pages/classify/selectCity/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/classify/groupOrder/index",
+					"pathName": "pages/classify/groupOrder/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/classify/groupOrder/index",
+					"pathName": "pages/classify/groupOrder/index",
 					"scene": null
 				}
 			]

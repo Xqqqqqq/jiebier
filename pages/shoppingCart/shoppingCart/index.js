@@ -344,11 +344,9 @@ Page({
         })
       }
     }).filter(orderItem => orderItem.children.length !== 0)
-    // console.log('newOrderList', newOrderList)
     if(newOrderList.length >0){
       newOrderList.map(item =>{
         const notUse = item.children.filter(productItem => productItem.ifUse != 1)
-        console.log(notUse)
         if(notUse.length > 0){
           $Toast({
             content: '此订单中包含不可结算商品，请重新选择后提交！',
@@ -358,7 +356,6 @@ Page({
             newOrderList: []
           })
         }else{
-          // console.log('可以跳转')
           wx.setStorage({
             key: 'orderList',
             data: newOrderList,
