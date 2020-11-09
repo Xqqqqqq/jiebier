@@ -4,7 +4,7 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"enhance": true,
 		"postcss": true,
@@ -25,7 +25,7 @@
 			"outputPath": ""
 		},
 		"useIsolateContext": true,
-		"useCompilerModule": true,
+		"useCompilerModule": false,
 		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"compileType": "miniprogram",
@@ -3013,6 +3013,111 @@
 					"id": -1,
 					"name": "pages/classify/groupOrder/index",
 					"pathName": "pages/classify/groupOrder/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/fillInformation/index",
+					"pathName": "pages/index/fillInformation/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/shoppingCart/groupBuying/index",
+					"pathName": "pages/shoppingCart/groupBuying/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/index/search/index",
+					"pathName": "packageMall/pages/index/search/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/shoppingCart/groupBuying/index",
+					"pathName": "pages/shoppingCart/groupBuying/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/index/searchList/index",
+					"pathName": "packageMall/pages/index/searchList/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/index/index",
+					"pathName": "pages/index/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/goodsInfo/goodsInfo/index",
+					"pathName": "packageMall/pages/goodsInfo/goodsInfo/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/mine/orders/index",
+					"pathName": "pages/mine/orders/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/goodsInfo/goodsInfo/index",
+					"pathName": "packageMall/pages/goodsInfo/goodsInfo/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/goodsInfo/groupRule/index",
+					"pathName": "packageMall/pages/goodsInfo/groupRule/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/goodsInfo/groupRule/index",
+					"pathName": "packageMall/pages/goodsInfo/groupRule/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/goodsInfo/goodsInfo/index",
+					"pathName": "packageMall/pages/goodsInfo/goodsInfo/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/index/index",
+					"pathName": "pages/index/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/goodsInfo/confirmOrder/index",
+					"pathName": "packageMall/pages/goodsInfo/confirmOrder/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/goodsInfo/groupMember/index",
+					"pathName": "packageMall/pages/goodsInfo/groupMember/index",
 					"scene": null
 				}
 			]

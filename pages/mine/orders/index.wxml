@@ -30,7 +30,7 @@
       </view>
       <!-- <view class="box-li-btn" catchtap="clickCancel" wx:if="{{item.orderState != 3}}">取消订单</view> -->
       <view class="box-li-btn box-li-btn-orange" 
-      wx:if="{{item.orderState == 2 || item.orderState == 3}}" 
+      wx:if="{{item.orderState == 2 || item.orderState == 3 || item.orderState == 1}}" 
       catchtap="gotoReturn" data-mainOrderNo="{{item.mainOrderNo}}">申请退货</view>
       <!-- <view class="box-li-btn box-li-btn-orange" catchtap="gotoProgress">查看进度</view> -->
     </view>

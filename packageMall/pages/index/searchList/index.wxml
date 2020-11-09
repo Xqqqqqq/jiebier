@@ -1,0 +1,41 @@
+<view class="wrap">
+  <!-- 搜索栏 -->
+  <view class="wrap-select wrap-select-other">
+    <input bindinput="bindNameInput" value="{{goodsName}}" name="goodsName" 
+    type="text" placeholder="搜索商品" placeholder-class="input-placeholder" class="input-length"/>
+    <view class="search-icon" bindtap="clickSearch">
+      <image src="{{url}}index/search.png"></image>
+    </view>
+  </view>
+  <!-- tab切换 -->
+  <view class="wrap-tab">
+    <view class="{{currentTab==index ? 'tab-li-ture tab-li-ture-other' : 'tab-li tab-li-other'}}"
+    wx:for="{{tabList}}"
+    wx:key="index"
+    data-current="{{index}}"
+    bindtap="clickTab">{{item.name}}</view>
+  </view>
+  <!-- 列表 -->
+  <view class="wrap-ul">
+    <view class="wrap-ul-li">
+      <view class="ul-li-left">
+        <image src=""></image>
+      </view>
+      <view class="ul-li-right">
+        <view class="li-right-title">裕道府五常稻花香东北大米20 20年新米上市</view>
+        <view class="li-right-bg">团团大米旗航店</view>
+        <view class="li-right-price">正价：￥<text>123.00</text></view>
+        <view class="li-right-origin">团团赚价：￥<text>123.00</text></view>
+      </view>
+      <view class="ul-li-pos">
+        <view class="li-pos-info">最多可获得<text>￥12</text></view>
+        <view class="li-pos-btn">去抢购></view>
+      </view>
+    </view>
+  </view>
+  <i-toast id="toast" />
+</view>
+<!-- 弹窗 -->
+<i-modal title="提示" visible="{{ visible }}" bind:ok="handleOk" bind:cancel="handleClose">
+  <view>您尚未登录，是否去登录？</view>
+</i-modal>

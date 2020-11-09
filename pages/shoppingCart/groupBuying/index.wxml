@@ -1,0 +1,58 @@
+<view class="wrap">
+  <!-- 搜索栏 -->
+  <view class="wrap-input">
+    <view class="wrap-input-select" bindtap="gotoRouter" data-url="/packageMall/pages/index/search/index" data-type="navigateTo">
+      搜索商品
+      <view class="search-icon">
+        <image src="{{url}}index/search.png"></image>
+      </view>
+    </view>
+  </view>
+  <!-- 轮播图 -->
+  <view class="wrap-swiper-box">
+    <view class="wrap-swiper">
+      <swiper indicator-dots="{{indicatorDots}}"
+      autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}"
+      style="height: 100%;">
+        <block wx:for="{{imgUrls}}" wx:key="imgUrls">
+          <swiper-item bindtap="clickSwiper" data-url="{{item.loopLink}}"> 
+            <!-- <image src="{{item.loopImg}}" class="slide-image" data-url="indexSwiper" data-id="{{item.id}}" bindtap="clickNews"/> -->
+            <image src="{{item.loopImg}}" class="slide-image"/>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+  </view>
+  <!-- 入口列表 -->
+  <view class="wrap-classify">
+    <view class="wrap-classify-li" wx:for="{{classifyList}}" wx:key="index">
+      <view class="classify-li-top">
+        <image src="{{item.img}}"></image>
+      </view>
+      <view class="classify-li-bottom">{{item.title}}</view>
+    </view>
+  </view>
+  <!-- 列表 -->
+  <view class="wrap-ul">
+    <view class="wrap-ul-li">
+      <view class="ul-li-left">
+        <image src=""></image>
+      </view>
+      <view class="ul-li-right">
+        <view class="li-right-title">裕道府五常稻花香东北大米20 20年新米上市</view>
+        <view class="li-right-bg">团团大米旗航店</view>
+        <view class="li-right-price">正价：￥<text>123.00</text></view>
+        <view class="li-right-origin">团团赚价：￥<text>123.00</text></view>
+      </view>
+      <view class="ul-li-pos">
+        <view class="li-pos-info">最多可获得<text>￥12</text></view>
+        <view class="li-pos-btn">去抢购></view>
+      </view>
+    </view>
+  </view>
+  <i-toast id="toast" />
+</view>
+<!-- 弹窗 -->
+<i-modal title="提示" visible="{{ visible }}" bind:ok="handleOk" bind:cancel="handleClose">
+  <view>您尚未登录，是否去登录？</view>
+</i-modal>

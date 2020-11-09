@@ -1,7 +1,5 @@
-import { Classify } from '../../../api-models/classify/classify';
-const classify = new Classify();
-const { $Toast } = require('../../../dist/base/index');
-import { wx_gotoNewUrl } from '../../../utils/fn'
+const { $Toast } = require('../../../../dist/base/index');
+import { wx_gotoNewUrl } from '../../../../utils/fn'
 const app = getApp()
 Page({
   data:{
@@ -17,9 +15,6 @@ Page({
       couponId: '', //优惠券ID
       couponType: '', //优惠类型：0打折，1优惠券，2无
     },
-    price:0, // 选择优惠券的钱数
-    couponName:0,
-    getPrice: 0
   },
   onLoad(options){
     console.log(options)
@@ -130,7 +125,6 @@ Page({
     })
   },
   gotoPay(){
-    // console.log('this.data.submitForm',this.data.submitForm)
     if(!this.data.submitForm.address || !this.data.submitForm.addressDetails || !this.data.submitForm.name || !this.data.submitForm.tel){
       $Toast({
         content: "请完善收货信息！",

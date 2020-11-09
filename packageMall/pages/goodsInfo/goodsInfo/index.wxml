@@ -1,0 +1,72 @@
+<view class="wrap">
+  <view class="wrap-top">
+    <view class="wrap-img">
+      <swiper indicator-dots="{{indicatorDots}}"
+      autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}"
+      style="height: 100%;">
+        <block wx:for="{{loopList}}" wx:key="imgUrls">
+          <swiper-item>
+            <image src="{{item.productPic}}" class="slide-image" data-url="indexSwiper" data-id="{{item.id}}" bindtap="clickNews"/>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <view class="wrap-top-box">
+      <view class="top-box-title">2020年新米大米20斤东北大米10kg20斤</view>
+      <view class="top-box-num">
+        <view class="top-box-score">团团大米旗航店</view>
+        <view class="top-box-num">销量：12547</view>
+      </view>
+      <view class="wrap-top-bottom">
+        <view class="top-bottom-price">
+          团团赚价：￥
+          <text class="bottom-price">11</text>
+          <text class="bottom-price-through">￥11</text>
+          <text class="bottom-price-gray">最多可获得</text>
+          ￥1.5
+        </view>
+        <view class="top-bottom-btn">
+          <view class="bottom-btn-box" bindtap='quantityChange' id='sub'>
+            <image src="{{url}}index/del.png"></image>
+          </view>
+          <view class="bottom-btn-num">1</view>
+          <view class="bottom-btn-box" bindtap='quantityChange' id='add'>
+            <image src="{{url}}index/add.png"></image>
+          </view>
+        </view>
+      </view>
+      <view class="top-box-rule" bindtap="gotoRule">
+        查看拼团规则
+      </view>
+    </view>
+  </view>
+  <!-- 成团列表 -->
+  <view class="wrap-content">
+    <view class="wrap-content-li">
+      <view class="content-li-img">
+        <image></image>
+      </view>
+      <view class="content-li-right">
+        <view class="li-right-title">5人团（差2人可成团）</view>
+        <view class="li-right-time">剩余时间：45：00</view>
+      </view>
+      <view class="content-li-btn">参与成团</view>
+    </view>
+    <view class="wrap-content-li">
+      <view class="content-li-img">
+        <image></image>
+      </view>
+      <view class="content-li-right">
+        <view class="li-right-title">5人团（差2人可成团）</view>
+        <view class="li-right-time">剩余时间：45：00</view>
+      </view>
+      <view class="content-li-btn">参与成团</view>
+    </view>
+  </view>
+  <!-- 详情 -->
+  <view class="wrap-detail">
+    <rich-text class="" nodes="{{}}"></rich-text>
+  </view>
+  <view class="wrap-btn">发起拼团</view>
+  <view class="wrap-btn-clone"></view>
+</view>

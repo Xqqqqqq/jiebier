@@ -1,0 +1,33 @@
+<view class="wrap">
+  <view class="wrap-select wrap-select-other">
+    <input bindinput="bindNameInput" value="{{goodsName}}" name="goodsName" 
+    type="text" placeholder="搜索商品" placeholder-class="input-placeholder" class="input-length"/>
+    <view class="search-icon" bindtap="clickSearch">
+      <image src="{{url}}index/search.png"></image>
+    </view>
+  </view>
+  <!-- 推荐搜索 -->
+  <view class="wrap-name" wx:if="{{historyList.length >0}}">
+    推荐搜索
+  </view>
+  <view class="history" wx:if="{{historyList.length >0}}">
+    <view wx:for="{{historyList}}" wx:key="index"
+    data-index="{{index}}" bindtap="clickHistoryTab"
+    class="{{currentHistoryTab==index ? 'tab-li tab-li-ture' : 'tab-li'}}">{{item}}</view>
+  </view>
+  <!-- 历史记录 -->
+  <view class="wrap-name" wx:if="{{historyList.length >0}}">
+    历史搜索
+    <view class="wrap-name-icon" bindtap="clickDelete">
+      <image src="{{url}}index/delete.png"></image>
+    </view>
+  </view>
+  <view class="history" wx:if="{{historyList.length >0}}">
+    <view wx:for="{{historyList}}" wx:key="index"
+    data-index="{{index}}" bindtap="clickHistoryTab"
+    class="{{currentHistoryTab==index ? 'tab-li tab-li-ture' : 'tab-li'}}">{{item}}</view>
+  </view>
+  <i-modal title="提示" visible="{{ visible }}" bind:ok="handleOk" bind:cancel="handleCancel">
+    <view>是否确认清空所有历史记录？</view>
+  </i-modal>
+</view>

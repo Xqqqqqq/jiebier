@@ -1,0 +1,37 @@
+<view class="wrap">
+  <view class="wrap-box">
+    <view class="wrap-box-title">收货地址</view>
+    <view class="wrap-box-content" wx:if="{{submitForm && submitForm.name}}" bindtap="chooseAddress">
+      <view class="box-content-phone"><text class="text-bold">合作社：</text>{{submitForm.tel}}</view>
+      <view class="box-content-address">
+        <view class="content-address"><text class="text-bold">地址：</text>{{submitForm.address}}{{submitForm.addressDetails}}</view>
+        <view class="box-content-arrow">></view>
+      </view>
+    </view>
+    <view class="wrap-box-address" wx:else bindtap="chooseAddress">请选择地址</view>
+  </view>
+
+  <view class="wrap-box wrap-box-goods" wx:if="{{orderList.length > 0}}">
+    <view class="wrap-box-ul" wx:for="{{orderList}}" wx:key="index">
+      <view class="wrap-box-title">{{item.companyName}}</view>
+      <view class="wrap-box-li" wx:for="{{item.children}}" wx:for-item="itemSmall" wx:key="indexSmall" wx:for-index="indexSmall">
+        <view class="box-li-left">
+          <image src="{{itemSmall.productImg}}"></image>
+        </view>
+        <view class="box-li-right">
+          <view class="li-right-title">{{itemSmall.productName}}</view>
+          <view class="li-right-type">10KG/袋</view>
+          <view class="li-right-price"><text class="right-price-small">￥</text>{{itemSmall.productPrice}} <text class="right-price-num">x{{itemSmall.productNum}}</text></view>
+        </view>
+      </view>
+      <view class="wrap-box-price">
+        <view class="box-price-left">订单需实付金额：</view>
+        <view class="box-price-right">123.00元</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="wrap-btn">微信付款</view>
+
+  <i-toast id="toast" />
+</view>

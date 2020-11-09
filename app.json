@@ -16,6 +16,7 @@
     "pages/classify/confirmOrder/index",
     "pages/classify/groupOrder/index",
     "pages/shoppingCart/shoppingCart/index",
+    "pages/shoppingCart/groupBuying/index",
     "pages/news/news/index",
     "pages/news/newsDetail/index",
     "pages/mine/mine/index",
@@ -33,6 +34,19 @@
     "pages/loginAll/register/index",
     "pages/loginAll/forget/index",
     "pages/loginAll/resetPassword/index"
+  ],
+  "subPackages": [
+    {
+      "root": "packageMall",
+      "pages": [
+        "pages/index/search/index",
+        "pages/index/searchList/index",
+        "pages/goodsInfo/goodsInfo/index",
+        "pages/goodsInfo/groupRule/index",
+        "pages/goodsInfo/confirmOrder/index",
+        "pages/goodsInfo/groupMember/index"
+      ]
+    }
   ],
   "permission": {
     "scope.userLocation": {
@@ -63,17 +77,17 @@
         "pagePath": "pages/classify/classify/index",
         "text": "分类"
       },
+      {
+        "iconPath": "/static/image/tabs/msg-gray.png",
+        "selectedIconPath": "/static/image/tabs/msg-green.png",
+        "pagePath": "pages/shoppingCart/groupBuying/index",
+        "text": "团团赚"
+      },
       {         
         "iconPath": "/static/image/tabs/shop-gray.png",
         "selectedIconPath": "/static/image/tabs/shop-green.png",       
         "pagePath": "pages/shoppingCart/shoppingCart/index",
         "text": "购物车"
-      },
-      {
-        "iconPath": "/static/image/tabs/msg-gray.png",
-        "selectedIconPath": "/static/image/tabs/msg-green.png",
-        "pagePath": "pages/news/news/index",
-        "text": "消息"
       },
       {
         "iconPath": "/static/image/tabs/my-gray.png",

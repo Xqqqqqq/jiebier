@@ -1,0 +1,29 @@
+page{
+  background-color: #ffffff;
+}
+.wrap{
+  width: 100%;
+  padding: 72rpx 24rpx;
+  box-sizing: border-box;
+}
+.wrap-top{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 95rpx;
+}
+.wrap-top-left{
+  font-size: 30rpx;
+  color: #000000;
+}
+.wrap-top-left text{
+  color: #A1A1A1;
+}
+.wrap-top-right{
+  font-size: 24rpx;
+  color: #0989BE;
+}
+.wrap-content{
+  width: 100%;
+  display: flex;
+}

@@ -58,7 +58,7 @@ Page({
               }
               // 设置购物车数量
               wx.setTabBarBadge({
-                index: 2,
+                index: 3,
                 text: goodsLength+''
               })
               this.getTotalPrice()
