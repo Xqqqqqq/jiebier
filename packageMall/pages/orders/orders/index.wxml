@@ -33,8 +33,8 @@
       <view class="ul-box-sum">合计：￥<text>200</text></view>
       <view class="ul-box-btn">
         <view class="box-btn-li box-btn-red">立即付款</view>
-        <view class="box-btn-li box-btn-gray">取消订单</view>
         <view class="box-btn-li box-btn-gray">查看物流</view>
+        <view class="box-btn-li box-btn-gray">取消订单</view>
       </view>
     </view>
   </view>

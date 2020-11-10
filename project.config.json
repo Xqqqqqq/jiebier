@@ -3132,6 +3132,20 @@
 					"id": -1,
 					"name": "packageMall/pages/orders/orders/index",
 					"pathName": "packageMall/pages/orders/orders/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/orders/orderDetail/index",
+					"pathName": "packageMall/pages/orders/orderDetail/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/wallet/cashOut/index",
+					"pathName": "packageMall/pages/wallet/cashOut/index",
 					"scene": null
 				}
 			]

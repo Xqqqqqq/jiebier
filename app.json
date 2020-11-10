@@ -46,7 +46,9 @@
         "pages/goodsInfo/confirmOrder/index",
         "pages/goodsInfo/groupMember/index",
         "pages/goodsInfo/paySuccessful/index",
-        "pages/orders/orders/index"
+        "pages/orders/orders/index",
+        "pages/orders/orderDetail/index",
+        "pages/wallet/cashOut/index"
       ]
     }
   ],
