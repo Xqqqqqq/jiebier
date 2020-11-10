@@ -4,7 +4,7 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": false,
+		"urlCheck": true,
 		"es6": true,
 		"enhance": true,
 		"postcss": true,
@@ -3118,6 +3118,20 @@
 					"id": -1,
 					"name": "packageMall/pages/goodsInfo/groupMember/index",
 					"pathName": "packageMall/pages/goodsInfo/groupMember/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/goodsInfo/paySuccessful/index",
+					"pathName": "packageMall/pages/goodsInfo/paySuccessful/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/orders/orders/index",
+					"pathName": "packageMall/pages/orders/orders/index",
 					"scene": null
 				}
 			]

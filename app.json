@@ -44,7 +44,9 @@
         "pages/goodsInfo/goodsInfo/index",
         "pages/goodsInfo/groupRule/index",
         "pages/goodsInfo/confirmOrder/index",
-        "pages/goodsInfo/groupMember/index"
+        "pages/goodsInfo/groupMember/index",
+        "pages/goodsInfo/paySuccessful/index",
+        "pages/orders/orders/index"
       ]
     }
   ],

@@ -1,0 +1,46 @@
+<view class="wrap">
+  <!-- tab切换 -->
+  <view class="wrap-tab">
+    <view class="{{currentTab==index ? 'tab-li-ture tab-li-ture-other' : 'tab-li tab-li-other'}}"
+    wx:for="{{tabList}}"
+    wx:key="index"
+    data-current="{{index}}"
+    bindtap="clickTab">{{item.name}}</view>
+  </view>
+  <!-- 列表 -->
+  <view class="wrap-ul">
+    <view class="wrap-ul-box">
+      <view class="ul-box-top">
+        <view class="box-top-left">
+          <image src="../../../../static/image/tabs/fenlei-gray.png"></image>
+          <text>团团大米旗航店</text>
+        </view>
+        <view class="box-top-right">待付款</view>
+      </view>
+      <view class="wrap-ul-li">
+        <view class="ul-li-left">
+          <image src=""></image>
+        </view>
+        <view class="ul-li-right">
+          <view class="li-right-title">裕道府五常稻花香东北大米20 20年新米上市</view>
+          <view class="li-right-price">10KG/袋</view>
+          <view class="li-right-bottom">
+            <view class="li-right-origin">￥<text>123.00</text></view>
+            <view class="li-right-num">X10</view>
+          </view>
+        </view>
+      </view>
+      <view class="ul-box-sum">合计：￥<text>200</text></view>
+      <view class="ul-box-btn">
+        <view class="box-btn-li box-btn-red">立即付款</view>
+        <view class="box-btn-li box-btn-gray">取消订单</view>
+        <view class="box-btn-li box-btn-gray">查看物流</view>
+      </view>
+    </view>
+  </view>
+  <i-toast id="toast" />
+</view>
+<!-- 弹窗 -->
+<i-modal title="提示" visible="{{ visible }}" bind:ok="handleOk" bind:cancel="handleClose">
+  <view>您尚未登录，是否去登录？</view>
+</i-modal>

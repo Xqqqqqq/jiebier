@@ -4,6 +4,18 @@
     <view class="wrap-top-right">剩余时间47:00:00</view>
   </view>
   <view class="wrap-content">
-    
+    <view class="content-li">
+      <view class="content-li-img">
+        <image src=""></image>
+        <view class="content-li-img-pos">团主</view>
+      </view>
+      <view class="content-li-text">会飞的鱼</view>
+    </view>
+    <view class="content-li">
+      <view class="content-li-img content-li-img-other">
+        <view class="content-li-img-pos-text">可加入</view>
+      </view>
+    </view>
   </view>
+  <view class="wrap-btn">参与成团</view>
 </view>

@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "团团单",
+  "usingComponents": {
+    "i-toast": "../../../../dist/toast/index",
+    "i-modal": "../../../../dist/modal/index",
+    "i-switch": "../../../../dist/switch/index"
+  }
+}
