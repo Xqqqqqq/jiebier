@@ -1,0 +1,117 @@
+.wrap{
+  width: 100%;
+}
+.wrap-top{
+  width: 100%;
+  height: 392rpx;
+  background: linear-gradient(0deg, #E1564A, #F57B6A);
+  position: relative;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 50rpx 0;
+  box-sizing: border-box;
+  margin-bottom: 40rpx;
+}
+.wrap-top-num{
+  font-size: 65rpx;
+  font-weight: bold;
+  color: #FFFFFF;
+}
+.wrap-top-title{
+  font-size: 24rpx;
+  color: #FFFFFF;
+}
+.wrap-top-btn{
+  width: 152rpx;
+  height: 38rpx;
+  margin: 0 auto;
+  line-height: 38rpx;
+  background: rgba(255, 255, 255, .5);
+  border-radius: 19rpx;
+  text-align: center;
+  font-size: 24rpx;
+  color: #FFFFFF;
+}
+.wrap-top-pos{
+  font-size: 24rpx;
+  color: #FFF799;
+  position: absolute;
+  top: 46rpx;
+  right: 25rpx;
+}
+/* 中间部分 */
+.wrap-content{
+  width: 100%;
+  padding: 0 24rpx;
+  box-sizing: border-box;
+}
+.wrap-tab-other{
+  display: flex;
+  margin-bottom: 20rpx;
+}
+.tab-li-ture-other{
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #DA1824;
+  padding-bottom: 9rpx;
+  box-sizing: border-box;
+  border-bottom: 6rpx solid #DA1824;
+  margin-right: 46rpx;
+}
+.tab-li-other{
+  font-size: 36rpx;
+  color: #242426;
+  font-weight: bold;
+  margin-right: 46rpx;
+}
+.wrap-content-li{
+  background-color: #fff;
+  width: 100%;
+  border-radius: 15rpx;
+  display: flex;
+  justify-content: space-between;
+  padding: 44rpx;
+  box-sizing: border-box;
+  box-shadow:0px 2px 8px 0px rgba(195, 195, 195, .5);
+  margin-bottom: 22rpx;
+}
+.content-li-left{
+  display: flex;
+}
+.li-left-img{
+  width: 66rpx;
+  height: 66rpx;
+  background: #FFBB37;
+  border-radius: 50%;
+  margin-right: 25rpx;
+  overflow: hidden;
+}
+.li-left-img image{
+  width: 100%;
+  height: 100%;
+}
+.li-left-text{
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #242426;
+  line-height: 66rpx;
+}
+.content-li-right{
+  height: 66rpx;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.li-right-money{
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #FD3E3B;
+  text-align: right;
+}
+.li-right-time{
+  font-size: 24rpx;
+  color: #C3C3C3;
+  text-align: right;
+}

@@ -1,0 +1,134 @@
+.wrap{
+  width: 100%;
+}
+.wrap-top{
+  width: 100%;
+  height: 370rpx;
+  background: linear-gradient(0deg, #E1564A, #F57B6A);
+  position: relative;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 100rpx 0;
+  box-sizing: border-box;
+  margin-bottom: 40rpx;
+}
+.wrap-top-num{
+  font-size: 65rpx;
+  font-weight: bold;
+  color: #FFFFFF;
+}
+.wrap-top-title{
+  font-size: 24rpx;
+  color: #FFFFFF;
+}
+/* 中间部分 */
+.wrap-content{
+  width: 100%;
+  padding: 24rpx;
+  box-sizing: border-box;
+}
+.wrap-ul-box{
+  width: 100%;
+  box-shadow:0px 2px 8px 0px rgba(147, 147, 147, 0.3);
+  padding: 30rpx 20rpx;
+  box-sizing: border-box;
+}
+.ul-box-top{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 30rpx;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgba(232, 232, 232, .3);
+  margin-bottom: 30rpx;
+}
+.box-top-left image{
+  width: 35rpx;
+  height: 35rpx;
+}
+.box-top-left text{
+  font-size: 34rpx;
+  font-weight: bold;
+  color: #000000;
+  margin-left: 10rpx;
+}
+.box-top-right{
+  font-size: 24rpx;
+  color: #DB1924;
+  line-height: 2;
+}
+.wrap-ul-li{
+  width: 100%;
+  display: flex;
+  border-radius: 15rpx;
+  margin-bottom: 28rpx;
+}
+.ul-li-left{
+  width: 175rpx;
+  height: 175rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+  background-color: red;
+  margin-right: 26rpx;
+}
+.ul-li-left image{
+  width: 100%;
+  height: 100%;
+}
+.ul-li-right{
+  width: 68%;
+  height: 175rpx;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.li-right-title{
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #000000;
+}
+.li-right-price{
+  font-size: 24rpx;
+  color: #8A8A8A;
+  margin-bottom: 5rpx;
+}
+.li-right-bottom{
+  display: flex;
+  justify-content: space-between;
+}
+.li-right-origin{
+  font-size: 20rpx;
+  color: #FD3E3B;
+}
+.li-right-origin text{
+  font-size: 34rpx;
+  font-weight: bold;
+}
+.li-right-num{
+  font-size: 24rpx;
+  color: #8A8A8A;
+  line-height: 2;
+}
+.ul-box-bottom{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.ul-box-sum{
+  color:rgba(138, 138, 138, 1);
+  font-size: 24rpx;
+}
+.ul-box-sum text{
+  font-size: 30rpx;
+}
+.ul-box-right{
+  color:rgba(138, 138, 138, 1);
+  font-size: 24rpx;
+}
+.ul-box-right text{
+  font-size: 30rpx;
+  color: rgba(253, 62, 59, 1);
+  margin-left: 20rpx;
+}

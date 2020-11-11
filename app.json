@@ -41,6 +41,7 @@
       "pages": [
         "pages/index/search/index",
         "pages/index/searchList/index",
+        "pages/index/classify/index",
         "pages/goodsInfo/goodsInfo/index",
         "pages/goodsInfo/groupRule/index",
         "pages/goodsInfo/confirmOrder/index",
@@ -48,7 +49,11 @@
         "pages/goodsInfo/paySuccessful/index",
         "pages/orders/orders/index",
         "pages/orders/orderDetail/index",
-        "pages/wallet/cashOut/index"
+        "pages/wallet/cashOut/index",
+        "pages/wallet/wallet/index",
+        "pages/wallet/walletFail/index",
+        "pages/wallet/walletSuccess/index",
+        "pages/wallet/explain/index"
       ]
     }
   ],

@@ -25,7 +25,7 @@
 			"outputPath": ""
 		},
 		"useIsolateContext": true,
-		"useCompilerModule": false,
+		"useCompilerModule": true,
 		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"compileType": "miniprogram",
@@ -3146,6 +3146,41 @@
 					"id": -1,
 					"name": "packageMall/pages/wallet/cashOut/index",
 					"pathName": "packageMall/pages/wallet/cashOut/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/wallet/wallet/index",
+					"pathName": "packageMall/pages/wallet/wallet/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/wallet/walletFail/index",
+					"pathName": "packageMall/pages/wallet/walletFail/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/wallet/walletSuccess/index",
+					"pathName": "packageMall/pages/wallet/walletSuccess/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/index/classify/index",
+					"pathName": "packageMall/pages/index/classify/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "packageMall/pages/wallet/explain/index",
+					"pathName": "packageMall/pages/wallet/explain/index",
 					"scene": null
 				}
 			]

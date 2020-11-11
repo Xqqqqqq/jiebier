@@ -1,0 +1,29 @@
+<view class="wrap">
+  <view class="wrap-top">
+    <view class="wrap-top-num">123.00</view>
+    <view class="wrap-top-title">邀请好友共获得(元)</view>
+    <view class="wrap-top-pos">活动说明</view>
+    <view class="wrap-top-btn">邀请好友</view>
+  </view>
+  <view class="wrap-content">
+    <view class="wrap-tab-other">
+      <view class="{{currentTab==index ? 'tab-li-ture-other' : 'tab-li-other'}}"
+      wx:for="{{tabList}}"
+      wx:key="index"
+      data-current="{{index}}"
+      bindtap="clickTab">{{item.name}}</view>
+    </view>
+    <view class="wrap-content-li">
+      <view class="content-li-left">
+        <view class="li-left-img">
+          <image src=""></image>
+        </view>
+        <view class="li-left-text">小甜甜</view>
+      </view>
+      <view class="content-li-right">
+        <view class="li-right-money">+10</view>
+        <view class="li-right-time">09-11 11:33</view>
+      </view>
+    </view>
+  </view>
+</view>

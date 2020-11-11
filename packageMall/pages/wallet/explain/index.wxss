@@ -1,0 +1,19 @@
+page{
+  background-color: #ffffff;
+}
+.wrap{
+  width: 100%;
+  padding: 146rpx 24rpx;
+  box-sizing: border-box;
+}
+.wrap-rule-title{
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 49rpx;
+}
+.wrap-content{
+  font-size: 24rpx;
+  color: #333333;
+  line-height: 48rpx;
+}

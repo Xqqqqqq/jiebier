@@ -1,0 +1,34 @@
+<view class="wrap">
+  <view class="wrap-top">
+    <view class="wrap-top-num">123.00</view>
+    <view class="wrap-top-title">退团失败退回（元）</view>
+  </view>
+  <view class="wrap-content">
+    <view class="wrap-ul-box">
+      <view class="ul-box-top">
+        <view class="box-top-left">
+          <image src="../../../../static/image/tabs/fenlei-gray.png"></image>
+          <text>团团大米旗航店</text>
+        </view>
+        <view class="box-top-right">拼单失败</view>
+      </view>
+      <view class="wrap-ul-li">
+        <view class="ul-li-left">
+          <image src=""></image>
+        </view>
+        <view class="ul-li-right">
+          <view class="li-right-title">裕道府五常稻花香东北大米20 20年新米上市</view>
+          <view class="li-right-price">10KG/袋</view>
+          <view class="li-right-bottom">
+            <view class="li-right-origin">￥<text>123.00</text></view>
+            <view class="li-right-num">X10</view>
+          </view>
+        </view>
+      </view>
+      <view class="ul-box-bottom">
+        <view class="ul-box-sum">合计：￥<text>200</text></view>
+        <view class="ul-box-right">2020.10.1 退回<text>￥200</text></view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,36 @@
+<view class="wrap">
+  <view class="wrap-top">
+    <view class="wrap-top-num">123.00</view>
+    <view class="wrap-top-title">钱包余额（元）</view>
+    <view class="wrap-top-pos">去提现</view>
+  </view>
+  <view class="wrap-content">
+    <view class="wrap-content-li">
+      <view class="content-li-box">
+        <view class="li-box-top">852</view>
+        <view class="li-box-bottom">拼团退回（元）</view>
+      </view>
+      <view class="content-li-box">
+        <view class="li-box-top">852</view>
+        <view class="li-box-bottom">拼团获得（元）</view>
+      </view>
+      <view class="content-li-box">
+        <view class="li-box-top">852</view>
+        <view class="li-box-bottom">邀请好友（元）</view>
+      </view>
+    </view>
+    <view class="wrap-content-title">钱包明细</view>
+    <view class="wrap-content-li">
+      <view class="content-li-left">
+        <view class="li-left-img">
+          <image src=""></image>
+        </view>
+        <view class="li-left-text">拼团失败返回</view>
+      </view>
+      <view class="content-li-right">
+        <view class="li-right-money">+10</view>
+        <view class="li-right-time">09-11 11:33</view>
+      </view>
+    </view>
+  </view>
+</view>

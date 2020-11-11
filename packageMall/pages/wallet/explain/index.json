@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "活动说明",
+  "usingComponents": {
+    "i-toast": "../../../../dist/toast/index",
+    "i-icon": "../../../../dist/icon/index",
+    "i-modal": "../../../../dist/modal/index"
+  }
+}

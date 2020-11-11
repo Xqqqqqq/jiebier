@@ -1,0 +1,28 @@
+<view class="wrap">
+  <!-- 分类 -->
+  <view class="cont">
+    <scroll-view scroll-y="true" class="scr_left" scroll-with-animation="true">
+      <block wx:for="{{goodsData}}" wx:for-item="item" wx:key="index">
+        <view class="sc_left_item {{cp_index==index? 'active':''}}"  data-id="c_{{item.id}}" data-index="{{index}}" bindtap="leftTap" >
+          <view class="{{cp_index==index? 'item-title-active':'item-title'}}">{{item.regionName}}</view>
+        </view>
+        </block>
+    </scroll-view>
+
+    <scroll-view scroll-y="true" class="scr_right" scroll-into-view="{{currentScrollId}}" scroll-with-animation="true" bindscroll="bindscroll">
+        <view wx:for="{{rightData.sonClassList}}" wx:for-item="itemSmall" wx:key="indexSmall" 
+        class="sc_right_item" id="c_{{itemSmall.id}}"  data-id="{{itemSmall.id}}" data-name="{{itemSmall.regionName}}" 
+        bindtap="gotoRouter">
+          <view class="right_item-img">
+            <image src="{{itemSmall.regionImg}}"></image>
+          </view>
+          <view class="right_item-box">{{itemSmall.regionName}}</view>
+        </view>
+    </scroll-view>
+  </view>
+  <view class="no-data" wx:if="{{goodsData.length ==0}}">
+    <image src="{{url}}tabs/no-data.png" mode="widthFix"></image>
+    <view class="no-data-text">暂无数据</view>
+  </view>
+  <i-toast id="toast" />
+</view>
