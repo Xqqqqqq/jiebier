@@ -45,8 +45,11 @@ Page({
   productClass(){
     classify.productClass().then(res => {
       if(res.code == '200'){
+        let leftInfo = res.result.find(item => item.regionName == '旗舰店')
+        let goodsData = res.result
+        goodsData.unshift(leftInfo)
         this.setData({
-          goodsData: res.result,
+          goodsData: this.unique(goodsData),
           rightData: res.result[0]
         })
       }else{
@@ -56,6 +59,9 @@ Page({
         });
       }
     })
+  },
+  unique(arr) {
+    return Array.from(new Set(arr))
   },
   // 点击左侧
   leftTap(e) {

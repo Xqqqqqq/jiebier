@@ -12,14 +12,9 @@ Page({
     submitInfo:{
       companyName: '',//企业名称
       companyAddress: '',//企业地址
-      companyClass: '',//	企业种类
       contactName: '',//企业法人姓名
       contactTel: '',//联系电话
       companyEmail: '',//企业邮箱
-      companyType: '',//企业类型 1：个人 2：企业
-      legalIdCardNum: '',//法人身份证号
-      legalIdCardImgOther: '',//法人身份证反面
-      legalIdCardImgPositive: '',//法人身份证正面
       bankCardNum: '',//银行卡账号
       bankCardOpen: '',//开户行
       licenseImg: '',//经营许可证
@@ -108,7 +103,7 @@ Page({
   },
   // 获取用户字典 
   getDictAll(){
-    // 企业种类
+    // 管理项目
     index.getDict({ dictType: 'settle_type' }).then(res => {
       if(res.code == 200){
         this.setData({
@@ -204,12 +199,6 @@ Page({
       'submitInfo.companyClass': e.detail.detail.value
     })
   },
-  bindStatusChange(e){
-    this.setData({
-      statusIndex: e.detail.value,
-      'submitInfo.companyClass': this.data.statusList[e.detail.value].dictValue,
-    })
-  },
   bindTypeChange(e){
     let showZhuobo = this.data.typeList[e.detail.value].dictLabel.indexOf('主播') != -1
     this.setData({
@@ -269,7 +258,7 @@ Page({
       });
     }else if(!this.data.submitInfo.remark){
       $Toast({
-        content: '请选择种类后提交！',
+        content: '请选择管理项目后提交！',
         type: 'warning'
       });
     }else{

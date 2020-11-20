@@ -1,0 +1,50 @@
+<view class="wrap">
+  <view class="wrap-video">
+    <view class="wrap-video-pos" wx:if="{{!showVideo}}">
+      <image class="video-pos-img" src="../../../static/image/index/3.jpg"></image>
+      <image bindtap="openVideo" class="video-pos-btn" src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3439888403,2696645035&fm=26&gp=0.jpg"></image>
+    </view>
+    <video
+      class="video"
+      id="myVideo"
+      src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400" 
+      show-center-play-btn='{{true}}' 
+      show-play-btn="{{true}}" 
+      controls
+      autoplay="{{videoAutoplay}}"
+      picture-in-picture-mode="{{['push', 'pop']}}"
+    ></video>
+  </view>
+  <view class="wrap-top">
+    <!-- <view class="wrap-img">
+      <swiper indicator-dots="{{indicatorDots}}"
+      autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}"
+      style="height: 100%;">
+        <block>
+          <swiper-item>
+            <image src="../../../static/image/index/1.jpg" class="slide-image" data-url="indexSwiper" data-id="{{item.id}}" bindtap="clickNews"/>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view> -->
+    <view class="wrap-top-title">哈哈哈哈很多很多的很多很多很多很多很多很多很多很好的电话电话</view>
+  </view>
+  <view class="wrap-box">
+    <view class="wrap-box-title">商品展示</view>
+    <view class="wrap-box-ul">
+      <view class="wrap-box-ul-li">
+        <image src="../../../static/image/index/2.jpg"></image>
+      </view>
+      <view class="wrap-box-ul-li">
+        <image src="../../../static/image/index/2.jpg"></image>
+      </view>
+      <view class="wrap-box-ul-li">
+        <image src="../../../static/image/index/2.jpg"></image>
+      </view>
+      <view class="wrap-box-ul-li">
+        <image src="../../../static/image/index/2.jpg"></image>
+      </view>
+    </view>
+  </view>
+  <i-toast id="toast" />
+</view>

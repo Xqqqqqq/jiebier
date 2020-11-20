@@ -14,25 +14,25 @@
     <i-cell title="我的订单"></i-cell>
     <view class="my-box-line"></view>
     <view class="my-box-block">
-      <view class="box-block-li" bindtap="gotoRouter" data-url="/pages/mine/orders/index" data-type="navigateTo">
+      <view class="box-block-li" bindtap="gotoRouter" data-url="/pages/mine/orders/index?type=0" data-type="navigateTo">
         <view class="box-block-img">
           <image src="{{url}}my/quanbu.png"></image>
         </view>
         <view class="box-block-name">全部订单</view>
       </view>
-      <view class="box-block-li">
+      <view class="box-block-li" bindtap="gotoRouter" data-url="/pages/mine/orders/index?type=1" data-type="navigateTo">
         <view class="box-block-img">
           <image src="{{url}}my/daishou.png"></image>
         </view>
-        <view class="box-block-name">待收货</view>
+        <view class="box-block-name">未完成</view>
       </view>
-      <view class="box-block-li">
+      <view class="box-block-li" bindtap="gotoRouter" data-url="/pages/mine/orders/index?type=2" data-type="navigateTo">
         <view class="box-block-img">
           <image src="{{url}}my/yiwancheng.png"></image>
         </view>
         <view class="box-block-name">已完成</view>
       </view>
-      <view class="box-block-li">
+      <view class="box-block-li" bindtap="gotoRouter" data-url="/pages/mine/orders/index?type=3" data-type="navigateTo">
         <view class="box-block-img">
           <image src="{{url}}my/yiquxiao.png"></image>
         </view>
@@ -41,8 +41,12 @@
     </view>
   </view>
   <view class="my-box my-box-other">
-    <i-cell title="商家入驻" is-link bindtap="gotoRouter" data-url="/pages/index/fillInformation/index" data-type="navigateTo"></i-cell>
+    <i-cell title="厂商入驻" is-link bindtap="gotoRouter" data-url="/pages/index/fillInformation/index" data-type="navigateTo"></i-cell>
     <view class="my-box-line"></view>
+    <!-- <i-cell title="物业入驻" is-link bindtap="gotoRouter" data-url="/pages/index/firmEnter/index" data-type="navigateTo"></i-cell>
+    <view class="my-box-line"></view>
+    <i-cell title="个体入驻" is-link bindtap="gotoRouter" data-url="/pages/index/personEnter/index" data-type="navigateTo"></i-cell>
+    <view class="my-box-line"></view> -->
     <i-cell title="优惠券" is-link bindtap="gotoRouter" data-url="/pages/mine/coupon/index" data-type="navigateTo"></i-cell>
     <view class="my-box-line"></view>
     <i-cell title="积分" is-link bindtap="gotoRouter" data-url="/pages/mine/myScore/index" data-type="navigateTo"></i-cell>

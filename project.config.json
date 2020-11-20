@@ -4,7 +4,7 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"enhance": true,
 		"postcss": true,
@@ -25,7 +25,7 @@
 			"outputPath": ""
 		},
 		"useIsolateContext": true,
-		"useCompilerModule": true,
+		"useCompilerModule": false,
 		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"compileType": "miniprogram",
@@ -3181,6 +3181,181 @@
 					"id": -1,
 					"name": "packageMall/pages/wallet/explain/index",
 					"pathName": "packageMall/pages/wallet/explain/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/fillInformation/index",
+					"pathName": "pages/index/fillInformation/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/loginAll/loginAdmin/index",
+					"pathName": "pages/loginAll/loginAdmin/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/fillInformation/index",
+					"pathName": "pages/index/fillInformation/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/firmEnter/index",
+					"pathName": "pages/index/firmEnter/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/firmEnter/index",
+					"pathName": "pages/index/firmEnter/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/fillInformation/index",
+					"pathName": "pages/index/fillInformation/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/firmEnter/index",
+					"pathName": "pages/index/firmEnter/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/fillInformation/index",
+					"pathName": "pages/index/fillInformation/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/firmEnter/index",
+					"pathName": "pages/index/firmEnter/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/firmEnter/index",
+					"pathName": "pages/index/firmEnter/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/personEnter/index",
+					"pathName": "pages/index/personEnter/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/fillInformation/index",
+					"pathName": "pages/index/fillInformation/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/personEnter/index",
+					"pathName": "pages/index/personEnter/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/fillInformation/index",
+					"pathName": "pages/index/fillInformation/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/personEnter/index",
+					"pathName": "pages/index/personEnter/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/personEnter/index",
+					"pathName": "pages/index/personEnter/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/fillInformation/index",
+					"pathName": "pages/index/fillInformation/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/fillInformation/index",
+					"pathName": "pages/index/fillInformation/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/firmEnter/index",
+					"pathName": "pages/index/firmEnter/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/classify/classify/index",
+					"pathName": "pages/classify/classify/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/personEnter/index",
+					"pathName": "pages/index/personEnter/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/flagshipStore/index",
+					"pathName": "pages/index/flagshipStore/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/fillInformation/index",
+					"pathName": "pages/index/fillInformation/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/flagshipStore/index",
+					"pathName": "pages/index/flagshipStore/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/flagshipStore/index",
+					"pathName": "pages/index/flagshipStore/index",
 					"scene": null
 				}
 			]

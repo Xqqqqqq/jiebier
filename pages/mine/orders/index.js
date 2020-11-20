@@ -20,13 +20,21 @@ Page({
     couponStateList:[],
     visible: false, // 登录弹窗
   },
+  onLoad(options){
+    console.log(options)
+    if(options.type){
+      this.setData({
+        currentTab: options.type
+      })
+    }
+  },
   onShow(){
-    this.selectOrdersList('')
+    this.selectOrdersList(this.data.currentTab)
   },
   selectOrdersList(condition){
     if(wx.getStorageSync('userInfo').id){
       mine.selectOrdersList({
-        condition:condition,
+        condition:condition == '0' ? '' : condition,
         userId:wx.getStorageSync('userInfo').id
       }).then(res => {
         if(res.code == 200){

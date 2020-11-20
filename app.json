@@ -2,13 +2,16 @@
   "pages": [
     "pages/index/index/index",
     "pages/index/fillInformation/index",
+    "pages/index/firmEnter/index",
     "pages/index/fillAgreement/index",
+    "pages/index/personEnter/index",
     "pages/index/recommendStores/index",
     "pages/index/shops/index",
     "pages/index/hotSale/index",
     "pages/index/search/index",
     "pages/index/searchDetail/index",
     "pages/index/groupBuying/index",
+    "pages/index/flagshipStore/index",
     "pages/classify/classify/index",
     "pages/classify/classifyGoods/index",
     "pages/classify/selectCity/index",
@@ -89,8 +92,8 @@
       {
         "iconPath": "/static/image/tabs/msg-gray.png",
         "selectedIconPath": "/static/image/tabs/msg-green.png",
-        "pagePath": "pages/shoppingCart/groupBuying/index",
-        "text": "团团赚"
+        "pagePath": "pages/news/news/index",
+        "text": "消息"
       },
       {         
         "iconPath": "/static/image/tabs/shop-gray.png",

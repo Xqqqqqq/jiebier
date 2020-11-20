@@ -7,72 +7,50 @@
   <view class="wrap-text" wx:if="{{companyStatus == 1}}">审核完成</view>
 </view>
 
-<!-- <view class="wrap-imgall" wx:if="{{showNoImg}}">
+<view class="wrap-imgall" wx:if="{{showNoImg}}">
   <view class="wrap-img">
     <image src="{{url}}index/shenhezhong.png" mode="widthFix"></image>
   </view>
   <view class="wrap-text">{{showNoImgText}}</view>
-</view> -->
+</view>
 
-<!-- <view class="wrap" wx:if="{{showImg == false && showNoImg == false}}"> -->
-<view class="wrap" wx:else>
+<view class="wrap" wx:if="{{showImg == false && showNoImg == false}}">
   <view class="wrap-box">
-    <view class="wrap-box-li wrap-box-li-picker">
-      <view class="wrap-box-li-img" style="width: 48rpx; height: 44rpx;">
-        <image src="{{url}}index/qiyeleixing.png"></image>
-      </view>
-      <view class="wrap-box-li-input">
-        <picker bindchange="bindTypeChange" value="{{typeIndex}}" range-key="dictLabel" range="{{typeList}}">
-          <view class="box-li-picker">
-            <view class="li-picker-left">企业类型</view>
-            <view class="li-picker-right">{{typeList[typeIndex].dictLabel}}</view>
-          </view>
-        </picker>
-      </view>
-    </view>
-  </view>
-  <view class="wrap-box">
-    <view class="wrap-box-li" wx:if="{{typeList[typeIndex].dictLabel}}">
+    <view class="wrap-box-li">
       <view class="wrap-box-li-img" style="width: 46rpx; height: 44rpx;">
         <image src="{{url}}index/qiyemingcheng.png"></image>
       </view>
       <view class="wrap-box-li-input">
-        <i-input wx:if="{{typeList[typeIndex].dictLabel == '企业'}}" bind:change="changeCompanyName" value="{{ submitInfo.companyName }}" title="企业名称" right="true" maxlength="100"/>
-        <i-input wx:if="{{typeList[typeIndex].dictLabel == '个体'}}" bind:change="changeCompanyName" value="{{ submitInfo.companyName }}" title="个体名称" right="true" maxlength="100"/>
-        <!-- <i-input wx:if="{{showZhuobo == true}}" bind:change="changeCompanyName" value="{{ submitInfo.companyName }}" title="团体/个人名称" right="true" maxlength="100"/> -->
+        <i-input bind:change="changeCompanyName" value="{{ submitInfo.companyName }}" title="个体名称" right="true" maxlength="100"/>
       </view>
     </view>
-    <view class="wrap-box-li" wx:if="{{typeList[typeIndex].dictLabel}}">
+    <view class="wrap-box-li">
       <view class="wrap-box-li-img" style="width: 48rpx; height: 44rpx;">
         <image src="{{url}}index/qiyedizhi.png"></image>
       </view>
       <view class="wrap-box-li-input">
-        <i-input wx:if="{{typeList[typeIndex].dictLabel == '企业'}}" bind:change="changeCompanyAddress" value="{{ submitInfo.companyAddress }}" title="企业地址" right="true" maxlength="100"/>
-        <i-input wx:if="{{typeList[typeIndex].dictLabel == '个体'}}" bind:change="changeCompanyAddress" value="{{ submitInfo.companyAddress }}" title="个体地址" right="true" maxlength="100"/>
-        <!-- <i-input wx:if="{{showZhuobo == true}}" bind:change="changeCompanyAddress" value="{{ submitInfo.companyAddress }}" title="团体/个人地址" right="true" maxlength="100"/> -->
+        <i-input bind:change="changeCompanyAddress" value="{{ submitInfo.companyAddress }}" title="个体地址" right="true" maxlength="100"/>
       </view>
     </view>
-    <view class="wrap-box-li" wx:if="{{typeList[typeIndex].dictLabel}}">
+    <view class="wrap-box-li">
       <view class="wrap-box-li-img" style="width: 46rpx; height: 46rpx;">
         <image src="{{url}}index/qiyezhonglei.png"></image>
       </view>
       <view class="wrap-box-li-input" bindtap="openBox">
-        <i-input wx:if="{{typeList[typeIndex].dictLabel == '企业'}}" bind:change="changeCompanyClass" value="{{ submitInfo.remark }}" title="企业种类" right="true" maxlength="100" disabled/>
-        <i-input wx:if="{{typeList[typeIndex].dictLabel == '个体'}}" bind:change="changeCompanyClass" value="{{ submitInfo.remark }}" title="个体种类" right="true" maxlength="100" disabled/>
-        <!-- <i-input wx:if="{{showZhuobo == true}}" bind:change="changeCompanyClass" value="{{ submitInfo.remark }}" title="团体/个人种类" right="true" maxlength="100" disabled/> -->
+        <i-input bind:change="changeCompanyClass" value="{{ submitInfo.remark }}" title="个体种类" right="true" maxlength="100" disabled/>
       </view>
     </view>
   </view>
-  <!-- 弹出框 -->
-  <view class="wrap-mask" wx:if="{{showMask}}" bindtap="closeCheckBox"></view>
-  <view class="mask-box" wx:if="{{showMask}}">
-    <i-checkbox-group bindchange="handleCheckboxChange" current="{{remarkList}}">
-      <i-checkbox wx:for="{{classList}}" position="{{position}}" wx:key="{{item.dictValue}}" value="{{item.dictLabel}}" checked="{{checked}}">
-      </i-checkbox>
-    </i-checkbox-group>
-    <view class="mask-box-btn-clone"></view>
-    <view class="mask-box-btn" bindtap="chooseCheckBox">确定</view>
-  </view>
+   <!-- 弹出框 -->
+   <view class="wrap-mask" wx:if="{{showMask}}" bindtap="closeCheckBox"></view>
+   <view class="mask-box" wx:if="{{showMask}}">
+     <i-checkbox-group bindchange="handleCheckboxChange" current="{{remarkList}}">
+       <i-checkbox wx:for="{{classList}}" position="{{position}}" wx:key="{{item.dictValue}}" value="{{item.dictLabel}}" checked="{{checked}}">
+       </i-checkbox>
+     </i-checkbox-group>
+     <view class="mask-box-btn-clone"></view>
+     <view class="mask-box-btn" bindtap="chooseCheckBox">确定</view>
+   </view>
   <view class="wrap-box">
     <view class="wrap-box-li">
       <view class="wrap-box-li-img" style="width: 48rpx; height: 44rpx;">
@@ -90,19 +68,16 @@
         <i-input bind:change="changeContactTel" value="{{ submitInfo.contactTel }}" title="联系电话" right="true" type="number" maxlength="100"/>
       </view>
     </view>
-    
     <view class="wrap-box-li wrap-box-li-other">
       <view class="wrap-box-li-img" style="width: 48rpx; height: 44rpx;">
         <image src="{{url}}index/qiyeyouxiang.png"></image>
       </view>
       <view class="wrap-box-li-input">
         <i-input bind:change="changeCompanyEmail" value="{{ submitInfo.companyEmail }}" title="邮箱" right="true" maxlength="100"/>
-        <!-- <i-input wx:if="{{showZhuobo == false}}" bind:change="changeCompanyEmail" value="{{ submitInfo.companyEmail }}" title="邮箱" right="true" maxlength="100"/> -->
-        <!-- <i-input wx:else bind:change="changeCompanyEmail" value="{{ submitInfo.companyEmail }}" title="抖音/快手号" right="true" maxlength="100"/> -->
       </view>
     </view>
   </view>
-  <!-- <view class="wrap-box wrap-box-other" wx:if="{{typeList[typeIndex].dictLabel && showZhuobo == true}}">
+  <view class="wrap-box wrap-box-other">
     <view class="wrap-box-li">
       <view class="wrap-box-li-img" style="width: 48rpx; height: 44rpx;">
         <image src="{{url}}index/card.png"></image>
@@ -125,7 +100,7 @@
       </view>
       <view class="box-block-title">上传身份证反面</view>
     </view>
-  </view> -->
+  </view>
   <view class="wrap-box">
     <view class="wrap-box-li">
       <view class="wrap-box-li-img" style="width: 48rpx; height: 44rpx;">
@@ -142,24 +117,6 @@
       <view class="wrap-box-li-input">
         <i-input bind:change="changeBankCardOpen" value="{{ submitInfo.bankCardOpen }}" title="开户行" right="true" maxlength="100"/>
       </view>
-    </view>
-  </view>
-  <!-- <view class="wrap-box wrap-box-other" wx:if="{{typeList[typeIndex].dictLabel && showZhuobo == false}}"> -->
-  <view class="wrap-box wrap-box-other">
-    <view class="wrap-box-li">
-      <view class="wrap-box-li-img" style="width: 48rpx; height: 44rpx;">
-        <image src="{{url}}index/xukezheng.png"></image>
-      </view>
-      <view class="wrap-box-li-input">
-        <i-input title="经营许可证" disabled maxlength="100"/>
-      </view>
-    </view>
-    <view class="wrap-box-block">
-      <view class="box-block-img" bindtap="chooseImage" data-type="cardPermit">
-        <image src="{{submitInfo.licenseImg}}" wx:if="{{submitInfo.licenseImg}}" style="box-shadow:0px 2px 8px 0px #EFEFEF"></image>
-        <image src="{{url}}index/zhaopian.png" wx:else></image>
-      </view>
-      <view class="box-block-title">上传许可证</view>
     </view>
   </view>
   <!-- <view class="tips" bindtap="gotoFill">* 提交即代表同意入驻协议（点击查看协议）</view> -->

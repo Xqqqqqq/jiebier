@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "厂商入驻",
+  "navigationBarTitleText": "个体入驻",
   "usingComponents": {
     "i-toast": "../../../dist/toast/index",
     "i-icon": "../../../dist/icon/index",
