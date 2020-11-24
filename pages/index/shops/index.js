@@ -73,7 +73,7 @@ Page({
     heightArr: 0,
     zindex: 0,
     showTop: true, // 是否展示顶部热销和门店图片
-    height: '',
+    contHeight: '', // 分类的高度
     url: app.globalData.url,
     companyId: '', //企业id
     shopInfo:{}, //店铺头部详情部分
@@ -90,14 +90,6 @@ Page({
     typeList:[],
   },
   onLoad(options){
-    // let that = this
-    // wx.getSystemInfo({
-    //   success: function(res) {
-    //     that.setData({
-    //       height: res.windowHeight - 200
-    //     })
-    //   }
-    // })
     // 获取店铺所有数据
     if(options){
       this.setData({
@@ -110,6 +102,17 @@ Page({
     }
     this.selectCompanyDetails(this.data.companyId)
     // this.selectCompanyDetails('42b477acad4311ea94340242ac110002')
+  },
+  onShow(){
+    let that = this
+    wx.getSystemInfo({
+      success: function(res) {
+        let windowHeight = res.windowHeight
+        that.setData({
+          contHeight: windowHeight-20
+        })
+      }
+    })
   },
   // 获取店铺详情
   selectCompanyDetails(companyId){

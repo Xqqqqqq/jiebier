@@ -1,4 +1,3 @@
 <view class="wrap">
-  <view class="wrap-title">协议名称</view>
-  <view class="wrap-content">协议名称福克斯；李开复老师开始看到了份开始开发；打开方式苦苦思考的方式卡夫卡式的看法；是客服；是客服；开始的；开风扇；客服</view>
+  <rich-text class="wrap-rich" nodes="{{nodes}}"></rich-text>
 </view>

@@ -120,5 +120,15 @@ class Index extends HTTP {
       data: data,
     })
   }
+  /**
+   * 	
+    获取协议
+   */
+  getAgreement(){
+    return this.request({
+      url:'/api/member/getAgreement',
+      method:"GET" 
+    })
+  }
 }
 export { Index }

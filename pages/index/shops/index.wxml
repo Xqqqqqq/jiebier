@@ -1,5 +1,5 @@
 <view class="containner">
-  <view class="top" wx:if="{{showTop}}">
+  <view class="top" id="top">
     <view class="top-banner">
       <image src="{{url}}index/banner.jpg" class="top-banner-img"></image>
       <view class="top-banner-mask"></view>
@@ -33,7 +33,7 @@
     <view class="line-block"></view>
   </view>
   <!-- 商品区 -->
-  <view class="cont" wx:if="{{rightData.length > 0}}">
+<view class="cont" wx:if="{{rightData.length > 0}}" style="height: {{contHeight*2}}rpx">
     <scroll-view scroll-y="true" scroll-with-animation="true" class="cont-box">
       <scroll-view scroll-y="true" class="scr_left" scroll-with-animation="true">
         <block wx:for="{{rightData}}" wx:for-item="item" wx:key="index">
@@ -43,7 +43,8 @@
           </block>
       </scroll-view>
          
-      <scroll-view scroll-y="true" class="scr_right" scroll-into-view="{{currentScrollId}}" scroll-with-animation="true" bindscroll="bindscroll">
+      <!-- <scroll-view scroll-y="true" class="scr_right" scroll-into-view="{{currentScrollId}}" scroll-with-animation="true" bindscroll="bindscroll"> -->
+      <scroll-view scroll-y="true" class="scr_right" scroll-with-animation="true" bindscroll="bindscroll">
         <block wx:for="{{rightDataList.productList}}" wx:for-item="item" wx:key="index">
           <view class="sc_right_item" id="c_{{item.id}}"  data-id="c_{{item.id}}" data-index="{{index}}">
             <view class="right_item-img">
@@ -91,7 +92,7 @@
     <view class="no-data-text">暂无数据</view>
   </view>
   <!-- 购物车 -->
-  <view class="containner-block"></view>
+  <!-- <view class="containner-block"></view> -->
   <view class="bottom">
     <view class="bottom-left" bindtap="clickBinding">绑定店铺</view>
     <view class="bottom-left bottom-right" bindtap="gotoShop">去购物车</view>

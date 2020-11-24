@@ -15,3 +15,7 @@
   text-align: left;
   width: 100%;
 }
+.wrap-rich{
+  font-size: 30rpx;
+  line-height: 50rpx;
+}

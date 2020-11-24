@@ -300,7 +300,10 @@ Page({
       })
     }
   },
-  gotoFill(){
-    wx_gotoNewUrl('navigateTo','/pages/index/fillAgreement/index')
+  gotoFill(e){
+    // console.log(e.currentTarget.dataset.type)
+    wx_gotoNewUrl('navigateTo','/pages/index/fillAgreement/index',{
+      type:e.currentTarget.dataset.type
+    })
   }
 })

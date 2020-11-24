@@ -21,6 +21,7 @@ Page({
     typeList:[], // 配送方式
     typeIndex: 0,
     visible: false,
+    title:'',
   },
   onLoad(options){
     if(options){
@@ -28,7 +29,8 @@ Page({
         title: options.goodsname 
       })
       this.setData({
-        "goodsDetail.productId":options.goodsid
+        "goodsDetail.productId":options.goodsid,
+        title: options.goodsname
       })
       this.productDetail(options.goodsid)
     }
@@ -142,4 +144,16 @@ Page({
       companyName: this.data.goodInfo.productOutVo.companyName,
     })
   },
+  onShareAppMessage: function (res) {
+    return {
+      title: this.data.title,
+      path: `/pages/classify/goodsDetail/index?goodsid=${this.data.goodsDetail.productId}&goodsname=${this.data.title}`
+    }
+  },
+  onShareTimeline(){
+    return{
+      title: this.data.title,
+      query: `goodsid=${this.data.goodsDetail.productId}&goodsname=${this.data.title}`
+    }
+  }
 })
