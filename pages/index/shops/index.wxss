@@ -52,6 +52,8 @@ page{
   left: 50%;
   transform: translateX(-50%);
   bottom:37rpx;
+  width: 100%;
+  text-align: center;
 }
 .top-hot{
   width: 100%;

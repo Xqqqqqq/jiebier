@@ -25,6 +25,7 @@ Page({
       licenseImg: '',//经营许可证
       openid: '', //微信openid  必填
       remark: '', // 种类
+      companyLogo:'',// 店铺LOGO
     },
     statusList: [], //状态数组
     statusIndex: '',
@@ -252,6 +253,11 @@ Page({
                 vm.setData({
                   'submitInfo.licenseImg': data.value
                 })
+              }else if(e.currentTarget.dataset.type == 'companyLogo'){
+                // 店铺logo
+                vm.setData({
+                  'submitInfo.companyLogo': data.value
+                })
               }
             }
           }
@@ -261,7 +267,7 @@ Page({
   },
   onSubmitForm(){
     // console.log(this.data.submitInfo)
-    // console.log(this.data.remarkList)
+    console.log(this.data.remarkList)
     if(!this.data.submitInfo.companyType){
       $Toast({
         content: '请选择企业类型后提交！',

@@ -81,11 +81,21 @@ page{
   overflow: hidden;
   text-align: center;
   margin: auto;
+  position: relative;
 }
 .box-block-img image{
   width: 98%;
   margin: auto;
   height: 98%;
+}
+.box-block-img .box-block-img-logo{
+  width:250rpx;
+  height: 250rpx;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
 }
 .box-block-title{
   font-size: 32rpx;

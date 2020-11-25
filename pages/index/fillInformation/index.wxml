@@ -161,6 +161,13 @@
       </view>
       <view class="box-block-title">上传许可证</view>
     </view>
+    <view class="wrap-box-block">
+      <view class="box-block-img" bindtap="chooseImage" data-type="companyLogo">
+        <image src="{{submitInfo.companyLogo}}" wx:if="{{submitInfo.companyLogo}}" class="box-block-img-logo"></image>
+        <image src="{{url}}index/zhaopian.png"></image>
+      </view>
+      <view class="box-block-title">上传店铺LOGO</view>
+    </view>
   </view>
   <view class="tips">* 提交即代表同意<text bindtap="gotoFill" data-type="1">入驻协议</text>及<text bindtap="gotoFill" data-type="2">服务条款</text></view>
   <view class="wrap-btn-block"></view>

@@ -13,11 +13,12 @@ Page({
     goodsData: [],
     rightData:{},
     cp_index: 0,// 左侧点击下标
+    urlType:'1', // 判断是调到二级分类还是调到店铺详情
   },
-  onShow(){
+  onLoad(){
     this.productClass()
     this.setData({
-      cp_index: 0,
+      // cp_index: 0,
       selectCity: app.globalData.selectCity
     })
     // 查询购物车数量
@@ -38,9 +39,6 @@ Page({
         }
       })
     }
-    // getUserAddress().then(res => {
-    //   console.log('sss',res)
-    // })
   },
   productClass(){
     classify.productClass().then(res => {
@@ -50,7 +48,8 @@ Page({
         goodsData.unshift(leftInfo)
         this.setData({
           goodsData: this.unique(goodsData),
-          rightData: res.result[0]
+          rightData: res.result[0],
+          urlType: this.unique(goodsData)[0].regionType
         })
       }else{
         $Toast({
@@ -68,6 +67,7 @@ Page({
     var index = e.currentTarget.dataset.index;
     var id = e.currentTarget.dataset.id;
     var idSplit = e.currentTarget.dataset.id.split("c_")[1];
+    this.data.urlType = e.currentTarget.dataset.type
     if(this.data.cp_index == index){
       return false;
     }else{
@@ -84,10 +84,16 @@ Page({
     wx_gotoNewUrl('navigateTo','/pages/classify/selectCity/index')
   },
   gotoRouter(e){
-    wx_gotoNewUrl('navigateTo','/pages/classify/classifyGoods/index',{
-      productRegionId: this.data.selectCity.id ? this.data.selectCity.id : '',
-      id:e.currentTarget.dataset.id,
-      title: e.currentTarget.dataset.name,
-    })
+    if(this.data.urlType == '2'){
+      wx_gotoNewUrl('navigateTo','/pages/index/shops/index',{
+        companyId:e.currentTarget.dataset.id
+      })
+    }else{
+      wx_gotoNewUrl('navigateTo','/pages/classify/classifyGoods/index',{
+        productRegionId: this.data.selectCity.id ? this.data.selectCity.id : '',
+        id:e.currentTarget.dataset.id,
+        title: e.currentTarget.dataset.name,
+      })
+    }
   }
 })
