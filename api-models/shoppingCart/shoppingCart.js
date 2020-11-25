@@ -20,5 +20,14 @@ class ShoppingCart extends HTTP {
       method:"GET"
     })
   }
+  /**
+   * 	操作购物车
+   */
+  operationCart(data){
+    return this.request({
+      url:'/api/company/operationCart',
+      data: data,
+    })
+  }
 }
 export { ShoppingCart }

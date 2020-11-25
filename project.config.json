@@ -4,7 +4,7 @@
     "ignore": []
   },
   "setting": {
-    "urlCheck": true,
+    "urlCheck": false,
     "es6": true,
     "enhance": true,
     "postcss": true,
@@ -3391,6 +3391,12 @@
         {
           "name": "pages/classify/classify/index",
           "pathName": "pages/classify/classify/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/shoppingCart/shoppingCart/index",
+          "pathName": "pages/shoppingCart/shoppingCart/index",
           "scene": null
         }
       ]

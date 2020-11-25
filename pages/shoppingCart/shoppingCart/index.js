@@ -260,6 +260,19 @@ Page({
       quantity += 1
     }
     goodsList[index].productList[indexsmall].productNum = quantity
+    shoppingCart.operationCart({
+      "id": e.currentTarget.dataset.id,
+      "productNum": goodsList[index].productList[indexsmall].productNum
+    }).then(res => {
+      if(res.code == 200){
+        console.log('成功')
+      }else{
+        $Toast({
+          content: res.msg,
+          type: 'error'
+        });
+      }
+    })
     this.getTotalPrice()
     this.setData({
       goodsList: goodsList
