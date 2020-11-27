@@ -293,3 +293,37 @@ page{
   height: 70%;
   margin: auto;
 }
+
+.wrap-bottom{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background-color: #fff;
+  border-top: 1rpx solid #EAEAEA;
+  padding: 15rpx 30rpx;
+  box-sizing: border-box;
+}
+.wrap-bottom-right{
+  display: flex;
+  height: 80rpx;
+  border-radius: 38rpx;
+  overflow: hidden;
+  width: 60%;
+}
+.bottom-right-li{
+  width: 50%;
+  text-align: center;
+  height: 100%;
+  line-height: 80rpx;
+  color: #fff;
+  font-size: 30rpx;
+}
+.bottom-right-li-yellow{
+  background: linear-gradient(90deg,#fdc403,#f59203);
+}
+.bottom-right-li-orange{
+  background: linear-gradient(90deg, #FD5709, #FF7904);
+}

@@ -154,6 +154,13 @@ Page({
               'paySign': result.miniPayRequest.paySign,
               'success': function (res) {
                 console.log("支付成功");
+                $Toast({
+                  content: '支付成功，正在跳转...',
+                  type: 'success'
+                });
+                setTimeout(() => {
+                  wx_gotoNewUrl('navigateTo','/pages/mine/orders/index?type=0')
+                }, 1000);
               },
               'fail': function (res) {
                 //支付失败后的回掉

@@ -1,4 +1,5 @@
 <view class="wrap">
+  <view class="wrap-top"></view>
   <view class="wrap-tab">
     <view class="{{currentTab==index ? 'tab-li-ture tab-li-ture-other' : 'tab-li tab-li-ture-other'}}"
     wx:for="{{tabList}}"
@@ -13,9 +14,19 @@
       <view class="box-li-top">
         <view class="li-top-right">
           <view class="top-right-title" wx:if="{{item.mainOrderNo}}">订单号：{{item.mainOrderNo}}</view>
-          <view class="top-right-time"><text wx:if="{{item.createTime}}">{{item.createTime}}</text><text wx:if="{{item.value}}">优惠金额：{{item.value}}元</text></view>
+          <view class="top-right-time">
+            <text wx:if="{{item.createTime}}">{{item.createTime}}</text>
+            <text wx:if="{{item.orderState == 0}}" style="color: #F13D03">未支付</text>
+            <text wx:if="{{item.orderState == 1}}" style="color: #F13D03">未发货</text>
+            <text wx:if="{{item.orderState == 2}}" style="color: #F13D03">已发货</text>
+            <text wx:if="{{item.orderState == 3}}" style="color: #F13D03">已完成</text>
+            <text wx:if="{{item.orderState == 4}}" style="color: #F13D03">已取消</text>
+            <text wx:if="{{item.orderState == 5}}" style="color: #F13D03">退款申请中</text>
+            <text wx:if="{{item.orderState == 6}}" style="color: #F13D03">退款完成</text>
+            <text wx:if="{{item.orderState == 7}}" style="color: #F13D03">退款中</text>
+            <text wx:if="{{item.orderState == 8}}" style="color: #F13D03">审批通过</text>
+          </view>
         </view>
-        <!-- <view class="li-top-status" style="color: #1F7DDF;">已支付</view> -->
       </view>
       <view class="box-li-content">
         <view class="li-content-line" wx:for="{{item.productList}}" wx:for-item="itemSmall" wx:key="indexSmall" wx:for-index="indexSmall">
@@ -29,10 +40,10 @@
         </view>
       </view>
       <!-- <view class="box-li-btn" catchtap="clickCancel" wx:if="{{item.orderState != 3}}">取消订单</view> -->
-      <view class="box-li-btn box-li-btn-orange" 
+      <view class="box-li-btn box-li-btn-green" 
       wx:if="{{item.orderState == 2 || item.orderState == 3 || item.orderState == 1}}" 
       catchtap="gotoReturn" data-mainOrderNo="{{item.mainOrderNo}}">申请退货</view>
-      <!-- <view class="box-li-btn box-li-btn-orange" catchtap="gotoProgress">查看进度</view> -->
+      <!-- <view class="box-li-btn box-li-btn-green" catchtap="gotoProgress">查看进度</view> -->
     </view>
   </view>
   <view class="no-data" wx:else>

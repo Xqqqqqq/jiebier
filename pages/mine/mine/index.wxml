@@ -41,17 +41,25 @@
     </view>
   </view>
   <view class="my-box my-box-other">
-    <i-cell title="厂商入驻" is-link bindtap="gotoRouter" data-url="/pages/index/fillInformation/index" data-type="navigateTo"></i-cell>
+    <i-cell title="厂商入驻" is-link bindtap="gotoRouter" data-url="/pages/index/fillInformation/index" data-type="navigateTo">
+      <view class="my-box-other-icon" slot="icon"><image src="{{url}}my/sjrz.png"></image></view>
+    </i-cell>
     <view class="my-box-line"></view>
     <!-- <i-cell title="物业入驻" is-link bindtap="gotoRouter" data-url="/pages/index/firmEnter/index" data-type="navigateTo"></i-cell>
     <view class="my-box-line"></view>
     <i-cell title="个体入驻" is-link bindtap="gotoRouter" data-url="/pages/index/personEnter/index" data-type="navigateTo"></i-cell>
     <view class="my-box-line"></view> -->
-    <i-cell title="优惠券" is-link bindtap="gotoRouter" data-url="/pages/mine/coupon/index" data-type="navigateTo"></i-cell>
+    <i-cell title="优惠券" is-link bindtap="gotoRouter" data-url="/pages/mine/coupon/index" data-type="navigateTo">
+      <view class="my-box-other-icon" slot="icon"><image src="{{url}}my/yhq.png"></image></view>
+    </i-cell>
     <view class="my-box-line"></view>
-    <i-cell title="积分" is-link bindtap="gotoRouter" data-url="/pages/mine/myScore/index" data-type="navigateTo"></i-cell>
+    <i-cell title="积分" is-link bindtap="gotoRouter" data-url="/pages/mine/myScore/index" data-type="navigateTo">
+      <view class="my-box-other-icon" slot="icon"><image src="{{url}}my/jf.png"></image></view>
+    </i-cell>
     <view class="my-box-line"></view>
-    <i-cell title="我的会员" is-link bindtap="gotoRouter" data-url="/pages/mine/myMember/index" data-type="navigateTo"></i-cell>
+    <i-cell title="我的会员" is-link bindtap="gotoRouter" data-url="/pages/mine/myMember/index" data-type="navigateTo">
+      <view class="my-box-other-icon" slot="icon"><image src="{{url}}my/huiyua.jpg"></image></view>
+    </i-cell>
     <!-- <view class="my-box-line"></view>
     <i-cell title="客服电话" is-link bindtap="callPhone" data-url="/pages/mine/myMember/index" data-type="navigateTo"></i-cell> -->
   </view>

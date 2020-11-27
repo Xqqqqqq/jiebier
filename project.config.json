@@ -3397,6 +3397,36 @@
         {
           "name": "pages/shoppingCart/shoppingCart/index",
           "pathName": "pages/shoppingCart/shoppingCart/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/mine/orders/index",
+          "pathName": "pages/mine/orders/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/classify/goodsDetail/index",
+          "pathName": "pages/classify/goodsDetail/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/mine/mine/index",
+          "pathName": "pages/mine/mine/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/index/shops/index",
+          "pathName": "pages/index/shops/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/shoppingCart/shoppingCart/index",
+          "pathName": "pages/shoppingCart/shoppingCart/index",
           "scene": null
         }
       ]

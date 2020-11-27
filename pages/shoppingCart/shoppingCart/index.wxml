@@ -83,6 +83,8 @@
     </view>
     <view class="mask-box-bottom" bindtap="closeMask"></view>
   </view>
+  <!-- 返回按钮 -->
+  <!-- <view class="wrap-mask-back" bindtap="goBack"><text>点我\n返回</text></view> -->
   <i-toast id="toast" />
 </view>
 <!-- 没有数据时 -->

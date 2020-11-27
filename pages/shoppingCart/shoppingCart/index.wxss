@@ -257,3 +257,17 @@ radio {
   width: 100%;
   height: 100%;
 }
+.wrap-mask-back{
+  position: fixed;
+  right: 24rpx;
+  bottom: 20%;
+  background-color: #79B646;
+  width: 80rpx;
+  height: 80rpx;
+  font-size: 22rpx;
+  border-radius: 50%;
+  padding: 10rpx 0;
+  box-sizing: border-box;
+  text-align: center;
+  color: #ffffff;
+}

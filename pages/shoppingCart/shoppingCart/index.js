@@ -396,5 +396,5 @@ Page({
       goodsid:e.currentTarget.dataset.id, // 详细商品id
       goodsname:e.currentTarget.dataset.name, // 详细商品名称
     })
-  }
+  },
 })

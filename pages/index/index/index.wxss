@@ -40,7 +40,7 @@
   width: 100%;
   padding: 0 24rpx;
   box-sizing: border-box;
-  height: 236rpx;
+  height: 330rpx;
   margin-bottom: 40rpx;
 }
 .wrap-swiper{
