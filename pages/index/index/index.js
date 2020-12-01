@@ -99,7 +99,7 @@ Page({
       })
     }
     this.getRegionTree()
-    this.getLoops()
+    this.storeBannerList()
     this.selectProductHomePage()
   },
   geo(){
@@ -145,9 +145,11 @@ Page({
       })
   },
   clickSwiper(e){
-    console.log(e.currentTarget.dataset.url)
-    if(e.currentTarget.dataset.url){
-      wx_gotoNewUrl('navigateTo',`/${e.currentTarget.dataset.url}`)
+    console.log(e.currentTarget.dataset.id)
+    if(e.currentTarget.dataset.id){
+      wx_gotoNewUrl('navigateTo','/pages/index/flagshipStore/index',{
+        id:e.currentTarget.dataset.id
+      })
     }
   },
   // 获取地区分类
@@ -166,8 +168,8 @@ Page({
     })
   },
   // 获取轮播图数组
-  getLoops(){
-    index.getLoops().then(res => {
+  storeBannerList(){
+    index.storeBannerList().then(res => {
       if(res.code == 200){
         this.setData({
           imgUrls: res.result

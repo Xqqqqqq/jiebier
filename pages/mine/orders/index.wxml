@@ -44,6 +44,8 @@
       wx:if="{{item.orderState == 2 || item.orderState == 3 || item.orderState == 1}}" 
       catchtap="gotoReturn" data-mainOrderNo="{{item.mainOrderNo}}">申请退货</view>
       <!-- <view class="box-li-btn box-li-btn-green" catchtap="gotoProgress">查看进度</view> -->
+      <view class="box-li-btn box-li-btn-green" 
+      wx:if="{{item.orderState == 0}}" data-mainOrderNo="{{item.mainOrderNo}}" catchtap="gotoPay">继续付款</view>
     </view>
   </view>
   <view class="no-data" wx:else>
@@ -53,6 +55,9 @@
   <!-- 取消按钮对话框 -->
   <i-modal title="提示" visible="{{ visibleReturn }}" bind:ok="handleReturnTrue" bind:cancel="handleReturnFalse">
     <view>是否确定申请退货？</view>
+  </i-modal>
+  <i-modal title="提示" visible="{{ visiblePay }}" bind:ok="handlePayTrue" bind:cancel="handlePayFalse">
+    <view>是否确定继续付款？</view>
   </i-modal>
   <i-modal title="提示" visible="{{ visible }}" bind:ok="handleOk" bind:cancel="handleClose">
     <view>您尚未登录，是否去登录？</view>

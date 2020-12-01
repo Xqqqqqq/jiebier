@@ -58,5 +58,14 @@ class Mine extends HTTP {
       method:'GET'
     })
   }
+  /**
+   * 	继续付款
+   */
+  paymentOrders(data){
+    return this.request({
+      url:'/api/orders/paymentOrders',
+      data: data,
+    })
+  }
 }
 export { Mine }

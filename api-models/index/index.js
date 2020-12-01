@@ -130,5 +130,25 @@ class Index extends HTTP {
       method:"GET" 
     })
   }
+  /**
+   * 	
+    获取首页轮播旗舰店
+   */
+  storeBannerList(){
+    return this.request({
+      url:'/api/store/storeBannerList',
+      method:"GET" 
+    })
+  }
+  /**
+   * 获取旗舰店详情
+   */
+  getStoreDetails(data){
+    return this.request({
+      url:'/api/store/getStoreDetails',
+      method:"GET",
+      data: data
+    })
+  }
 }
 export { Index }

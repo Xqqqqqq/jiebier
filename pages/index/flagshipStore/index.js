@@ -13,24 +13,26 @@ Page({
     duration: 500,
     goodInfo:{},
     showVideo:false,
-    videoAutoplay: false
+    videoAutoplay: true,
+    storeId: '',
   },
   onLoad(options){
-    // if(options){
-    //   wx.setNavigationBarTitle({
-    //     title: options.goodsname 
-    //   })
-    //   this.setData({
-    //     "goodsDetail.productId":options.goodsid
-    //   })
-    //   this.productDetail(options.goodsid)
-    // }
+    console.log(options.id)
+    if(options){
+      this.setData({
+        storeId:options.id
+      })
+      this.getStoreDetails(this.data.storeId)
+    }
   },
-  productDetail(id){
-    index.productDetail({
-      id: id
+  getStoreDetails(id){
+    index.getStoreDetails({
+      storeId: id
     }).then(res => {
       if(res.code == 200){
+        wx.setNavigationBarTitle({
+          title: res.result.storeName 
+        })
         this.setData({
           goodInfo: res.result,
         })
@@ -47,5 +49,6 @@ Page({
       showVideo: true,
       videoAutoplay: true
     })
+    console.log(this.data.videoAutoplay)
   }
 })

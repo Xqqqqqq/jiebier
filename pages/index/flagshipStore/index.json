@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "XXX旗舰店",
+  "navigationBarTitleText": "旗舰店",
   "usingComponents": {
     "i-toast": "../../../dist/toast/index",
     "i-icon": "../../../dist/icon/index",

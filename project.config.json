@@ -3427,6 +3427,30 @@
         {
           "name": "pages/shoppingCart/shoppingCart/index",
           "pathName": "pages/shoppingCart/shoppingCart/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/mine/orders/index",
+          "pathName": "pages/mine/orders/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/mine/orders/index",
+          "pathName": "pages/mine/orders/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/index/flagshipStore/index",
+          "pathName": "pages/index/flagshipStore/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/index/flagshipStore/index",
+          "pathName": "pages/index/flagshipStore/index",
           "scene": null
         }
       ]

@@ -13,7 +13,8 @@
     </view>
     <view class="wrap-scroll" wx:if="{{hotList.length > 0}}">
       <scroll-view scroll-x="true">
-        <view class="scroll-li" wx:for="{{hotList}}" wx:key="index">
+        <view class="scroll-li" wx:for="{{hotList}}" wx:key="index"
+         bindtap="gotoDetail" data-productid="{{item.id}}" data-name="{{item.productName}}">
           <view class="scroll-li-img">
             <image src="{{item.mainImg}}"></image>
           </view>
@@ -46,7 +47,9 @@
       <!-- <scroll-view scroll-y="true" class="scr_right" scroll-into-view="{{currentScrollId}}" scroll-with-animation="true" bindscroll="bindscroll"> -->
       <scroll-view scroll-y="true" class="scr_right" scroll-with-animation="true" bindscroll="bindscroll">
         <block wx:for="{{rightDataList.productList}}" wx:for-item="item" wx:key="index">
-          <view class="sc_right_item" id="c_{{item.id}}"  data-id="c_{{item.id}}" data-index="{{index}}">
+          <view class="sc_right_item" id="c_{{item.id}}" 
+          data-id="c_{{item.id}}" data-index="{{index}}"
+          bindtap="gotoDetail" data-productid="{{item.id}}" data-name="{{item.productName}}">
             <view class="right_item-img">
               <image src="{{item.mainImg}}"></image>
             </view>

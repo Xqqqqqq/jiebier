@@ -15,6 +15,7 @@ Page({
     ],
     currentTab:0,
     visibleReturn: false, //申请退货弹窗
+    visiblePay: false, // 继续付款
     mainorderno:'', //申请退货
     orderList:[],
     couponStateList:[],
@@ -97,9 +98,21 @@ Page({
       mainorderno: e.currentTarget.dataset.mainorderno
     });
   },
+  // 继续付款
+  gotoPay(e){
+    this.setData({
+      visiblePay: true,
+      mainorderno: e.currentTarget.dataset.mainorderno
+    });
+  },
   handleReturnFalse(){
     this.setData({
       visibleReturn: false
+    });
+  },
+  handlePayFalse(){
+    this.setData({
+      visiblePay: false
     });
   },
   handleReturnTrue(){
@@ -134,6 +147,60 @@ Page({
     }
     this.setData({
       visibleReturn: false
+    });
+  },
+  handlePayTrue(){
+    if(this.data.mainorderno){
+      mine.paymentOrders({
+        mainOrderNo: this.data.mainorderno,
+        openId: wx.getStorageSync('openId')
+      }).then(res => {
+        if(res.code == 200){
+          if(res.result){
+            let vm = this
+            let result = JSON.parse(res.result)
+            console.log(result.miniPayRequest)
+            wx.requestPayment({
+              'timeStamp': result.miniPayRequest.timeStamp,
+              'nonceStr': result.miniPayRequest.nonceStr,
+              'package': result.miniPayRequest.package,
+              'signType': result.miniPayRequest.signType,
+              'paySign': result.miniPayRequest.paySign,
+              'success': function (res) {
+                console.log("支付成功");
+                $Toast({
+                  content: '支付成功',
+                  type: 'success'
+                })
+              },
+              'fail': function (res) {
+                //支付失败后的回掉
+                console.log("支付失败");
+              }
+            })
+            setTimeout(() => {
+              vm.setData({
+                orderList:[],
+                couponStateList:[]
+              })
+              vm.selectOrdersList('')
+            }, 2000);
+          }
+        }else{
+          $Toast({
+            content: res.msg,
+            type: 'error'
+          });
+        }
+      })
+    }else{
+      $Toast({
+        content: '未获取到订单号，请重试！',
+        type: 'error'
+      });
+    }
+    this.setData({
+      visiblePay: false
     });
   }
 })
