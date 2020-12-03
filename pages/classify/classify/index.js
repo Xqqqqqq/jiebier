@@ -15,8 +15,7 @@ Page({
     cp_index: 0,// 左侧点击下标
     urlType:'1', // 判断是调到二级分类还是调到店铺详情
   },
-  onLoad(){
-    this.productClass()
+  onShow(){
     this.setData({
       // cp_index: 0,
       selectCity: app.globalData.selectCity
@@ -39,6 +38,9 @@ Page({
         }
       })
     }
+  },
+  onLoad(){
+    this.productClass()
   },
   productClass(){
     classify.productClass().then(res => {
@@ -87,6 +89,10 @@ Page({
     if(this.data.urlType == '2'){
       wx_gotoNewUrl('navigateTo','/pages/index/shops/index',{
         companyId:e.currentTarget.dataset.id
+      })
+    }else if(this.data.urlType == '3'){
+      wx_gotoNewUrl('navigateTo','/pages/index/flagshipStore/index',{
+        id:e.currentTarget.dataset.id
       })
     }else{
       wx_gotoNewUrl('navigateTo','/pages/classify/classifyGoods/index',{
