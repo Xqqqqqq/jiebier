@@ -135,7 +135,7 @@ picker{
   text-align: center;
   color: #fff;
   font-weight: bold;
-  background-color: hsl(195, 67%, 68%);
+  background-color: #59c205;
   position: fixed;
   left: 0;
   bottom: 0;

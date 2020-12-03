@@ -17,7 +17,7 @@ Page({
       companyEmail: '',//企业邮箱
       bankCardNum: '',//银行卡账号
       bankCardOpen: '',//开户行
-      licenseImg: '',//经营许可证
+      licenseImg: '',//营业执照
       openid: '', //微信openid  必填
       remark: '', // 种类
     },

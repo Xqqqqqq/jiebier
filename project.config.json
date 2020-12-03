@@ -3451,6 +3451,12 @@
         {
           "name": "pages/index/flagshipStore/index",
           "pathName": "pages/index/flagshipStore/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/index/fillInformation/index",
+          "pathName": "pages/index/fillInformation/index",
           "scene": null
         }
       ]

@@ -124,7 +124,7 @@
         <image src="{{url}}index/xukezheng.png"></image>
       </view>
       <view class="wrap-box-li-input">
-        <i-input title="经营许可证" disabled maxlength="100"/>
+        <i-input title="营业执照" disabled maxlength="100"/>
       </view>
     </view>
     <view class="wrap-box-block">

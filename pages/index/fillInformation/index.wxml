@@ -18,7 +18,7 @@
 <view class="wrap" wx:else>
   <view class="wrap-box">
     <view class="wrap-box-li wrap-box-li-picker">
-      <view class="wrap-box-li-img" style="width: 48rpx; height: 44rpx;">
+      <view class="wrap-box-li-img">
         <image src="{{url}}index/qiyeleixing.png"></image>
       </view>
       <view class="wrap-box-li-input">
@@ -33,7 +33,7 @@
   </view>
   <view class="wrap-box">
     <view class="wrap-box-li" wx:if="{{typeList[typeIndex].dictLabel}}">
-      <view class="wrap-box-li-img" style="width: 46rpx; height: 44rpx;">
+      <view class="wrap-box-li-img">
         <image src="{{url}}index/qiyemingcheng.png"></image>
       </view>
       <view class="wrap-box-li-input">
@@ -43,7 +43,7 @@
       </view>
     </view>
     <view class="wrap-box-li" wx:if="{{typeList[typeIndex].dictLabel}}">
-      <view class="wrap-box-li-img" style="width: 48rpx; height: 44rpx;">
+      <view class="wrap-box-li-img">
         <image src="{{url}}index/qiyedizhi.png"></image>
       </view>
       <view class="wrap-box-li-input">
@@ -53,7 +53,7 @@
       </view>
     </view>
     <view class="wrap-box-li" wx:if="{{typeList[typeIndex].dictLabel}}">
-      <view class="wrap-box-li-img" style="width: 46rpx; height: 46rpx;">
+      <view class="wrap-box-li-img">
         <image src="{{url}}index/qiyezhonglei.png"></image>
       </view>
       <view class="wrap-box-li-input" bindtap="openBox">
@@ -75,7 +75,7 @@
   </view>
   <view class="wrap-box">
     <view class="wrap-box-li">
-      <view class="wrap-box-li-img" style="width: 48rpx; height: 44rpx;">
+      <view class="wrap-box-li-img">
         <image src="{{url}}index/farenxingming.png"></image>
       </view>
       <view class="wrap-box-li-input">
@@ -83,7 +83,7 @@
       </view>
     </view>
     <view class="wrap-box-li">
-      <view class="wrap-box-li-img" style="width: 48rpx; height: 44rpx;">
+      <view class="wrap-box-li-img">
         <image src="{{url}}index/lianxidianhua.png"></image>
       </view>
       <view class="wrap-box-li-input">
@@ -92,7 +92,7 @@
     </view>
     
     <view class="wrap-box-li wrap-box-li-other">
-      <view class="wrap-box-li-img" style="width: 48rpx; height: 44rpx;">
+      <view class="wrap-box-li-img">
         <image src="{{url}}index/qiyeyouxiang.png"></image>
       </view>
       <view class="wrap-box-li-input">
@@ -104,7 +104,7 @@
   </view>
   <!-- <view class="wrap-box wrap-box-other" wx:if="{{typeList[typeIndex].dictLabel && showZhuobo == true}}">
     <view class="wrap-box-li">
-      <view class="wrap-box-li-img" style="width: 48rpx; height: 44rpx;">
+      <view class="wrap-box-li-img">
         <image src="{{url}}index/card.png"></image>
       </view>
       <view class="wrap-box-li-input">
@@ -128,7 +128,7 @@
   </view> -->
   <view class="wrap-box">
     <view class="wrap-box-li">
-      <view class="wrap-box-li-img" style="width: 48rpx; height: 44rpx;">
+      <view class="wrap-box-li-img">
         <image src="{{url}}index/yinhangkahao.png"></image>
       </view>
       <view class="wrap-box-li-input">
@@ -136,7 +136,7 @@
       </view>
     </view>
     <view class="wrap-box-li wrap-box-li-other">
-      <view class="wrap-box-li-img" style="width: 48rpx; height: 44rpx;">
+      <view class="wrap-box-li-img">
         <image src="{{url}}index/kaihuhang.png"></image>
       </view>
       <view class="wrap-box-li-input">
@@ -147,11 +147,11 @@
   <!-- <view class="wrap-box wrap-box-other" wx:if="{{typeList[typeIndex].dictLabel && showZhuobo == false}}"> -->
   <view class="wrap-box wrap-box-other">
     <view class="wrap-box-li">
-      <view class="wrap-box-li-img" style="width: 48rpx; height: 44rpx;">
+      <view class="wrap-box-li-img">
         <image src="{{url}}index/xukezheng.png"></image>
       </view>
       <view class="wrap-box-li-input">
-        <i-input title="经营许可证" disabled maxlength="100"/>
+        <i-input title="营业执照" disabled maxlength="100"/>
       </view>
     </view>
     <view class="wrap-box-block">
