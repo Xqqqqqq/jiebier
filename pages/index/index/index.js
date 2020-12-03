@@ -415,6 +415,17 @@ Page({
     this.setData({
       collapseList: this.data.collapseList
     })
+  },
+  onShareAppMessage: function (res) {
+    return {
+      title: '界壁儿',
+      path: `/pages/index/index/index`
+    }
+  },
+  onShareTimeline(){
+    return{
+      title: '界壁儿',
+    }
   }
 });
 

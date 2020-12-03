@@ -15,6 +15,7 @@ Page({
     showVideo:false,
     videoAutoplay: true,
     storeId: '',
+    preImgList:[], //需要预览的图片list
   },
   onLoad(options){
     console.log(options.id)
@@ -33,6 +34,9 @@ Page({
         wx.setNavigationBarTitle({
           title: res.result.storeName 
         })
+        this.data.preImgList = res.result.storeProductList.map(item => {
+          return item.productImg
+        })
         this.setData({
           goodInfo: res.result,
         })
@@ -50,5 +54,14 @@ Page({
       videoAutoplay: true
     })
     console.log(this.data.videoAutoplay)
+  },
+  openImg(e){
+    console.log(e.currentTarget.dataset.url)
+    if(e.currentTarget.dataset.url){
+      wx.previewImage({
+        current: e.currentTarget.dataset.url,
+        urls: this.data.preImgList
+      })
+    }
   }
 })

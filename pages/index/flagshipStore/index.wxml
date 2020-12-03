@@ -32,8 +32,10 @@
   <view class="wrap-box" wx:if="{{goodInfo.storeProductList.length > 0}}">
     <view class="wrap-box-title">商品展示</view>
     <view class="wrap-box-ul">
-      <view class="wrap-box-ul-li" wx:for="{{goodInfo.storeProductList}}" wx:key="index">
-        <image src="{{item.productImg}}"></image>
+      <view class="wrap-box-ul-li" wx:for="{{goodInfo.storeProductList}}" wx:key="index"
+      bindtap="openImg" data-url="{{item.productImg}}">
+        <image mode="aspectFill" src="{{item.productImg}}"></image>
+        <view class="box-ul-li-text">{{item.productName}}</view>
       </view>
     </view>
   </view>

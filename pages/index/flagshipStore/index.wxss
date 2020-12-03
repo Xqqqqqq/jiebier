@@ -178,14 +178,14 @@ swiper-item image {
   margin-top: 30rpx;
 }
 .wrap-box-ul-li{
-  width: 30%;
+  width: 45%;
   text-align: center;
   margin-right: 3%;
   margin-bottom: 3%;
 }
 .wrap-box-ul-li image{
-  width: 150rpx;
-  height: 150rpx;
+  width: 180rpx;
+  height: 180rpx;
   margin: auto;
   margin-bottom: 10rpx;
 }
