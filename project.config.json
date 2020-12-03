@@ -3457,6 +3457,18 @@
         {
           "name": "pages/index/fillInformation/index",
           "pathName": "pages/index/fillInformation/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/mine/myCode/index",
+          "pathName": "pages/mine/myCode/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/mine/myCode/index",
+          "pathName": "pages/mine/myCode/index",
           "scene": null
         }
       ]

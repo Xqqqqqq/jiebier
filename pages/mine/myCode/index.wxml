@@ -1,0 +1,5 @@
+<view class="wrap-code">
+  <view class="wrap-code-img">
+    <image src="{{url}}my/mycode.jpg"></image>
+  </view>
+</view>

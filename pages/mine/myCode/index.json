@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "小程序二维码",
+  "usingComponents": {
+    "i-toast": "../../../dist/toast/index"
+  }
+}

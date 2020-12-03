@@ -32,6 +32,7 @@
     "pages/mine/myScore/index",
     "pages/mine/scoreInfo/index",
     "pages/mine/myMember/index",
+    "pages/mine/myCode/index",
     "pages/loginAll/loginCode/index",
     "pages/loginAll/loginAdmin/index",
     "pages/loginAll/register/index",
