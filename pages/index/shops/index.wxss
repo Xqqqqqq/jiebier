@@ -89,15 +89,15 @@ page{
 }
 .scr_left{
   width: 180rpx;
-  height: 100%;
-  /* height: calc(100% - 97rpx); */
+  /* height: 100%; */
+  height: calc(100% - 97rpx);
   box-sizing: border-box;
   background-color: #F6F6F6;
   float: left;
 }
 .scr_right{
-  height: 100%;
-  /* height: calc(100% - 97rpx); */
+  /* height: 100%; */
+  height: calc(100% - 97rpx);
   padding-right: 25rpx;
   box-sizing: border-box;
   float: right;

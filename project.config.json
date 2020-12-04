@@ -3469,6 +3469,30 @@
         {
           "name": "pages/mine/myCode/index",
           "pathName": "pages/mine/myCode/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/mine/mine/index",
+          "pathName": "pages/mine/mine/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/index/index/index",
+          "pathName": "pages/index/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/loginAll/loginAdmin/index",
+          "pathName": "pages/loginAll/loginAdmin/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/index/index/index",
+          "pathName": "pages/index/index/index",
           "scene": null
         }
       ]
