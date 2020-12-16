@@ -9,7 +9,7 @@
   <view class="wrap-box wrap-box-other">
     <input bindinput="bindPasInput" value="{{submitForm.password}}" name="submitForm.password" password class="wrap-box-input" placeholder="请输入密码" placeholder-class="input-placeholder"/>
   </view>
-  <view class="wrap-box-type" bindtap="gotoUrl" data-url="/pages/loginAll/loginCode/index" data-type="navigateTo">手机号验证</view>
+  <view class="wrap-box-type" bindtap="gotoUrl" data-url="/pages/loginAll/loginCode/index" data-type="navigateTo">验证码登录</view>
   <button class="wrap-box-btn" bindgetuserinfo="clickSubmit" open-type="getUserInfo">登录</button>
   <!-- <view class="wrap-box-btn" bindtap="clickSubmit">提交</view> -->
   <view class="wrap-box-bottom">
