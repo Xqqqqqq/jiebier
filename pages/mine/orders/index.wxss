@@ -128,3 +128,10 @@ page{
   justify-content: space-between;
   width: 75%;
 }
+.voucher{
+  width: 100%;
+  font-size: 28rpx;
+  line-height: 60rpx;
+  color:#565656;
+  font-weight: bold;
+}

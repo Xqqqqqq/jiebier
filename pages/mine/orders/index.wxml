@@ -39,6 +39,8 @@
           </view>
         </view>
       </view>
+      <view class="voucher" wx:if="{{item.verificationCode}}">核销凭证：{{item.verificationCode}}</view>
+      <view class="voucher" wx:else>核销凭证：无</view>
       <!-- <view class="box-li-btn" catchtap="clickCancel" wx:if="{{item.orderState != 3}}">取消订单</view> -->
       <view class="box-li-btn box-li-btn-green" 
       wx:if="{{item.orderState == 2 || item.orderState == 3 || item.orderState == 1}}" 
