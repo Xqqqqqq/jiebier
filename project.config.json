@@ -3501,6 +3501,12 @@
         {
           "name": "pages/mine/orders/index",
           "pathName": "pages/mine/orders/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/index/shops/index",
+          "pathName": "pages/index/shops/index",
           "scene": null
         }
       ]

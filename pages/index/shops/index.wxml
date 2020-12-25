@@ -38,10 +38,10 @@
     <scroll-view scroll-y="true" scroll-with-animation="true" class="cont-box">
       <scroll-view scroll-y="true" class="scr_left" scroll-with-animation="true">
         <block wx:for="{{rightData}}" wx:for-item="item" wx:key="index">
-          <view class="sc_left_item {{cp_index==index? 'active':''}}"  data-id="c_{{item.classId}}" data-index="{{index}}" bindtap="leftTap" >
+          <view class="sc_left_item {{cp_index==index? 'active':''}}"  data-id="c_{{item.classId}}" data-index="{{index}}" bindtap="leftTap" wx:if="{{item.classId}}">
             <view class="{{cp_index==index? 'item-title-active':'item-title'}}">{{item.className}}</view>
           </view>
-          </block>
+        </block>
       </scroll-view>
          
       <!-- <scroll-view scroll-y="true" class="scr_right" scroll-into-view="{{currentScrollId}}" scroll-with-animation="true" bindscroll="bindscroll"> -->

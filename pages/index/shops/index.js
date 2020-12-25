@@ -101,7 +101,7 @@ Page({
       })
     }
     this.selectCompanyDetails(this.data.companyId)
-    // this.selectCompanyDetails('42b477acad4311ea94340242ac110002')
+    // this.selectCompanyDetails('908f6dee2b2511ebb1390242ac110002')
   },
   onShow(){
     let that = this
@@ -229,7 +229,7 @@ Page({
       return false;
     }else{
       let goodsList = this.data.rightData
-      let rightDataList = goodsList.find(item => item.classId == idSplit)
+      let rightDataList = goodsList.find(item => item && item.classId == idSplit)
       rightDataList.productList.map(item => {
         item.typeList = []
         if(item.express && item.express== 1){
