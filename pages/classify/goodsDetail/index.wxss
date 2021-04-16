@@ -56,6 +56,7 @@ swiper-item image {
 .top-num-num{
   font-size: 24rpx;
   color: #565656;
+  margin-right: 20rpx;
 }
 .wrap-top-bottom{
   width: 100%;

@@ -111,13 +111,13 @@ Page({
           if(res.code == 200){
             if(res.result){
               let result = JSON.parse(res.result)
-              console.log(result)
+              let resultInfo = JSON.parse(result.ysepay_online_weixin_pay_response.jsapi_pay_info)
               wx.requestPayment({
-                'timeStamp': result.timeStamp,
-                'nonceStr': result.nonceStr,
-                'package': result.package,
-                'signType': result.signType,
-                'paySign': result.paySign,
+                'timeStamp': resultInfo.timeStamp,
+                'nonceStr': resultInfo.nonceStr,
+                'package': resultInfo.package,
+                'signType': resultInfo.signType,
+                'paySign': resultInfo.paySign,
                 'success': function (res) {
                   console.log("支付成功");
                 },
@@ -126,6 +126,20 @@ Page({
                   console.log("支付失败");
                 }
               })
+              // wx.requestPayment({
+              //   'timeStamp': result.timeStamp,
+              //   'nonceStr': result.nonceStr,
+              //   'package': result.package,
+              //   'signType': result.signType,
+              //   'paySign': result.paySign,
+              //   'success': function (res) {
+              //     console.log("支付成功");
+              //   },
+              //   'fail': function (res) {
+              //     //支付失败后的回掉
+              //     console.log("支付失败");
+              //   }
+              // })
             }
           }else{
             $Toast({
@@ -144,13 +158,12 @@ Page({
           if(res.code == 200){
             if(res.result){
               let result = JSON.parse(res.result)
-              console.log(result)
               wx.requestPayment({
-                'timeStamp': result.timeStamp,
-                'nonceStr': result.nonceStr,
-                'package': result.package,
-                'signType': result.signType,
-                'paySign': result.paySign,
+                'timeStamp': result.miniPayRequest.timeStamp,
+                'nonceStr': result.miniPayRequest.nonceStr,
+                'package': result.miniPayRequest.package,
+                'signType': result.miniPayRequest.signType,
+                'paySign': result.miniPayRequest.paySign,
                 'success': function (res) {
                   console.log("支付成功");
                 },
@@ -159,6 +172,21 @@ Page({
                   console.log("支付失败");
                 }
               })
+              // let resultInfo = JSON.parse(result.ysepay_online_weixin_pay_response.jsapi_pay_info)
+              // wx.requestPayment({
+              //   'timeStamp': resultInfo.timeStamp,
+              //   'nonceStr': resultInfo.nonceStr,
+              //   'package': resultInfo.package,
+              //   'signType': resultInfo.signType,
+              //   'paySign': resultInfo.paySign,
+              //   'success': function (res) {
+              //     console.log("支付成功");
+              //   },
+              //   'fail': function (res) {
+              //     //支付失败后的回掉
+              //     console.log("支付失败");
+              //   }
+              // })
             }
           }else{
             $Toast({

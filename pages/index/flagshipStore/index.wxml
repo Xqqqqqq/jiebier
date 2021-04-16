@@ -40,4 +40,20 @@
     </view>
   </view>
   <i-toast id="toast" />
+
+  <!-- <video src='{{item.videoSrc}}' wx:for="{{videoList}}" wx:key="" 
+  id='myVideo{{item.id}}' 
+  show-center-play-btn='{{false}}'
+  style="width: 100%;height: 300rpx;margin-bottom: 20rpx;border: 1px solid red;"
+  bindended='videoEnd' bindfullscreenchange='videoFull'>
+    <cover-view style="display:{{item.id==videoindex?'none':'block'}};position: relative;width: 100%;height: 100%">
+      <cover-image src="{{item.src}}"
+      style="position: absolute;left: 0;top: 0;width: 100%;height: 100%;z-index: 2;">
+      </cover-image>
+      <cover-image 
+        style="width: 100rpx; height: 100rpx;position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);z-index: 999999;"
+        src='https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimages.669pic.com%2Felement_pic%2F97%2F35%2F84%2F30%2Fd85ef114ceaaa73c595482b89efc7562.jpg&refer=http%3A%2F%2Fimages.669pic.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1611899980&t=e1981318b694e444e400c61cbfdb043c' 
+        bindtap='bindplay' data-pid='myVideo{{item.id}}' data-index='{{item.id}}'></cover-image>
+    </cover-view>
+  </video> -->
 </view>

@@ -15,6 +15,7 @@
     <view class="wrap-top-num">
       <view class="top-num-score">{{goodInfo.productOutVo.productPrice}}积分</view>
       <view class="top-num-num">销量：{{goodInfo.productOutVo.shopSale}}</view>
+      <view class="top-num-num">库存：{{goodInfo.productOutVo.shopStore}}</view>
     </view>
     <view class="wrap-top-bottom">
       <view class="top-bottom-price"><text>￥</text>{{goodInfo.productOutVo.productPrice}}</view>
