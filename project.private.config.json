@@ -1,4 +1,5 @@
 {
+  "setting": {},
   "condition": {
     "plugin": {
       "list": []
@@ -3479,6 +3480,30 @@
         {
           "name": "pages/index/index/index",
           "pathName": "pages/index/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/classify/confirmOrder/index",
+          "pathName": "pages/classify/confirmOrder/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/index/fillInformation/index",
+          "pathName": "pages/index/fillInformation/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/loginAll/loginAdmin/index",
+          "pathName": "pages/loginAll/loginAdmin/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/loginAll/vendorBinding/index",
+          "pathName": "pages/loginAll/vendorBinding/index",
           "scene": null
         }
       ]

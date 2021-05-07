@@ -22,7 +22,7 @@ Page({
     getPrice: 0
   },
   onLoad(options){
-    console.log(options)
+    // console.log(options)
     if(options && options.couponType){
       this.setData({
         'submitForm.address': options.address,
@@ -45,13 +45,13 @@ Page({
       if(this.data.orderList){
         this.data.orderList.map(item => {
           item.children.map(itemSmall => {
-            this.data.submitForm.productList.push({
-              deliveryType: itemSmall.deliveryType,
-              num: itemSmall.productNum,
-              productId: itemSmall.productId,
-              productClassId:itemSmall.productClassId,
-              price:itemSmall.productPrice
-            })
+            // this.data.submitForm.productList.push({
+            //   deliveryType: itemSmall.deliveryType,
+            //   num: itemSmall.productNum,
+            //   productId: itemSmall.productId,
+            //   productClassId:itemSmall.productClassId,
+            //   price:itemSmall.productPrice
+            // })
           })
         })
       }
@@ -129,19 +129,28 @@ Page({
       }
     })
   },
-  gotoPay(){
-    // console.log('this.data.submitForm',this.data.submitForm)
-    if(!this.data.submitForm.address || !this.data.submitForm.addressDetails || !this.data.submitForm.name || !this.data.submitForm.tel){
+  gotoPay(e){
+    let vm = this
+    let selectItem = e.currentTarget.dataset.item
+    vm.data.submitForm.productList.push({
+      deliveryType: selectItem.deliveryType,
+      num: selectItem.productNum,
+      productId: selectItem.productId,
+      productClassId:selectItem.productClassId,
+      price:selectItem.productPrice
+    })
+
+    if(!vm.data.submitForm.address || !vm.data.submitForm.addressDetails || !vm.data.submitForm.name || !vm.data.submitForm.tel){
       $Toast({
         content: "请完善收货信息！",
         type: 'warning'
       });
     }else{
-      // console.log('可以提交')
       classify.saveOrders({
-        ...this.data.submitForm,
+        ...vm.data.submitForm,
         openId: wx.getStorageSync('openId')
       }).then(res => {
+        vm.data.submitForm.productList = []
         if(res.code == 200){
           if(res.result){
             let result = JSON.parse(res.result)
@@ -176,12 +185,29 @@ Page({
               'success': function (res) {
                 console.log("支付成功");
                 $Toast({
-                  content: '支付成功，正在跳转...',
+                  content: '支付成功',
                   type: 'success'
                 });
-                setTimeout(() => {
-                  wx_gotoNewUrl('navigateTo','/pages/mine/orders/index?type=0')
-                }, 1000);
+                const newArr = vm.data.orderList.map(item => {
+                  return {
+                    ...item,
+                    children: item.children.filter(it => it.productId !== selectItem.productId)
+                  }
+                })
+                vm.data.orderList = newArr.filter(item => item.children.length > 0)
+                console.log(vm.data.orderList)
+                wx.setStorage({
+                  key: 'orderList',
+                  data: vm.data.orderList,
+                })
+                vm.setData({
+                  orderList: vm.data.orderList
+                })
+                if(vm.data.orderList.length <= 0){
+                  setTimeout(() => {
+                    wx_gotoNewUrl('navigateTo','/pages/mine/orders/index?type=0')
+                  }, 1000);
+                }
               },
               'fail': function (res) {
                 //支付失败后的回掉

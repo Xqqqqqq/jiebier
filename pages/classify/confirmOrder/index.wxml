@@ -23,19 +23,20 @@
           <view class="li-right-type">取货方式：{{itemSmall.deliveryLabel}}</view>
           <view class="li-right-price"><text class="right-price-small">￥</text>{{itemSmall.productPrice}} <text class="right-price-num">x{{itemSmall.productNum}}</text></view>
         </view>
+        <view class="box-li-btn" bindtap="gotoPay" data-item="{{itemSmall}}">去购买</view>
       </view>
     </view>
   </view>
 
-  <view class="wrap-box wrap-box-other">
-    <!-- <view class="box-line">
+  <!-- <view class="wrap-box wrap-box-other">
+    <view class="box-line">
       <view class="box-line-left">获得积分</view>
       <view class="box-line-right">30积分</view>
-    </view> -->
-    <!-- <view class="box-line">
+    </view>
+    <view class="box-line">
       <view class="box-line-left">折扣</view>
       <view class="box-line-right">98折</view>
-    </view> -->
+    </view>
     <view class="box-line" bindtap="gotoCoupon">
       <view class="box-line-left">折扣/优惠券</view>
       <view class="box-line-right" wx:if="{{price}}">抵扣{{price}}元 ></view>
@@ -51,7 +52,7 @@
   <view class="wrap-btn">
     <view class="wrap-btn-left">总金额：<text class="btn-left-small">￥</text><text class="btn-left-big">{{totalMoney}}</text></view>
     <view class="wrap-btn-right" bindtap="gotoPay">立即支付</view>
-  </view>
+  </view> -->
 
   <i-toast id="toast" />
 </view>

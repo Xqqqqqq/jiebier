@@ -74,6 +74,20 @@
   box-sizing: border-box;
   border-bottom: 1px solid #E8E8E8;
   display: flex;
+  position: relative;
+}
+.box-li-btn{
+  width:120rpx;
+  line-height: 60rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 24rpx;
+  background:rgba(89,194,5,1);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10rpx;
+  border-radius: 10rpx;
 }
 .box-li-left{
   width:135rpx;
@@ -88,7 +102,7 @@
   height: 100%;
 }
 .box-li-right{
-
+  flex: 1;
 }
 .li-right-title{
   font-size: 32rpx;

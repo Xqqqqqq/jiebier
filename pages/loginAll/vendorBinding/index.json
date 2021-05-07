@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "厂商绑定",
+  "usingComponents": {
+    "i-toast": "../../../dist/toast/index",
+    "i-icon": "../../../dist/icon/index"
+  }
+}

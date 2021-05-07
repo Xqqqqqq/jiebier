@@ -74,5 +74,14 @@ class Login extends HTTP {
       data: data,
     })
   }
+  /**
+   * 	厂商绑定账号密码
+   */
+   companySetOpenid(data){
+    return this.request({
+      url:'/api/company/companySetOpenid',
+      data: data,
+    })
+  }
 }
 export { Login }

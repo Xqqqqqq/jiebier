@@ -17,6 +17,10 @@ App({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
         let code = res.code;
+        wx.setStorage({
+          key: 'code',
+          data: res.code,
+        })
         if(code) {
           // console.log('获取用户登录凭证：' + code);
           // 获取openid

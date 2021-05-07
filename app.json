@@ -37,7 +37,8 @@
     "pages/loginAll/loginAdmin/index",
     "pages/loginAll/register/index",
     "pages/loginAll/forget/index",
-    "pages/loginAll/resetPassword/index"
+    "pages/loginAll/resetPassword/index",
+    "pages/loginAll/vendorBinding/index"
   ],
   "subPackages": [
     {

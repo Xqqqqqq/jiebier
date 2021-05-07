@@ -45,6 +45,10 @@
       <view class="my-box-other-icon" slot="icon"><image src="{{url}}my/sjrz.png"></image></view>
     </i-cell>
     <view class="my-box-line"></view>
+    <i-cell title="厂商绑定" is-link bindtap="gotoRouter" data-url="/pages/loginAll/vendorBinding/index" data-type="navigateTo">
+      <view class="my-box-other-icon" slot="icon"><image src="{{url}}my/saoma.png"></image></view>
+    </i-cell>
+    <view class="my-box-line"></view>
     <!-- <i-cell title="物业入驻" is-link bindtap="gotoRouter" data-url="/pages/index/firmEnter/index" data-type="navigateTo"></i-cell>
     <view class="my-box-line"></view>
     <i-cell title="个体入驻" is-link bindtap="gotoRouter" data-url="/pages/index/personEnter/index" data-type="navigateTo"></i-cell>
