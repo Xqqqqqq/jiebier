@@ -10,5 +10,6 @@
     <input bindinput="bindPasInput" value="{{submitForm.password}}" name="submitForm.password" password class="wrap-box-input" placeholder="请输入后台密码" placeholder-class="input-placeholder"/>
   </view>
   <view class="wrap-box-btn" bindtap="clickSubmit">绑定</view>
+  <view class="wrap-box-btn" style="background-color: brown;" bindtap="clickUnSubmit">解绑</view>
   <i-toast id="toast" />
 </view>
