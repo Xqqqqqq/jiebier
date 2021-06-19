@@ -27,11 +27,11 @@
   <!-- 热销 -->
   <view class="wrap-title" wx:if="{{hotList.length > 0}}">
     <view class="wrap-title-name">热销</view>
-    <!-- <view class="wrap-title-arrow" bindtap="gotoRouter" data-url="/pages/index/hotSale/index" data-type="navigateTo">查看更多 ></view> -->
   </view>
   <view class="wrap-scroll" wx:if="{{hotList.length > 0}}">
-    <scroll-view scroll-x="true">
-      <view class="scroll-li" wx:for="{{hotList}}" wx:key="index" bindtap="gotoDetail" data-id="{{item.id}}" data-name="{{item.productName}}">
+    <!-- <scroll-view scroll-x="true"> -->
+      <view class="scroll-li" style="width: 215rpx;"
+      wx:for="{{hotList}}" wx:key="index" bindtap="gotoDetail" data-id="{{item.id}}" data-name="{{item.productName}}">
         <view class="scroll-li-img">
           <image src="{{item.mainImg}}"></image>
         </view>
@@ -46,10 +46,10 @@
           </view>
         </view>
       </view>
-    </scroll-view>
+    <!-- </scroll-view> -->
   </view>
   <!-- 推荐城市 -->
-  <view class="wrap-title" wx:if="{{showRecommend}}">
+  <!-- <view class="wrap-title" wx:if="{{showRecommend}}">
     <view class="wrap-title-name">推荐城市</view>
   </view>
   <view class="wrap-recommend" wx:if="{{showRecommend}}">
@@ -59,10 +59,9 @@
     data-current="{{index}}"
     data-item="{{item}}"
     bindtap="clickTab">{{item.regionName}}</view>
-  </view>
+  </view> -->
   <!-- 选择城市 -->
-  <!-- <view class="wrap-line"></view> -->
-  <view class="wrap-title">
+  <!-- <view class="wrap-title">
     <view class="wrap-title-name">选择城市</view>
   </view>
   <view class="wrap-collapse">
@@ -83,16 +82,10 @@
             data-index="{{index}}"
             bindtap="selectTab">{{itemSmaller.regionName}}</view>
           </view>
-          <!-- <radio-group bindchange="radioChange">
-            <label class="collapse-label" wx:for="{{item.children}}" wx:key="index" wx:for-item="itemSmall">
-              <radio value="{{itemSmall.id}}" checked="{{itemSmall.checked}}"/>
-              <view class="collapse-label-title">{{itemSmall.value}}</view>
-            </label>
-          </radio-group> -->
         </view>
       </i-collapse-item>
     </i-collapse>
-  </view>
+  </view> -->
   <!-- 底部弹窗 -->
   <view class="wrap-mask" wx:if="{{showPopup}}" bindtap="closePopup"></view>
   <view class="popup" wx:if="{{showPopup}}">

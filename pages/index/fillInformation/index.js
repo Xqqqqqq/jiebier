@@ -89,7 +89,7 @@ Page({
       openid: openid
     }).then(res => {
       if(res.code == 200){
-        if(res.result == null){
+        if(res.result == null || res.result.companyStatus == 3){
           this.setData({
             showImg: false
           })

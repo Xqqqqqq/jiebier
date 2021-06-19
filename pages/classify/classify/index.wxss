@@ -92,8 +92,8 @@ page{
 .sc_right_item{
   width: 124rpx;
   overflow: hidden;
-  text-align: center;
-  margin-bottom: 50rpx;
+  text-align: left;
+  /* margin-bottom: 20rpx; */
   margin-right: 45rpx;
   display: inline-block;
 }
@@ -111,7 +111,11 @@ page{
 .right_item-box{
   font-size: 30rpx;
   color: #000000;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2; /* 这里是超出几行省略 */
   overflow: hidden;
-  text-overflow:ellipsis;
-  white-space: nowrap;
+  height: 90rpx;
 }

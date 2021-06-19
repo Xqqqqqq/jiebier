@@ -120,3 +120,12 @@ swiper-item image {
   padding: 0 24rpx;
   box-sizing: border-box;
 }
+.wrap-scroll{
+  flex-wrap: wrap;
+}
+.scroll-li{
+  margin-bottom: 50rpx;
+}
+.scroll-li-img{
+  height: 217rpx;
+}

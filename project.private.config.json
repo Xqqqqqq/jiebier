@@ -3510,6 +3510,12 @@
         {
           "name": "pages/loginAll/vendorBinding/index",
           "pathName": "pages/loginAll/vendorBinding/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/classify/classify/index",
+          "pathName": "pages/classify/classify/index",
           "scene": null
         }
       ]
