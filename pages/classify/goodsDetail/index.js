@@ -120,7 +120,7 @@ Page({
     this.setData({
       visible: false
     })
-    wx_gotoNewUrl('navigateTo','/pages/loginAll/loginAdmin/index')
+    wx_gotoNewUrl('switchTab','/pages/mine/mine/index')
   },
   handleClose(){
     this.setData({

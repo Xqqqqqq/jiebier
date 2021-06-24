@@ -1,5 +1,5 @@
 <view class="wrap">
-  <view class="wrap-box">
+  <view class="wrap-box" wx:if="{{!notShowAddress}}">
     <view class="wrap-box-title">收货地址</view>
     <view class="wrap-box-content" wx:if="{{submitForm && submitForm.name}}" bindtap="chooseAddress">
       <view class="box-content-phone">{{submitForm.name}}<text>{{submitForm.tel}}</text></view>

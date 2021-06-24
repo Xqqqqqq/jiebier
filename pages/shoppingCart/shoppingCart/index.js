@@ -90,7 +90,7 @@ Page({
     this.setData({
       visible: false
     })
-    wx_gotoNewUrl('navigateTo','/pages/loginAll/loginAdmin/index')
+    wx_gotoNewUrl('switchTab','/pages/mine/mine/index')
   },
   handleClose(){
     this.setData({
@@ -360,42 +360,29 @@ Page({
     if(newOrderList.length >0){
       newOrderList.map(item =>{
         const notUse = item.children.filter(productItem => productItem.ifUse != 1)
-        wx.setStorage({
-          key: 'orderList',
-          data: newOrderList,
-          success: function(res){
-            wx_gotoNewUrl('navigateTo','/pages/classify/confirmOrder/index')
-          },
-          fail: function() {
-            // fail
-          },
-          complete: function() {
-            // complete
-          }
-        })
-        // if(notUse.length > 0){
-        //   $Toast({
-        //     content: '此订单中包含不可结算商品，请重新选择后提交！',
-        //     type: 'warning'
-        //   });
-        //   this.setData({
-        //     newOrderList: []
-        //   })
-        // }else{
-        //   wx.setStorage({
-        //     key: 'orderList',
-        //     data: newOrderList,
-        //     success: function(res){
-        //       wx_gotoNewUrl('navigateTo','/pages/classify/confirmOrder/index')
-        //     },
-        //     fail: function() {
-        //       // fail
-        //     },
-        //     complete: function() {
-        //       // complete
-        //     }
-        //   })
-        // }
+        if(notUse.length > 0){
+          $Toast({
+            content: '此订单中包含不可结算商品，请重新选择后提交！',
+            type: 'warning'
+          });
+          this.setData({
+            newOrderList: []
+          })
+        }else{
+          wx.setStorage({
+            key: 'orderList',
+            data: newOrderList,
+            success: function(res){
+              wx_gotoNewUrl('navigateTo','/pages/classify/confirmOrder/index')
+            },
+            fail: function() {
+              // fail
+            },
+            complete: function() {
+              // complete
+            }
+          })
+        }
       })
     }else{
       $Toast({

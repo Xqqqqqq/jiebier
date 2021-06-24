@@ -19,7 +19,8 @@ Page({
     },
     price:0, // 选择优惠券的钱数
     couponName:0,
-    getPrice: 0
+    getPrice: 0,
+    notShowAddress:true,// 是否不显示收货地址
   },
   onLoad(options){
     // console.log(options)
@@ -43,17 +44,22 @@ Page({
         'submitForm.userId': wx.getStorageSync('userInfo').id,
       })
       if(this.data.orderList){
-        this.data.orderList.map(item => {
-          item.children.map(itemSmall => {
-            // this.data.submitForm.productList.push({
-            //   deliveryType: itemSmall.deliveryType,
-            //   num: itemSmall.productNum,
-            //   productId: itemSmall.productId,
-            //   productClassId:itemSmall.productClassId,
-            //   price:itemSmall.productPrice
-            // })
-          })
+        this.data.notShowAddress = this.data.orderList.every(item => item.children.every(it => it.deliveryType === 2))
+        this.setData({
+          notShowAddress: this.data.notShowAddress
         })
+      
+        // this.data.orderList.map(item => {
+        //   item.children.map(itemSmall => {
+        //     this.data.submitForm.productList.push({
+        //       deliveryType: itemSmall.deliveryType,
+        //       num: itemSmall.productNum,
+        //       productId: itemSmall.productId,
+        //       productClassId:itemSmall.productClassId,
+        //       price:itemSmall.productPrice
+        //     })
+        //   })
+        // })
       }
       this.getTotalPrice()
     }else{
@@ -140,89 +146,91 @@ Page({
       price:selectItem.productPrice
     })
 
-    if(!vm.data.submitForm.address || !vm.data.submitForm.addressDetails || !vm.data.submitForm.name || !vm.data.submitForm.tel){
-      $Toast({
-        content: "请完善收货信息！",
-        type: 'warning'
-      });
-    }else{
-      classify.saveOrders({
-        ...vm.data.submitForm,
-        openId: wx.getStorageSync('openId')
-      }).then(res => {
-        vm.data.submitForm.productList = []
-        if(res.code == 200){
-          if(res.result){
-            let result = JSON.parse(res.result)
-            // wx.requestPayment({
-            //   'timeStamp': result.miniPayRequest.timeStamp,
-            //   'nonceStr': result.miniPayRequest.nonceStr,
-            //   'package': result.miniPayRequest.package,
-            //   'signType': result.miniPayRequest.signType,
-            //   'paySign': result.miniPayRequest.paySign,
-            //   'success': function (res) {
-            //     console.log("支付成功");
-            //     $Toast({
-            //       content: '支付成功，正在跳转...',
-            //       type: 'success'
-            //     });
-            //     setTimeout(() => {
-            //       wx_gotoNewUrl('navigateTo','/pages/mine/orders/index?type=0')
-            //     }, 1000);
-            //   },
-            //   'fail': function (res) {
-            //     //支付失败后的回掉
-            //     console.log("支付失败");
-            //   }
-            // })
-            let resultInfo = JSON.parse(result.ysepay_online_weixin_pay_response.jsapi_pay_info)
-            wx.requestPayment({
-              'timeStamp': resultInfo.timeStamp,
-              'nonceStr': resultInfo.nonceStr,
-              'package': resultInfo.package,
-              'signType': resultInfo.signType,
-              'paySign': resultInfo.paySign,
-              'success': function (res) {
-                console.log("支付成功");
-                $Toast({
-                  content: '支付成功',
-                  type: 'success'
-                });
-                const newArr = vm.data.orderList.map(item => {
-                  return {
-                    ...item,
-                    children: item.children.filter(it => it.productId !== selectItem.productId)
-                  }
-                })
-                vm.data.orderList = newArr.filter(item => item.children.length > 0)
-                console.log(vm.data.orderList)
-                wx.setStorage({
-                  key: 'orderList',
-                  data: vm.data.orderList,
-                })
-                vm.setData({
-                  orderList: vm.data.orderList
-                })
-                if(vm.data.orderList.length <= 0){
-                  setTimeout(() => {
-                    wx_gotoNewUrl('navigateTo','/pages/mine/orders/index?type=0')
-                  }, 1000);
-                }
-              },
-              'fail': function (res) {
-                //支付失败后的回掉
-                console.log("支付失败");
-              }
-            })
-          }
-        }else{
-          $Toast({
-            content: res.msg,
-            type: 'error'
-          });
-        }
-      })
+    if(this.data.notShowAddress == false){ 
+      if(!vm.data.submitForm.address || !vm.data.submitForm.addressDetails || !vm.data.submitForm.name || !vm.data.submitForm.tel){
+        $Toast({
+          content: "请完善收货信息！",
+          type: 'warning'
+        });
+        return
+      }
     }
+    classify.saveOrders({
+      ...vm.data.submitForm,
+      openId: wx.getStorageSync('openId')
+    }).then(res => {
+      vm.data.submitForm.productList = []
+      if(res.code == 200){
+        if(res.result){
+          let result = JSON.parse(res.result)
+          // wx.requestPayment({
+          //   'timeStamp': result.miniPayRequest.timeStamp,
+          //   'nonceStr': result.miniPayRequest.nonceStr,
+          //   'package': result.miniPayRequest.package,
+          //   'signType': result.miniPayRequest.signType,
+          //   'paySign': result.miniPayRequest.paySign,
+          //   'success': function (res) {
+          //     console.log("支付成功");
+          //     $Toast({
+          //       content: '支付成功，正在跳转...',
+          //       type: 'success'
+          //     });
+          //     setTimeout(() => {
+          //       wx_gotoNewUrl('navigateTo','/pages/mine/orders/index?type=0')
+          //     }, 1000);
+          //   },
+          //   'fail': function (res) {
+          //     //支付失败后的回掉
+          //     console.log("支付失败");
+          //   }
+          // })
+          let resultInfo = JSON.parse(result.ysepay_online_weixin_pay_response.jsapi_pay_info)
+          wx.requestPayment({
+            'timeStamp': resultInfo.timeStamp,
+            'nonceStr': resultInfo.nonceStr,
+            'package': resultInfo.package,
+            'signType': resultInfo.signType,
+            'paySign': resultInfo.paySign,
+            'success': function (res) {
+              console.log("支付成功");
+              $Toast({
+                content: '支付成功',
+                type: 'success'
+              });
+              const newArr = vm.data.orderList.map(item => {
+                return {
+                  ...item,
+                  children: item.children.filter(it => it.productId !== selectItem.productId)
+                }
+              })
+              vm.data.orderList = newArr.filter(item => item.children.length > 0)
+              console.log(vm.data.orderList)
+              wx.setStorage({
+                key: 'orderList',
+                data: vm.data.orderList,
+              })
+              vm.setData({
+                orderList: vm.data.orderList
+              })
+              if(vm.data.orderList.length <= 0){
+                setTimeout(() => {
+                  wx_gotoNewUrl('navigateTo','/pages/mine/orders/index?type=0')
+                }, 1000);
+              }
+            },
+            'fail': function (res) {
+              //支付失败后的回掉
+              console.log("支付失败");
+            }
+          })
+        }
+      }else{
+        $Toast({
+          content: res.msg,
+          type: 'error'
+        });
+      }
+    })
   },
   gotoCoupon(){
     if(this.data.submitForm.productList){

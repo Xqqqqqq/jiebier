@@ -3516,6 +3516,18 @@
         {
           "name": "pages/classify/classify/index",
           "pathName": "pages/classify/classify/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "packageMall/pages/goodsInfo/confirmOrder/index",
+          "pathName": "packageMall/pages/goodsInfo/confirmOrder/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/classify/confirmOrder/index",
+          "pathName": "pages/classify/confirmOrder/index",
           "scene": null
         }
       ]

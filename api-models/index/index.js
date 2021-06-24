@@ -150,5 +150,14 @@ class Index extends HTTP {
       data: data
     })
   }
+  /**
+   * 根据openid查询用户详情
+   */
+   userDetailByOpenid(data){
+    return this.request({
+      url:'/api/member/userDetailByOpenid',
+      data: data
+    })
+  }
 }
 export { Index }

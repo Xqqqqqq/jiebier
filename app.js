@@ -31,11 +31,28 @@ App({
               if(res.result){
                 wx.setStorage({
                   key: 'openId',
-                  data: res.result,
+                  data: res.result.openid,
+                })
+                wx.setStorage({
+                  key: 'sessionKey',
+                  data: res.result.session_key,
+                })
+                index.userDetailByOpenid({
+                  openid: res.result.openid
+                }).then(res => {
+                  if(res.code == 200) {
+                    wx.setStorage({
+                      key: 'userInfo',
+                      data: res.result,
+                    })
+                    wx.setStorage({
+                      key: 'loginStatus',
+                      data: true,
+                    })
+                  }
                 })
               }
             }
-            // console.log('openId',res)
           })
         }else{
           console.log('未获取到code', res);

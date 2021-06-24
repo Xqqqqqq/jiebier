@@ -92,5 +92,14 @@ class Login extends HTTP {
       data: data,
     })
   }
+  /**
+   * 	解密与微信绑定的手机号
+   */
+   getWxPhone(data){
+    return this.request({
+      url:'/api/wx/getWxPhone',
+      data: data,
+    })
+  }
 }
 export { Login }
