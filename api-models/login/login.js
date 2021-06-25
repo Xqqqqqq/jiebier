@@ -101,5 +101,14 @@ class Login extends HTTP {
       data: data,
     })
   }
+  /**
+   * 	用户授权注册
+   */
+   userRegisterNew(data){
+    return this.request({
+      url:'/api/member/userRegisterNew',
+      data: data,
+    })
+  }
 }
 export { Login }

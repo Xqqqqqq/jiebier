@@ -358,32 +358,43 @@ Page({
       }
     }).filter(orderItem => orderItem.children.length !== 0)
     if(newOrderList.length >0){
-      newOrderList.map(item =>{
-        const notUse = item.children.filter(productItem => productItem.ifUse != 1)
-        if(notUse.length > 0){
-          $Toast({
-            content: '此订单中包含不可结算商品，请重新选择后提交！',
-            type: 'warning'
-          });
-          this.setData({
-            newOrderList: []
-          })
-        }else{
-          wx.setStorage({
-            key: 'orderList',
-            data: newOrderList,
-            success: function(res){
-              wx_gotoNewUrl('navigateTo','/pages/classify/confirmOrder/index')
-            },
-            fail: function() {
-              // fail
-            },
-            complete: function() {
-              // complete
-            }
-          })
+      wx.setStorage({
+        key: 'orderList',
+        data: newOrderList,
+        success: function(res){
+          wx_gotoNewUrl('navigateTo','/pages/classify/confirmOrder/index')
+        },
+        fail: function() {
+          // fail
+        },
+        complete: function() {
+          // complete
         }
       })
+      // const notUse = newOrderList.some(item => item.children.some(it => it.ifUse != 1))
+      // if(notUse == true){
+      //   $Toast({
+      //     content: '此订单中包含不可结算商品，请重新选择后提交！',
+      //     type: 'warning'
+      //   });
+      //   this.setData({
+      //     newOrderList: []
+      //   })
+      // }else{
+      //   wx.setStorage({
+      //     key: 'orderList',
+      //     data: newOrderList,
+      //     success: function(res){
+      //       wx_gotoNewUrl('navigateTo','/pages/classify/confirmOrder/index')
+      //     },
+      //     fail: function() {
+      //       // fail
+      //     },
+      //     complete: function() {
+      //       // complete
+      //     }
+      //   })
+      // }
     }else{
       $Toast({
         content: '请先选择想要结算的宝贝！',

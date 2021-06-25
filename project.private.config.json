@@ -3528,6 +3528,18 @@
         {
           "name": "pages/classify/confirmOrder/index",
           "pathName": "pages/classify/confirmOrder/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/classify/confirmOrder/index",
+          "pathName": "pages/classify/confirmOrder/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/shoppingCart/shoppingCart/index",
+          "pathName": "pages/shoppingCart/shoppingCart/index",
           "scene": null
         }
       ]

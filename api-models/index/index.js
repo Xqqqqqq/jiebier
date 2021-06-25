@@ -159,5 +159,15 @@ class Index extends HTTP {
       data: data
     })
   }
+  /**
+   * 获取openidNew
+   */
+   getOpenidNew(data){
+    return this.request({
+      url:'/api/wx/getOpenidNew',
+      method:"GET",
+      data: data
+    })
+  }
 }
 export { Index }

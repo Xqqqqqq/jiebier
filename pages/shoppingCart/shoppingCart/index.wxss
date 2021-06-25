@@ -131,6 +131,7 @@
 .content-right-top{
   width: 100%;
   display: flex;
+  justify-content: space-between;
   font-size: 32rpx;
   color: #000000;
   margin-bottom: 15rpx;
@@ -147,10 +148,16 @@
   color: #FF4100;
 }
 .content-right-top-name{
-  max-width: 45%;
+  /* max-width: 45%;
   overflow: hidden;
   text-overflow:ellipsis;
-  white-space: nowrap;
+  white-space: nowrap; */
+  max-width: 75%;
+  white-space: normal;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 3;
 }
 .right-top-score{
   min-width:72rpx;

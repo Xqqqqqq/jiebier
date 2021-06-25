@@ -24,7 +24,7 @@ App({
         if(code) {
           // console.log('获取用户登录凭证：' + code);
           // 获取openid
-          index.getOpenid({
+          index.getOpenidNew({
             code:code
           }).then(res => {
             if(res.code == 200){

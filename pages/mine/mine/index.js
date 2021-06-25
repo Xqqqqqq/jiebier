@@ -38,7 +38,7 @@ Page({
             key: 'userPhone',
             data: res.result,
           })
-          login.userRegister({
+          login.userRegisterNew({
             openid: wx.getStorageSync('openId'),//	string	是	openId
             tel: wx.getStorageSync('userPhone'),// string	是	用户电话
           }).then(res => {
