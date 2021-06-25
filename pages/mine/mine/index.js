@@ -9,14 +9,13 @@ const app = getApp()
 Page({
   data:{
     url: app.globalData.url,
-    isLogin: false,
-    wxUserInfo: {}, // 获取用户信息
+    userPhone: '', // 获取用户手机号
   },
   onShow(){
-    if(wx.getStorageSync('loginStatus') && wx.getStorageSync('userInfo')){
+    // console.log(wx.getStorageSync('userInfo'))
+    if(wx.getStorageSync('userInfo') && wx.getStorageSync('userInfo').tel){
       this.setData({
-        isLogin: wx.getStorageSync('loginStatus'),
-        wxUserInfo: wx.getStorageSync('userInfo')
+        userPhone: wx.getStorageSync('userInfo').tel
       })
     }
   },
@@ -32,28 +31,23 @@ Page({
         encrypdata:e.detail.encryptedData,//	string	是	微信参数
         ivdata: e.detail.iv,//	string	是	微信参数
         sessionKey: wx.getStorageSync('sessionKey'),//	string	是	会话密钥
-      }).then(res => {
-        if(res.code == 200){
+      }).then(response => {
+        if(response.code == 200){
           wx.setStorage({
             key: 'userPhone',
-            data: res.result,
+            data: response.result,
           })
           login.userRegisterNew({
             openid: wx.getStorageSync('openId'),//	string	是	openId
-            tel: wx.getStorageSync('userPhone'),// string	是	用户电话
+            tel: wx.getStorageSync('userPhone') ? wx.getStorageSync('userPhone') : response.result,// string	是	用户电话
           }).then(res => {
             if(res.code == 200){
               wx.setStorage({
                 key: 'userInfo',
                 data: res.result,
               })
-              wx.setStorage({
-                key: 'loginStatus',
-                data: true,
-              })
-              this.setData({
-                isLogin: wx.getStorageSync('loginStatus'),
-                wxUserInfo: wx.getStorageSync('userInfo')
+              vm.setData({
+                userPhone: wx.getStorageSync('userInfo').tel ? wx.getStorageSync('userInfo').tel : res.result.tel
               })
             }else{
               $Toast({
@@ -64,7 +58,7 @@ Page({
           })
         }else{
           $Toast({
-            content: res.info,
+            content: response.info,
             type: 'error'
           });
         }

@@ -45,10 +45,6 @@ App({
                       key: 'userInfo',
                       data: res.result,
                     })
-                    wx.setStorage({
-                      key: 'loginStatus',
-                      data: true,
-                    })
                   }
                 })
               }
