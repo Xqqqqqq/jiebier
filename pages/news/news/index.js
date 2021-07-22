@@ -12,7 +12,7 @@ Page({
     url: app.globalData.url,
     visible: false,
   },
-  onLoad(){
+  onShow(){
     this.getDictAll()
   },
   // 获取用户字典 
