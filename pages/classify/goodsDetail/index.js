@@ -147,6 +147,7 @@ Page({
   onShareAppMessage: function (res) {
     return {
       title: this.data.title,
+      imageUrl: this.data.goodInfo.productOutVo.transpondImg ? this.data.goodInfo.productOutVo.transpondImg : this.data.goodInfo.productOutVo.mainImg,
       path: `/pages/classify/goodsDetail/index?goodsid=${this.data.goodsDetail.productId}&goodsname=${this.data.title}`
     }
   },

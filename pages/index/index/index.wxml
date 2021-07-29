@@ -1,5 +1,4 @@
 <view class="wrap">
-  <!-- <button open-type="contact" class='follow_mp'>回复“1”，关注我们</button> -->
   <!-- 搜索栏 -->
   <view class="wrap-input">
     <view class="wrap-input-select" bindtap="gotoRouter" data-url="/pages/index/search/index" data-type="navigateTo">
@@ -15,82 +14,87 @@
       <swiper indicator-dots="{{indicatorDots}}"
       autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}"
       style="height: 100%;">
-        <block wx:for="{{imgUrls}}" wx:key="imgUrls">
+        <block wx:for="{{indexInfo.storeList}}" wx:key="index">
           <swiper-item bindtap="clickSwiper" data-id="{{item.id}}"> 
-            <!-- <image src="{{item.storeBannerImg}}" class="slide-image" data-url="indexSwiper" data-id="{{item.id}}" bindtap="clickNews"/> -->
             <image src="{{item.storeBannerImg}}" class="slide-image"/>
           </swiper-item>
         </block>
       </swiper>
     </view>
   </view>
-  <!-- 热销 -->
-  <view class="wrap-title" wx:if="{{hotList.length > 0}}">
-    <view class="wrap-title-name">热销</view>
-  </view>
-  <view class="wrap-scroll" wx:if="{{hotList.length > 0}}">
-    <!-- <scroll-view scroll-x="true"> -->
-      <view class="scroll-li" style="width: 215rpx;"
-      wx:for="{{hotList}}" wx:key="index" bindtap="gotoDetail" data-id="{{item.id}}" data-name="{{item.productName}}">
-        <view class="scroll-li-img">
-          <image src="{{item.mainImg}}"></image>
+  <i-notice-bar i-class="wrap-notice-box" icon="systemprompt" loop style="width: 100%;">
+    {{indexInfo.borNoticeList[0].noticeTiltle}}
+  </i-notice-bar>
+  <!-- 分类 -->
+  <scroll-view class="bottom_scroll" scroll-x="true" scroll-left="{{x}}" scroll-with-animation="{{true}}">
+    <view wx:for="{{indexInfo.borProductClassList}}" wx:key="index" data-id="{{item.id}}" data-index="{{index}}"
+    class='nav {{currentTab == index?"cur":""}}' bindtap='switchTap'>
+      <view>{{item.regionName}}</view>
+      <text></text>
+    </view>
+  </scroll-view>
+  <!-- 列表 -->
+  <view style="width: 100%; padding: 0 20rpx;box-sizing: border-box;">
+    <!-- 当为热销商品时 -->
+    <block wx:if="{{currentTab == 0}}">
+      <view class="hot-box" wx:for="{{homeList}}">
+        <view class="hot-box-title">
+          <view class="box-title-name">{{item.columnName}}</view>
+          <view bindtap="clickMore" data-name="{{item.columnName}}">更多 ></view>
         </view>
-        <view class="scroll-li-bottom">
-          <view class="scroll-li-bottom-title">{{item.productName}}</view>
-          <view class="scroll-li-bottom-num">销量：{{item.shopSale}}</view>
-          <view class="scroll-li-bottom-price">
-            <text>￥</text>{{item.productPrice}}
-            <view class="li-bottom-price" catchtap="openPopup" data-id="{{item.id}}"  data-company="{{item.companyId}}">
-              <image src="{{url}}index/cart.png"></image>
+        <view class="wrap-scroll">
+          <view class="scroll-li" style="width: 210rpx;margin-right: 20rpx;"
+          wx:for="{{item.homePageProductList}}" wx:key="indexSmall" wx:for-item="itemSmall"
+          bindtap="gotoDetail" data-id="{{itemSmall.id}}" data-name="{{itemSmall.productName}}">
+            <view class="scroll-li-img">
+              <image src="{{itemSmall.mainImg}}"></image>
+            </view>
+            <view class="scroll-li-bottom">
+              <view class="scroll-li-bottom-title">{{itemSmall.productName}}</view>
+              <view class="scroll-li-bottom-num">销量：{{itemSmall.shopSale}}</view>
+              <view class="scroll-li-bottom-price">
+                <text>￥</text>{{itemSmall.productPrice}}
+                <view class="li-bottom-price" catchtap="openPopup" data-item="{{itemSmall}}">
+                  <image src="{{url}}index/cart.png"></image>
+                </view>
+              </view>
             </view>
           </view>
         </view>
       </view>
-    <!-- </scroll-view> -->
-  </view>
-  <!-- 推荐城市 -->
-  <!-- <view class="wrap-title" wx:if="{{showRecommend}}">
-    <view class="wrap-title-name">推荐城市</view>
-  </view>
-  <view class="wrap-recommend" wx:if="{{showRecommend}}">
-    <view class="{{currentTab==index ? 'recommend-li-ture' : 'recommend-li'}}"
-    wx:for="{{recommendList}}"
-    wx:key="index"
-    data-current="{{index}}"
-    data-item="{{item}}"
-    bindtap="clickTab">{{item.regionName}}</view>
-  </view> -->
-  <!-- 选择城市 -->
-  <!-- <view class="wrap-title">
-    <view class="wrap-title-name">选择城市</view>
-  </view>
-  <view class="wrap-collapse">
-    <i-collapse accordion name="{{name}}">
-      <i-collapse-item 
-      title="{{item.regionName}}" wx:for="{{collapseList}}" wx:key="index" name="{{item.regionName}}"
-      i-class-title="collapse-item-title" i-class-content="collapse-item-content">
-        <view slot="content">
-          <view class="wrap-recommend wrap-recommend-other">
-            <view class="{{selectTab==indexSmall ? 'recommend-li-ture' : 'recommend-li'}}"
-            wx:for="{{item.children}}"
-            wx:key="index"
-            wx:for-item="itemSmaller"
-            wx:for-index="indexSmall"
-            data-name="{{itemSmaller.regionName}}"
-            data-id="{{itemSmaller.id}}"
-            data-indexsmall="{{indexSmall}}"
-            data-index="{{index}}"
-            bindtap="selectTab">{{itemSmaller.regionName}}</view>
+    </block>
+    <!-- 当为其他分类商品时 -->
+    <block wx:else>
+      <view class="class-box">
+        <view class="hot-box-title" wx:if="{{hotInfo.columnName}}">
+          <view class="box-title-name">{{hotInfo.columnName}}</view>
+        </view>
+        <view wx:if="{{hotInfo.homePageProductList.length > 0}}">
+          <view class="class-box-li" wx:for="{{hotInfo.homePageProductList}}" wx:key="index" bindtap="gotoDetail" data-id="{{item.id}}" data-name="{{item.productName}}">
+            <view class="box-li-img">
+              <image src="{{item.mainImg}}"></image>
+            </view>
+            <view class="box-li-right">
+              <view class="li-right-title">{{item.productName}}</view>
+              <view class="li-right-num">销量：{{item.shopSale}}</view>
+              <view class="li-right-price">
+                ￥{{item.productPrice}}
+                <view class="li-right-price-btn" catchtap="openPopup" data-item="{{item}}">加入购物车</view>
+              </view>
+            </view>
           </view>
         </view>
-      </i-collapse-item>
-    </i-collapse>
-  </view> -->
+        <view class="no-data" wx:else>
+          <image src="{{url}}tabs/no-data.png" mode="widthFix"></image>
+        </view>
+      </view>
+    </block>
+  </view>
   <!-- 底部弹窗 -->
   <view class="wrap-mask" wx:if="{{showPopup}}" bindtap="closePopup"></view>
   <view class="popup" wx:if="{{showPopup}}">
     <radio-group bindchange="typeChange">
-      <view class="popup-li" wx:for="{{typeList.typeList}}" wx:key="index">
+      <view class="popup-li" wx:for="{{typeList}}" wx:key="index">
         <label class="popup-left">
           <view class="popup-left-check">
             <radio value="{{item.id}}"/>

@@ -169,5 +169,31 @@ class Index extends HTTP {
       data: data
     })
   }
+  /**
+   * 展示
+   */
+   getShows(){
+    return this.request({
+      url:'/api/miniCommon/getShows',
+      method:"GET",
+    })
+  }
+  /**
+   * 首页商品展示
+   */
+   selectProductHomePageList(){
+    return this.request({
+      url:'/api/product/selectProductHomePageList',
+    })
+  }
+  /**
+   * 首页商品分类展示
+   */
+   selectProductClassHomePageList(data){
+    return this.request({
+      url:'/api/product/selectProductClassHomePageList',
+      data: data
+    })
+  }
 }
 export { Index }

@@ -1,8 +1,6 @@
 /**index.wxss**/
 .wrap{
   width: 100%;
-  padding-bottom: 100rpx;
-  box-sizing: border-box;
 }
 /* 搜索栏 */
 .wrap-input{
@@ -41,7 +39,7 @@
   padding: 0 24rpx;
   box-sizing: border-box;
   height: 330rpx;
-  margin-bottom: 40rpx;
+  margin-bottom: 20rpx;
 }
 .wrap-swiper{
   height: 100%;
@@ -55,70 +53,53 @@ swiper-item image {
   display: inline-block;
   overflow: hidden;
  }
-/* 推荐城市 */
-.wrap-recommend{
-  width: 100%;
-  padding-left: 24rpx;
-  box-sizing: border-box;
-  display: flex;
-  flex-wrap: wrap;
+/* 公告 */
+.wrap-notice-box{
+  width: 93%;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 5rpx;
+  margin-bottom: 5rpx;
 }
-.recommend-li-ture{
-  padding: 0 15rpx;
-  box-sizing: border-box;
-  text-align: center;
-  height:70rpx;
-  line-height: 70rpx;
-  border:1px solid rgba(204,204,204,1);
-  border-radius:10rpx;
-  font-size: 30rpx;
-  color: #333;
-  box-sizing: border-box;
-  margin-right: 25rpx;
-  margin-bottom: 25rpx;
-  min-width: 145rpx;
-  background-color: #F7F7F7;
-}
-.recommend-li{
-  padding: 0 15rpx;
-  box-sizing: border-box;
-  text-align: center;
-  height:70rpx;
-  line-height: 70rpx;
-  border:1px solid rgba(204,204,204,1);
-  border-radius:10rpx;
-  font-size: 30rpx;
-  color: #333;
-  box-sizing: border-box;
-  margin-right: 25rpx;
-  margin-bottom: 25rpx;
-  min-width: 145rpx;
-}
-/* 选择城市 */
-.collapse-item-title{
-  color: #333333;
-  font-size: 30rpx;
-  padding: 15rpx 0;
-  box-sizing: border-box;
-}
-.collapse-item-content{
-  display: flex;
-  padding: 0;
-}
-.wrap-recommend-other{
-  padding-left: 0rpx;
-}
-.collapse-label{
-  width: 100%;
-  display: flex;
-}
-.collapse-label-title{
-  width: 80%;
-}
-.wrap-collapse{
-  width: 100%;
+/* 分类横向滚动 */
+.bottom_scroll{
+  width:100%;
   padding: 0 24rpx;
   box-sizing: border-box;
+  white-space:nowrap;
+  overflow:hidden;
+  line-height:83rpx;
+  margin-bottom: 10rpx;
+}
+.bottom_scroll .nav{
+  display:inline-block;
+  white-space:normal;
+  text-align:center;
+  color:#6f7580;
+  font-size:28rpx;
+  position: relative;
+  margin-right: 30rpx;
+}
+.bottom_scroll .cur{
+  font-size:30rpx;
+  color: #333;
+  font-weight: bold;
+} 
+.cur text{
+  width:50rpx;
+  height: 8rpx;
+  border-radius: 5rpx;
+  background: rgba(237,146,110,1);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 5rpx;
+}
+/* 列表 */
+.hot-box{
+  width: 100%;
+  box-shadow:0px 2px 8px 0px #e0dcdc;
+  margin-top: 20rpx;
 }
 .wrap-scroll{
   flex-wrap: wrap;
@@ -126,6 +107,78 @@ swiper-item image {
 .scroll-li{
   margin-bottom: 50rpx;
 }
+.scroll-li:nth-child(3n){
+  margin-right: 0;
+}
 .scroll-li-img{
-  height: 217rpx;
+  height: 210rpx;
+}
+.hot-box-title{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 24rpx;
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 24rpx;
+  color: #666;
+  line-height: 80rpx;
+}
+.box-title-name{
+  font-size: 30rpx;
+  color: rgb(156, 8, 8);
+  font-weight: bold;
+}
+.class-box{
+  width: 100%;
+}
+.class-box-li{
+  width: 100%;
+  display: flex;
+  padding: 20rpx;
+  box-sizing: border-box;
+  margin-bottom: 30rpx;
+  box-shadow:0px 2px 8px 0px #eceaea;
+}
+.box-li-img{
+  width: 210rpx;
+  height: 210rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+  margin-right: 20rpx;
+}
+.box-li-img image{
+  width: 100%;
+  height: 100%;
+}
+.box-li-right{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 65%;
+}
+.li-right-title{
+  font-size: 30rpx;
+  color: #000000;
+  font-weight: bold;
+  margin-bottom: 5rpx;
+}
+.li-right-num{
+  font-size: 24rpx;
+  color: #6666;
+}
+.li-right-price{
+  font-size: 32rpx;
+  color: rgb(156, 8, 8);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.li-right-price-btn{
+  background-color: #4FBE00;
+  color: #fff;
+  text-align: center;
+  width: 180rpx;
+  line-height: 60rpx;
+  font-size: 26rpx;
+  border-radius: 10rpx;
 }

@@ -13,18 +13,21 @@ const app = getApp()
 Page({
   data : {
     url: app.globalData.url,
-    imgUrls: [], // 轮播图数组
     indicatorDots: true,
     autoplay: true,
     interval: 3000,
     duration: 500,
-    recommendList:[],
-    hotList:[],
-    showRecommend: false,
-    currentTab: -1,
-    collapseList: [], //选择城市的数组
-    selectTab: -1,
-    name: '',
+    indexInfo: {}, // 首页数据
+    x:0,
+    currentTab: 0,
+    currentName: '热销商品',
+    pageNum:1,
+    pageSize: 10,
+    homeList: [], // 热销商品
+    hotInfo:{
+      columnName: '',
+      homePageProductList: []
+    }, // 分类商品数组
     typeList:[],
     showPopup:false, // 是否显示底部弹窗
     visible: false, //是否显示去登录的按钮
@@ -35,21 +38,14 @@ Page({
       companyId: '',//店铺id
     },  // 加入购物车的参数
     canSubmit: false, // 是否可以点击加入购物车
+    code: 0, // 判断是否可加载
+    value: {
+      columnType: '', //专栏类型1热销2特价
+      productClassId: '', //商品分类id
+    }
   },
-  onShow(){
-    this.setData({
-      selectTab: -1,
-      name: '',
-      currentTab: -1,
-      collapseList: [], //选择城市的数组
-      recommendList:[],
-      showRecommend: false,
-    })
+  onLoad(){
     if(wx.getStorageSync('userCity')){
-      this.setData({
-        recommendList: wx.getStorageSync('userCity'),
-        showRecommend: true,
-      })
     }else{
       // 获取定位
       let vm = this
@@ -98,9 +94,7 @@ Page({
         }
       })
     }
-    this.getRegionTree()
-    this.storeBannerList()
-    this.selectProductHomePage()
+    this.getShows()
   },
   geo(){
     let vm =this
@@ -125,18 +119,10 @@ Page({
                   key: 'posCity',
                   data: res.result.city,
                 })
-                vm.setData({
-                  recommendList: res.result.regions,
-                  showRecommend: true,
-                })
               }else{
                 wx.setStorage({
                   key: 'showRecommend',
                   data: false,
-                })
-                vm.setData({
-                  recommendList: res.result,
-                  showRecommend: false,
                 })
               }
             })
@@ -144,79 +130,148 @@ Page({
         }
       })
   },
+  // 获取首页数据
+  getShows(){
+    index.getShows().then(res => {
+      if(res.code ==200){
+        res.result.borProductClassList.unshift({
+          id:'',
+          regionName: '热销商品'
+        })
+        this.setData({
+          indexInfo: res.result
+        })
+        this.selectProductHomePageList('', '520f317ee38e11ea94340242ac110002')
+      }else{
+        $Toast({
+          content: res.msg,
+          type: 'error'
+        });
+      }
+    })
+  },
+  // 点击轮播图跳转
   clickSwiper(e){
-    console.log(e.currentTarget.dataset.id)
     if(e.currentTarget.dataset.id){
       wx_gotoNewUrl('navigateTo','/pages/index/flagshipStore/index',{
         id:e.currentTarget.dataset.id
       })
     }
   },
-  // 获取地区分类
-  getRegionTree(){
-    index.getRegionTree().then(res => {
-      if(res.code == '200'){
-        this.setData({
-          collapseList: res.result[0].children
-        })
-      }else{
-        $Toast({
-          content: res.msg,
-          type: 'error'
-        });
-      }
+  // 点击更多
+  clickMore(e){
+    this.setData({
+      currentTab: -1,
+      pageNum: 1,
+      hotInfo: {},
+      homeList: []
     })
-  },
-  // 获取轮播图数组
-  storeBannerList(){
-    index.storeBannerList().then(res => {
-      if(res.code == 200){
-        this.setData({
-          imgUrls: res.result
-        })
-      }else{
-        $Toast({
-          content: res.msg,
-          type: 'error'
-        });
+    // console.log(e.currentTarget.dataset.name)
+    if(e.currentTarget.dataset.name == '热销专栏'){
+      this.data.value = {
+        columnType: '1', //专栏类型1热销2特价
+        productClassId: '', //商品分类id
       }
-    })
+      this.selectProductClassHomePageList(this.data.value)
+    }else{
+      this.data.value = {
+        columnType: '2', //专栏类型1热销2特价
+        productClassId: '', //商品分类id
+      }
+      this.selectProductClassHomePageList(this.data.value)
+    }
   },
-  // 获取首页热销商品
-  selectProductHomePage(){
-    let hotList = []
-    index.selectProductHomePage().then(res => {
+  // 获取首页商品
+  selectProductHomePageList(){
+    let homeList = []
+    index.selectProductHomePageList().then(res => {
+      this.data.code = 0
       if(res.code ==200){
-        hotList = res.result
-        hotList.map(item => {
-          item.typeList = []
-          if(item.express && item.express== 1){
-            item.typeList.push({
-              id:'3',
-              name: '快递',
-              num: 1,
-              checked: false
-            })
-          }
-          if(item.isPick && item.isPick== 1){
-            item.typeList.push({
-              id:'2',
-              name: '自提',
-              num: 1,
-              checked: false
-            })
-          }
-          if(item.isDelivery && item.isDelivery== 1){
-            item.typeList.push({
-              id:'1',
-              name: '商家配送',
-              num: 1,
-              checked: false
-            })
-          }
+        homeList = res.result
+        homeList.map(item => {
+          item.homePageProductList.map(itemSmall => {
+            itemSmall.typeList = []
+            if(itemSmall.express && itemSmall.express== 1){
+              itemSmall.typeList.push({
+                id:'3',
+                name: '快递',
+                num: 1,
+                checked: false
+              })
+            }
+            if(itemSmall.isPick && itemSmall.isPick== 1){
+              itemSmall.typeList.push({
+                id:'2',
+                name: '自提',
+                num: 1,
+                checked: false
+              })
+            }
+            if(itemSmall.isDelivery && itemSmall.isDelivery== 1){
+              itemSmall.typeList.push({
+                id:'1',
+                name: '商家配送',
+                num: 1,
+                checked: false
+              })
+            }
+          })
         })
         this.setData({
-          hotList: hotList
+          homeList: homeList
+        })
+      }else{
+        $Toast({
+          content: res.msg,
+          type: 'error'
+        });
+      }
+    })
+  },
+  // 获取首页分类商品
+  selectProductClassHomePageList(value){
+    index.selectProductClassHomePageList({
+      pageNum: this.data.pageNum,
+      pageSize: this.data.pageSize,
+      value: value
+    }).then(res => {
+      this.data.code = res.code
+      if(res.code == '200' || res.code == '-118'){
+        this.data.hotInfo.columnName = res.result.columnName
+        if(this.data.hotInfo.homePageProductList) {
+          this.data.hotInfo.homePageProductList = [...this.data.hotInfo.homePageProductList, ...res.result.homePageProductList]
+        }else{
+          this.data.hotInfo.homePageProductList = res.result.homePageProductList
+        }
+        this.data.hotInfo.homePageProductList.map(item => {
+          item.typeList = []
+            if(item.express && item.express== 1){
+              item.typeList.push({
+                id:'3',
+                name: '快递',
+                num: 1,
+                checked: false
+              })
+            }
+            if(item.isPick && item.isPick== 1){
+              item.typeList.push({
+                id:'2',
+                name: '自提',
+                num: 1,
+                checked: false
+              })
+            }
+            if(item.isDelivery && item.isDelivery== 1){
+              item.typeList.push({
+                id:'1',
+                name: '商家配送',
+                num: 1,
+                checked: false
+              })
+            }
+        })
+        this.setData({
+          hotInfo: this.data.hotInfo
         })
       }else{
         $Toast({
@@ -228,7 +283,7 @@ Page({
   },
   // 点击热销弹出的底部弹窗
   typeChange(e){
-    this.data.typeList.typeList.map(item => {
+    this.data.typeList.map(item => {
       item.checked = false
       if(item.id == e.detail.value){
         item.checked = true
@@ -241,14 +296,16 @@ Page({
   // 点击加入购物车图标
   openPopup(e){
     if(wx.getStorageSync('userInfo').id){
-      let hotList = this.data.hotList
-      let id = e.currentTarget.dataset.id
-      this.data.typeList = hotList.find(item => item.id == id)
+      // let homeList = this.data.homeList
+      // let id = e.currentTarget.dataset.id
+      // this.data.typeList = homeList.find(item => item.id == id)
+      let item = e.currentTarget.dataset.item
+      this.data.typeList = item.typeList
       this.setData({
         showPopup: true,
         typeList: this.data.typeList,
-        'goodsDetail.productId': id,
-        'goodsDetail.companyId': e.currentTarget.dataset.company
+        'goodsDetail.productId': item.id,
+        'goodsDetail.companyId': item.companyId
       })
     }else{
       this.setData({
@@ -267,7 +324,7 @@ Page({
   quantityChange(e){
     const index = e.currentTarget.dataset.index
     let typeList = this.data.typeList
-    let quantity = typeList.typeList[index].num
+    let quantity = typeList[index].num
     if(e.currentTarget.id == 'sub'){
       if(quantity <= 1){
         $Toast({
@@ -281,13 +338,13 @@ Page({
     }else if(e.currentTarget.id == 'add'){
       quantity += 1
     }
-    typeList.typeList[index].num = quantity
+    typeList[index].num = quantity
     this.setData({
       typeList: typeList
     })
   },
   clickAddShop(){
-    this.data.typeList.typeList.forEach(item => {
+    this.data.typeList.forEach(item => {
       if(item.checked == true){
         this.data.canSubmit = true
         this.setData({
@@ -364,57 +421,53 @@ Page({
       goodsname:e.currentTarget.dataset.name, // 详细商品名称
     })
   },
-  // 推荐城市
-  clickTab(e){
-    let cur = e.currentTarget.dataset.current;
-    if(this.data.currentTab == cur){
-      return false;
+  // 分类滚动
+  switchTap(e){
+    let screenWidth = wx.getSystemInfoSync().windowWidth;
+    let itemWidth = screenWidth/5;
+    let { index,id } = e.currentTarget.dataset;
+    const { borProductClassList } = this.data.indexInfo;
+    let scrollX = itemWidth * index - itemWidth*2;
+    let maxScrollX = (borProductClassList.length+1) * itemWidth;
+    if(scrollX<0){
+      scrollX = 0;
+    } else if (scrollX >= maxScrollX){
+      scrollX = maxScrollX;
+    }
+    this.setData({
+      x: scrollX,
+      currentTab: index,
+      pageNum: 1,
+      hotInfo: {},
+      homeList: []
+    })
+    if(index == 0){
+      this.getShows()
     }else{
-      this.setData({
-        currentTab:cur,
-      }) 
+      this.data.value = {
+        columnType: '', //专栏类型1热销2特价
+        productClassId: id, //商品分类id
+      }
+      this.selectProductClassHomePageList(this.data.value)
     }
-    if(e.currentTarget.dataset.item.regionName && e.currentTarget.dataset.item.id){
-      app.globalData.selectCity.id = e.currentTarget.dataset.item.id
-      app.globalData.selectCity.city = e.currentTarget.dataset.item.regionName
-    }
-    wx_gotoNewUrl('switchTab','/pages/classify/classify/index')
   },
-  // 选择城市  // 没做完
-  selectTab(e){
-    let index = e.currentTarget.dataset.index;
-    let indexsmall = e.currentTarget.dataset.indexsmall;
-    if(this.data.selectTab == this.data.collapseList[index].children[indexsmall]){
-      return false;
-    }else{
-      this.setData({
-        selectTab:this.data.collapseList[index].children[indexsmall],
-      }) 
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+    if(this.data.code != '-116' && this.data.code != '0' && this.data.code != '-118'){
+      const vm =this;
+      const pageNum = vm.data.pageNum + 1;
+      vm.setData({
+        pageNum: pageNum, //更新当前页数
+      })
+      vm.selectProductClassHomePageList(this.data.value);
     }
-    if(e.currentTarget.dataset.name && e.currentTarget.dataset.id){
-      app.globalData.selectCity.id = e.currentTarget.dataset.id
-      app.globalData.selectCity.city = e.currentTarget.dataset.name
-    }
-    wx_gotoNewUrl('switchTab','/pages/classify/classify/index')
   },
   gotoRouter(e){
     let type= e.currentTarget.dataset.type
     let url= e.currentTarget.dataset.url
     wx_gotoNewUrl(type,url)
-  },
-  radioChange(e){
-    // console.log(e.detail.value)
-    this.data.collapseList.map(item =>{
-      item.children.map(itemSmall => {
-        itemSmall.checked = false
-        if(itemSmall.id == e.detail.value){
-          itemSmall.checked = true
-        }
-      })
-    })
-    this.setData({
-      collapseList: this.data.collapseList
-    })
   },
   onShareAppMessage: function (res) {
     return {
