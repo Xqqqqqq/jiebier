@@ -11,7 +11,8 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 34rpx;
+  line-height: 1;
+  /* margin-bottom: 34rpx; */
 }
 .message-top-left{
   font-size: 30rpx;

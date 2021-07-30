@@ -37,7 +37,7 @@
   <view style="width: 100%; padding: 0 20rpx;box-sizing: border-box;">
     <!-- 当为热销商品时 -->
     <block wx:if="{{currentTab == 0}}">
-      <view class="hot-box" wx:for="{{homeList}}">
+      <view class="hot-box" wx:for="{{homeList}}" wx:key="index">
         <view class="hot-box-title">
           <view class="box-title-name">{{item.columnName}}</view>
           <view bindtap="clickMore" data-name="{{item.columnName}}">更多 ></view>

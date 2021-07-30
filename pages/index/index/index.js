@@ -236,7 +236,7 @@ Page({
       value: value
     }).then(res => {
       this.data.code = res.code
-      if(res.code == '200' || res.code == '-118'){
+      if(res.code == '200' || res.code == '-118' || res.code == '-116'){
         this.data.hotInfo.columnName = res.result.columnName
         if(this.data.hotInfo.homePageProductList) {
           this.data.hotInfo.homePageProductList = [...this.data.hotInfo.homePageProductList, ...res.result.homePageProductList]
@@ -455,7 +455,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    if(this.data.code != '-116' && this.data.code != '0' && this.data.code != '-118'){
+    if(this.data.code != '0' && this.data.code != '-118'){
       const vm =this;
       const pageNum = vm.data.pageNum + 1;
       vm.setData({
@@ -463,6 +463,16 @@ Page({
       })
       vm.selectProductClassHomePageList(this.data.value);
     }
+  },
+  onPullDownRefresh() {
+    this.setData({
+      currentTab: 0,
+      pageNum: 1,
+      hotInfo: {},
+      homeList: []
+    })
+    this.getShows()
+    wx.stopPullDownRefresh()//得到结果后关掉刷新动画
   },
   gotoRouter(e){
     let type= e.currentTarget.dataset.type

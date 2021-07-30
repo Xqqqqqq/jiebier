@@ -1,13 +1,21 @@
 import { HTTP } from '../../utils/http.js'
 class News extends HTTP {
   /**
-   * 	查询消息
+   * 	商城消息列表
    */
-  searchNews(data){
+   borArticleList(data){
     return this.request({
-      url:'/api/member/searchNews',
+      url:'/api/borArticle/borArticleList',
       data: data,
-      method:"GET"
+    })
+  }
+  /**
+   * 	商城消息详情
+   */
+   getborArticle(data){
+    return this.request({
+      url:'/api/borArticle/getborArticle',
+      data: data,
     })
   }
 }

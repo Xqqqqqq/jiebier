@@ -1,6 +1,6 @@
 .wrap{
   width: 100%;
-  background-color: #F8F8F8;
+  background-color: #ffffff;
   padding: 27rpx 24rpx;
   box-sizing: border-box;
 }
@@ -82,4 +82,18 @@
   box-sizing: border-box;
   margin-top: -1%;
   margin-left: 23rpx;
+}
+.news-title{
+  font-weight: bold;
+  color: #333;
+  font-size: 30rpx;
+  margin-bottom: 20rpx;
+}
+.news-info{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20rpx;
+  color: #666;
+  font-size: 26rpx;
+  width: 100%;
 }

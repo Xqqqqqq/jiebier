@@ -1,5 +1,6 @@
 {
   "navigationBarTitleText": "界壁儿",
+  "enablePullDownRefresh":true,
   "usingComponents": {
     "i-toast": "../../../dist/toast/index",
     "i-icon": "../../../dist/icon/index",

@@ -1,8 +1,13 @@
 <view class="wrap">
-  <view class="news-detail">
+  <view class="news-title">{{newsInfo.articleTiltle}}</view>
+  <view class="news-info">
+    <view wx:if="{{newsInfo.articleAuthor}}">作者：{{newsInfo.articleAuthor}}</view>
+    <view wx:if="{{newsInfo.createTime}}">时间：{{newsInfo.createTime}}</view>
+  </view>
+  <rich-text nodes="{{newsInfo.content}}"></rich-text>
+  <!-- <view class="news-detail">
     <view class="detail-click-li" bindtap="gotoShops">
       <view class="click-li-img">
-        <!-- <image></image> -->
       </view>
       <view class="click-li-name">校友店铺</view>
       <i-icon type="enter" size="24" color="#D3D3D3" class="click-li-icon"/>
@@ -50,5 +55,5 @@
       <view class="detail-li-left detail-li-left-other">物流单号</view>
       <view class="detail-li-right">wda143543241321<text class="li-right-btn">复制</text></view>
     </view>
-  </view>
+  </view> -->
 </view>

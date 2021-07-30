@@ -3540,6 +3540,25 @@
         {
           "name": "pages/shoppingCart/shoppingCart/index",
           "pathName": "pages/shoppingCart/shoppingCart/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/news/news/index",
+          "pathName": "pages/news/news/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/news/newsDetail/index",
+          "pathName": "pages/news/newsDetail/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/news/newsDetail/index",
+          "pathName": "pages/news/newsDetail/index",
+          "query": "",
           "scene": null
         }
       ]

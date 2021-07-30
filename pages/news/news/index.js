@@ -1,7 +1,5 @@
 import { News } from '../../../api-models/news/news';
 const news = new News();
-import { Index } from '../../../api-models/index/index';
-const index = new Index();
 const { $Toast } = require('../../../dist/base/index');
 import { wx_gotoNewUrl } from '../../../utils/fn'
 //获取应用实例
@@ -10,82 +8,61 @@ Page({
   data:{
     newsList:[],
     url: app.globalData.url,
-    visible: false,
+    pageNum: 1,
+    pageSize: 10,
+    code: 0,
   },
-  onShow(){
-    this.getDictAll()
+  onLoad(){
+    this.borArticleList()
   },
-  // 获取用户字典 
-  getDictAll(){
-    if(wx.getStorageSync('userInfo').id){
-      let couponStateList = []
-      let newsList = []
-      index.getDict({ dictType: 'news_type' }).then(res => {
-        if(res.code == 200){
-          couponStateList = res.result
-          news.searchNews({
-            userId: wx.getStorageSync('userInfo').id
-          }).then(res => {
-            if(res.code == 200){
-              newsList = res.result
-              if(newsList && couponStateList){
-                this.setData({
-                  newsList:this.findDictLabel(couponStateList,newsList)
-                })
-              }
-              console.log(this.data.newsList)
-            }else{
-              $Toast({
-                content: res.msg,
-                type: 'error'
-              });
-            }
-          })
-        }else {
-          $Toast({
-            content: res.msg,
-            type: 'error'
-          });
+  borArticleList(){
+    news.borArticleList({
+      pageNum: this.data.pageNum,
+      pageSize: this.data.pageSize,
+    }).then(res => {
+      this.data.code = res.code
+      if(res.code == '200' || res.code == '-118' || res.code == '-116'){
+        if(this.data.newsList) {
+          this.data.newsList = [...this.data.newsList, ...res.result.list]
+        }else{
+          this.data.newsList = res.result.list
         }
-      })
-    }else{
-      this.setData({
-        visible: true
-      })
-    }
-  },
-  handleOk(){
-    this.setData({
-      visible: false
-    })
-    wx_gotoNewUrl('switchTab','/pages/mine/mine/index')
-  },
-  handleClose(){
-    this.setData({
-      visible: false
+        this.setData({
+          newsList: this.data.newsList
+        })
+      }else{
+        $Toast({
+          content: res.msg,
+          type: 'error'
+        });
+      }
     })
   },
   gotoRouter(e){
-    if(e.currentTarget.dataset.item.newsType == 1){ // 订单信息
-
-    }else if(e.currentTarget.dataset.item.newsType == 2) { //商品消息
-      wx_gotoNewUrl('navigateTo','/pages/classify/goodsDetail/index',{
-        goodsid:e.currentTarget.dataset.item.keyword, // 详细商品id
-        goodsname:'订单详情', // 详细商品名称
-      })
-    }else if(e.currentTarget.dataset.item.newsType == 0) { // 系统消息
-      console.log('系统消息，不可点击')
-    }
-    // wx_gotoNewUrl('navigateTo','/pages/news/newsDetail/index')
-  },
-  // 数据字典-列表转换
-  findDictLabel(dictData,data){
-    const newData = data.map(item => {
-      return {
-        ...item,
-        dictLabel: dictData.find(it => it.dictValue == item.newsType).dictLabel
-      }
+    let id = e.currentTarget.dataset.item.id
+    wx_gotoNewUrl('navigateTo','/pages/news/newsDetail/index',{
+      id: id
     })
-    return newData
+  },
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+   onReachBottom: function () {
+    if(this.data.code != '0' && this.data.code != '-118'){
+      const vm =this;
+      const pageNum = vm.data.pageNum + 1;
+      vm.setData({
+        pageNum: pageNum, //更新当前页数
+      })
+      vm.borArticleList();
+    }
+  },
+  onPullDownRefresh() {
+    this.setData({
+      pageNum: 1,
+      newsList: []
+    })
+    this.borArticleList()
+    wx.stopPullDownRefresh()//得到结果后关掉刷新动画
   },
 })

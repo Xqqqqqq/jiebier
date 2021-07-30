@@ -2,13 +2,17 @@
   <view class="wrap-message" 
   bindtap="gotoRouter" wx:for="{{newsList}}" wx:key="index"
   data-item="{{item}}">
-    <view class="message-top">
-      <view class="message-top-left">{{item.dictLabel}}</view>
-      <view class="message-top-right">{{item.createTime}}</view>
-    </view>
+    <!-- <view class="message-top">
+      <view class="message-top-left">{{item.articleTiltle}}</view>
+      <view class="message-top-right" wx:if="{{item.createTime}}">{{item.createTime}}</view>
+    </view> -->
     <view class="message-bottom">
-      <view class="message-bottom-title">{{item.newsTitle}}</view>
-      <view class="message-bottom-tip">{{item.newsContent}}</view>
+      <view class="message-top">
+        <view class="message-bottom-title">{{item.articleTiltle}}</view>
+        <view class="message-top-right" wx:if="{{item.createTime}}">{{item.createTime}}</view>
+      </view>
+      <!-- <view class="message-bottom-title">{{item.articleTiltle}}</view> -->
+      <image src="{{item.articleImg}}" style="width: 300rpx;height: 200rpx; border-radius: 20rpx;"></image>
     </view>
   </view>
   <i-toast id="toast" />
@@ -18,7 +22,3 @@
   <image src="{{url}}tabs/no-data.png" mode="widthFix"></image>
   <view class="no-data-text">暂无数据</view>
 </view>
-<!-- 弹窗 -->
-<i-modal title="提示" visible="{{ visible }}" bind:ok="handleOk" bind:cancel="handleClose">
-  <view>您尚未授权，是否去授权？</view>
-</i-modal>
