@@ -22,9 +22,13 @@
       </swiper>
     </view>
   </view>
-  <i-notice-bar i-class="wrap-notice-box" icon="systemprompt" loop style="width: 100%;">
+  <van-notice-bar
+    left-icon="volume-o" scrollable
+    text="{{indexInfo.borNoticeList[0].noticeTiltle}}"
+  />
+  <!-- <i-notice-bar i-class="wrap-notice-box" icon="systemprompt" loop="{{loop}}" style="width: 100%;">
     {{indexInfo.borNoticeList[0].noticeTiltle}}
-  </i-notice-bar>
+  </i-notice-bar> -->
   <!-- 分类 -->
   <scroll-view class="bottom_scroll" scroll-x="true" scroll-left="{{x}}" scroll-with-animation="{{true}}">
     <view wx:for="{{indexInfo.borProductClassList}}" wx:key="index" data-id="{{item.id}}" data-index="{{index}}"
@@ -40,7 +44,7 @@
       <view class="hot-box" wx:for="{{homeList}}" wx:key="index">
         <view class="hot-box-title">
           <view class="box-title-name">{{item.columnName}}</view>
-          <view bindtap="clickMore" data-name="{{item.columnName}}">更多 ></view>
+          <view bindtap="clickMore" data-type="{{item.columnType}}">更多 ></view>
         </view>
         <view class="wrap-scroll">
           <view class="scroll-li" style="width: 210rpx;margin-right: 20rpx;"
@@ -64,7 +68,7 @@
       </view>
     </block>
     <!-- 当为其他分类商品时 -->
-    <block wx:else>
+    <block>
       <view class="class-box">
         <view class="hot-box-title" wx:if="{{hotInfo.columnName}}">
           <view class="box-title-name">{{hotInfo.columnName}}</view>

@@ -17,6 +17,7 @@ Page({
     autoplay: true,
     interval: 3000,
     duration: 500,
+    loop: true,
     indexInfo: {}, // 首页数据
     x:0,
     currentTab: 0,
@@ -141,7 +142,12 @@ Page({
         this.setData({
           indexInfo: res.result
         })
-        this.selectProductHomePageList('', '520f317ee38e11ea94340242ac110002')
+        this.selectProductHomePageList()
+        this.data.value = {
+          columnType: '', //专栏类型1热销2特价
+          productClassId: '', //商品分类id
+        }
+        this.selectProductClassHomePageList(this.data.value)
       }else{
         $Toast({
           content: res.msg,
@@ -167,19 +173,11 @@ Page({
       homeList: []
     })
     // console.log(e.currentTarget.dataset.name)
-    if(e.currentTarget.dataset.name == '热销专栏'){
-      this.data.value = {
-        columnType: '1', //专栏类型1热销2特价
-        productClassId: '', //商品分类id
-      }
-      this.selectProductClassHomePageList(this.data.value)
-    }else{
-      this.data.value = {
-        columnType: '2', //专栏类型1热销2特价
-        productClassId: '', //商品分类id
-      }
-      this.selectProductClassHomePageList(this.data.value)
+    this.data.value = {
+      columnType: e.currentTarget.dataset.type, //专栏类型1热销2特价
+      productClassId: '', //商品分类id
     }
+    this.selectProductClassHomePageList(this.data.value)
   },
   // 获取首页商品
   selectProductHomePageList(){

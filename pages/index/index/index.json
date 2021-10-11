@@ -7,6 +7,7 @@
     "i-collapse": "../../../dist/collapse/index",
     "i-collapse-item": "../../../dist/collapse-item/index",
     "i-modal": "../../../dist/modal/index",
-    "i-notice-bar": "../../../dist/notice-bar/index"
+    "i-notice-bar": "../../../dist/notice-bar/index",
+    "van-notice-bar": "@vant/weapp/notice-bar/index"
   }
 }
